@@ -1,0 +1,34 @@
+* general stuff
+setup.sh sets variables
+** globus commands:
+globus endpoint search 
+globus endpoint local-id
+globus task list
+
+* genome assembly download 
+cd genome
+globus transfer $t2t_endpoint:assemblies/drafts/t2t-chm13.20200602.fasta $my_endpoint:$(pwd -P)/t2t-chm13.20200602.fasta
+mv t2t-chm13.20200602.fasta t2tChm13_20200602.unmasked.fa
+bgzip t2tChm13_20200602.unmasked.fa 
+faToTwoBit t2tChm13_20200602.unmasked.fa.gz t2tChm13_20200602.unmasked.2bit
+* repeatmasker 
+RepeatMasker version 4.1.0
+Dfam_3.1
+** cd rmsk
+repeatMaskerMkJobs ../genome/t2tChm13_20200602.unmasked.2bit tmp
+para make -cpu=4 -ram=32g tmp/jobs.para -batch=tmp/b1 >&log& 
+* trf
+TRF 4.09
+** cd trf
+doSimpleRepeat.pl -stop=filter -buildDir=$(pwd) -unmaskedSeq=../genome/t2tChm13_20200602.unmasked.2bit -trf409=6 none  >&log&
+# should have use:  -bigClusterHub=ku -workhorse=hgwdev
+** results:
+simpleRepeat.bb
+simpleRepeat.bed.gz
+trfMask.bed.gz
+
+
+* to-do
+** Chirag Jain  10:02 AM 2020-06-05
+Thanks @Arang Rhie @Sergey Nurk for putting together a non-redundant asm;
+ONT UL (3.6.0) alignments and SV calls available here: team-nanopore/alignments_and_SVs/20200605

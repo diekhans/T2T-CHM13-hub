@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import os
+import argparse
+import twobitreader
+from pycbio.sys import fileOps
+
+bindir = os.path.abspath(os.path.dirname(__file__))
+
+def parseArgs():
+    usage = """generate repeatmasker jobs for new or update chromsomes """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('unmaskedTwoBit')
+    parser.add_argument('rundir')
+    return parser.parse_args()
+
+def loadChromNames(twoBit):
+    tbr = twobitreader.TwoBitFile(twoBit)
+    try:
+        return tuple(sorted(tbr.sequence_sizes().keys()))
+    finally:
+        tbr.close()
+
+def mkJob(unmaskedTwoBit, chrom, jobFh):
+    print(f"{bindir}/repeatMaskerJob {unmaskedTwoBit} {chrom} tmp", file=jobFh)
+
+def main(args):
+    chroms = loadChromNames(args.unmaskedTwoBit)
+    jobFile = os.path.join(args.rundir, "jobs.para")
+    fileOps.ensureDir(args.rundir)
+    with open(jobFile, "w") as jobFh:
+        for chrom in chroms:
+            mkJob(args.unmaskedTwoBit, chrom, jobFh)
+
+main(parseArgs())

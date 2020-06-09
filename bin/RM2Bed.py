@@ -544,7 +544,7 @@ def main(*args):
             #  a startover of the ID magnitude.
             query_seq = flds[4]
             if ( len(flds) < 16 ):
-                print (line)
+                print (line, file=sys.stderr)
             rm_id = int(flds[15])
             if ( query_seq != last_query_seq or
                 ( rm_id < last_rm_id - 50 and rm_id < 3 ) ):
@@ -759,7 +759,7 @@ def main(*args):
                     clustered_W.to_csv(file_prefix + '_' + split_value + '_rm.bed',
                                        sep='\t', header=False, index=False)
         else:
-            print('Splitting options are by name, family, and class.')
+            print('Splitting options are by name, family, and class.', file=sys.stderr)
 
     # Write as monolithic file
     output_bed = args.output_bed if args.output_bed is not None else (file_prefix + '_rm.bed')

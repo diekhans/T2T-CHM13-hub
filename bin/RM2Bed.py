@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# markd: extract from RepeatMaster distribution and modified to add optional output file
 """
     Usage: ./RM2Bed.py [--help] [--out_dir <path>]
                        [--log_level <number>]
@@ -14,7 +15,7 @@
                        [--ovlp_resolution 'higher_score'|
                           'longer_element'|'lower_divergence']
 
-                       <*.align> or <*.out>
+                       <*.align> or <*.out> [output_bed]
 
     This Python3 script reads in RepeatMasker a single *.out or
     *.align file and creates one or more BED files with
@@ -411,6 +412,7 @@ def main(*args):
 
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('rm_file', metavar='<*.out> or <*.align>')
+    parser.add_argument('output_bed', nargs='?', const='/dev/stdout')
     parser.add_argument('-h', '--help', action=_CustomUsageAction )
     parser.add_argument("-l", "--log_level", default="INFO")
     parser.add_argument('-d', '--out_dir')
@@ -424,6 +426,8 @@ def main(*args):
     parser.add_argument("-o", "--ovlp_resolution", type=str, help='Options are higher_score, longer_element, and lower_divergence. Optional')
 
     args = parser.parse_args()
+    if args.split and (args.output_bed is not None):
+        parser.error("can't specify both --split and output_bed")
 
     # Setup logging and script timing
     logging.basicConfig(format='')
@@ -758,9 +762,9 @@ def main(*args):
             print('Splitting options are by name, family, and class.')
 
     # Write as monolithic file
-    LOGGER.info("Creating: " + file_prefix + '_rm.bed' )
-    annot_dataframe.to_csv(file_prefix + '_rm.bed', sep='\t', header=False, index=False)
-
+    output_bed = args.output_bed if args.output_bed is not None else (file_prefix + '_rm.bed')
+    LOGGER.info("Creating: " +  output_bed)
+    annot_dataframe.to_csv(output_bed, sep='\t', header=False, index=False)
 
     #
     # Remaining main() code
@@ -776,4 +780,3 @@ def main(*args):
 #
 if __name__ == '__main__':
     main(*sys.argv)
-

@@ -9,14 +9,17 @@ use Getopt::Long;
 use warnings;
 use strict;
 use Carp;
-use FindBin qw($Bin);
-use lib "$Bin";
+#use FindBin qw($Bin);
+#use lib "$Bin";
+my $Bin="/cluster/home/markd/kent/src/hg/utils/automation";
+use lib "/cluster/home/markd/kent/src/hg/utils/automation";
 use HgAutomate;
 use HgRemoteScript;
 use HgStepManager;
 
 # Hardcoded command path:
-my $RepeatMaskerPath = "/hive/data/staging/data/RepeatMasker";
+#my $RepeatMaskerPath = "/hive/data/staging/data/RepeatMasker";
+my $RepeatMaskerPath = "/cluster/home/markd/compbio/nanopore/projs/t2t-chm13/progs/RepeatMasker";
 my $RepeatMasker = "$RepeatMaskerPath/RepeatMasker";
 my $RepeatMaskerEngine = "-engine crossmatch -s";
 # Let parasol pick defaults
@@ -323,12 +326,12 @@ VERSION:\\n" > ../versionInfo.txt
 
 ./dummyRun.csh | grep -v "dev/null" >> ../versionInfo.txt
 
-grep 'version of RepeatMasker\$' $RepeatMasker >> ../versionInfo.txt
+$RepeatMasker -v >> ../versionInfo.txt
 grep RELEASE $RepeatMaskerPath/Libraries/RepeatMaskerLib.embl >> ../versionInfo.txt
 printf "# RepeatMasker engine: %s\\n" "${RepeatMaskerEngine}" >> ../versionInfo.txt
 
 ls -ld $RepeatMaskerPath $RepeatMasker
-grep 'version of RepeatMasker\$' $RepeatMasker
+$RepeatMasker -v
 grep RELEASE $RepeatMaskerPath/Libraries/RepeatMaskerLib.embl
 echo "# RepeatMasker engine: $RepeatMaskerEngine"
 _EOF_

@@ -1,0 +1,35 @@
+
+##
+# varRep
+##
+
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9 +
+bigDataUrl rmsk.bigBed
+maxWindowToDraw 10000000
+priority 1
+
+track simpleRepeat
+shortLabel Simple Repeats
+longLabel Simple Tandem Repeats by TRF
+group varRep
+visibility hide
+type bigBed 4 +
+bigDataUrl simpleRepeat.bb
+priority 2
+
+track as_annotation1
+shortLabel AS annotation
+longLabel Alpha satellite annotation
+group varRep
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_annotation1.bigBed
+priority 3
+

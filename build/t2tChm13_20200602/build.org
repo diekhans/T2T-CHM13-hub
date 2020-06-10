@@ -1,0 +1,99 @@
+* general stuff
+** URLs
+https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+
+** setup.sh sets variables
+** globus commands:
+globus endpoint search 
+globus endpoint local-id
+globus task list
+
+* genome assembly download 
+cd genome
+globus transfer $t2t_endpoint:assemblies/drafts/t2t-chm13.20200602.fasta $my_endpoint:$(pwd -P)/t2t-chm13.20200602.fasta
+mv t2t-chm13.20200602.fasta t2tChm13_20200602.unmasked.fa
+bgzip t2tChm13_20200602.unmasked.fa 
+faToTwoBit t2tChm13_20200602.unmasked.fa.gz t2tChm13_20200602.unmasked.2bit
+* repeatmasker 
+RepeatMasker version 4.1.0
+Dfam_3.1
+** cd rmsk
+# uses modified version of browser doRepeatMasker.pl
+mkdir tmp
+../../../T2T-CHM13-hub/bin/doRepeatMasker.pl -stop=cat -buildDir=$(pwd)/tmp -species=mammal -unmaskedSeq=$(pwd)/../genome/t2tChm13_20200602.unmasked.2bit -useHMMER -bigClusterHub=ku -workhorse=hgwdev nodb
+../../../T2T-CHM13-hub/bin/doRepeatMasker.pl -continue=cat -stop=cat -buildDir=$(pwd)/tmp -species=mammal -unmaskedSeq=$(pwd)/../genome/t2tChm13_20200602.unmasked.2bit -useHMMER -bigClusterHub=ku -workhorse=hgwdev nodb
+
+# got:
+#   ERROR: the attempt of cleaning nestedRepeats did not work+ exit 255
+# just skipping and using RM2Bed
+# RM2Bed also failes on bad id:
+   tmp/RMPart/003/453/003453.lst.out
+   174  18.9  2.1  4.8  m16_613   38473326 38473527 (4427574) +  MLT1B          LTR/ERVL-MaLR          190  390    (0)       
+
+# drop this line
+cat tmp/nodb.sorted.fa.out | fgrep -v 'm16_613   38473326 38473527'| gzip -c > t2tChm13_20200602.out.gz&
+nice ../../../T2T-CHM13-hub/bin/RM2Bed.py t2tChm13_20200602.out.gz - | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin rmsk.bed >&log
+
+bedToBigBed -type=bed9+ -as=../../../T2T-CHM13-hub/etc/rmskBed.as rmsk.bed.gz ../genome/t2tChm13_20200602.sizes rmsk.bigBed
+gzip -9 rmsk.bed 
+ln rmsk.bigBed ../../../hub/t2tChm13_20200602/
+
+* trf
+TRF 4.09
+** cd trf
+doSimpleRepeat.pl -stop=filter -buildDir=$(pwd) -unmaskedSeq=../genome/t2tChm13_20200602.unmasked.2bit -trf409=6 none  >&log&
+# should have use:  -bigClusterHub=ku -workhorse=hgwdev
+ln simpleRepeat.bb  ../../../hub/t2tChm13_20200602/
+** results:
+simpleRepeat.bb
+simpleRepeat.bed.gz
+trfMask.bed.gz
+
+* mask and finish genome
+twoBitMask -type=.bed t2tChm13_20200602.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trfMask.bed.gz ) t2tChm13_20200602.2bit
+twoBitInfo t2tChm13_20200602.2bit t2tChm13_20200602.sizes
+twoBitToFa t2tChm13_20200602.2bit t2tChm13_20200602.fa
+bgzip t2tChm13_20200602.fa
+samtools faidx t2tChm13_20200602.fa.gz 
+blat t2tChm13_20200602.2bit -makeOoc=t2tChm13_20200602.11.ooc /dev/null /dev/null
+ln t2tChm13_20200602.2bit  ../../../hub/t2tChm13_20200602/
+* cenSat1Align 
+cd cenSat1Align ; mkdir tmp
+doSameSpeciesLiftOver.pl cenSat1 t2tChm13_20200602 \
+ -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
+ -target2Bit=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.2bit \
+ -targetSizes=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.sizes \
+ -ooc=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.11.ooc \
+ -query2Bit=$(pwd)/../genome/t2tChm13_20200602.2bit \
+ -querySizes=$(pwd)/../genome/t2tChm13_20200602.sizes \
+ -bigClusterHub=ku -workhorse=hgwdev
+
+* as_annotation1
+from Lev Uralsky
+Globus /team-satellites/AS_Annotation/draft_20200602/AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+cd as_annotation1
+buildBigBed bed9 t2tChm13_20200602 as_annotation1.bigBed AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+ln as_annotation1.bigBed  ../../../hub/t2tChm13_20200602/
+* to-do
+** Chirag Jain  10:02 AM 2020-06-05
+Thanks @Arang Rhie @Sergey Nurk for putting together a non-redundant asm;
+ONT UL (3.6.0) alignments and SV calls available here: team-nanopore/alignments_and_SVs/20200605
+
+** Merqury error 
+Arang Rhie  10:38 PM
+Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
+The .vcf s will be nice to have a track. @Chirag Jain generated SV calls from UL reads in team-nanopore/alignments_and_SVs/20200605/ . Chirag, there are currently 3 .vcf files. Which one do you think is the most useful to share?
+Arang Rhie  10:38 PM
+Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
+I guess output.filtered.vcf from your README?
+** AS_Annotation
+Hi, @Mark Diekhans if it's not too late, we have added an alpha satellite annotation for 20200602 draft.
+It is on Globus /team-satellites/AS_Annotation/draft_20200602/
+https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200602%2F
+Can you make a track out of it on a UCSC hub?
+
+** Arang Rhie
+@Mark Diekhans I shared a doc with you and members of the polishing group: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
+It contains an empty template + filled out tracks.
+Others, feel free to request edit access if needed. I thought it might be useful to keep track of them in one place. (edited) 

@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import argparse
+from os import path as osp
+import glob
+import shutil
+import tempfile
+from pycbio.sys import fileOps
+import pipettor
+from t2tlib import findGenomeTwoBit, loadChromNames
+
+def parseArgs():
+    usage = """build a bigBed file from one or more inputs, doing various
+    edits and cleanup"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--keep', action="store_true")
+    parser.add_argument('--as', dest="asFile")
+    parser.add_argument('bedType')
+    parser.add_argument('assembly')
+    parser.add_argument('bigBedOut')
+    parser.add_argument('inBeds', nargs='+')
+    return parser.parse_args()
+
+bedSortCmd = ["sort", "-k1,1", "-k2,2n"]
+
+def editBedRec(line, outBedFh, chromNames, reportedUnknownChroms):
+    if line.startswith("track") or line.startswith("#"):
+        return False
+    row = line.split('\t')
+    if row[0] not in chromNames:
+        if row[0] not in reportedUnknownChroms:
+            print("Unknown chrom:", row[0], file=sys.stderr)
+            reportedUnknownChroms.add(row[0])
+        return False
+    outBedFh.write(line)
+    return True
+
+def copyBeds(inBeds, outBedFh, chromNames):
+    reportedUnknownChroms = set()
+    for inBed in inBeds:
+        with fileOps.opengz(inBed) as inBedFh:
+            for line in inBedFh:
+                editBedRec(line, outBedFh, chromNames, reportedUnknownChroms)
+
+def createInBed(inBeds, tmpBedFh, chromNames):
+    with pipettor.Popen([bedSortCmd], "w", stdout=tmpBedFh) as outBedFh:
+        copyBeds(inBeds, outBedFh, chromNames)
+
+def bedToBigBed(tmpBed, bigBedOut, bedType, asFile, genomeTwoBit):
+    cmd = ["bedToBigBed", "-type=" + bedType, "-tab", "-sizesIs2Bit"]
+    if asFile is not None:
+        cmd += ["-asFile=" + asFile]
+    cmd += [tmpBed, genomeTwoBit, bigBedOut]
+    pipettor.run(cmd)
+
+def buildBigBed(inBeds, bigBedOut, keep, bedType, asFile, genomeTwoBit, chromNames):
+    with tempfile.NamedTemporaryFile(delete=not keep) as tmpBedFh:
+        if keep:
+            print("keeping temporary bed:", tmpBedFh.name, file=sys.stderr)
+        createInBed(inBeds, tmpBedFh, chromNames)
+        bedToBigBed(tmpBedFh.name, bigBedOut, bedType, asFile, genomeTwoBit)
+
+def main(args):
+    genomeTwoBit = findGenomeTwoBit(args.assembly)
+    chromNames = frozenset(loadChromNames(genomeTwoBit))
+    buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.asFile, genomeTwoBit, chromNames)
+
+main(parseArgs())

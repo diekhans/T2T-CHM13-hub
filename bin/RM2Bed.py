@@ -545,13 +545,7 @@ def main(*args):
             query_seq = flds[4]
             if ( len(flds) < 16 ):
                 print (line, file=sys.stderr)
-            try:
-                rm_id = int(flds[15])
-            except ValueError:
-                # bad record, skip
-                print('invalid id: {} in {}'.format(flds[15], flds), file=sys.stderr)
-                del results[-1]
-                continue
+            rm_id = int(flds[15])
             if ( query_seq != last_query_seq or
                 ( rm_id < last_rm_id - 50 and rm_id < 3 ) ):
                 if ( query_seq == last_query_seq ):

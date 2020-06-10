@@ -1,0 +1,11 @@
+genome t2tChm13_20200602
+trackDb t2tChm13_20200602/trackDb.txt
+groups t2tChm13_20200602/groups.txt
+description T2T CHM13 
+twoBitPath t2tChm13_20200602/t2tChm13_20200602.2bit
+organism Homo sapiens
+defaultPos chr3:90,755,737-90,789,938
+scientificName Homo sapiens
+htmlPath t2tChm13_20200602/description.html
+#blat blatx.soe.ucsc.edu 17877
+#transBlat blatx.soe.ucsc.edu 17876

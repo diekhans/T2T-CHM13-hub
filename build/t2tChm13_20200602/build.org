@@ -75,6 +75,20 @@ Globus /team-satellites/AS_Annotation/draft_20200602/AS-HORs-draft_20200602-hmme
 cd as_annotation1
 buildBigBed bed9 t2tChm13_20200602 as_annotation1.bigBed AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
 ln as_annotation1.bigBed  ../../../hub/t2tChm13_20200602/
+* merqury tracks
+from team-curation/merqury/
+** link tracks
+- 20200602.read_multiplicity.bigWig  merqury_10X_reads_kmers.bigWig
+- 20200602.asm_multiplicity.bigWig   merqury_assembly_kmers.bigWig
+- 20200602.only.bigWig merqury_errors.bigWig
+- 20200602.single.bigWig merqury_marker_kmers.bigWig
+
+
+* winnowmap_nanopore tracks
+from team-nanopore/alignments_and_SVs/20200605
+- winnowmap_nanopore_aligns    output.bam
+- winnowmap_nanopore_variants  output.filtered.vcf
+
 * to-do
 ** Chirag Jain  10:02 AM 2020-06-05
 Thanks @Arang Rhie @Sergey Nurk for putting together a non-redundant asm;
@@ -84,16 +98,13 @@ ONT UL (3.6.0) alignments and SV calls available here: team-nanopore/alignments_
 Arang Rhie  10:38 PM
 Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
 The .vcf s will be nice to have a track. @Chirag Jain generated SV calls from UL reads in team-nanopore/alignments_and_SVs/20200605/ . Chirag, there are currently 3 .vcf files. Which one do you think is the most useful to share?
-Arang Rhie  10:38 PM
 Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
 I guess output.filtered.vcf from your README?
-** AS_Annotation
-Hi, @Mark Diekhans if it's not too late, we have added an alpha satellite annotation for 20200602 draft.
-It is on Globus /team-satellites/AS_Annotation/draft_20200602/
-https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200602%2F
-Can you make a track out of it on a UCSC hub?
-
 ** Arang Rhie
 @Mark Diekhans I shared a doc with you and members of the polishing group: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
 It contains an empty template + filled out tracks.
 Others, feel free to request edit access if needed. I thought it might be useful to keep track of them in one place. (edited) 
+** Tatiana Dvorkina  7:46 AM
+Hi @Mark Diekhans Could you please add our HOR annotations for 20200602 to the browser? (can be found on Globus /team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed) (edited) 
+I also added phase1 HOR decompositions (hordecomposition_*_phase1.bed) and decomposition of cenX (hordecomposition_*_karen.bed)  from the Miga et al paper -- maybe these decompositions will be useful for comparison, but I don't know if they should be added.
+Just noticed html-description needed - added to Globus in the same folder here.

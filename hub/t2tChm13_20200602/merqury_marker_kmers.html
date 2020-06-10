@@ -1,0 +1,41 @@
+<h2>Description</h2>
+<p>Merqury - Single copy marker k-mers</p>
+
+
+<h2>Methods</h2>
+<p>The first 23 bp of the 10X Genomics read pair 1 were trimmed to remove barcode bases,
+and 21-mers were collected with Meryl (read set).
+
+
+21-mers in the multiplicity of >5x and <58x were defined as “single copy k-mers”, which we expect to be found in the haploid assembly once. This set was intersected with the 21-mers found only once in the assembly, to ensure the 21-mer in the assembly is the only place found globally in the assembly.
+
+
+Each position containing a marker k-mer was converted to a .bed file, with the accumulated number of k-mers per position collected in bigWig format. As a result, the maximum number of k-mers found per base will be 21 (all k-mers overlapping that base are markers).
+</p>
+
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p>Maximum set to 21x</p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p>Data is available on globus: team-curation/merqury/20200602.single.bigWig with a corresponding .tdf</p>
+
+
+<h2>Release history</h2>
+<ol>
+  <li> 2020 June 9 : Initial upload for 20200602 release
+</ol>
+
+
+<h2>Contact</h2>
+<p>Contact <a href="mailto:rhiea@nih.gov">Arang Rhie &lt;rhiea@nih.gov&gt;</a>
+</p>
+
+
+<h2>Credits</h2>
+<p></p>
+

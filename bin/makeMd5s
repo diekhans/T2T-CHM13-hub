@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+from os import path as osp
+from pycbio.sys import fileOps
+import pipettor
+from concurrent.futures import ThreadPoolExecutor
+
+def parseArgs():
+    usage = """generate md5s on data files and make them read-only"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--outFile', default="data.md5")
+    parser.add_argument('dataFiles', nargs='+')
+    return parser.parse_args()
+
+def parseMd5(md5out):
+    lines = md5out.splitlines()
+    if len(lines) != 1:
+        raise Exception("invalid md5sum output, expected one line: " + md5out)
+    words = lines[0].split()
+    if len(words) != 2:
+        raise Exception("invalid md5sum output, expected two words: " + md5out)
+    return words[0]
+
+def callMd5(cmds):
+    return parseMd5(pipettor.runout(cmds))
+
+def md5File(dataFile):
+    fileMd5 = callMd5(["md5sum", dataFile])
+    ftype = osp.splitext(dataFile)[1]
+    if ftype == ".gz":
+        dataMd5 = callMd5([["zcat", dataFile], ["md5sum"]])
+    elif ftype in (".bigBed", ".bb"):
+        dataMd5 = callMd5([["bigBedToBed", dataFile, "stdout"], ["md5sum"]])
+    elif ftype in (".bigBed", ".bb", ".bigPsl"):
+        dataMd5 = callMd5([["bigBedToBed", dataFile, "stdout"], ["md5sum"]])
+    elif ftype in (".bigWig", ".bw"):
+        dataMd5 = callMd5([["bigWigToWig", dataFile, "stdout"], ["md5sum"]])
+    else:
+        dataMd5 = fileMd5
+    return (dataFile, fileMd5, dataMd5)
+
+def collectMd5Data(dataFiles):
+    with ThreadPoolExecutor() as tpe:
+        return sorted(tpe.map(md5File, dataFiles), key=lambda r: r[0])
+
+def writeMd5Data(md5Data, outFh):
+    fileOps.prRowv(outFh, "file", "file_md5", "data_md5")
+    for d in md5Data:
+        fileOps.prRow(outFh, d)
+
+
+def main(args):
+    if osp.exists(args.outFile):
+        raise Exception("output file already exists: " + args.outFile)
+    md5Data = collectMd5Data(args.dataFiles)
+    for df in args.dataFiles:
+        os.chmod(df, 0o444)
+    with open(args.outFile, "w") as outFh:
+        writeMd5Data(md5Data, outFh)
+    os.chmod(args.outFile, 0o444)
+
+main(parseArgs())

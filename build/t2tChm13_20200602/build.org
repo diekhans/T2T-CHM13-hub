@@ -3,6 +3,7 @@
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 
+ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
 ** setup.sh sets variables
 ** globus commands:
 globus endpoint search 
@@ -12,8 +13,9 @@ globus task list
 * genome assembly download 
 cd genome
 globus transfer $t2t_endpoint:assemblies/drafts/t2t-chm13.20200602.fasta $my_endpoint:$(pwd -P)/t2t-chm13.20200602.fasta
-mv t2t-chm13.20200602.fasta t2tChm13_20200602.unmasked.fa
-bgzip t2tChm13_20200602.unmasked.fa 
+bgzip t2t-chm13.20200602.fasta
+makeMd5s t2t-chm13.20200602.fasta.gz 
+ln t2t-chm13.20200602.fasta.gz t2tChm13_20200602.unmasked.fa.gz
 faToTwoBit t2tChm13_20200602.unmasked.fa.gz t2tChm13_20200602.unmasked.2bit
 * repeatmasker 
 RepeatMasker version 4.1.0
@@ -69,42 +71,75 @@ doSameSpeciesLiftOver.pl cenSat1 t2tChm13_20200602 \
  -querySizes=$(pwd)/../genome/t2tChm13_20200602.sizes \
  -bigClusterHub=ku -workhorse=hgwdev
 
-* as_annotation1
+* as_annotation
 from Lev Uralsky
-Globus /team-satellites/AS_Annotation/draft_20200602/AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
-cd as_annotation1
-buildBigBed bed9 t2tChm13_20200602 as_annotation1.bigBed AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
-ln as_annotation1.bigBed  ../../../hub/t2tChm13_20200602/
+cd as_annotation
+# get /team-satellites/AS_Annotation/draft_20200602/AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+makeMd5s AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+buildBigBed bed9 t2tChm13_20200602 as_annotation.bigBed AS-HORs-draft_20200602-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+ln as_annotation.bigBed  ../../../hub/t2tChm13_20200602/
 * merqury tracks
-from team-curation/merqury/
-** link tracks
-- 20200602.read_multiplicity.bigWig  merqury_10X_reads_kmers.bigWig
-- 20200602.asm_multiplicity.bigWig   merqury_assembly_kmers.bigWig
-- 20200602.only.bigWig merqury_errors.bigWig
-- 20200602.single.bigWig merqury_marker_kmers.bigWig
+from Arang Rhie
+cd merqury
+from team-curation/merqury/merqury_*.bigWig
+makeMd5s 20200602.*.bigWig
+ln 20200602.read_multiplicity.bigWig  merqury_10X_reads_kmers.bigWig
+ln 20200602.asm_multiplicity.bigWig   merqury_assembly_kmers.bigWig
+ln 20200602.only.bigWig merqury_errors.bigWig
+ln 20200602.single.bigWig merqury_marker_kmers.bigWig
 
+ln merqury_* ../../../hub/t2tChm13_20200602/merqury/
 
 * winnowmap_nanopore tracks
-from team-nanopore/alignments_and_SVs/20200605
-- winnowmap_nanopore_aligns    output.bam
-- winnowmap_nanopore_variants  output.filtered.vcf
+from Chirag Jain
+cd winnowmap_nanopore
+from team-nanopore/alignments_and_SVs/20200605/
+      output.bam, output.filtered.vcf
+bgzip output.filtered.vcf
+makeMd5s output.*
+ln output.bam winnowmap_nanopore_aligns.bam
+nice samtools index -@ 32 winnowmap_nanopore_aligns.bam 
+
+# vcf not sorted
+vcf-sort output.filtered.vcf.gz |bgzip -c > winnowmap_nanopore_variants.vcf.gz
+tabix -p vcf winnowmap_nanopore_variants.vcf.gz 
+
+ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
+
+* hor_decompositions
+from Tatiana Dvorkina
+/team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed
+   decomposition_cen20_20200602.bed
+   decomposition_cen3_20200602.bed
+   decomposition_cen8_20200602.bed
+   decomposition_cenX_20200602.bed
+horTrackDescription.html
 
 * to-do
-** Chirag Jain  10:02 AM 2020-06-05
+** DONE Chirag Jain  10:02 AM 2020-06-05
+CLOSED: [2020-06-10 Wed 15:07]
 Thanks @Arang Rhie @Sergey Nurk for putting together a non-redundant asm;
 ONT UL (3.6.0) alignments and SV calls available here: team-nanopore/alignments_and_SVs/20200605
 
-** Merqury error 
+** DONE Merqury error 
+CLOSED: [2020-06-10 Wed 15:07]
 Arang Rhie  10:38 PM
 Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
 The .vcf s will be nice to have a track. @Chirag Jain generated SV calls from UL reads in team-nanopore/alignments_and_SVs/20200605/ . Chirag, there are currently 3 .vcf files. Which one do you think is the most useful to share?
 Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
 I guess output.filtered.vcf from your README?
-** Arang Rhie
+** DONE Arang Rhie
+CLOSED: [2020-06-10 Wed 15:07]
 @Mark Diekhans I shared a doc with you and members of the polishing group: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
 It contains an empty template + filled out tracks.
 Others, feel free to request edit access if needed. I thought it might be useful to keep track of them in one place. (edited) 
-** Tatiana Dvorkina  7:46 AM
-Hi @Mark Diekhans Could you please add our HOR annotations for 20200602 to the browser? (can be found on Globus /team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed) (edited) 
-I also added phase1 HOR decompositions (hordecomposition_*_phase1.bed) and decomposition of cenX (hordecomposition_*_karen.bed)  from the Miga et al paper -- maybe these decompositions will be useful for comparison, but I don't know if they should be added.
-Just noticed html-description needed - added to Globus in the same folder here.
+** TODO Tatiana Dvorkina  7:46 AM
+Hi @Mark Diekhans Could you please add our HOR annotations for 20200602 to the
+browser? (can be found on Globus
+/team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed)
+(edited) I also added phase1 HOR decompositions
+(hordecomposition_*_phase1.bed) and decomposition of cenX
+(hordecomposition_*_karen.bed) from the Miga et al paper -- maybe these
+decompositions will be useful for comparison, but I don't know if they should
+be added.  Just noticed html-description needed - added to Globus in the same
+folder here.

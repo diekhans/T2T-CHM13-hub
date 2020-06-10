@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import argparse
-from os import path as osp
-import glob
-import shutil
 import tempfile
 from pycbio.sys import fileOps
 import pipettor

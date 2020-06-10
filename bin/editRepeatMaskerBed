@@ -2,7 +2,6 @@
 
 import argparse
 import sys
-import re
 from pycbio.sys.color import Color
 from pycbio.hgdata.bed import BedReader
 
@@ -66,7 +65,7 @@ def lookupColor(*names):
 def editBedRec(rec):
     # name is family
     repClass, repFamily = rec.extraCols[0:2]
-    rec.extraCols =  [int(rec.score)] + rec.extraCols
+    rec.extraCols = [int(rec.score)] + rec.extraCols
 
     rec.thickStart = rec.chromStart
     rec.thickEnd = rec.chromEnd

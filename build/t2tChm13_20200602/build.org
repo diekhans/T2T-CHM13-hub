@@ -3,7 +3,9 @@
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 
-ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
+https://hgwdev.gi.ucsc.edu/~markd/t2t/hub-problem/hub.txt
+
+
 ** setup.sh sets variables
 ** globus commands:
 globus endpoint search 
@@ -113,33 +115,8 @@ from Tatiana Dvorkina
    decomposition_cen3_20200602.bed
    decomposition_cen8_20200602.bed
    decomposition_cenX_20200602.bed
-horTrackDescription.html
+gzip -9 *.bed
+makeMd5s *.bed.gz
+buildBigBed bed9 t2tChm13_20200602 hor_decompositions.bigBed *.bed.gz
 
 * to-do
-** DONE Chirag Jain  10:02 AM 2020-06-05
-CLOSED: [2020-06-10 Wed 15:07]
-Thanks @Arang Rhie @Sergey Nurk for putting together a non-redundant asm;
-ONT UL (3.6.0) alignments and SV calls available here: team-nanopore/alignments_and_SVs/20200605
-
-** DONE Merqury error 
-CLOSED: [2020-06-10 Wed 15:07]
-Arang Rhie  10:38 PM
-Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
-The .vcf s will be nice to have a track. @Chirag Jain generated SV calls from UL reads in team-nanopore/alignments_and_SVs/20200605/ . Chirag, there are currently 3 .vcf files. Which one do you think is the most useful to share?
-Hi @Mark Diekhans! Thanks for creating this channel. Here is the Merqury error k-mers: team-curation/merqury/20200602.only.bigwig
-I guess output.filtered.vcf from your README?
-** DONE Arang Rhie
-CLOSED: [2020-06-10 Wed 15:07]
-@Mark Diekhans I shared a doc with you and members of the polishing group: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
-It contains an empty template + filled out tracks.
-Others, feel free to request edit access if needed. I thought it might be useful to keep track of them in one place. (edited) 
-** TODO Tatiana Dvorkina  7:46 AM
-Hi @Mark Diekhans Could you please add our HOR annotations for 20200602 to the
-browser? (can be found on Globus
-/team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed)
-(edited) I also added phase1 HOR decompositions
-(hordecomposition_*_phase1.bed) and decomposition of cenX
-(hordecomposition_*_karen.bed) from the Miga et al paper -- maybe these
-decompositions will be useful for comparison, but I don't know if they should
-be added.  Just noticed html-description needed - added to Globus in the same
-folder here.

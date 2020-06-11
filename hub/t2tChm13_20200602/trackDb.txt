@@ -33,12 +33,22 @@ itemRgb on
 bigDataUrl as_annotation.bigBed
 priority 3
 
+track hor_decompositions
+shortLabel HOR annotation
+longLabel Centromere HOR annotation
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl hor_decompositions.bigBed
+priority 4
+
 # track merqury
 # shortLabel Merqury
 # longLabel Merqury
 # superTrack on hide
 # visibility hide
-# group assembly
+# group map
 # priority 10
 
     track merqury_10X_reads_kmers
@@ -46,70 +56,75 @@ priority 3
     shortLabel Merqury 10XG k-mers
     longLabel Merqury k-mer multiplicity in 10XG reads
     type bigWig 0.0 100.0
+    color 60,60,140
+    altColor 140,60,60
     visibility hide
     bigDataUrl merqury/merqury_10X_reads_kmers.bigWig
-    html merqury_10X_reads_kmers.html
     viewLimitsMax 0:100
     maxHeightPixels 100:32:8
     priority 1
-    group assembly
+    group map
 
     track merqury_assembly_kmers
     #parent merqury
     shortLabel Merqury assembly k-mers
     longLabel Merqury k-mer multiplicity in assembly
+    color 60,60,140
+    altColor 140,60,60
     type bigWig 0.0 100.0
     visibility hide
     bigDataUrl merqury/merqury_assembly_kmers.bigWig
-    html merqury_assembly_kmers.html
     viewLimitsMax 0:100
     maxHeightPixels 100:32:8
     priority 2
-    group assembly
+    group map
 
     track merqury_marker_kmers
     #parent merqury
-    shortLabel merqury_marker_kmers
+    shortLabel Merqury marker k-mers
     longLabel Merqury Single copy marker k-mers
+    color 60,60,140
+    altColor 140,60,60
     type bigWig 0.0 100.0
     visibility hide
     bigDataUrl merqury/merqury_marker_kmers.bigWig
-    html merqury_marker_kmers.html
     viewLimitsMax 0:100
     maxHeightPixels 100:32:8
     priority 3
-    group assembly
+    group map
 
     track merqury_errors
     #parent merqury
     shortLabel Merqury errors
     longLabel Merqury - Assembly-only (Errors)
+    color 60,60,140
+    altColor 140,60,60
     type bigWig 0.0 100.0
     visibility hide
     bigDataUrl merqury/merqury_errors.bigWig
-    html merqury_errors.html
     viewLimitsMax 0:100
     maxHeightPixels 100:32:8
     priority 4
-    group assembly
+    group map
 
 # track winnowmap_nanopore
 # shortLabel Winnowmap Nanopore SVs
 # longLabel Winnowmap Nanopore SVs
 # superTrack on hide
 # visibility hide
-# group assembly
+# group map
 # priority 10
 
     track winnowmap_nanopore_aligns
     #parent winnowmap_nanopore
     shortLabel Winnowmap Nanopore Alignments
     longLabel Winnowmap Nanopore Alignments
-    priority 1
+    priority 10
     type bam
     maxItems 1000000
     visibility hide
     bigDataUrl winnowmap_nanopore/winnowmap_nanopore_aligns.bam
+    group map
 
     track winnowmap_nanopore_variants
     #parent winnowmap_nanopore
@@ -118,5 +133,7 @@ priority 3
     type vcfTabix
     maxWindowToDraw 200000
     bigDataUrl winnowmap_nanopore/winnowmap_nanopore_variants.vcf.gz
-    priority 2
+    priority 20
     visibility dense
+    group map
+

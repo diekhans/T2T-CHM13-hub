@@ -4,7 +4,7 @@ priority 1
 defaultIsClosed 1
 
 name map
-label Mapping
+label Mapping and Assembly
 priority 2
 defaultIsClosed 0
 

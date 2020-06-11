@@ -5,7 +5,6 @@ https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 
 https://hgwdev.gi.ucsc.edu/~markd/t2t/hub-problem/hub.txt
 
-
 ** setup.sh sets variables
 ** globus commands:
 globus endpoint search 
@@ -111,12 +110,24 @@ ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
 * hor_decompositions
 from Tatiana Dvorkina
 /team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed
-   decomposition_cen20_20200602.bed
-   decomposition_cen3_20200602.bed
-   decomposition_cen8_20200602.bed
-   decomposition_cenX_20200602.bed
+    hordecomposition_cen20_20200602.bed
+    hordecomposition_cen3_20200602.bed
+    hordecomposition_cen8_20200602.bed
+    hordecomposition_cenX_20200602.bed
 gzip -9 *.bed
 makeMd5s *.bed.gz
 buildBigBed bed9 t2tChm13_20200602 hor_decompositions.bigBed *.bed.gz
-
+ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200602/
+* hg38BlatAlign 
+# try same species liftover going from t2tChm13_20200602 to hg38 (as target)
+# since we have a subset of chroms, this should be the best direction
+cd hg38BlatAlign ; mkdir tmp
+doSameSpeciesLiftOver.pl hg38 t2tChm13_20200602 \
+ -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
+ -target2Bit=/hive/data/genomes/hg38/hg38.2bit \
+ -targetSizes=/hive/data/genomes/hg38/chrom.sizes \
+ -ooc=/hive/data/genomes/hg38/jkStuff/hg38.11.ooc \
+ -query2Bit=$(pwd)/../genome/t2tChm13_20200602.2bit \
+ -querySizes=$(pwd)/../genome/t2tChm13_20200602.sizes \
+ -bigClusterHub=ku -workhorse=hgwdev
 * to-do

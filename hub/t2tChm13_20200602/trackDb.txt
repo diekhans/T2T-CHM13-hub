@@ -31,6 +31,7 @@ visibility hide
 type bigBed 9
 itemRgb on
 bigDataUrl as_annotation.bigBed
+maxItems 100000
 priority 3
 
 track hor_decompositions
@@ -41,6 +42,7 @@ visibility hide
 itemRgb on
 type bigBed 9
 bigDataUrl hor_decompositions.bigBed
+maxItems 100000
 priority 4
 
 # track merqury

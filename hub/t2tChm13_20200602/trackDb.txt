@@ -134,6 +134,6 @@ priority 4
     maxWindowToDraw 200000
     bigDataUrl winnowmap_nanopore/winnowmap_nanopore_variants.vcf.gz
     priority 20
-    visibility dense
+    visibility hide
     group map
 

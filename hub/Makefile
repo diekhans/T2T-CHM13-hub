@@ -23,7 +23,11 @@ ${hubDir}/%: %
 	@mkdir -p $(dir $@)
 	cp -f $< $@
 
-sync: hub
-	@if [ "$$(hostname)" != "hgwdev" ] ; then echo "Error: sync can only be run on hgwdev" ; exit 1 ; fi
+define hgwdev_check
+@if [ "$$(hostname)" != "hgwdev" ] ; then echo "Error: sync can only be run on hgwdev" ; exit 1 ; fi
+endef
+
+sync:
+	${hgwdev_check}
 	cd ../.. && rsync -a --inplace hub courtyard.gi.ucsc.edu:/nanopore/markd/t2t-chm13/
 	hubCheck ${courtyardUrl}

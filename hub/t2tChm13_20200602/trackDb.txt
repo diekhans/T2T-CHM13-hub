@@ -139,3 +139,65 @@ priority 4
     visibility hide
     group map
 
+# track hg002_aligns
+# shortLabel HG002 to CHM13 alignments
+# longLabel HG002 to CHM13 alignments
+# superTrack on hide
+# visibility hide
+# group compGeno
+# priority 10
+
+    track HG002vCHM13_20200602_mm2_ONT
+    #parent hg002_aligns
+    shortLabel HG002 ONT minimap2
+    longLabel HG002 ONT minimap2 alignments
+    priority 10
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_ONT.sort.bam
+    group compGeno
+
+    track HG002vCHM13_20200602_mm2_PBCCS
+    #parent hg002_aligns
+    shortLabel HG002 PacBio HiFi minimap2
+    longLabel HG002 PacBio HiFi minimap2 alignments
+    priority 11
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_PBCCS.sort.bam
+    group compGeno
+
+    track HG002vCHM13_20200602_mm2_PB
+    #parent hg002_aligns
+    shortLabel HG002 PacBio CLR minimap2
+    longLabel HG002 PacBio CLR minimap2 alignments
+    priority 12
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_PB.sort.bam
+    group compGeno
+
+    track HG002vCHM13_20200602_ngmlr_PBCCS
+    #parent hg002_aligns
+    shortLabel HG002 PacBio HiFi NGMLR
+    longLabel HG002 PacBio HiFi NGMLR alignments
+    priority 13
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl HG002vCHM13/HG002vCHM13_20200602_ngmlr_PBCCS.sort.bam
+    group compGeno
+
+    track HG002vCHM13_20200602_ngmlr_PB
+    #parent hg002_aligns
+    shortLabel HG002 PacBio CLR NGMLR
+    longLabel HG002 PacBio CLR NGMLR alignments
+    priority 14
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl HG002vCHM13/HG002vCHM13_20200602_ngmlr_PB.sort.bam
+    group compGeno

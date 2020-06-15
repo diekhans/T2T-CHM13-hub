@@ -120,7 +120,8 @@ buildBigBed bed9 t2tChm13_20200602 hor_decompositions.bigBed *.bed.gz
 ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200602/
 * hg38BlatAlign 
 # try same species liftover going from t2tChm13_20200602 to hg38 (as target)
-# since we have a subset of chroms, this should be the best direction
+# since we have a subset of chroms, this should be the best direction.
+# This ran for days without repeatmasking, so try it with.
 cd hg38BlatAlign ; mkdir tmp
 doSameSpeciesLiftOver.pl hg38 t2tChm13_20200602 \
  -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
@@ -129,5 +130,23 @@ doSameSpeciesLiftOver.pl hg38 t2tChm13_20200602 \
  -ooc=/hive/data/genomes/hg38/jkStuff/hg38.11.ooc \
  -query2Bit=$(pwd)/../genome/t2tChm13_20200602.2bit \
  -querySizes=$(pwd)/../genome/t2tChm13_20200602.sizes \
- -bigClusterHub=ku -workhorse=hgwdev
+ -bigClusterHub=ku -workhorse=hgwdev \
+ -repeatMasked
+
+* HG002vCHM13 alignments
+from Sergey Aganezov <sergeyaganezovjr@gmail.com>
+from /team-variants/read_aligns/bams/
+tracks:
+    HG002vCHM13_20200602_mm2_ONT
+    HG002vCHM13_20200602_mm2_PBCCS
+    HG002vCHM13_20200602_mm2_PB
+    HG002vCHM13_20200602_ngmlr_PBCCS
+    HG002vCHM13_20200602_ngmlr_PB
+makeMd5s HG002vCHM13_20200602_*&
+
 * to-do
+** 0200611,
+https://t2t-consortium.slack.com/archives/C013XAJ6U67/p1591908583197800
+
+** Sergey Aganezov  9:35 AM
+I’m now ready to share CLR/ONT/HiFi minimap2 and CLR/Hifi NGMLR alignments of HG002 reads to 20200602 assembly. I guess I just need some initial guidance on how to do said sharing. NGMLR ONT alignments are going to be ready later today/tomorrow (NGMLR is slower in general, but especially with UL ONT reads).  SVs are still being inferred/refined, and I’ll update the channel as soon as they are ready.

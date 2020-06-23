@@ -153,6 +153,33 @@ makeMd5s *.bed.gz
 buildBigBed bed9 t2tChm13_20200602 hor_decompositions.bigBed *.bed.gz
 ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200602/
 
+* dupmasker, seqdup, segduplow
+2020-06-23 Mitchell Robert Vollger
+Annotation of ancestral duplications with dupmasker:
+team-segdups/Masker/chm13.20200602_dupmasker_colors.bed
+team-segdups/Masker/chm13.20200602_dupmasker_colors.html
+gzip -9 chm13.20200602_dupmasker_colors.bed 
+makeMd5s chm13.20200602_dupmasker_colors.bed.gz 
+buildBigBed bed9 t2tChm13_20200602 dupmasker.bigBed *.bed.gz
+ln -f dupmasker.bigBed   ../../../hub/t2tChm13_20200602/
+
+* seqdups (and  segdupslow)
+2020-06-23 Mitchell Robert Vollger
+SD tracks described by the html. Same as before but I have updated to split into traditional SDs and low identity SDS:p
+team-segdups/Masker/chm13.20200602_sedef_out/SDs.browser.bed
+team-segdups/Masker/chm13.20200602_sedef_out/SDs.browser.html
+team-segdups/Masker/chm13.20200602_sedef_out/SDs.lowid.browser.bed
+gzip -9 *.bed 
+makeMd5s *.bed.gz
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/segDups.as t2tChm13_20200602 segdups.bigBed SDs.browser.bed.gz
+End coordinate 1708955 bigger than m14_26 size of 1464311 line 9916 of /data/tmp/tmptah4kw1s
+# so drop this for now
+zcat SDs.browser.bed.gz | tawk '$1!="m14_26"' > tmp.bed
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/segDups.as t2tChm13_20200602 segdups.bigBed tmp.bed
+
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/segDups.as t2tChm13_20200602 segdupslow.bigBed SDs.lowid.browser.bed.gz
+ln -f *.bigBed   ../../../hub/t2tChm13_20200602/segdups/
+
 * to-do
 Arang Rhie doc: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
 ** 0200611,

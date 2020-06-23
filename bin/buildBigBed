@@ -19,7 +19,7 @@ def parseArgs():
     parser.add_argument('inBeds', nargs='+')
     return parser.parse_args()
 
-bedSortCmd = ["sort", "-k1,1", "-k2,2n"]
+bedSortCmd = ["bedSort", "/dev/stdin", "/dev/stdout"]
 
 def editBedRec(line, outBedFh, chromNames, reportedUnknownChroms):
     if line.startswith("track") or line.startswith("#"):
@@ -47,7 +47,7 @@ def createInBed(inBeds, tmpBedFh, chromNames):
 def bedToBigBed(tmpBed, bigBedOut, bedType, asFile, genomeTwoBit):
     cmd = ["bedToBigBed", "-type=" + bedType, "-tab", "-sizesIs2Bit"]
     if asFile is not None:
-        cmd += ["-asFile=" + asFile]
+        cmd += ["-as=" + asFile]
     cmd += [tmpBed, genomeTwoBit, bigBedOut]
     pipettor.run(cmd)
 

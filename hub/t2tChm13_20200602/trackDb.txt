@@ -45,6 +45,40 @@ bigDataUrl hor_decompositions.bigBed
 maxItems 100000
 priority 4
 
+track segdups
+shortLabel Segmental Dups
+longLabel Segmental Duplications
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl segdups/segdups.bigBed
+priority 5
+
+track segdupslow
+shortLabel Segmental Dups Low Id
+longLabel Segmental Duplications Low Identity
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl segdups/segdupslow.bigBed
+html segdup.html
+priority 7
+
+track dupmasker
+shortLabel Ancestral Seg Dups
+longLabel Ancestral segmental duplications by DupMasker
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl dupmasker.bigBed
+priority 8
+
+
+
+
 # track merqury
 # shortLabel Merqury
 # longLabel Merqury

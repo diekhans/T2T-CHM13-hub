@@ -23,27 +23,27 @@ type bigBed 4 +
 bigDataUrl trf.bigBed
 priority 2
 
-# track as_annotation
-# shortLabel AS annotation
-# longLabel Alpha satellite annotation
-# group varRep
-# visibility hide
-# type bigBed 9
-# itemRgb on
-# bigDataUrl as_annotation.bigBed
-# maxItems 100000
-# priority 3
+track as_annotation
+shortLabel AS annotation
+longLabel Alpha satellite annotation
+group varRep
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_annotation.bigBed
+maxItems 100000
+priority 3
 
-# track hor_decompositions
-# shortLabel HOR annotation
-# longLabel Centromere HOR annotation
-# group varRep
-# visibility hide
-# itemRgb on
-# type bigBed 9
-# bigDataUrl hor_decompositions.bigBed
-# maxItems 100000
-# priority 4
+track hor_decompositions
+shortLabel HOR annotation
+longLabel Centromere HOR annotation
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl hor_decompositions.bigBed
+maxItems 100000
+priority 4
 
 # track segdups
 # shortLabel Segmental Dups

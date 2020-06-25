@@ -110,11 +110,12 @@ ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
 * hor_decompositions
 from Tatiana Dvorkina
 /team-satellites/HorAnnotation_20200602/cen*/hordecomposition_*_20200602.bed
-hordecomposition_cen20_20200602.bed hordecomposition_cen3_20200602.bed
-hordecomposition_cen8_20200602.bed hordecomposition_cenX_20200602.bed gzip -9
-*.bed makeMd5s *.bed.gz buildBigBed bed9 t2tChm13_20200602
-hor_decompositions.bigBed *.bed.gz ln -f hor_decompositions.bigBed
-../../../hub/t2tChm13_20200602/
+  hordecomposition_cen20_20200602.bed hordecomposition_cen3_20200602.bed
+  hordecomposition_cen8_20200602.bed hordecomposition_cenX_20200602.bed
+gzip -9 *.bed 
+makeMd5s *.bed.gz
+buildBigBed bed9 t2tChm13_20200602 hor_decompositions.bigBed *.bed.gz
+ln -f hor_decompositions.bigBed ../../../hub/t2tChm13_20200602/
 * hg38BlatAlign 
 # try same species liftover going from t2tChm13_20200602 to hg38 (as target)
 # since we have a subset of chroms, this should be the best direction.
@@ -182,27 +183,3 @@ ln -f *.bigBed   ../../../hub/t2tChm13_20200602/segdups/
 
 * to-do
 Arang Rhie doc: https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
-** 0200611,
-https://t2t-consortium.slack.com/archives/C013XAJ6U67/p1591908583197800
-
-** Sergey Aganezov  9:35 AM
-I’m now ready to share CLR/ONT/HiFi minimap2 and CLR/Hifi NGMLR alignments of HG002 reads to 20200602 assembly. I guess I just need some initial guidance on how to do said sharing. NGMLR ONT alignments are going to be ready later today/tomorrow (NGMLR is slower in general, but especially with UL ONT reads).  SVs are still being inferred/refined, and I’ll update the channel as soon as they are ready.
-** Chirag Jain  3:35 PM
-Hi @Mark Diekhans; I’ve added an annotation description in the google doc for hifi (ccs) alignments; please pull it when you get chance
-
-**  0611 assembly
-Mitchell Robert Vollger  3:38 PM
-@Mark Diekhans will there be a browser update for 0611 assembly?
-Lev  3:43 PM
-We annotated the assembly of chromosomes 7, 8, 10, 11, 12.
-
-Lev Uralsky
-Globus link to BED file at /team-satellites/AS_Annotation/draft_20200611/
-https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200611%2F
-** Tatiana Dvorkina
-Hi @Mark Diekhans Could you please add HOR annotations for 0611 and update it for 0602? Bed-files (hordecomposition_cen*.bed) can be found on Globus in folders /team-satellites/HorAnnotation/20200611 and  /team-satellites/HorAnnotation/20200602
-
-
-** Lev  1:34 PM
-I updated draft annotation 20200611 for all AS contigs in addition to the assembled chromosomes, which I did before.
-Link to Globus folder /team-satellites/AS_Annotation/draft_20200611/ https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200611%2F

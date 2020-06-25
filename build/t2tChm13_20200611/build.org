@@ -27,10 +27,11 @@ ln rmsk.bigBed ../../../hub/t2tChm13_20200611/
 2020-06-24
 produced by Mitchell Robert Vollger
 team-segdups/Masker/chm13.20200611_2_trf.bed
-gzip -9 chm13.20200611_2_trf.bed
+gzip chm13.20200611_2_trf.bed
 makeMd5s chm13.20200611_2_trf.bed.gz 
 buildBigBed --as=../../../T2T-CHM13-hub/etc/simpleRepeat2.as --twoBit=../genome/t2tChm13_20200611.unmasked.2bit bed3+ t2tChm13_20200611 trf.bigBed chm13.20200611_2_trf.bed.gz 
 ln trf.bigBed  ../../../hub/t2tChm13_20200611/
+# re-download 2020-06-25 due to chr3 missing
 
 * mask and finish genome
 cd genome

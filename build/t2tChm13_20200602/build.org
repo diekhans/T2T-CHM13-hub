@@ -203,3 +203,6 @@ https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d1
 Hi @Mark Diekhans Could you please add HOR annotations for 0611 and update it for 0602? Bed-files (hordecomposition_cen*.bed) can be found on Globus in folders /team-satellites/HorAnnotation/20200611 and  /team-satellites/HorAnnotation/20200602
 
 
+** Lev  1:34 PM
+I updated draft annotation 20200611 for all AS contigs in addition to the assembled chromosomes, which I did before.
+Link to Globus folder /team-satellites/AS_Annotation/draft_20200611/ https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200611%2F

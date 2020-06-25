@@ -412,7 +412,8 @@ def main(*args):
 
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('rm_file', metavar='<*.out> or <*.align>')
-    parser.add_argument('output_bed', nargs='?', const='/dev/stdout')
+    parser.add_argument('output_bed', nargs='?', const='/dev/stdout',
+                        help="Output BED file.  If not specified, name is derived from rm_file, if '-', stdout is used")
     parser.add_argument('-h', '--help', action=_CustomUsageAction )
     parser.add_argument("-l", "--log_level", default="INFO")
     parser.add_argument('-d', '--out_dir')
@@ -762,7 +763,12 @@ def main(*args):
             print('Splitting options are by name, family, and class.', file=sys.stderr)
 
     # Write as monolithic file
-    output_bed = args.output_bed if args.output_bed is not None else (file_prefix + '_rm.bed')
+    if args.output_bed == '-':
+        output_bed = "/dev/stdout"
+    elif args.output_bed is not None:
+        output_bed = args.output_bed
+    else:
+        output_bed = file_prefix + '_rm.bed'
     LOGGER.info("Creating: " +  output_bed)
     annot_dataframe.to_csv(output_bed, sep='\t', header=False, index=False)
 

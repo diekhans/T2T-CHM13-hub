@@ -13,6 +13,8 @@ def parseArgs():
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('--keep', action="store_true")
     parser.add_argument('--as', dest="asFile")
+    parser.add_argument('--twoBit',
+                        help="optional path to twobit as opposed to finding it via assembly (for pre-repeat mask)")
     parser.add_argument('bedType')
     parser.add_argument('assembly')
     parser.add_argument('bigBedOut')
@@ -59,7 +61,10 @@ def buildBigBed(inBeds, bigBedOut, keep, bedType, asFile, genomeTwoBit, chromNam
         bedToBigBed(tmpBedFh.name, bigBedOut, bedType, asFile, genomeTwoBit)
 
 def main(args):
-    genomeTwoBit = findGenomeTwoBit(args.assembly)
+    if args.twoBit is not None:
+        genomeTwoBit = args.twoBit
+    else:
+        genomeTwoBit = findGenomeTwoBit(args.assembly)
     chromNames = frozenset(loadChromNames(genomeTwoBit))
     buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.asFile, genomeTwoBit, chromNames)
 

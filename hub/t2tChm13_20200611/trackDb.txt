@@ -1,0 +1,237 @@
+
+##
+# varRep
+##
+
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9 +
+bigDataUrl rmsk.bigBed
+maxWindowToDraw 10000000
+priority 1
+
+track simpleRepeat
+shortLabel Simple Repeats
+longLabel Simple Tandem Repeats by TRF
+group varRep
+visibility hide
+type bigBed 4 +
+bigDataUrl trf.bigBed
+priority 2
+
+# track as_annotation
+# shortLabel AS annotation
+# longLabel Alpha satellite annotation
+# group varRep
+# visibility hide
+# type bigBed 9
+# itemRgb on
+# bigDataUrl as_annotation.bigBed
+# maxItems 100000
+# priority 3
+
+# track hor_decompositions
+# shortLabel HOR annotation
+# longLabel Centromere HOR annotation
+# group varRep
+# visibility hide
+# itemRgb on
+# type bigBed 9
+# bigDataUrl hor_decompositions.bigBed
+# maxItems 100000
+# priority 4
+
+# track segdups
+# shortLabel Segmental Dups
+# longLabel Segmental Duplications
+# group varRep
+# visibility hide
+# itemRgb on
+# type bigBed 9
+# bigDataUrl segdups/segdups.bigBed
+# priority 5
+
+# track segdupslow
+# shortLabel Segmental Dups Low Id
+# longLabel Segmental Duplications Low Identity
+# group varRep
+# visibility hide
+# itemRgb on
+# type bigBed 9
+# bigDataUrl segdups/segdupslow.bigBed
+# html segdup.html
+# priority 7
+
+# track dupmasker
+# shortLabel Ancestral Seg Dups
+# longLabel Ancestral segmental duplications by DupMasker
+# group varRep
+# visibility hide
+# itemRgb on
+# type bigBed 9
+# bigDataUrl dupmasker.bigBed
+# priority 8
+
+
+
+
+# # track merqury
+# # shortLabel Merqury
+# # longLabel Merqury
+# # superTrack on hide
+# # visibility hide
+# # group map
+# # priority 10
+
+#     track merqury_10X_reads_kmers
+#     #parent merqury
+#     shortLabel Merqury 10XG k-mers
+#     longLabel Merqury k-mer multiplicity in 10XG reads
+#     type bigWig 0.0 100.0
+#     color 60,60,140
+#     altColor 140,60,60
+#     visibility hide
+#     bigDataUrl merqury/merqury_10X_reads_kmers.bigWig
+#     viewLimitsMax 0:100
+#     maxHeightPixels 100:32:8
+#     priority 1
+#     group map
+
+#     track merqury_assembly_kmers
+#     #parent merqury
+#     shortLabel Merqury assembly k-mers
+#     longLabel Merqury k-mer multiplicity in assembly
+#     color 60,60,140
+#     altColor 140,60,60
+#     type bigWig 0.0 100.0
+#     visibility hide
+#     bigDataUrl merqury/merqury_assembly_kmers.bigWig
+#     viewLimitsMax 0:100
+#     maxHeightPixels 100:32:8
+#     priority 2
+#     group map
+
+#     track merqury_marker_kmers
+#     #parent merqury
+#     shortLabel Merqury marker k-mers
+#     longLabel Merqury Single copy marker k-mers
+#     color 60,60,140
+#     altColor 140,60,60
+#     type bigWig 0.0 100.0
+#     visibility hide
+#     bigDataUrl merqury/merqury_marker_kmers.bigWig
+#     viewLimitsMax 0:100
+#     maxHeightPixels 100:32:8
+#     priority 3
+#     group map
+
+#     track merqury_errors
+#     #parent merqury
+#     shortLabel Merqury errors
+#     longLabel Merqury - Assembly-only (Errors)
+#     color 60,60,140
+#     altColor 140,60,60
+#     type bigWig 0.0 100.0
+#     visibility hide
+#     bigDataUrl merqury/merqury_errors.bigWig
+#     viewLimitsMax 0:100
+#     maxHeightPixels 100:32:8
+#     priority 4
+#     group map
+
+# # track winnowmap_nanopore
+# # shortLabel Winnowmap Nanopore SVs
+# # longLabel Winnowmap Nanopore SVs
+# # superTrack on hide
+# # visibility hide
+# # group map
+# # priority 10
+
+#     track winnowmap_nanopore_aligns
+#     #parent winnowmap_nanopore
+#     shortLabel Winnowmap Nanopore Alignments
+#     longLabel Winnowmap Nanopore Alignments
+#     priority 10
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl winnowmap_nanopore/winnowmap_nanopore_aligns.bam
+#     group map
+
+#     track winnowmap_nanopore_variants
+#     #parent winnowmap_nanopore
+#     shortLabel Winnowmap Nanopore Variants
+#     longLabel  Winnowmap Nanopore Variants
+#     type vcfTabix
+#     maxWindowToDraw 200000
+#     bigDataUrl winnowmap_nanopore/winnowmap_nanopore_variants.vcf.gz
+#     priority 20
+#     visibility hide
+#     group map
+
+# # track hg002_aligns
+# # shortLabel HG002 to CHM13 alignments
+# # longLabel HG002 to CHM13 alignments
+# # superTrack on hide
+# # visibility hide
+# # group compGeno
+# # priority 10
+
+#     track HG002vCHM13_20200602_mm2_ONT
+#     #parent hg002_aligns
+#     shortLabel HG002 ONT minimap2
+#     longLabel HG002 ONT minimap2 alignments
+#     priority 10
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_ONT.sort.bam
+#     group compGeno
+
+#     track HG002vCHM13_20200602_mm2_PBCCS
+#     #parent hg002_aligns
+#     shortLabel HG002 PacBio HiFi minimap2
+#     longLabel HG002 PacBio HiFi minimap2 alignments
+#     priority 11
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_PBCCS.sort.bam
+#     group compGeno
+
+#     track HG002vCHM13_20200602_mm2_PB
+#     #parent hg002_aligns
+#     shortLabel HG002 PacBio CLR minimap2
+#     longLabel HG002 PacBio CLR minimap2 alignments
+#     priority 12
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl HG002vCHM13/HG002vCHM13_20200602_mm2_PB.sort.bam
+#     group compGeno
+
+#     track HG002vCHM13_20200602_ngmlr_PBCCS
+#     #parent hg002_aligns
+#     shortLabel HG002 PacBio HiFi NGMLR
+#     longLabel HG002 PacBio HiFi NGMLR alignments
+#     priority 13
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl HG002vCHM13/HG002vCHM13_20200602_ngmlr_PBCCS.sort.bam
+#     group compGeno
+
+#     track HG002vCHM13_20200602_ngmlr_PB
+#     #parent hg002_aligns
+#     shortLabel HG002 PacBio CLR NGMLR
+#     longLabel HG002 PacBio CLR NGMLR alignments
+#     priority 14
+#     type bam
+#     maxItems 1000000
+#     visibility hide
+#     bigDataUrl HG002vCHM13/HG002vCHM13_20200602_ngmlr_PB.sort.bam
+#     group compGeno

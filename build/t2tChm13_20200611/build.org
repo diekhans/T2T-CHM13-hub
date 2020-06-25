@@ -1,0 +1,59 @@
+* general stuff
+** URLs
+https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+
+* genome assembly download 
+2020-06-24
+cd genome
+globus /assemblies/drafts/t2t-chm13.20200611.fasta
+bgzip t2t-chm13.20200611.fasta
+makeMd5s t2t-chm13.20200611.fasta.gz 
+ln t2t-chm13.20200611.fasta.gz t2tChm13_20200611.unmasked.fa.gz
+faToTwoBit t2tChm13_20200611.unmasked.fa.gz t2tChm13_20200611.unmasked.2bit
+
+* rmsk
+2020-06-24
+produced by Mitchell Robert Vollger
+team-segdups/Masker/chm13.20200611_2_repeatmasker.out
+cd rmsk
+gzip -9 chm13.20200611_2_repeatmasker.out 
+makeMd5s chm13.20200611_2_repeatmasker.out.gz 
+nice ../../../T2T-CHM13-hub/bin/RM2Bed.py chm13.20200611_2_repeatmasker.out.gz - | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | gzip -c >rmsk.bed.gz >&log&
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2tChm13_20200611.unmasked.2bit bed9+ t2tChm13_20200611 rmsk.bigBed rmsk.bed.gz
+ln rmsk.bigBed ../../../hub/t2tChm13_20200611/
+
+* trf
+2020-06-24
+produced by Mitchell Robert Vollger
+team-segdups/Masker/chm13.20200611_2_trf.bed
+gzip -9 chm13.20200611_2_trf.bed
+makeMd5s chm13.20200611_2_trf.bed.gz 
+buildBigBed --as=../../../T2T-CHM13-hub/etc/simpleRepeat2.as --twoBit=../genome/t2tChm13_20200611.unmasked.2bit bed3+ t2tChm13_20200611 trf.bigBed chm13.20200611_2_trf.bed.gz 
+ln trf.bigBed  ../../../hub/t2tChm13_20200611/
+
+* mask and finish genome
+cd genome
+twoBitMask -type=.bed t2tChm13_20200611.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/chm13.20200611_2_trf.bed.gz ) t2tChm13_20200611.2bit
+twoBitInfo t2tChm13_20200611.2bit t2tChm13_20200611.sizes
+twoBitToFa t2tChm13_20200611.2bit t2tChm13_20200611.fa
+bgzip t2tChm13_20200611.fa
+samtools faidx t2tChm13_20200611.fa.gz 
+blat t2tChm13_20200611.2bit -makeOoc=t2tChm13_20200611.11.ooc /dev/null /dev/null
+ln t2tChm13_20200611.2bit  ../../../hub/t2tChm13_20200611/
+
+* to-do 
+Mitchell Robert Vollger
+Yes. 4.1.0. Let me find my parametrers.
+team-segdups/Masker/chm13.20200611_2_repeatmasker.out.bed  
+team-segdups/Masker/chm13.20200611_2_trf.bed
+
+RepeatMasker \
+        -s \
+        -xsmall \
+        -e ncbi \
+        -species human \
+        -dir $(dirname {input.fasta}) \
+        -pa {threads} \
+        {input.fasta}
+trf {input.fasta} 2 7 7 80 10 50 15 -l 25 -h -ngs > {output.dat}

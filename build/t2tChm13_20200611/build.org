@@ -46,10 +46,11 @@ ln t2tChm13_20200611.2bit  ../../../hub/t2tChm13_20200611/
 from Lev Uralsky
 cd as_annotation
 /team-satellites/AS_Annotation/draft_20200611/
+t2t-chm13.20200611.hmmer3.0-23042020-new-S4C20H7_8.track.bed.gz
 
 makeMd5s t2t-chm13.20200611.hmmer3.0-23042020-new-S4C20H7_8.track.bed.gz
 
-buildBigBed bed9 t2tChm13_20200611 as_annotation.bigBed AS-HORs-draft_20200611-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
+buildBigBed bed9 t2tChm13_20200611 as_annotation.bigBed t2t-chm13.20200611.hmmer3.0-23042020-new-S4C20H7_8.track.bed.gz
 ln as_annotation.bigBed  ../../../hub/t2tChm13_20200611/
 
 * hor_decompositions
@@ -68,15 +69,3 @@ ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200611/
 
 
 * to-do 
-** AS_Annotation
-Lev Uralsky
-Globus link to BED file at /team-satellites/AS_Annotation/draft_20200611/
-https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200611%2F
-# chr obly AS-annotation-draft_20200611-hmmer3.0-23042020-new-S4C20H7_8.bed.gz
-#  t2t-chm13.20200611.hmmer3.0-23042020-new-S4C20H7_8.track.bed.gz
-** HOR
-Tatiana Dvorkina
-Hi @Mark Diekhans Could you please add HOR annotations for 0611 and update it for 0602? Bed-files (hordecomposition_cen*.bed) can be found on Globus in folders /team-satellites/HorAnnotation/20200611 and  /team-satellites/HorAnnotation/20200602
-**  Lev  1:34 PM
-I updated draft annotation 20200611 for all AS contigs in addition to the assembled chromosomes, which I did before.
-Link to Globus folder /team-satellites/AS_Annotation/draft_20200611/ https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2Fdraft_20200611%2F

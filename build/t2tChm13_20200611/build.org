@@ -30,7 +30,7 @@ team-segdups/Masker/chm13.20200611_2_trf.bed
 gzip chm13.20200611_2_trf.bed
 makeMd5s chm13.20200611_2_trf.bed.gz 
 buildBigBed --as=../../../T2T-CHM13-hub/etc/simpleRepeat2.as --twoBit=../genome/t2tChm13_20200611.unmasked.2bit bed3+ t2tChm13_20200611 trf.bigBed chm13.20200611_2_trf.bed.gz 
-ln trf.bigBed  ../../../hub/t2tChm13_20200611/
+ln -f trf.bigBed  ../../../hub/t2tChm13_20200611/
 # re-download 2020-06-25 due to chr3 missing
 
 * mask and finish genome
@@ -68,5 +68,11 @@ makeMd5s *.bed.gz
 buildBigBed bed9 t2tChm13_20200611 hor_decompositions.bigBed *.bed.gz
 ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200611/
 
+# updated inplace 2020-06-26 with 
+/team-satellites/HorAnnotation/20200611/
+gzip -9 *.bed
+makeMd5s *.bed.gz
+buildBigBed bed9 t2tChm13_20200611 hor_decompositions.bigBed *.bed.gz
+ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200611/
 
 * to-do 

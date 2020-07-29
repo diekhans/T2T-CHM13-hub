@@ -1,0 +1,46 @@
+* general stuff
+t2t-chm13.20200727  v1.0
+** URLs
+https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+
+* genome assembly
+# 2020-07-28
+/assemblies/drafts/t2t-chm13.20200727.fasta  # include chrMT
+bgzip --threads=64 t2t-chm13.20200727.fasta
+makeMd5s t2t-chm13.20200727.fasta.gz 
+ln t2t-chm13.20200727.fasta.gz t2tChm13_20200727.unmasked.fa.gz
+faToTwoBit t2tChm13_20200727.unmasked.fa.gz t2tChm13_20200727.unmasked.2bit
+
+
+* rmsk
+2020-07-28
+produced by Mitchell Robert Vollger
+team-segdups/Masker/t2t-chm13.20200727_repeatmasker.out
+cd rmsk
+bgzip --threads=65 t2t-chm13.20200727_repeatmasker.out 
+makeMd5s t2t-chm13.20200727_repeatmasker.out.gz 
+(../../../T2T-CHM13-hub/bin/RM2Bed.py t2t-chm13.20200727_repeatmasker.out.gz - | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | gzip -c >rmsk.bed.gz) >&log&
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2tChm13_20200727.unmasked.2bit bed9+ t2tChm13_20200727 rmsk.bigBed rmsk.bed.gz
+ln -f rmsk.bigBed ../../../hub/t2tChm13_20200727/
+
+* trf
+team-segdups/Masker/t2t-t2t-chm13.20200727_repeatmasker.out
+gzip t2t-chm13.20200727_trf.bed
+makeMd5s t2t-chm13.20200727_trf.bed.gz 
+buildBigBed --as=../../../T2T-CHM13-hub/etc/simpleRepeat2.as --twoBit=../genome/t2tChm13_20200727.unmasked.2bit bed3+ t2tChm13_20200727 trf.bigBed t2t-chm13.20200727_trf.bed.gz 
+ln -f trf.bigBed  ../../../hub/t2tChm13_20200727/
+
+* mask and finish genome
+2020-07-28
+cd genome
+twoBitMask -type=.bed t2tChm13_20200727.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/t2t-chm13.20200727_trf.bed.gz ) t2tChm13_20200727.2bit
+twoBitInfo t2tChm13_20200727.2bit t2tChm13_20200727.sizes
+twoBitToFa t2tChm13_20200727.2bit t2tChm13_20200727.fa
+nice bgzip  --threads=64 t2tChm13_20200727.fa
+samtools faidx t2tChm13_20200727.fa.gz 
+blat t2tChm13_20200727.2bit -makeOoc=t2tChm13_20200727.11.ooc /dev/null /dev/null
+ln -f t2tChm13_20200727.2bit  ../../../hub/t2tChm13_20200727/
+
+* todo
+** RMMaskBed to David, etc

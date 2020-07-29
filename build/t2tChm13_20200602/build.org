@@ -23,6 +23,7 @@ RepeatMasker version 4.1.0
 Dfam_3.1
 ** cd rmsk
 # uses modified version of browser doRepeatMasker.pl
+ssh-sh  # important, or ssh will not forward
 mkdir tmp
 ../../../T2T-CHM13-hub/bin/doRepeatMasker.pl -stop=cat -buildDir=$(pwd)/tmp -species=mammal -unmaskedSeq=$(pwd)/../genome/t2tChm13_20200602.unmasked.2bit -useHMMER -bigClusterHub=ku -workhorse=hgwdev nodb
 ../../../T2T-CHM13-hub/bin/doRepeatMasker.pl -continue=cat -stop=cat -buildDir=$(pwd)/tmp -species=mammal -unmaskedSeq=$(pwd)/../genome/t2tChm13_20200602.unmasked.2bit -useHMMER -bigClusterHub=ku -workhorse=hgwdev nodb

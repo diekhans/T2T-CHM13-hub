@@ -45,26 +45,26 @@ priority 2
 # maxItems 100000
 # priority 4
 
-# track segdups
-# shortLabel Segmental Dups
-# longLabel Segmental Duplications
-# group varRep
-# visibility hide
-# itemRgb on
-# type bigBed 9
-# bigDataUrl segdups/segdups.bigBed
-# priority 5
+track sedefSegDups
+shortLabel SEDEF Segmental Dups
+longLabel Segmental Duplications
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl sedefSegDups/sedefSegDups.bigBed
+priority 5
 
-# track segdupslow
-# shortLabel Segmental Dups Low Id
-# longLabel Segmental Duplications Low Identity
-# group varRep
-# visibility hide
-# itemRgb on
-# type bigBed 9
-# bigDataUrl segdups/segdupslow.bigBed
-# html segdup.html
-# priority 7
+track sedefSegDupsLow
+shortLabel SEDEF Segmental Dups Low Id
+longLabel SEDEF Segmental Duplications Low Identity
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
+html sedefSegDups.html
+iority 7
 
 # track dupmasker
 # shortLabel Ancestral Seg Dups

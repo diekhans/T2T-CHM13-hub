@@ -57,6 +57,9 @@ buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_202007
 buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDupsLow.bigBed SDs.lowid.browser.bed.gz
 ln -f *.bigBed   ../../../hub/t2tChm13_20200727/sedefSegDups/
 
+2020-07-31 rebuilt due to column name problems
+
+
 * as_annotation (as_hor_annotation, as_sf_annotation)
 2020-07-31 from Lev Uralsky
 cd as_annotation

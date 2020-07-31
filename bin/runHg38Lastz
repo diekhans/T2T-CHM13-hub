@@ -1,0 +1,18 @@
+#!/bin/bash -e
+set -beEu -o pipefail
+
+if [ $# != 1 ] ; do
+done
+
+
+doSameSpeciesLiftOver.pl hg38  t2tChm13_20200727 \
+ -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
+ -target2Bit=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.2bit \
+ -targetSizes=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.sizes \
+ -ooc=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.11.ooc \
+ -query2Bit=$(pwd)/../genome/t2tChm13_20200727.2bit \
+ -querySizes=$(pwd)/../genome/t2tChm13_20200727.sizes \
+ -swapDir=$(pwd)/hg38 \
+ -bigClusterHub=ku -workhorse=hgwdev
+ -
+

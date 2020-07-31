@@ -23,16 +23,27 @@ type bigBed 4 +
 bigDataUrl trf.bigBed
 priority 2
 
-# track as_annotation
-# shortLabel AS annotation
-# longLabel Alpha satellite annotation
-# group varRep
-# visibility hide
-# type bigBed 9
-# itemRgb on
-# bigDataUrl as_annotation.bigBed
-# maxItems 100000
-# priority 3
+track as_hor_annotation
+shortLabel AS HOR annotation
+longLabel Alpha satellite higher-order repeats annotation
+group varRep
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_hor_annotation.bigBed
+maxItems 100000
+priority 3
+
+track as_sf_annotation
+shortLabel AS SF annotation
+longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
+group varRep
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_sf_annotation.bigBed
+maxItems 100000
+priority 3.1
 
 # track hor_decompositions
 # shortLabel HOR annotation

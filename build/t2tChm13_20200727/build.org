@@ -54,8 +54,43 @@ have made the SEDEF segdup tracks  for the new asm if you want to add them to th
 bgzip --threads=64 *.bed 
 makeMd5s *.bed.gz
 buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDups.bigBed SDs.browser.bed.gz
-buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDups.bigBed SDs.lowid.browser.bed.gz
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDupsLow.bigBed SDs.lowid.browser.bed.gz
 ln -f *.bigBed   ../../../hub/t2tChm13_20200727/sedefSegDups/
+
+* as_annotation (as_hor_annotation, as_sf_annotation)
+2020-07-31 from Lev Uralsky
+cd as_annotation
+/team-satellites/AS_Annotation/draft_20200727/
+    AS_HOR_Annot.html -> as_hor_annotation.html
+    AS_SF_Annot.html  -> as_sf_annotation.html
+    t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm.h.bed.gz
+    t2t-chm13.20200727-vs-AS-SFs-hmmer3.0-30072020.hmm.h.bed.gz
+
+makeMd5s *.bed.gz
+
+buildBigBed bed9 t2tChm13_20200727 as_hor_annotation.bigBed t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm.h.bed.gz 
+buildBigBed bed9 t2tChm13_20200727 as_sf_annotation.bigBed t2t-chm13.20200727-vs-AS-SFs-hmmer3.0-30072020.hmm.h.bed.gz 
+
+ln -f as_*annotation.bigBed  ../../../hub/t2tChm13_20200727/
+
+
+
+* hg38Lastz
+
+ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
+  ln -s ../../T2T_cenSat_hub/build/cenSat1/hg38lastz/DEF .
+  cp /scratch/data/blastz/human_chimp.v2.q
+
+doSameSpeciesLiftOver.pl hg38  t2tChm13_20200727 \
+ -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
+ -target2Bit=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.2bit \
+ -targetSizes=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.sizes \
+ -ooc=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.11.ooc \
+ -query2Bit=$(pwd)/../genome/t2tChm13_20200727.2bit \
+ -querySizes=$(pwd)/../genome/t2tChm13_20200727.sizes \
+ -swapDir=$(pwd)/hg38 \
+ -bigClusterHub=ku -workhorse=hgwdev
 
 * todo
 ** RMMaskBed to David, etc
+** as_sf_annotation.html as_hor_annotation.html reference a google doc

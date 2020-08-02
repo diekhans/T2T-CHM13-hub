@@ -1,18 +1,19 @@
 #!/bin/bash -e
 set -beEu -o pipefail
 
-if [ $# != 1 ] ; do
-done
+if [ $# != 1 ] ; then
+    echo "wrong number of args: $0 targetGenome" >&2
+    exit 1
+fi
 
+targetGenome="$1"
+trackdir=$(realpath .)
+targetGenomeDir=$(realpath ${trackdir}/../genome)
+hg38Dir=/hive/data/genomes/hg38
 
-doSameSpeciesLiftOver.pl hg38  t2tChm13_20200727 \
- -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
- -target2Bit=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.2bit \
- -targetSizes=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.sizes \
- -ooc=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.11.ooc \
- -query2Bit=$(pwd)/../genome/t2tChm13_20200727.2bit \
- -querySizes=$(pwd)/../genome/t2tChm13_20200727.sizes \
- -swapDir=$(pwd)/hg38 \
- -bigClusterHub=ku -workhorse=hgwdev
- -
+doBlastzChainNet.pl DEF \
+    -stop=net -syntenicNet -noDbNameCheck \
+    -blastzOutRoot=${trackdir}/${targetGenome} \
+    -bigClusterHub=ku -workhorse=hgwdev -priority=15
+
 

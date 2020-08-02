@@ -1,3 +1,14 @@
+##
+# map
+## 
+track gap
+shortLabel Gap
+longLabel Gap Locations
+group map
+visibility hide
+type bigBed 3
+bigDataUrl gap.bigBed
+
 
 ##
 # varRep

@@ -77,22 +77,14 @@ buildBigBed bed9 t2tChm13_20200727 as_sf_annotation.bigBed t2t-chm13.20200727-vs
 ln -f as_*annotation.bigBed  ../../../hub/t2tChm13_20200727/
 
 
+* gap track 2020-08-02
+../../../T2T-CHM13-hub/bin/faToGapBed ../genome/t2tChm13_20200727.fa.gz gap.bed
+buildBigBed bed3 t2tChm13_20200727 gap.bigBed gap.bed
+ln -f gap.bigBed  ../../../hub/t2tChm13_20200727/
 
 * hg38Lastz
-
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
-  ln -s ../../T2T_cenSat_hub/build/cenSat1/hg38lastz/DEF .
-  cp /scratch/data/blastz/human_chimp.v2.q
-
-doSameSpeciesLiftOver.pl hg38  t2tChm13_20200727 \
- -stop=net -buildDir=$(pwd)/tmp -localTmp=/dev/shm \
- -target2Bit=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.2bit \
- -targetSizes=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.sizes \
- -ooc=$(pwd)/../../../../t2t-centromere/T2T_cenSat/hub/cenSat1/cenSat1.11.ooc \
- -query2Bit=$(pwd)/../genome/t2tChm13_20200727.2bit \
- -querySizes=$(pwd)/../genome/t2tChm13_20200727.sizes \
- -swapDir=$(pwd)/hg38 \
- -bigClusterHub=ku -workhorse=hgwdev
+runHg38Lastz t2tChm13_20200727 >&log&
 
 * todo
 ** RMMaskBed to David, etc

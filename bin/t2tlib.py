@@ -13,7 +13,7 @@ def loadChromNames(twoBit):
 def findGenomeDir(assembly):
     asmDir = osp.join(bindir, "../../build", assembly)
     if not osp.exists(asmDir):
-        raise Exception("assembly build directory not found: " + asmDir)
+        raise Exception("assembly build directory not found for {}: {}".format(assembly, asmDir))
     return osp.join(asmDir, "genome")
 
 def findGenomeTwoBit(assembly):

@@ -71,10 +71,12 @@ cd as_annotation
 
 makeMd5s *.bed.gz
 
-buildBigBed bed9 t2tChm13_20200727 as_hor_annotation.bigBed t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm.h.bed.gz 
+buildBigBed bed9 t2tChm13_20200727 as_hor_annotation.bigBed t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm.v2.h.bed.gz
 buildBigBed bed9 t2tChm13_20200727 as_sf_annotation.bigBed t2t-chm13.20200727-vs-AS-SFs-hmmer3.0-30072020.hmm.h.bed.gz 
 
 ln -f as_*annotation.bigBed  ../../../hub/t2tChm13_20200727/
+
+# updated 2020-08-02 due to error found in data
 
 
 * gap track 2020-08-02

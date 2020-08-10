@@ -84,6 +84,19 @@ ln -f as_*annotation.bigBed  ../../../hub/t2tChm13_20200727/
 buildBigBed bed3 t2tChm13_20200727 gap.bigBed gap.bed
 ln -f gap.bigBed  ../../../hub/t2tChm13_20200727/
 
+* hor_decompositions
+update from Tatiana Dvorkina 2020-08-10
+/team-satellites/HorAnnotation/20200727/hordecomposition_cen*_v1.0.bed
+gzip -9 *.bed
+makeMd5s *.bed.gz
+buildBigBed bed9 t2tChm13_20200727 hor_decompositions.bigBed *.bed.gz
+ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200727/
+
+Error line 51509 of /data/tmp/tmp4n12d4oh: name [S5C5pH7-B_13_S5C5pH7-A_14_S5C5pH7-B_15_S5C5pH7-A_17-18_S5C5pH7-B_19_27_S5C5pH7-A_28-29_S5C5pH7-B_30_S5C5pH7-A_31_9_S5C5pH7-B_10_S5C5pH7-A_11-12_S5C5pH7-B_13_S5C5pH7-A_14_S5C5pH7-B_15_S5C5pH7-A_21-25_28_S5C5pH7-B_29-30_S5C5pH7-A_31-32_1-2_S5C5pH7-B_3-6_S5C5pH7-A_7_S5C5pH7-B_8-10_9] is too long (must not exceed 255 characters)
+
+
+
+
 * hg38Lastz
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
 runHg38Lastz t2tChm13_20200727 >&log&
@@ -91,3 +104,38 @@ runHg38Lastz t2tChm13_20200727 >&log&
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
+
+
+*  Tatiana Dvorkina  6:42 AM
+Hi @Mark Diekhans I prepared decomposition into HORs. Please add it to the new track! :pray: All bed-files are on Globus /team-satellites/HorAnnotation/20200727/
+6:42
+Thank you!
+
+* Chirag Jain  1:39 PM
+@Mark Diekhans I've updated  ONT / hifi read alignment track informatino in the google doc for the latest T2T asm 20200727; please pull them into the browser when you get chance (cc @Arang Rhie)
+https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
+
+* Arang Rhie  3:07 PM
+Hi @Mark Diekhans, in this doc (:point_up:), page 6-12 are ready to go up for the 20200727 release. Thanks!
+https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
+
+
+
+* hordecomposition error
+
+
+* winnowmap_nanopore tracks
+from Chirag Jain
+cd winnowmap_nanopore
+from team-nanopore/alignments_and_SVs/20200605/
+      output.bam, output.filtered.vcf
+bgzip output.filtered.vcf
+makeMd5s output.*
+ln output.bam winnowmap_nanopore_aligns.bam
+nice samtools index -@ 32 winnowmap_nanopore_aligns.bam 
+
+# vcf not sorted
+vcf-sort output.filtered.vcf.gz |bgzip -c > winnowmap_nanopore_variants.vcf.gz
+tabix -p vcf winnowmap_nanopore_variants.vcf.gz 
+
+ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/

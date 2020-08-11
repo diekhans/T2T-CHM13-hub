@@ -3,34 +3,30 @@ trackDb t2tChm13_20200727/trackDb.txt
 groups t2tChm13_20200727/groups.txt
 description T2T CHM13 v1.0 (20200727)
 twoBitPath t2tChm13_20200727/t2tChm13_20200727.2bit
-organism Homo sapiens (T2T)
+organism T2T Homo sapiens
 defaultPos chr3:90,755,737-90,789,938
 scientificName Homo sapiens
 htmlPath t2tChm13_20200727/description.html
-blat blatx.soe.ucsc.edu 17877
-transBlat blatx.soe.ucsc.edu 17876
+blat blatx.soe.ucsc.edu 17879
+transBlat blatx.soe.ucsc.edu 17878
 
 genome t2tChm13_20200611
 trackDb t2tChm13_20200611/trackDb.txt
 groups t2tChm13_20200611/groups.txt
 description T2T CHM13 20200611
 twoBitPath t2tChm13_20200611/t2tChm13_20200611.2bit
-organism Homo sapiens (T2T)
+organism T2T Homo sapiens
 defaultPos chr3:90,755,737-90,789,938
 scientificName Homo sapiens
 htmlPath t2tChm13_20200611/description.html
-#blat blatx.soe.ucsc.edu 17877
-#transBlat blatx.soe.ucsc.edu 17876
 
 genome t2tChm13_20200602
 trackDb t2tChm13_20200602/trackDb.txt
 groups t2tChm13_20200602/groups.txt
 description T2T CHM13 20200602
 twoBitPath t2tChm13_20200602/t2tChm13_20200602.2bit
-organism Homo sapiens (T2T)
+organism T2T Homo sapiens
 defaultPos chr3:90,755,737-90,789,938
 scientificName Homo sapiens
 htmlPath t2tChm13_20200602/description.html
-#blat blatx.soe.ucsc.edu 17877
-#transBlat blatx.soe.ucsc.edu 17876
 

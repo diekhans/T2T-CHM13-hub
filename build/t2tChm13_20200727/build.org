@@ -97,11 +97,13 @@ updated 2020-08-11 due to error
 Chirag Jain
 team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.bam
 team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.filtered.sniffles.vcf
+
+# FIXME, replace CRAM
 bgzip --threads=64 output.filtered.sniffles.vcf
 makeMd5s output.*
 
-ln -f output.cram winnowmap_ont_all.cram
-ln -f output.cram.crai winnowmap_ont_all.cram.crai
+ln -f output.bam winnowmap_ont_all.bam
+ln -f output.bam.bai winnowmap_ont_all.bam.bai
 
 vcf-sort output.filtered.sniffles.vcf.gz |bgzip --threads=64 -c > winnowmap_ont_all_variants.vcf.gz
 tabix -p vcf winnowmap_ont_all_variants.vcf.gz 
@@ -120,18 +122,45 @@ ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_ont
 * winnowmap_clr
 Chirag Jain
 team-curation/alignments/20200727/clr/output.bam
-makeMd5s output.* 
+makeMd5s output.* &
 ln -f output.bam winnowmap_pb_clr.bam
-ln -f output.bam.bai winnowmap_pb_clr.bam.bi
+ln -f output.bam.bai winnowmap_pb_clr.bam.bai
 ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_pb
 
 * winnowmap_hifi
 Chirag Jain
 team-curation/alignments/20200727/hifi/output.bam
+makeMd5s output.* &
 ln -f output.bam winnowmap_pb_hifi.bam
-ln -f output.bam.bai winnowmap_pb_hifi.bam.bi
+ln -f output.bam.bai winnowmap_pb_hifi.bam.bai
 ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_pb
 
+* illumina_pcrfree
+Arkarachai Fungtammasan
+team-curation/alignments/20200727/PCRfree/CHM13_markdup.bam
+team-curation/alignments/20200727/PCRfree/deepvariant.vcf.gz
+makeMd5s CHM13_markdup.bam* deepvariant.vcf.gz*&
+ln -f CHM13_markdup.bam illumina_pcrfree.bam
+ln -f CHM13_markdup.bam.bai illumina_pcrfree.bam.bai
+ln -f deepvariant.vcf.gz  illumina_pcrfree_variants.vcf.gz
+ln -f deepvariant.vcf.gz.tbi  illumina_pcrfree_variants.vcf.gz.tbi
+ln -f illumina_pcrfree* ../../../hub/t2tChm13_20200727/illumina_pcrfree/
+
+* bionano_cover
+Arang Rhie
+team-curation/alignments/20200727/bionano/mol/BN.cov.wig
+bgzip --threads=64 BN.cov.wig 
+makeMd5s BN.cov.wig.gz &
+wigToBigWig -clip BN.cov.wig.gz ../genome/t2tChm13_20200727.sizes bionano_cover.bigWig
+ln -f bionano_cover.bigWig ../../../hub/t2tChm13_20200727/
+
+
+* kmer_metric
+Arang Rhie
+team-curation/kstar/t2t-chm13.20200727.kstar.bw
+makeMd5s t2t-chm13.20200727.kstar.bw &
+ln -f t2t-chm13.20200727.kstar.bw kmer_metric.bigWig
+ln -f kmer_metric.bigWig ../../../hub/t2tChm13_20200727/
 
 * hg38Lastz
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
@@ -142,49 +171,3 @@ runHg38Lastz t2tChm13_20200727 >&log&
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
 
 
-* Chirag Jain  1:39 PM
-@Mark Diekhans I've updated  ONT / hifi read alignment track informatino in the google doc for the latest T2T asm 20200727; please pull them into the browser when you get chance (cc @Arang Rhie)
-https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
-
-winnowmap_ont_ul_reads.html
-winnowmap_ont_all_reads.html
-winnowmap_ont_all_variants.html
-winnowmap_clr_reads.html
-winnowmap_hifi_reads.html
-illumina_pcrfree_reads.html
-illumina_pcrfree_variants.html
-bionano_cover.html
-
-
-* Arang Rhie  3:07 PM
-Hi @Mark Diekhans, in this doc (:point_up:), page 6-12 are ready to go up for the 20200727 release. Thanks!
-https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
-
-kmer_metric.html
-
-
-
-* hordecomposition error
-
-
-* winnowmap_nanopore tracks
-from Chirag Jain
-cd winnowmap_nanopore
-from team-nanopore/alignments_and_SVs/20200605/
-      output.bam, output.filtered.vcf
-bgzip output.filtered.vcf
-makeMd5s output.*
-ln output.bam winnowmap_nanopore_aligns.bam
-nice samtools index -@ 32 winnowmap_nanopore_aligns.bam 
-
-# vcf not sorted
-vcf-sort output.filtered.vcf.gz |bgzip -c > winnowmap_nanopore_variants.vcf.gz
-tabix -p vcf winnowmap_nanopore_variants.vcf.gz 
-
-ln winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_nanopore/
-
-* 
-bionano_cover.html
-illumina_pcrfree_reads.html
-illumina_pcrfree_variants.html
-kmer_metric.html

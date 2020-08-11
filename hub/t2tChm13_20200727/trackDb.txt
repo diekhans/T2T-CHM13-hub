@@ -15,18 +15,18 @@ longLabel Winnowmap ONT SVs
 superTrack on hide
 visibility hide
 group map
-priority 10
+priority 100
 
-    track winnowmap_ont_all
-    parent winnowmap_ont
-    shortLabel Winnowmap ONT Alignments
-    longLabel Winnowmap ONT Alignments
-    priority 1
-    type bam
-    maxItems 1000000
-    visibility hide
-    bigDataUrl winnowmap_ont/winnowmap_ont_all.cram
-    group map
+    # track winnowmap_ont_all
+    # parent winnowmap_ont
+    # shortLabel Winnowmap ONT Alignments
+    # longLabel Winnowmap ONT Alignments
+    # priority 1
+    # type bam
+    # maxItems 1000000
+    # visibility hide
+    # bigDataUrl winnowmap_ont/winnowmap_ont_all.bam
+    # group map
 
     track winnowmap_ont_ul
     parent winnowmap_ont
@@ -56,7 +56,7 @@ longLabel Winnowmap PackBio SVs
 superTrack on hide
 visibility hide
 group map
-priority 11
+priority 101
 
     track winnowmap_pb_clr
     parent winnowmap_pb
@@ -80,6 +80,58 @@ priority 11
     bigDataUrl winnowmap_pb/winnowmap_pb_hifi.bam
     group map
 
+
+track illumina_pcrfree
+shortLabel Illumina PCRfree
+longLabel Illumina PCRfree
+superTrack on hide
+visibility hide
+group map
+priority 102
+
+    track illumina_pcrfree_aligns
+    parent illumina_pcrfree
+    shortLabel Illumina PCRfree Alignments
+    longLabel Illumina PCRfree Alignments
+    priority 1
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl illumina_pcrfree/illumina_pcrfree.bam
+    group map
+
+    track illumina_pcrfree_variants
+    parent illumina_pcrfree
+    shortLabel Illumina PCRfree Variants
+    longLabel  Illumina PCRfree Variants
+    type vcfTabix
+    maxWindowToDraw 200000
+    bigDataUrl illumina_pcrfree/illumina_pcrfree_variants.vcf.gz
+    priority 3
+    visibility hide
+    group map
+
+track bionano_cover
+shortLabel Bionano Coverage
+longLabel Bionano Coverage
+type bigWig 0.0 100.0
+color 60,60,140
+altColor 140,60,60
+visibility hide
+bigDataUrl bionano_cover.bigWig
+group map
+priority 103
+
+track kmer_metric
+shortLabel Kmer Metric
+longLabel Kmer Metric
+type bigWig 0.0 100.0
+color 60,60,140
+altColor 140,60,60
+visibility hide
+bigDataUrl kmer_metric.bigWig
+group map
+priority 104
 
 ##
 # varRep

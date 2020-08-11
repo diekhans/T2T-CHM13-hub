@@ -17,18 +17,18 @@ visibility hide
 group map
 priority 10
 
-    track winnowmap_ont_all_reads
+    track winnowmap_ont_all
     parent winnowmap_ont
     shortLabel Winnowmap ONT Alignments
     longLabel Winnowmap ONT Alignments
     priority 1
-    type cram
+    type bam
     maxItems 1000000
     visibility hide
-    bigDataUrl winnowmap_ont_all_reads.cram
+    bigDataUrl winnowmap_ont/winnowmap_ont_all.cram
     group map
 
-    track winnowmap_ont_ul_reads
+    track winnowmap_ont_ul
     parent winnowmap_ont
     shortLabel Winnowmap ONT Ultra-long Alignments
     longLabel Winnowmap ONT Ultra-long Alignments (at least 100kb)
@@ -36,16 +36,16 @@ priority 10
     type bam
     maxItems 1000000
     visibility hide
-    bigDataUrl winnowmap_ont_ul_reads.ba,
+    bigDataUrl winnowmap_ont/winnowmap_ont_ul.bam
     group map
 
     track winnowmap_ont_all_variants
-    parent winnowmap_nanopore
+    parent winnowmap_ont
     shortLabel Winnowmap ONT Variants
     longLabel  Winnowmap ONT Variants
     type vcfTabix
     maxWindowToDraw 200000
-    bigDataUrl winnowmap_ont_all_variants.vcf.gz
+    bigDataUrl winnowmap_ont/winnowmap_ont_all_variants.vcf.gz
     priority 3
     visibility hide
     group map
@@ -58,18 +58,18 @@ visibility hide
 group map
 priority 11
 
-    track winnowmap_clr_reads
+    track winnowmap_pb_clr
     parent winnowmap_pb
     shortLabel Winnowmap PacBio CLR Alignments
     longLabel Winnowmap PacBio CLR Alignments
     priority 1
-    type cram
+    type bam
     maxItems 1000000
     visibility hide
-    bigDataUrl winnowmap_clr_reads.cram
+    bigDataUrl winnowmap_pb/winnowmap_pb_clr.bam
     group map
 
-    track winnowmap_hifi_reads
+    track winnowmap_pb_hifi
     parent winnowmap_pb
     shortLabel Winnowmap PacBio HiFi Alignments
     longLabel Winnowmap PacBio HiFi Alignments
@@ -77,7 +77,7 @@ priority 11
     type bam
     maxItems 1000000
     visibility hide
-    bigDataUrl winnowmap_hifi_reads.bam
+    bigDataUrl winnowmap_pb/winnowmap_pb_hifi.bam
     group map
 
 

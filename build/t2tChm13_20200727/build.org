@@ -91,10 +91,46 @@ gzip -9 *.bed
 makeMd5s *.bed.gz
 buildBigBed bed9 t2tChm13_20200727 hor_decompositions.bigBed *.bed.gz
 ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200727/
+updated 2020-08-11 due to error
 
-Error line 51509 of /data/tmp/tmp4n12d4oh: name [S5C5pH7-B_13_S5C5pH7-A_14_S5C5pH7-B_15_S5C5pH7-A_17-18_S5C5pH7-B_19_27_S5C5pH7-A_28-29_S5C5pH7-B_30_S5C5pH7-A_31_9_S5C5pH7-B_10_S5C5pH7-A_11-12_S5C5pH7-B_13_S5C5pH7-A_14_S5C5pH7-B_15_S5C5pH7-A_21-25_28_S5C5pH7-B_29-30_S5C5pH7-A_31-32_1-2_S5C5pH7-B_3-6_S5C5pH7-A_7_S5C5pH7-B_8-10_9] is too long (must not exceed 255 characters)
+* winnowmap_ont_all
+Chirag Jain
+team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.bam
+team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.filtered.sniffles.vcf
+bgzip --threads=64 output.filtered.sniffles.vcf
+makeMd5s output.*
+
+ln -f output.cram winnowmap_ont_all.cram
+ln -f output.cram.crai winnowmap_ont_all.cram.crai
+
+vcf-sort output.filtered.sniffles.vcf.gz |bgzip --threads=64 -c > winnowmap_ont_all_variants.vcf.gz
+tabix -p vcf winnowmap_ont_all_variants.vcf.gz 
+
+ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_ont
 
 
+* winnowmap_ont_ul
+Chirag Jain
+team-curation/alignments/20200727/ONT/rel5_over_100k/output.bam
+makeMd5s output.* 
+ln -f output.bam winnowmap_ont_ul.bam
+ln -f output.bam.bai winnowmap_ont_ul.bam.bai
+ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_ont
+
+* winnowmap_clr
+Chirag Jain
+team-curation/alignments/20200727/clr/output.bam
+makeMd5s output.* 
+ln -f output.bam winnowmap_pb_clr.bam
+ln -f output.bam.bai winnowmap_pb_clr.bam.bi
+ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_pb
+
+* winnowmap_hifi
+Chirag Jain
+team-curation/alignments/20200727/hifi/output.bam
+ln -f output.bam winnowmap_pb_hifi.bam
+ln -f output.bam.bai winnowmap_pb_hifi.bam.bi
+ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_pb
 
 
 * hg38Lastz
@@ -105,11 +141,6 @@ runHg38Lastz t2tChm13_20200727 >&log&
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
 
-
-*  Tatiana Dvorkina  6:42 AM
-Hi @Mark Diekhans I prepared decomposition into HORs. Please add it to the new track! :pray: All bed-files are on Globus /team-satellites/HorAnnotation/20200727/
-6:42
-Thank you!
 
 * Chirag Jain  1:39 PM
 @Mark Diekhans I've updated  ONT / hifi read alignment track informatino in the google doc for the latest T2T asm 20200727; please pull them into the browser when you get chance (cc @Arang Rhie)
@@ -150,4 +181,10 @@ nice samtools index -@ 32 winnowmap_nanopore_aligns.bam
 vcf-sort output.filtered.vcf.gz |bgzip -c > winnowmap_nanopore_variants.vcf.gz
 tabix -p vcf winnowmap_nanopore_variants.vcf.gz 
 
-ln winnowmap_* ../../../hub/t2tChm13_20200602/winnowmap_nanopore/
+ln winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_nanopore/
+
+* 
+bionano_cover.html
+illumina_pcrfree_reads.html
+illumina_pcrfree_variants.html
+kmer_metric.html

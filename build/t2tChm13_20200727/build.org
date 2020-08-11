@@ -115,9 +115,21 @@ Thank you!
 @Mark Diekhans I've updated  ONT / hifi read alignment track informatino in the google doc for the latest T2T asm 20200727; please pull them into the browser when you get chance (cc @Arang Rhie)
 https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
 
+winnowmap_ont_ul_reads.html
+winnowmap_ont_all_reads.html
+winnowmap_ont_all_variants.html
+winnowmap_clr_reads.html
+winnowmap_hifi_reads.html
+illumina_pcrfree_reads.html
+illumina_pcrfree_variants.html
+bionano_cover.html
+
+
 * Arang Rhie  3:07 PM
 Hi @Mark Diekhans, in this doc (:point_up:), page 6-12 are ready to go up for the 20200727 release. Thanks!
 https://docs.google.com/document/d/1v8ivK6DUKEV9M4DBXkDLyTOuXd6REJ6rRX4B48cF7Bk/edit?usp=sharing
+
+kmer_metric.html
 
 
 

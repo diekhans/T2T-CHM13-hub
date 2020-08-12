@@ -17,16 +17,16 @@ visibility hide
 group map
 priority 100
 
-    # track winnowmap_ont_all
-    # parent winnowmap_ont
-    # shortLabel Winnowmap ONT Alignments
-    # longLabel Winnowmap ONT Alignments
-    # priority 1
-    # type bam
-    # maxItems 1000000
-    # visibility hide
-    # bigDataUrl winnowmap_ont/winnowmap_ont_all.bam
-    # group map
+    track winnowmap_ont_all
+    parent winnowmap_ont
+    shortLabel Winnowmap ONT Alignments
+    longLabel Winnowmap ONT Alignments
+    priority 1
+    type bam
+    maxItems 1000000
+    visibility hide
+    bigDataUrl winnowmap_ont/winnowmap_ont_all.bam
+    group map
 
     track winnowmap_ont_ul
     parent winnowmap_ont

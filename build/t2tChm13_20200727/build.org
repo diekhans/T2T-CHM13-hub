@@ -98,7 +98,6 @@ Chirag Jain
 team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.bam
 team-curation/alignments/20200727/ONT/rel5_all_include_uw/output.filtered.sniffles.vcf
 
-# FIXME, replace CRAM
 bgzip --threads=64 output.filtered.sniffles.vcf
 makeMd5s output.*
 
@@ -108,7 +107,7 @@ ln -f output.bam.bai winnowmap_ont_all.bam.bai
 vcf-sort output.filtered.sniffles.vcf.gz |bgzip --threads=64 -c > winnowmap_ont_all_variants.vcf.gz
 tabix -p vcf winnowmap_ont_all_variants.vcf.gz 
 
-ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_ont
+ln -f winnowmap_* ../../../hub/t2tChm13_20200727/winnowmap_ont/
 
 
 * winnowmap_ont_ul

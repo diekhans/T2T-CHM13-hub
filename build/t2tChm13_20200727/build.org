@@ -162,8 +162,22 @@ ln -f t2t-chm13.20200727.kstar.bw kmer_metric.bigWig
 ln -f kmer_metric.bigWig ../../../hub/t2tChm13_20200727/
 
 * hg38Lastz
+cd hg38Lastz
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
 runHg38Lastz t2tChm13_20200727 >&log&
+# OPPS built chains backwards:
+chainSwap axtChain/hg38.t2tChm13_20200727.all.chain.gz stdout | bgzip --threads=64 -c >axtChain/t2tChm13_20200727.hg38.all.chain.gz 
+
+# create all bigChain
+cd bigAll.tmp
+hgLoadChain -noBin -test no bigChain ../axtChain/t2tChm13_20200727.hg38.all.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+bbedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all.bigChain
+
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all.bigLink
+cd ..
+ln -f t2tChm13_20200727.hg38.all.big* ../../../hub/t2tChm13_20200727/grch38/
 
 * todo
 ** RMMaskBed to David, etc

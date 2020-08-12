@@ -209,5 +209,20 @@ itemRgb on
 type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
-iority 7
+priority 7
+
+##
+# group grch38
+##
+track grch38AllChains
+shortLabel GRCh38 All Chains
+longLabel  GRCh38 LASTZ All Alignment Chains
+type bigChain hg38
+color 20,0,220
+maxItems 100000
+visibility hide
+bigDataUrl grch38/t2tChm13_20200727.hg38.all.bigChain
+linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
+priority 30.1
+group compGeno
 

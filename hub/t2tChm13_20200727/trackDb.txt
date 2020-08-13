@@ -9,6 +9,17 @@ visibility hide
 type bigBed 3
 bigDataUrl gap.bigBed
 
+track cenRegions
+shortLabel Centromere Regions
+longLabel Centromere Regions
+type bigBed
+visibility hide
+color 218,165,32
+bigDataUrl cenRegions.bigBed
+priority 99
+group map
+
+track hifi_20k
 track winnowmap_ont
 shortLabel Winnowmap ONT SVs
 longLabel Winnowmap ONT SVs
@@ -210,6 +221,18 @@ type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
 priority 7
+
+track cenSat_annotation
+shortLabel CenSat Annotation
+longLabel Centromeric Satellite Annotation
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9 +
+bigDataUrl cenSat_annotation.bigBed
+maxWindowToDraw 10000000
+priority 10
+
 
 ##
 # group grch38

@@ -179,6 +179,24 @@ bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink
 cd ..
 ln -f t2tChm13_20200727.hg38.all.big* ../../../hub/t2tChm13_20200727/grch38/
 
+
+* cenRegions
+Karen Miga
+team-satellite/t2t-chm13.20200727.cenRegions.bed
+
+bgzip --threads=64 t2t-chm13.20200727.cenRegions.bed
+makeMd5s t2t-chm13.20200727.cenRegions.bed.gz 
+buildBigBed bed8 t2tChm13_20200727 cenRegions.bigBed t2t-chm13.20200727.cenRegions.bed.gz
+ln -f cenRegions.bigBed ../../../hub/t2tChm13_20200727
+
+* cenSat_annotation
+Karen Miga
+team-satellite/t2t-chm13.20200727.cenSat_annotation.bed
+bgzip --threads=64 t2t-chm13.20200727.cenSat_annotation.bed 
+buildBigBed bed9 t2tChm13_20200727 cenSat_annotation.bigBed t2t-chm13.20200727.cenSat_annotation.bed.gz 
+ln -f cenSat_annotation.bigBed ../../../hub/t2tChm13_20200727
+
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc

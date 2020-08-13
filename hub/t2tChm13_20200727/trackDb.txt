@@ -179,16 +179,16 @@ bigDataUrl as_sf_annotation.bigBed
 maxItems 100000
 priority 3.1
 
-# track hor_decompositions
-# shortLabel HOR annotation
-# longLabel Centromere HOR annotation
-# group varRep
-# visibility hide
-# itemRgb on
-# type bigBed 9
-# bigDataUrl hor_decompositions.bigBed
-# maxItems 100000
-# priority 4
+track hor_decompositions
+shortLabel HOR annotation
+longLabel Centromere HOR annotation
+group varRep
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl hor_decompositions.bigBed
+maxItems 100000
+priority 4
 
 track sedefSegDups
 shortLabel SEDEF Segmental Dups

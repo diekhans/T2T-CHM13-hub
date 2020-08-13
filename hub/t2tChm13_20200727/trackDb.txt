@@ -9,16 +9,6 @@ visibility hide
 type bigBed 3
 bigDataUrl gap.bigBed
 
-track cenRegions
-shortLabel Centromere Regions
-longLabel Centromere Regions
-type bigBed
-visibility hide
-color 218,165,32
-bigDataUrl cenRegions.bigBed
-priority 99
-group map
-
 track hifi_20k
 track winnowmap_ont
 shortLabel Winnowmap ONT SVs
@@ -34,7 +24,6 @@ priority 100
     longLabel Winnowmap ONT Alignments
     priority 1
     type bam
-    maxItems 1000000
     visibility hide
     bigDataUrl winnowmap_ont/winnowmap_ont_all.bam
     group map
@@ -45,7 +34,6 @@ priority 100
     longLabel Winnowmap ONT Ultra-long Alignments (at least 100kb)
     priority 2
     type bam
-    maxItems 1000000
     visibility hide
     bigDataUrl winnowmap_ont/winnowmap_ont_ul.bam
     group map
@@ -75,7 +63,6 @@ priority 101
     longLabel Winnowmap PacBio CLR Alignments
     priority 1
     type bam
-    maxItems 1000000
     visibility hide
     bigDataUrl winnowmap_pb/winnowmap_pb_clr.bam
     group map
@@ -86,7 +73,6 @@ priority 101
     longLabel Winnowmap PacBio HiFi Alignments
     priority 2x
     type bam
-    maxItems 1000000
     visibility hide
     bigDataUrl winnowmap_pb/winnowmap_pb_hifi.bam
     group map
@@ -106,7 +92,6 @@ priority 102
     longLabel Illumina PCRfree Alignments
     priority 1
     type bam
-    maxItems 1000000
     visibility hide
     bigDataUrl illumina_pcrfree/illumina_pcrfree.bam
     group map
@@ -145,9 +130,61 @@ group map
 priority 104
 
 ##
+# cenTelo
+##
+track cenRegions
+shortLabel Centromere Regions
+longLabel Centromere Regions
+group cenTelo
+type bigBed
+visibility hide
+color 218,165,32
+bigDataUrl cenRegions.bigBed
+priority 1
+
+track cenSat_annotation
+shortLabel CenSat Annotation
+longLabel Centromeric Satellite Annotation
+group cenTelo
+visibility hide
+itemRgb on
+type bigBed 9 +
+bigDataUrl cenSat_annotation.bigBed
+priority 2
+
+track as_hor_annotation
+shortLabel AS HOR annotation
+longLabel Alpha satellite higher-order repeats annotation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_hor_annotation.bigBed
+priority 3
+
+track as_sf_annotation
+shortLabel AS SF annotation
+longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+bigDataUrl as_sf_annotation.bigBed
+priority 4
+
+track hor_decompositions
+shortLabel HOR annotation
+longLabel Centromere HOR annotation
+group cenTelo
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl hor_decompositions.bigBed
+priority 5
+
+##
 # varRep
 ##
-
 track rmsk
 shortLabel RepeatMasker
 longLabel Repeating Elements by RepeatMasker
@@ -167,39 +204,6 @@ visibility hide
 type bigBed 4 +
 bigDataUrl trf.bigBed
 priority 2
-
-track as_hor_annotation
-shortLabel AS HOR annotation
-longLabel Alpha satellite higher-order repeats annotation
-group varRep
-visibility hide
-type bigBed 9
-itemRgb on
-bigDataUrl as_hor_annotation.bigBed
-maxItems 100000
-priority 3
-
-track as_sf_annotation
-shortLabel AS SF annotation
-longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
-group varRep
-visibility hide
-type bigBed 9
-itemRgb on
-bigDataUrl as_sf_annotation.bigBed
-maxItems 100000
-priority 3.1
-
-track hor_decompositions
-shortLabel HOR annotation
-longLabel Centromere HOR annotation
-group varRep
-visibility hide
-itemRgb on
-type bigBed 9
-bigDataUrl hor_decompositions.bigBed
-maxItems 100000
-priority 4
 
 track sedefSegDups
 shortLabel SEDEF Segmental Dups
@@ -222,27 +226,15 @@ bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
 priority 7
 
-track cenSat_annotation
-shortLabel CenSat Annotation
-longLabel Centromeric Satellite Annotation
-group varRep
-visibility hide
-itemRgb on
-type bigBed 9 +
-bigDataUrl cenSat_annotation.bigBed
-maxWindowToDraw 10000000
-priority 10
-
 
 ##
-# group grch38
+# comparative genomics
 ##
 track grch38AllChains
 shortLabel GRCh38 All Chains
 longLabel  GRCh38 LASTZ All Alignment Chains
 type bigChain hg38
 color 20,0,220
-maxItems 100000
 visibility hide
 bigDataUrl grch38/t2tChm13_20200727.hg38.all.bigChain
 linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink

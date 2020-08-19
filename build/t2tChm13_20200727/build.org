@@ -41,6 +41,7 @@ nice bgzip  --threads=64 t2tChm13_20200727.fa
 samtools faidx t2tChm13_20200727.fa.gz 
 blat t2tChm13_20200727.2bit -makeOoc=t2tChm13_20200727.11.ooc /dev/null /dev/null
 ln -f t2tChm13_20200727.2bit  ../../../hub/t2tChm13_20200727/
+ln -f t2tChm13_20200727.fa.gz*  ../../../hub/t2tChm13_20200727/
 
 
 * sedefSegDups/sedefSegDupsLowId
@@ -87,6 +88,15 @@ ln -f gap.bigBed  ../../../hub/t2tChm13_20200727/
 * hor_decompositions
 update from Tatiana Dvorkina 2020-08-10
 /team-satellites/HorAnnotation/20200727/hordecomposition_cen*_v1.0.bed
+gzip -9 *.bed
+makeMd5s *.bed.gz
+buildBigBed bed9 t2tChm13_20200727 hor_decompositions.bigBed *.bed.gz
+ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200727/
+updated 2020-08-11 due to error
+
+* hor_decompositions_native
+update from Tatiana Dvorkina 2020-08-19
+team-satellites/HorAnnotation/20200727_naive/
 gzip -9 *.bed
 makeMd5s *.bed.gz
 buildBigBed bed9 t2tChm13_20200727 hor_decompositions.bigBed *.bed.gz

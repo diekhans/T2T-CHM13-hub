@@ -182,6 +182,16 @@ type bigBed 9
 bigDataUrl hor_decompositions.bigBed
 priority 5
 
+track hor_decompositions_native
+shortLabel HOR annotation native
+longLabel Centromere HOR annotation native
+group cenTelo
+visibility hide
+itemRgb on
+type bigBed 9
+bigDataUrl hor_decompositions_native.bigBed
+priority 6
+
 ##
 # varRep
 ##

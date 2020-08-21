@@ -99,9 +99,8 @@ update from Tatiana Dvorkina 2020-08-19
 team-satellites/HorAnnotation/20200727_naive/
 gzip -9 *.bed
 makeMd5s *.bed.gz
-buildBigBed bed9 t2tChm13_20200727 hor_decompositions.bigBed *.bed.gz
-ln -f hor_decompositions.bigBed   ../../../hub/t2tChm13_20200727/
-updated 2020-08-11 due to error
+buildBigBed bed9 t2tChm13_20200727 hor_decompositions_native.bigBed *.bed.gz
+ln -f hor_decompositions_native.bigBed   ../../../hub/t2tChm13_20200727/
 
 * winnowmap_ont_all
 Chirag Jain
@@ -190,6 +189,12 @@ cd ..
 ln -f t2tChm13_20200727.hg38.all.big* ../../../hub/t2tChm13_20200727/grch38/
 
 
+# files are 
+hg38.t2tChm13_20200727.all.chain.gz
+hg38.t2tChm13_20200727.net.axt.gz
+hg38.t2tChm13_20200727.over.chain.gz
+
+
 * cenRegions
 Karen Miga
 team-satellite/t2t-chm13.20200727.cenRegions.bed
@@ -207,8 +212,54 @@ buildBigBed bed9 t2tChm13_20200727 cenSat_annotation.bigBed t2t-chm13.20200727.c
 ln -f cenSat_annotation.bigBed ../../../hub/t2tChm13_20200727
 
 
+
+* GENCODE transmap (drop)
+** data
+hgsql hg38 -Ne 'select * from gencodeAnnotV34' | cut -f 2- >data/gencodeAnnotV34.gp
+hgsql hg38 -e 'select * from gencodeAttrsV34' | cut -f 2- >data/gencodeAttrsV34.tsv
+genePredToFakePsl hg38 data/gencodeAnnotV34.gp data/gencodeAnnotV34.psl data/gencodeAnnotV34.cds
+getRnaPred hg38 gencodeAnnotV34 all stdout | seqkit rmdup --quiet | bgzip  --threads=64 >data/gencodeAnnotV34.fa.gz
+
+
+** transMap try 1
+(pslMap -chainMapFile -swapMap -mapInfo=transMap/gencodeV24.hg38-t2tChm13_20200727.raw.mapinfo  data/gencodeAnnotV34.psl  ../hg38Lastz/hg38.t2tChm13_20200727.over.chain.gz stdout | \
+pslRecalcMatch stdin ../genome/t2tChm13_20200727.2bit data/gencodeAnnotV34.fa.gz stdout | pslTSort >  transMap/gencodeV24.hg38-t2tChm13_20200727.raw.psl) >&log&
+
+pslMapPostChain transMap/gencodeV24.hg38-t2tChm13_20200727.raw.psl stdout | pslTSort > transMap/gencodeV24.hg38-t2tChm13_20200727.chained.psl
+
+sort -k 10,10 transMap/gencodeV24.hg38-t2tChm13_20200727.chained.psl | pslCDnaFilter -localNearBest=0.010 -minId=0.35 -minCover=0.15 -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap /dev/stdin transMap/gencodeV24.hg38-t2tChm13_20200727.filt.psl >& transMap/gencodeV24.hg38-t2tChm13_20200727.filt.out &
+transMapPslToGenePred data/gencodeAnnotV34.gp transMap/gencodeV24.hg38-t2tChm13_20200727.filt.psl transMap/gencodeV24.hg38-t2tChm13_20200727.filt.gp -frameShifts=transMap/gencodeV24.hg38-t2tChm13_20200727.filt.fs.ts
+# use r
+
+* TransMap (refseq and gencode)
+export PATH=${HOME}/compbio/projs/transMap/transMap-dev/bin:${PATH}
+cd transMap/tmp
+
+
+srcDbLoadEnsemblAligns --gencodeVersion=V35 hg38 ensembl data/src/hg38/hg38.ensembl.src.db
+srcDbLoadEnsemblMetadata --gencodeVersion=V35 hg38 ensembl data/src/hg38/hg38.ensembl.src.db
+srcDbLoadEnsemblSeqs hg38 ensembl data/src/hg38/hg38.ensembl.src.db  
+
+srcDbLoadGenbankAligns hg38 refseq data/src/hg38/hg38.refseq.src.db
+srcDbLoadGenbankMetadata hg38 refseq data/src/hg38/hg38.refseq.src.db
+srcDbLoadGenbankSeqs hg38 refseq data/src/hg38/hg38.refseq.src.db  
+
+# manually create
+sqlite3 data/genome.db < ../../../../T2T-CHM13-hub/build/t2tChm13_20200727/transMapGenomeDb.sql 
+
+# build with all chains
+#  CLUSTER DOWN DUE TO FIRE, BUILD LOCAL
+ln -s  ../../../../T2T-CHM13-hub/build/t2tChm13_20200727/transMapBuildConf.py .
+mappingChainBuild data/genome.db hg38 t2tChm13_20200727 all data/chains/hg38/t2tChm13_20200727/hg38.t2tChm13_20200727.all.chain
+transMapBatch --directRun ./transMapBuildConf.py hg38 t2tChm13_20200727 ensembl all >&ens.log &
+transMapBatch --directRun ./transMapBuildConf.py hg38 t2tChm13_20200727 refseq all >&ref.log &
+
+transMapBuildBigPsl ./transMapBuildConf.py t2tChm13_20200727 ensembl hg38 >&ens.log &
+transMapBuildBigPsl ./transMapBuildConf.py t2tChm13_20200727 refseq hg38 >&ref.log &
+
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
-
+** chains for hg38->t2t, announce to variant group.
 

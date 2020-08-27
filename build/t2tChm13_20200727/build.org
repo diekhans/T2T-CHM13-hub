@@ -3,7 +3,10 @@ t2t-chm13.20200727  v1.0
 ** URLs
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
+* PATH setup
+export PATH=${HOME}/compbio/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin:${HOME}/compbio/gencode/projs/icedb/intronProspector/bin:${PATH}
 * genome assembly
 # 2020-07-28
 /assemblies/drafts/t2t-chm13.20200727.fasta  # include chrMT
@@ -213,25 +216,7 @@ ln -f cenSat_annotation.bigBed ../../../hub/t2tChm13_20200727
 
 
 
-* GENCODE transmap (drop)
-** data
-hgsql hg38 -Ne 'select * from gencodeAnnotV34' | cut -f 2- >data/gencodeAnnotV34.gp
-hgsql hg38 -e 'select * from gencodeAttrsV34' | cut -f 2- >data/gencodeAttrsV34.tsv
-genePredToFakePsl hg38 data/gencodeAnnotV34.gp data/gencodeAnnotV34.psl data/gencodeAnnotV34.cds
-getRnaPred hg38 gencodeAnnotV34 all stdout | seqkit rmdup --quiet | bgzip  --threads=64 >data/gencodeAnnotV34.fa.gz
-
-
-** transMap try 1
-(pslMap -chainMapFile -swapMap -mapInfo=transMap/gencodeV24.hg38-t2tChm13_20200727.raw.mapinfo  data/gencodeAnnotV34.psl  ../hg38Lastz/hg38.t2tChm13_20200727.over.chain.gz stdout | \
-pslRecalcMatch stdin ../genome/t2tChm13_20200727.2bit data/gencodeAnnotV34.fa.gz stdout | pslTSort >  transMap/gencodeV24.hg38-t2tChm13_20200727.raw.psl) >&log&
-
-pslMapPostChain transMap/gencodeV24.hg38-t2tChm13_20200727.raw.psl stdout | pslTSort > transMap/gencodeV24.hg38-t2tChm13_20200727.chained.psl
-
-sort -k 10,10 transMap/gencodeV24.hg38-t2tChm13_20200727.chained.psl | pslCDnaFilter -localNearBest=0.010 -minId=0.35 -minCover=0.15 -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap /dev/stdin transMap/gencodeV24.hg38-t2tChm13_20200727.filt.psl >& transMap/gencodeV24.hg38-t2tChm13_20200727.filt.out &
-transMapPslToGenePred data/gencodeAnnotV34.gp transMap/gencodeV24.hg38-t2tChm13_20200727.filt.psl transMap/gencodeV24.hg38-t2tChm13_20200727.filt.gp -frameShifts=transMap/gencodeV24.hg38-t2tChm13_20200727.filt.fs.ts
-# use r
-
-* TransMap (refseq and gencode)
+* TransMap all chains (refseq and gencode) 
 export PATH=${HOME}/compbio/projs/transMap/transMap-dev/bin:${PATH}
 cd transMap/tmp
 
@@ -248,18 +233,42 @@ srcDbLoadGenbankSeqs hg38 refseq data/src/hg38/hg38.refseq.src.db
 sqlite3 data/genome.db < ../../../../T2T-CHM13-hub/build/t2tChm13_20200727/transMapGenomeDb.sql 
 
 # build with all chains
-#  CLUSTER DOWN DUE TO FIRE, BUILD LOCAL
+#  CLUSTER DOWN DUE TO FIRE, paraHost=hgwdev
 ln -s  ../../../../T2T-CHM13-hub/build/t2tChm13_20200727/transMapBuildConf.py .
 mappingChainBuild data/genome.db hg38 t2tChm13_20200727 all data/chains/hg38/t2tChm13_20200727/hg38.t2tChm13_20200727.all.chain
-transMapBatch --directRun ./transMapBuildConf.py hg38 t2tChm13_20200727 ensembl all >&ens.log &
-transMapBatch --directRun ./transMapBuildConf.py hg38 t2tChm13_20200727 refseq all >&ref.log &
+transMapBatch ./transMapBuildConf.py hg38 t2tChm13_20200727 ensembl all >&ens.log &
+transMapBatch ./transMapBuildConf.py hg38 t2tChm13_20200727 refseq all >&ref.log &
 
 transMapBuildBigPsl ./transMapBuildConf.py t2tChm13_20200727 ensembl hg38 >&ens.log &
 transMapBuildBigPsl ./transMapBuildConf.py t2tChm13_20200727 refseq hg38 >&ref.log &
 
+cd ..
+ln tmp/results/mapped/t2tChm13_20200727/t2tChm13_20200727.ensembl.transMapV1.bigPsl t2tChm13_20200727.ensembl.transMap.all.bigPsl 
+ln tmp/results/mapped/t2tChm13_20200727/t2tChm13_20200727.refseq.transMapV1.bigPsl  t2tChm13_20200727.refseq.transMap.all.bigPsl 
+mkdir ../../../hub/t2tChm13_20200727/transMap
+ln t2tChm13_20200727.*.all.bigPsl ../../../hub/t2tChm13_20200727/transMap/
+
+ixIxx input.txt myTrix.ix myTrix.ixx
+ searchTrix
+
+* shortRnaSeqIntrons:
+** download data from /team-genes/20200727/shortRnaSeq/raw-introns/
+see ~/compbio/nanopore/projs/t2t-chm13/gene-annotation/t2t-chm13-gene-analysis/doc/t2tChm13_20200727.org
+into shortRnaSeqIntrons/data
+** 
 
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
 ** chains for hg38->t2t, announce to variant group.
+
+
+** introns /team-genes/20200727/shortRnaSeq/raw-introns
+
+** Lev ask for coloring to be left on when zoomed out
+can't be done, as it falls into bigBed summary mode.
+
+linkedFeaturesDraw
+    bigBedDrawDense(tg, seqStart, seqEnd, hvg, xOff, yOff, width, font, color);
+    # which does not  draw colors in summary mode
 

@@ -13,8 +13,10 @@ def getConfig(configPyFile, dataRootDir=None, srcHgDb=None, destHgDb=None,
     batchGen = 2
     asm = "t2tChm13_20200727"
     buildDir = "/hive/users/markd/nanopore/projs/t2t-chm13/build/" + asm
+    genomeDir = os.path.join(buildDir, "genome")
     dataRootDir = os.path.join(buildDir, "transMap/tmp")
     conf = TransMapConf(configPyFile,
+                        paraHost="hgwdev",
                         dataRootDir=dataRootDir,
                         srcHgDb=srcHgDb,
                         destHgDb=destHgDb,
@@ -22,6 +24,6 @@ def getConfig(configPyFile, dataRootDir=None, srcHgDb=None, destHgDb=None,
                         chainType=chainType,
                         version=version,
                         batchGen=batchGen,
-                        destTwoBitPathPat=os.path.join(dataDir, "genome/" + asm + ".2bit"),
-                        destChromSizesPat=os.path.join(dataDir, "genome/" + asm + ".sizes"),
+                        destTwoBitPathPat=os.path.join(genomeDir, asm + ".2bit"),
+                        destChromSizesPat=os.path.join(genomeDir, asm + ".sizes"))
     return conf

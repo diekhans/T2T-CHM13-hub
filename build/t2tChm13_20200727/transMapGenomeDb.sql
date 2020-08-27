@@ -18,8 +18,8 @@ CREATE TABLE chains (
             chainFile text not null,
             netFile text not null);
 INSERT INTO chains VALUES('hg38','t2tChm13_20200727','all',
-       '/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200727/hg38Lastz/axtChain/hg38.t2tChm13_20200727.all.chain.gz',
-       '/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200727/hg38Lastz/axtNet/hg38.t2tChm13_20200727.net.axt.gz');
+       '/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200727/hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz',
+       '');
 CREATE INDEX genomeAsms_hgDb on genomeAsms (hgDb);
 CREATE INDEX genomeAsms_commonName on genomeAsms (commonName);
 CREATE INDEX genomeAsms_annotationTypeSet on genomeAsms (annotationTypeSet);

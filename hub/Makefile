@@ -3,6 +3,7 @@ hubDir = ../../hub
 
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 courtyardUrl = https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+t2tUrl = http://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
 ifeq ($(shell hostname),hgwdev)
 localUrl = ${hgwdevUrl}
@@ -27,8 +28,15 @@ define hgwdev_check
 @if [ "$$(hostname)" != "hgwdev" ] ; then echo "Error: sync can only be run on hgwdev" ; exit 1 ; fi
 endef
 
+sync: sync-t2t
+
 # progress = --progress
-sync:
+sync-courtyard:
 	${hgwdev_check}
-	cd ../.. && rsync -a --partial ${progress} hub courtyard.gi.ucsc.edu:/nanopore/markd/t2t-chm13/
+	cd ../.. && rsync -aH --partial ${progress} hub courtyard.gi.ucsc.edu:/nanopore/markd/t2t-chm13/
 	hubCheck ${courtyardUrl}
+
+sync-t2t:
+	${hgwdev_check}
+	cd ../.. && rsync -aH --partial ${progress} --no-owner --no-group hub t2t.gi.ucsc.edu:/data/chm13
+	hubCheck ${t2tUrl}

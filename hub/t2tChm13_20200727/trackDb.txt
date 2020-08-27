@@ -148,6 +148,7 @@ longLabel Centromeric Satellite Annotation
 group cenTelo
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9 +
 bigDataUrl cenSat_annotation.bigBed
 priority 2
@@ -159,6 +160,7 @@ group cenTelo
 visibility hide
 type bigBed 9
 itemRgb on
+maxItems 100000
 bigDataUrl as_hor_annotation.bigBed
 priority 3
 
@@ -169,6 +171,7 @@ group cenTelo
 visibility hide
 type bigBed 9
 itemRgb on
+maxItems 100000
 bigDataUrl as_sf_annotation.bigBed
 priority 4
 
@@ -178,6 +181,7 @@ longLabel Centromere HOR annotation
 group cenTelo
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9
 bigDataUrl hor_decompositions.bigBed
 priority 5
@@ -188,6 +192,7 @@ longLabel Centromere HOR annotation native
 group cenTelo
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9
 bigDataUrl hor_decompositions_native.bigBed
 priority 6
@@ -201,6 +206,7 @@ longLabel Repeating Elements by RepeatMasker
 group varRep
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9 +
 bigDataUrl rmsk.bigBed
 maxWindowToDraw 10000000
@@ -221,6 +227,7 @@ longLabel Segmental Duplications
 group varRep
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDups.bigBed
 priority 5
@@ -231,6 +238,7 @@ longLabel SEDEF Segmental Duplications Low Identity
 group varRep
 visibility hide
 itemRgb on
+maxItems 100000
 type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
@@ -251,3 +259,67 @@ linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
 priority 30.1
 group compGeno
 
+##
+# genes
+##
+track transMap
+superTrack on
+shortLabel TransMap LASTZ
+longLabel TransMap Alignments using LASTZ chains
+type bigPsl
+group genes
+
+    track transMapEnsemblAll
+    superTrack transMap pack
+    shortLabel TransMap GENCODE (all chains)
+    longLabel TransMap GENCODE Mappings using all LASTZ chains (LOTS OF PARALOGS)
+    html transMapEnsemblAll.html
+    transMapSrcSet ensembl
+    group genes
+    type bigPsl
+    priority 10.001
+    color 0,100,0
+    canPack on
+    visibility pack
+    baseColorDefault diffCodons
+    baseColorUseCds given
+    baseColorUseSequence lfExtra
+    indelDoubleInsert on
+    indelQueryInsert on
+    showDiffBasesAllScales .
+    showDiffBasesMaxZoom 10000.0
+    showCdsAllScales .
+    showCdsMaxZoom 10000.0
+    labelFields commonName,orgAbbrev,srcDb,srcTransId,name,geneName,geneId,geneType,transcriptType
+    defaultLabelFields geneName
+    labelSeparator " "
+    bigDataUrl transMap/t2tChm13_20200727.ensembl.transMap.all.bigPsl
+    searchIndex name,srcTransId,geneName,geneId
+
+
+    track transMapRefSeqAll
+    superTrack transMap pack
+    shortLabel TransMap RefGene (all chains)
+    longLabel TransMap RefSeq Gene Mappings using all LASTZ chains (LOTS OF PARALOGS)
+    html transMapRefSeqAll.html
+    transMapSrcSet refseq
+    group genes
+    type bigPsl
+    priority 10.003
+    color 0,100,0
+    canPack on
+    visibility pack
+    baseColorDefault diffCodons
+    baseColorUseCds given
+    baseColorUseSequence lfExtra
+    indelDoubleInsert on
+    indelQueryInsert on
+    showDiffBasesAllScales .
+    showDiffBasesMaxZoom 10000.0
+    showCdsAllScales .
+    showCdsMaxZoom 10000.0
+    labelFields commonName,orgAbbrev,srcDb,srcTransId,name,geneName,geneId
+    defaultLabelFields geneName
+    labelSeparator " "
+    bigDataUrl transMap/t2tChm13_20200727.refseq.transMap.all.bigPsl
+    searchIndex name,srcTransId,geneName,geneId

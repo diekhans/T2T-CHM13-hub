@@ -1,0 +1,79 @@
+<h2>Description</h2>
+<p>Intron predictions from short-read RNA-Seq experiments</p>
+
+<h2>Methods</h2>
+<p>
+  <ul>
+    <li> The reads from 432 single-ended and paired-end Poly(A)_ short-read
+      RNA-Seq experiments were obtained
+      from <a href="https://www.encodeproject.org/">ENCODE</a>.  The selection
+      emphasized brain, testis, liver, or the H1 cell line to optimize transcript
+      diversity, as well as reads for at least 100bp.  The experiments included are lists below.
+    <li>Reads were aligned to the T2T CHM13 assembly using STAR 2.7.5. with
+      parameters derived from the ENCODE pipeline.  The maximum number of
+      allowed multi-mapping reads was increases to 2048 to improve sensitivity
+      over specificity.  The intention is to develop post-mapping filters to obtain
+      more specific mappings.
+      <table>
+        <tr>
+          <td>--outFilterMultimapNmax 2048</td>
+          <td>--alignSJoverhangMin 8</td>
+          <td>--alignSJDBoverhangMin 1</td>
+        </tr>
+        <tr>
+          <td>--outFilterMismatchNmax 999</td>
+          <td>--outFilterMismatchNoverReadLmax 0.04</td>
+          <td>--alignIntronMin 20</td>
+        </tr>
+        <tr>
+          <td>--alignIntronMax 1000000</td>
+          <td>--alignMatesGapMax 1000000</td>
+          <td>--outSAMunmapped Within</td>
+        </tr>
+        <tr>
+          <td>--outFilterType BySJout</td>
+          <td>--outSAMstrandField intronMotif<br>(single ended)</td>
+          <td>--sjdbScore 1</td>
+        </tr>
+      </table>
+    <li> 
+  </ul>
+  <li> Called introns using <a href="https://github.com/diekhans/intronProspector">intronProspector</a> with
+    <code>--min-confidence-score=1.0</code>.
+</p>
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p> Each intron calls is represent by a two-block record, with the blocks
+  representing the longest observed exon overlap.   The name field contains the splicing junction motif,
+  with known splice junctions capitalized.  Items are colored based on their
+  introns:
+  <table>
+    <tr><th>U2-type intron<td style="background:rgb(0,128,0);">green</tr> 
+    <tr><th>U12-type intron<td style="background:rgb(0,0,128);">blue</tr> 
+    <tr><th>unknown intron type<td style="background:rgb(128,0,0);">red</tr> 
+  </table>
+</p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li> 2020-09-01: initial t2tChm13_20200727 release
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:markd@ucsc.edu">Mark Diekhans &lt;markd@ucsc.edu&gt;</a>
+</ul>
+<h2>Credits</h2>
+<p>
+  <ul>
+    <li> Mark Diekhans
+    <li> Ann Mc Cartney
+  </ul>
+</p>

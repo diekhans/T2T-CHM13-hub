@@ -248,13 +248,15 @@ ln tmp/results/mapped/t2tChm13_20200727/t2tChm13_20200727.refseq.transMapV1.bigP
 mkdir ../../../hub/t2tChm13_20200727/transMap
 ln t2tChm13_20200727.*.all.bigPsl ../../../hub/t2tChm13_20200727/transMap/
 
-ixIxx input.txt myTrix.ix myTrix.ixx
- searchTrix
+## maybe add trixIdx to make case-insensitive: ixIxx input.txt myTrix.ix myTrix.ixx
 
 * shortRnaSeqIntrons:
-** download data from /team-genes/20200727/shortRnaSeq/raw-introns/
-see ~/compbio/nanopore/projs/t2t-chm13/gene-annotation/t2t-chm13-gene-analysis/doc/t2tChm13_20200727.org
-into shortRnaSeqIntrons/data
+see t2t-chm13-gene-analysis/doc/t2tChm13_20200727.org for details
+on how it was built.
+
+buildBigBed bed12 t2tChm13_20200727 shortReadIntrons.bigBed ../../../gene-annotation/build/t2tChm13_20200727/shortRnaSeq/raw-introns-combined/shortRnaSeq-2020-08-28.juncs.bed.gz 
+ln shortReadIntrons.bigBed ../../../hub/t2tChm13_20200727/
+
 ** 
 
 * todo
@@ -264,11 +266,4 @@ into shortRnaSeqIntrons/data
 
 
 ** introns /team-genes/20200727/shortRnaSeq/raw-introns
-
-** Lev ask for coloring to be left on when zoomed out
-can't be done, as it falls into bigBed summary mode.
-
-linkedFeaturesDraw
-    bigBedDrawDense(tg, seqStart, seqEnd, hvg, xOff, yOff, width, font, color);
-    # which does not  draw colors in summary mode
-
+** GENCODE and RefSeq BLAT alignments

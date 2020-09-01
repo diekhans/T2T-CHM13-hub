@@ -19,7 +19,7 @@ priority 3
 defaultIsClosed 0
 
 name rna
-label mRNA
+label Transcription
 priority 4
 defaultIsClosed 0
 

@@ -323,3 +323,18 @@ group genes
     labelSeparator " "
     bigDataUrl transMap/t2tChm13_20200727.refseq.transMap.all.bigPsl
     searchIndex name,srcTransId,geneName,geneId
+
+##
+# Expression
+##
+track shortRnaSeqIntrons
+shortLabel Short RNA-Seq Introns
+longLabel  Short RNA-Seq Introns from ENCODE
+group rna
+visibility hide
+type bigBed 12
+itemRgb on
+maxItems 100000
+bigDataUrl shortRnaSeqIntrons.bigBed
+priority 3
+

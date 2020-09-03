@@ -1,0 +1,61 @@
+track catEvidence
+superTrack on
+group genes
+visibility hide
+shortLabel CAT Evidence
+longLabel CAT Gene Annotation Evidence
+priority 2
+
+include consensus.txt
+include transmap.txt
+include augustus_pb.txt
+include isoseq_bams.txt
+include evaluation.txt
+include filtered_transmap.txt
+
+
+track cactus20200727
+compositeTrack on
+shortLabel Cactus
+longLabel Cactus Alignment Tracks
+group compGeno
+subGroup1 view Track_Type Snake=Alignments
+subGroup2 orgs Organisms CHM13=CHM13 GRCh38=GRCh38
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+priority 0
+centerLabelsDense on
+visibility hide
+type bigBed 3
+
+    track cactus20200727Alignments
+    shortLabel Alignments
+    view Alignments
+    visibility full
+    subTrack cactus20200727
+
+        track snakeCHM13
+        longLabel CHM13
+        shortLabel CHM13
+        otherSpecies CHM13
+        visibility hide
+        parent cactus20200727Alignments off
+        priority 3
+        bigDataUrl t2tChm13.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=CHM13
+
+        track snakeGRCh38
+        longLabel GRCh38
+        shortLabel GRCh38
+        otherSpecies GRCh38
+        visibility full
+        parent cactus20200727Alignments off
+        priority 3
+        bigDataUrl t2tChm13.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=GRCh38
+

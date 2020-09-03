@@ -267,6 +267,7 @@ superTrack on
 shortLabel TransMap LASTZ
 longLabel TransMap Alignments using LASTZ chains
 type bigPsl
+priority 3
 group genes
 
     track transMapEnsemblAll
@@ -338,3 +339,7 @@ maxItems 100000
 bigDataUrl shortRnaSeqIntrons.bigBed
 priority 3
 
+##
+# Cactus & CAT
+##
+include CAT/trackDb.txt

@@ -1,0 +1,16 @@
+track augustus_augPB_CHM13
+superTrack catEvidence hide
+shortLabel AugustusPB
+longLabel AugustusPB
+description PacBio Augustus
+bigDataUrl CAT/augustus_pb.bb
+type bigGenePred
+group genes
+priority 4
+itemRgb on
+searchIndex assignedGeneId,name,name2
+labelFields assignedGeneId,name,name2
+defaultLabelFields name
+labelSeperator " "
+
+

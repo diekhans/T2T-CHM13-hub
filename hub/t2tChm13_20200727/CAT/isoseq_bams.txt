@@ -1,0 +1,200 @@
+track bams_CHM13
+superTrack catEvidence hide
+group genes
+compositeTrack on
+shortLabel IsoSeq BAMs
+longLabel IsoSeq BAMs
+dragAndDrop subTracks
+visibility hide
+type bam
+indelDoubleInsert on
+indelQueryInsert on
+showNames off
+bamColorMode gray
+bamGrayMode aliQual
+pairEndsByName on
+
+    track 0_ENCFF026VEI.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/0_ENCFF026VEI.t2t.sorted.bam
+    shortLabel ENCFF026VEI.t2t.sorted
+    longLabel ENCFF026VEI.t2t.sorted
+    type bam
+    priority 10
+
+    track 1_ENCFF185VYD.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/1_ENCFF185VYD.t2t.sorted.bam
+    shortLabel ENCFF185VYD.t2t.sorted
+    longLabel ENCFF185VYD.t2t.sorted
+    type bam
+    priority 10
+
+    track 2_ENCFF249GFH.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/2_ENCFF249GFH.t2t.sorted.bam
+    shortLabel ENCFF249GFH.t2t.sorted
+    longLabel ENCFF249GFH.t2t.sorted
+    type bam
+    priority 10
+
+    track 3_ENCFF251CBB.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/3_ENCFF251CBB.t2t.sorted.bam
+    shortLabel ENCFF251CBB.t2t.sorted
+    longLabel ENCFF251CBB.t2t.sorted
+    type bam
+    priority 10
+
+    track 4_ENCFF318SKH.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/4_ENCFF318SKH.t2t.sorted.bam
+    shortLabel ENCFF318SKH.t2t.sorted
+    longLabel ENCFF318SKH.t2t.sorted
+    type bam
+    priority 10
+
+    track 5_ENCFF427JDY.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/5_ENCFF427JDY.t2t.sorted.bam
+    shortLabel ENCFF427JDY.t2t.sorted
+    longLabel ENCFF427JDY.t2t.sorted
+    type bam
+    priority 10
+
+    track 6_ENCFF450VAU.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/6_ENCFF450VAU.t2t.sorted.bam
+    shortLabel ENCFF450VAU.t2t.sorted
+    longLabel ENCFF450VAU.t2t.sorted
+    type bam
+    priority 10
+
+    track 7_ENCFF471YEK.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/7_ENCFF471YEK.t2t.sorted.bam
+    shortLabel ENCFF471YEK.t2t.sorted
+    longLabel ENCFF471YEK.t2t.sorted
+    type bam
+    priority 10
+
+    track 8_ENCFF489XQJ.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/8_ENCFF489XQJ.t2t.sorted.bam
+    shortLabel ENCFF489XQJ.t2t.sorted
+    longLabel ENCFF489XQJ.t2t.sorted
+    type bam
+    priority 10
+
+    track 9_ENCFF580BQX.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/9_ENCFF580BQX.t2t.sorted.bam
+    shortLabel ENCFF580BQX.t2t.sorted
+    longLabel ENCFF580BQX.t2t.sorted
+    type bam
+    priority 10
+
+    track 10_ENCFF589SMB.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/10_ENCFF589SMB.t2t.sorted.bam
+    shortLabel ENCFF589SMB.t2t.sorted
+    longLabel ENCFF589SMB.t2t.sorted
+    type bam
+    priority 10
+
+    track 11_ENCFF595PPR.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/11_ENCFF595PPR.t2t.sorted.bam
+    shortLabel ENCFF595PPR.t2t.sorted
+    longLabel ENCFF595PPR.t2t.sorted
+    type bam
+    priority 10
+
+    track 12_ENCFF694DIE.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/12_ENCFF694DIE.t2t.sorted.bam
+    shortLabel ENCFF694DIE.t2t.sorted
+    longLabel ENCFF694DIE.t2t.sorted
+    type bam
+    priority 10
+
+    track 13_ENCFF694INI.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/13_ENCFF694INI.t2t.sorted.bam
+    shortLabel ENCFF694INI.t2t.sorted
+    longLabel ENCFF694INI.t2t.sorted
+    type bam
+    priority 10
+
+    track 14_ENCFF733RRO.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/14_ENCFF733RRO.t2t.sorted.bam
+    shortLabel ENCFF733RRO.t2t.sorted
+    longLabel ENCFF733RRO.t2t.sorted
+    type bam
+    priority 10
+
+    track 15_ENCFF763VZC.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/15_ENCFF763VZC.t2t.sorted.bam
+    shortLabel ENCFF763VZC.t2t.sorted
+    longLabel ENCFF763VZC.t2t.sorted
+    type bam
+    priority 10
+
+    track 16_ENCFF770DXN.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/16_ENCFF770DXN.t2t.sorted.bam
+    shortLabel ENCFF770DXN.t2t.sorted
+    longLabel ENCFF770DXN.t2t.sorted
+    type bam
+    priority 10
+
+    track 17_ENCFF919JFJ.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/17_ENCFF919JFJ.t2t.sorted.bam
+    shortLabel ENCFF919JFJ.t2t.sorted
+    longLabel ENCFF919JFJ.t2t.sorted
+    type bam
+    priority 10
+
+    track 18_ENCFF954UFG.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/18_ENCFF954UFG.t2t.sorted.bam
+    shortLabel ENCFF954UFG.t2t.sorted
+    longLabel ENCFF954UFG.t2t.sorted
+    type bam
+    priority 10
+
+    track 19_ENCFF982WKN.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/19_ENCFF982WKN.t2t.sorted.bam
+    shortLabel ENCFF982WKN.t2t.sorted
+    longLabel ENCFF982WKN.t2t.sorted
+    type bam
+    priority 10
+
+    track 20_ENCFF988RQM.t2t.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/20_ENCFF988RQM.t2t.sorted.bam
+    shortLabel ENCFF988RQM.t2t.sorted
+    longLabel ENCFF988RQM.t2t.sorted
+    type bam
+    priority 10
+
+    track 21_chm13_1.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/21_chm13_1.sorted.bam
+    shortLabel chm13
+    longLabel chm13
+    type bam
+    priority 10
+
+    track 22_chm13_2.sorted.bam_CHM13
+    parent bams_CHM13
+    bigDataUrl CAT/22_chm13_2.sorted.bam
+    shortLabel chm13
+    longLabel chm13
+    type bam
+    priority 10
+

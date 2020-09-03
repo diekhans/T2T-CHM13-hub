@@ -1,3 +1,4 @@
+
 * general stuff
 t2t-chm13.20200727  v1.0
 ** URLs
@@ -251,13 +252,34 @@ ln t2tChm13_20200727.*.all.bigPsl ../../../hub/t2tChm13_20200727/transMap/
 ## maybe add trixIdx to make case-insensitive: ixIxx input.txt myTrix.ix myTrix.ixx
 
 * shortRnaSeqIntrons:
+cd shortRnaSeq
 see t2t-chm13-gene-analysis/doc/t2tChm13_20200727.org for details
 on how it was built.
 
-buildBigBed bed12 t2tChm13_20200727 shortReadIntrons.bigBed ../../../gene-annotation/build/t2tChm13_20200727/shortRnaSeq/raw-introns-combined/shortRnaSeq-2020-08-28.juncs.bed.gz 
-ln shortReadIntrons.bigBed ../../../hub/t2tChm13_20200727/
+buildBigBed bed12 t2tChm13_20200727 shortRnaSeqIntrons.bigBed ../../../gene-annotation/build/t2tChm13_20200727/shortRnaSeq/raw-introns-combined/shortRnaSeq-2020-08-28.juncs.bed.gz 
+ln shortRnaSeqIntrons.bigBed ../../../hub/t2tChm13_20200727/
 
-** 
+** CAT annotations 2020-09-03
+# run by Marina in AWS and downloaded it to: 
+   courtyard.gi.ucsc.edu:/nanopore/marina/out-chm13-t2t/assemblyHub
+
+
+cd CAT
+rsync -a courtyard.gi.ucsc.edu:/nanopore/marina/out-chm13-t2t/assemblyHub . >&log&
+
+# need to create a GRCh38/CAT and add to GRCh38 to assembly hub
+ln assemblyHub/GRCh38/annotation.bb assemblyHub/GRCh38/GRCh38.2bit  ../../../hub/GRCh38/
+
+ln assemblyHub/CHM13/*.bam ../../../hub/t2tChm13_20200727/CAT/
+ln assemblyHub/CHM13/*.bam.bai ../../../hub/t2tChm13_20200727/CAT/
+ln assemblyHub/CHM13/*.bb   ../../../hub/t2tChm13_20200727/CAT/
+
+# rename HAL
+export PATH=${HOME}/compbio/compartiveGenomics/projs/hal/src/hal/bin:${PATH}
+CHM13	t2tChm13_20200727
+halRenameGenomes assemblyHub/t2tChm13.hal rename.tab
+halStats --genomes assemblyHub/t2tChm13.hal
+ln assemblyHub/t2tChm13.hal   ../../../hub/t2tChm13_20200727/CAT/
 
 * todo
 ** RMMaskBed to David, etc
@@ -267,3 +289,10 @@ ln shortReadIntrons.bigBed ../../../hub/t2tChm13_20200727/
 
 ** introns /team-genes/20200727/shortRnaSeq/raw-introns
 ** GENCODE and RefSeq BLAT alignments
+** mydennis  CN mapps
+We generated CN maps of the 20200727 release using kmers and CHM13 genome Illumina data (quickmer2 pipeline). Not sure if this would be of interest to add as a track
+track name=CHM13_CN itemRgb="On" bigDataUrl=https://bioshare.bioinformatics.ucdavis.edu/bioshare/download/rlc692m7tk5cibb/t2t/t2t_chm13_20200727/quickmer2/SRR3986881.depth.bed.CN.bb type=bigBed
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7073954/
+** proseq
+** check default assembly in CHM13
+*** report hide bug

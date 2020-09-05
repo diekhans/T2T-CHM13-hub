@@ -3,12 +3,16 @@ import os.path as osp
 from pycbio.sys import fileOps
 bindir = osp.abspath(osp.dirname(__file__))
 
-def loadChromNames(twoBit):
+def loadChromInfo(twoBit):
+    """map of chrom names to sizes"""
     tbr = twobitreader.TwoBitFile(twoBit)
     try:
-        return tuple(sorted(tbr.sequence_sizes().keys()))
+        return dict(tbr.sequence_sizes())
     finally:
         tbr.close()
+
+def loadChromNames(twoBit):
+    return tuple(sorted(loadChromInfo(twoBit)))
 
 def findGenomeDir(assembly):
     asmDir = osp.join(bindir, "../../build", assembly)

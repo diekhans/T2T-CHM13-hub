@@ -9,6 +9,23 @@ visibility hide
 type bigBed 3
 bigDataUrl gap.bigBed
 
+track gc5Base
+shortLabel GC Percent
+longLabel GC Percent in 5-Base Windows
+group map
+visibility hide
+autoScale Off
+maxHeightPixels 128:36:16
+graphTypeDefault Bar
+gridDefault OFF
+windowingFunction Mean
+color 0,0,0
+altColor 128,128,128
+viewLimits 30:70
+type bigWig 0 100
+bigDataUrl gc5Base.bigWig
+html gc5Base
+
 track hifi_20k
 track winnowmap_ont
 shortLabel Winnowmap ONT SVs
@@ -258,6 +275,28 @@ bigDataUrl grch38/t2tChm13_20200727.hg38.all.bigChain
 linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
 priority 30.1
 group compGeno
+
+track grch38Synteny25kb
+shortLabel GRCh38 Synteny 25KB
+longLabel  GRCh38  Synteny 25KB resolution
+type bigPsl
+color 0,20,180
+visibility hide
+priority 40.1
+bigDataUrl synteny/synteny.25kb.bigPsl
+group compGeno
+
+track grch38Synteny1mb
+shortLabel GRCh38 Synteny 1MB
+longLabel  GRCh38 Synteny 1MB resolution
+type bigPsl
+color 0,20,180
+visibility hide
+priority 41.1
+bigDataUrl synteny/synteny.1mb.bigPsl
+group compGeno
+
+
 
 ##
 # genes

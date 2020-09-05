@@ -1,4 +1,3 @@
-
 * general stuff
 t2t-chm13.20200727  v1.0
 ** URLs
@@ -217,6 +216,12 @@ ln -f cenSat_annotation.bigBed ../../../hub/t2tChm13_20200727
 
 
 
+* GC percent 2020-09-03
+cd gc5Base
+hgGcPercent -noLoad -wigOut -doGaps -win=5 -file=stdout -verbose=0 NODB ../genome/t2tChm13_20200727.2bit  | gzip -c > gc5Base.wigVarStep.gz
+wigToBigWig gc5Base.wigVarStep.gz  ../genome/t2tChm13_20200727.sizes gc5Base.bigWig
+ln gc5Base.bigWig  ../../../hub/t2tChm13_20200727/
+
 * TransMap all chains (refseq and gencode) 
 export PATH=${HOME}/compbio/projs/transMap/transMap-dev/bin:${PATH}
 cd transMap/tmp
@@ -259,6 +264,45 @@ on how it was built.
 buildBigBed bed12 t2tChm13_20200727 shortRnaSeqIntrons.bigBed ../../../gene-annotation/build/t2tChm13_20200727/shortRnaSeq/raw-introns-combined/shortRnaSeq-2020-08-28.juncs.bed.gz 
 ln shortRnaSeqIntrons.bigBed ../../../hub/t2tChm13_20200727/
 
+* refSeqBlat
+cd refSeqBlat/data
+# files from 2020-05-29
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.fna.gz
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_knownrefseq_alignments.bam
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.gbff.gz
+faSize -detailed GRCh38_latest_rna.fna.gz | tawk '/^N/{print $1}' >refSeq-curated.acc
+faSomeRecords GRCh38_latest_rna.fna.gz refSeq-curated.acc stdout | bgzip -@ 64 -c >refSeq-curated.fa.gz
+cd ..
+blatRnaMkJobs ../genome/t2tChm13_20200727.2bit data/refSeq-curated.fa.gz tmp/
+para make -batch=tmp/b1 tmp/para.jobs >&log&
+
+* synteny  2020-09-04
+cd synteny/tmp
+halStats --bedSequences t2tChm13_20200727../../../data/primates_eichler.hal > chm13.bed
+
+create syn.tmpl:
+#LOOP
+../../../../T2T-CHM13-hub/bin/halSyntenyRun ../../CAT/assemblyHub/t2tChm13.hal t2tChm13_20200727 $(path1) GRCh38 25000 25000 {check out exists out/25kb.$(path1).psl}
+../../../../T2T-CHM13-hub/bin/halSyntenyRun ../../CAT/assemblyHub/t2tChm13.hal t2tChm13_20200727 $(path1) GRCh38 1000000 50000 {check out exists out/1mb.$(path1).psl}
+#ENDLOOP
+
+gensub2 <(cut -f 1 chm13.bed) <(echo "") syn.tmpl syn.jobs
+
+ # run with -ram=16g
+ para create -batch=b1 syn.jobs -ram=16g -maxQueue=100000000
+
+# halSyntenty produced no output for chrMT, which is identical
+
+# combine data for tracks
+cat  out/25kb.chr* | pslSwap stdin stdout | sort -k 14,14 -k 16,16n |gzip -9 >../synteny.25kb.psl.gz
+cat  out/1mb.chr* | pslSwap stdin stdout | sort -k 14,14 -k 16,16n |gzip -9 >../synteny.1mb.psl.gz
+
+pslToBigPsl ../synteny.25kb.psl.gz 25kb.bigin
+pslToBigPsl ../synteny.1mb.psl.gz 1mb.bigin
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 25kb.bigin ../../genome/t2tChm13_20200727.sizes ../synteny.25kb.bigPsl
+
+ln  *.bigPsl ../../../hub/t2tChm13_20200727/synteny/
+
 ** CAT annotations 2020-09-03
 # run by Marina in AWS and downloaded it to: 
    courtyard.gi.ucsc.edu:/nanopore/marina/out-chm13-t2t/assemblyHub
@@ -293,7 +337,9 @@ ln assemblyHub/t2tChm13.hal   ../../../hub/t2tChm13_20200727/CAT/
 We generated CN maps of the 20200727 release using kmers and CHM13 genome Illumina data (quickmer2 pipeline). Not sure if this would be of interest to add as a track
 track name=CHM13_CN itemRgb="On" bigDataUrl=https://bioshare.bioinformatics.ucdavis.edu/bioshare/download/rlc692m7tk5cibb/t2t/t2t_chm13_20200727/quickmer2/SRR3986881.depth.bed.CN.bb type=bigBed
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7073954/
-** proseq
+** proseq  (@Savannah Klein @Rachel O'Neill) 
+**  RNA-seq PE ILMN mydennis
+** all isoset 
 ** check default assembly in CHM13
 *** report hide bug
 

@@ -1,0 +1,34 @@
+#!/bin/bash -e
+# -*-python-*-
+"true" '''\'
+source ~/.bashrc
+exec python3 "$0" "$@"
+exit 127
+'''
+
+import os.path as osp
+import argparse
+import subprocess
+from pycbio.sys import fileOps
+
+def parseArgs():
+    usage = """do one blat RNA alignment"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('genomeTwoBit')
+    parser.add_argument('chrom')
+    parser.add_argument('rnaFa')
+    parser.add_argument('outPsl')
+    return parser.parse_args()
+
+def runBlat(genomeTwoBit, chrom, rnaFa, outPsl):
+    fileOps.ensureFileDir(outPsl)
+    ooc = osp.splitext(genomeTwoBit)[0] + ".11.ooc"
+    subprocess.check_call(["blat", "-q=rna", "-fine", "-minScore=20", "-stepSize=5", "-noHead",
+                          "-ooc=" + ooc, genomeTwoBit + ":" + chrom,
+                           rnaFa, outPsl])
+
+def main(args):
+    with fileOps.AtomicFileCreate(args.outPsl) as outPslTmp:
+        runBlat(args.genomeTwoBit, args.chrom, args.rnaFa, outPslTmp)
+
+main(parseArgs())

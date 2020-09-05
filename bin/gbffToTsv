@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+
+import argparse
+from Bio import SeqIO
+from pycbio.sys import fileOps
+
+
+def parseArgs():
+    usage = """quick and dirty conversion of RefSeq GBFF to TSV for joining into track """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('gbff')
+    parser.add_argument('tsv')
+    return parser.parse_args()
+
+def findFeature(rec, ftype):
+    for feat in rec.features:
+        if feat.type == ftype:
+            return feat
+    return None
+
+def getFeature(rec, ftype):
+    f = findFeature(rec, ftype)
+    if f is None:
+        raise ValueError(f"feature {ftype} not found")
+    return f
+
+def findQualfierSingle(feat, qual):
+    q = feat.qualifiers.get(qual)
+    if q is None:
+        return ''
+    if len(q) > 1:
+        raise ValueError(f"expect single qualifier of {qual} in {feat.type}")
+    return q[0]
+
+def findQualfiers(feat, qual):
+    return feat.qualifiers.get(qual, [])
+
+def splitXRef(dbXRef):
+    i = dbXRef.find(':')
+    return dbXRef[i + 1:]
+
+def findGeneDbXref(geneFeat):
+    geneId = hgncId = ''
+    for q in findQualfiers(geneFeat, 'db_xref'):
+        if q.startswith('GeneID:'):
+            geneId = splitXRef(q)
+        elif q.startswith('HGNC:'):
+            hgncId = splitXRef(q)
+    return geneId, hgncId
+
+def findCds(rec):
+    feat = findFeature(rec, "CDS")
+    if feat is None:
+        return ''
+    else:
+        loc = feat.location
+        return str(loc.start) + '..' + str(loc.end)
+
+def prHeader(fh):
+    print('id', 'geneSym', 'geneId', 'hgncId', 'geneType', 'cds', 'chroms', sep='\t', file=fh)
+
+def processRec(rec, fh):
+    geneFeat = getFeature(rec, 'gene')
+    geneSym = findQualfierSingle(geneFeat, 'gene')
+    geneId, hgncId = findGeneDbXref(geneFeat)
+    geneType = "coding" if rec.id.startswith('NM_') else "nonCoding"
+    cds = findCds(rec)
+    chroms = findQualfiers(getFeature(rec, 'source'), 'chromosome')
+    print(rec.id, geneSym, geneId, hgncId, geneType, cds, ",".join(chroms), sep='\t', file=fh)
+
+def processRecs(gbffFh, tsvFh):
+    for rec in SeqIO.parse(gbffFh, "genbank"):
+        try:
+            if rec.id[0] == 'N':  # curated only
+                processRec(rec, tsvFh)
+        except Exception as ex:
+            raise Exception(f"Error parsing {rec.id}") from ex
+
+def main(args):
+    with fileOps.opengz(args.gbff) as gbffFh:
+        with fileOps.opengz(args.tsv, 'w') as tsvFh:
+            prHeader(tsvFh)
+            processRecs(gbffFh, tsvFh)
+
+main(parseArgs())

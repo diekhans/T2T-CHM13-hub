@@ -336,7 +336,7 @@ group genes
     bigDataUrl transMap/t2tChm13_20200727.ensembl.transMap.all.bigPsl
     searchIndex name,srcTransId,geneName,geneId
 
-
+ 
     track transMapRefSeqAll
     superTrack transMap pack
     shortLabel TransMap RefGene (all chains)
@@ -363,6 +363,31 @@ group genes
     labelSeparator " "
     bigDataUrl transMap/t2tChm13_20200727.refseq.transMap.all.bigPsl
     searchIndex name,srcTransId,geneName,geneId
+
+track refSeqBlat
+shortLabel RefSeq BLAT
+longLabel BLAT of RefSeq curated RNA
+html refSeqBlat.html
+group genes
+type bigPsl
+priority 10.001
+color 0,0,100
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl refSeq-curated.bigBlatPsl
+searchIndex name,geneSym,geneId,geneType
 
 ##
 # Expression

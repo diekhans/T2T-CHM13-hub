@@ -272,9 +272,26 @@ wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/
 wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.gbff.gz
 faSize -detailed GRCh38_latest_rna.fna.gz | tawk '/^N/{print $1}' >refSeq-curated.acc
 faSomeRecords GRCh38_latest_rna.fna.gz refSeq-curated.acc stdout | bgzip -@ 64 -c >refSeq-curated.fa.gz
+
+# metadata for later merge (2m16s)
+gbffToTsv data/GRCh38_latest_rna.gbff.gz data/refSeq-curated.meta.tsv.gz >&log&
+
 cd ..
 blatRnaMkJobs ../genome/t2tChm13_20200727.2bit data/refSeq-curated.fa.gz tmp/
 para make -batch=tmp/b1 tmp/para.jobs >&log&
+
+# filter 
+faPolyASizes data/GRCh38_latest_rna.fna.gz stdout | gzip -c >data/GRCh38_latest_rna.polya.gz
+
+find tmp/psls -type f | xargs cat | sort -k 15,15 | pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats stdin stdout | sort -k 14,14 -k 16,16n |gzip -9c >refSeq-curated.psl.gz
+
+# build bigPsl with extra columns
+zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
+pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl.gz stdout | sort -k1,1 -k2,2n > tmp/rs.bigin1
+bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
+
+bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/t2tChm13_20200727.sizes refSeq-curated.bigBlatPsl
+
 
 * synteny  2020-09-04
 cd synteny/tmp
@@ -300,6 +317,7 @@ cat  out/1mb.chr* | pslSwap stdin stdout | sort -k 14,14 -k 16,16n |gzip -9 >../
 pslToBigPsl ../synteny.25kb.psl.gz 25kb.bigin
 pslToBigPsl ../synteny.1mb.psl.gz 1mb.bigin
 bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 25kb.bigin ../../genome/t2tChm13_20200727.sizes ../synteny.25kb.bigPsl
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin ../../genome/t2tChm13_20200727.sizes ../synteny.1mb.bigPsl
 
 ln  *.bigPsl ../../../hub/t2tChm13_20200727/synteny/
 
@@ -324,6 +342,7 @@ CHM13	t2tChm13_20200727
 halRenameGenomes assemblyHub/t2tChm13.hal rename.tab
 halStats --genomes assemblyHub/t2tChm13.hal
 ln assemblyHub/t2tChm13.hal   ../../../hub/t2tChm13_20200727/CAT/
+
 
 * todo
 ** RMMaskBed to David, etc

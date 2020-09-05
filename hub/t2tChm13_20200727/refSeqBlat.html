@@ -1,0 +1,52 @@
+<h2>Description</h2>
+<p>BLAT of RefSeq currated RNAs (NM_ and NR_) to T2T CHM13 assembly</p>
+
+<h2>Methods</h2>
+<p>
+  Methods are based on those used by the UCSC browser.
+  <ol>
+    <li> Obtained GRCh38 RefSeq RNA dated 2020-05-29 from
+      <a href="https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers">NCBI</a>.
+    <li> Aligned to T2t CHM13 using
+      <code>blat -q=rna -fine -minScore=20 -stepSize=5 -noHead</code>.
+    <li> Estimate Poly(A) lengths with <code>faPolyASizes</code>.
+    <li> Filter resulting alignment with
+      <code>
+      pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=&lt;polya&gt; -localNearBest=0.001  -minId=0.92 -minCover=0.75
+      </code>
+  </ol>
+</p>
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p></p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li> 2020-09-04 t2tChm13_20200727 alignments
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:markd@ucsc.edu">Mark Diekhans &lt;markd@ucsc.edu&gt;</a>
+</ul>
+
+<h2>Credits</h2>
+<P>
+  O&apos;Leary NA, Wright MW, Brister JR, et al. Reference sequence (RefSeq)
+  database at NCBI: current status, taxonomic expansion, and functional
+  annotation. Nucleic Acids Res. 2016;44(D1):D733-D745.
+  PMID: 26553804 PMCID: PMC4702849, DOI: <a href="https://doi.org/10.1093/nar/gkv1189">10.1093/nar/gkv1189</a>
+</P>
+<P>
+Kent WJ.
+<A HREF="http://genome.cshlp.org/content/12/4/656.full"
+TARGET=_blank>BLAT - the BLAST-like alignment tool</A>.
+<em>Genome Res.</em> 2002 Apr;12(4):656-64.
+</P>

@@ -1,6 +1,5 @@
 import twobitreader
 import os.path as osp
-from pycbio.sys import fileOps
 bindir = osp.abspath(osp.dirname(__file__))
 
 def loadChromInfo(twoBit):

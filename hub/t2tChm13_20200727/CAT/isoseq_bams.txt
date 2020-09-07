@@ -198,3 +198,15 @@ pairEndsByName on
     type bam
     priority 10
 
+
+track all_isoseq
+superTrack catEvidence hide
+bigDataUrl CAT/all_isoseq.bigBed
+shortLabel Combined ISOSeq
+longLabel Combined ISOSeq Annotation
+type bigBed 12
+spectrum on
+scoreMin 0
+scoreMax 60
+priority 99
+

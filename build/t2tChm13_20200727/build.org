@@ -396,6 +396,18 @@ halRenameGenomes assemblyHub/t2tChm13.hal rename.tab
 halStats --genomes assemblyHub/t2tChm13.hal
 ln assemblyHub/t2tChm13.hal   ../../../hub/t2tChm13_20200727/CAT/
 
+# make combined BED of all reads to make it posible to
+# see context
+# whack read names to make it smaller
+cnvBedToBam:
+  #!/bin/bash -e
+  bamToBed -bed12 -i $1 | tawk '{$4="";print}' > $2
+
+find assemblyHub/CHM13 -name '*.bam' | parallel -j 8 ./cnvBedToBam {} tmp/beds/{/}.bed&
+sort -k1,1 -k2,2n -m --parallel=64 tmp/beds/*.bed >tmp/all_isoseq.bed
+buildBigBed bed12 t2tChm13_20200727 all_isoseq.bigBed tmp/all_isoseq.bed
+ln all_isoseq.bigBed  ../../../hub/t2tChm13_20200727/CAT/
+
 
 * uniqRegions
 attempts to find regions not in GRCh38

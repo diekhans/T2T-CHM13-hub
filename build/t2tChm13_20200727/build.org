@@ -223,15 +223,16 @@ buildBigBed bed8 t2tChm13_20200727 cenRegions.bigBed t2t-chm13.20200727.cenRegio
 ln -f cenRegions.bigBed ../../../hub/t2tChm13_20200727
 
 * telomereRegions
-/assemblies/drafts/20200727/t2t-chm13.20200727.telomere
+/assemblies/drafts/20200727/t2t-chm13.20200727.telomere from Sergey Koren
 buildBigBed bed4 t2tChm13_20200727 telomereRegions.bigBed t2t-chm13.20200727.telomere
+ln -f telomereRegions.bigBed ../../../hub/t2tChm13_20200727/
 
-# got error
-End coordinate 135129800 bigger than chr11 size of 135129797
-
-tawk '$2>0{print $1,$3}'  t2t-chm13.20200727.telomere |sort -k 1,1 >sizes
-join -t $'\t'  <(sort -k 1,1 ../genome/t2tChm13_20200727.sizes) sizes >sizecmp.tab
-# end sizes don't match for any of them
+Display name
+Sergey Koren
+Local time
+4:34 PM
+Email address
+sergekoren@gmail.com
 
 * cenSat_annotation
 Karen Miga

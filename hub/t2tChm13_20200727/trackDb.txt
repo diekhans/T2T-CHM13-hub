@@ -159,6 +159,16 @@ color 218,165,32
 bigDataUrl cenRegions.bigBed
 priority 1
 
+track telomereRegions
+shortLabel Telomere Regions
+longLabel Telomere Regions
+group cenTelo
+type bigBed
+visibility hide
+color 32,165,218
+bigDataUrl telomereRegions.bigBed
+priority 1.1
+
 track cenSat_annotation
 shortLabel CenSat Annotation
 longLabel Centromeric Satellite Annotation

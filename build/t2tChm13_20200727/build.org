@@ -174,6 +174,8 @@ ln -f t2t-chm13.20200727.kstar.bw kmer_metric.bigWig
 ln -f kmer_metric.bigWig ../../../hub/t2tChm13_20200727/
 
 * hg38Lastz
+# WARNING have query and target reverse, so had to build swap
+# ALSO seems to run at priority 15
 cd hg38Lastz
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200727/hg38Lastz.DEF DEF
 runHg38Lastz t2tChm13_20200727 >&log&
@@ -184,7 +186,7 @@ chainSwap axtChain/hg38.t2tChm13_20200727.all.chain.gz stdout | bgzip --threads=
 cd bigAll.tmp
 hgLoadChain -noBin -test no bigChain ../axtChain/t2tChm13_20200727.hg38.all.chain.gz
 sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
-bbedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all.bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all.bigChain
 
 tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
 bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all.bigLink
@@ -194,8 +196,21 @@ ln -f t2tChm13_20200727.hg38.all.big* ../../../hub/t2tChm13_20200727/grch38/
 
 # files are 
 hg38.t2tChm13_20200727.all.chain.gz
-hg38.t2tChm13_20200727.net.axt.gz
 hg38.t2tChm13_20200727.over.chain.gz
+
+chainSwap to
+t2tChm13_20200727.hg38.all.chain.gz
+t2tChm13_20200727.hg38.over.chain.gz
+
+cd tmp
+hgLoadChain -noBin -test no bigChain ../axtChain/t2tChm13_20200727.hg38.over.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.over.bigChain
+
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.over.bigLink
+cd ..
+ln -f t2tChm13_20200727.hg38.over.big* ../../../hub/t2tChm13_20200727/grch38/
 
 
 * cenRegions
@@ -206,6 +221,17 @@ bgzip --threads=64 t2t-chm13.20200727.cenRegions.bed
 makeMd5s t2t-chm13.20200727.cenRegions.bed.gz 
 buildBigBed bed8 t2tChm13_20200727 cenRegions.bigBed t2t-chm13.20200727.cenRegions.bed.gz
 ln -f cenRegions.bigBed ../../../hub/t2tChm13_20200727
+
+* telomereRegions
+/assemblies/drafts/20200727/t2t-chm13.20200727.telomere
+buildBigBed bed4 t2tChm13_20200727 telomereRegions.bigBed t2t-chm13.20200727.telomere
+
+# got error
+End coordinate 135129800 bigger than chr11 size of 135129797
+
+tawk '$2>0{print $1,$3}'  t2t-chm13.20200727.telomere |sort -k 1,1 >sizes
+join -t $'\t'  <(sort -k 1,1 ../genome/t2tChm13_20200727.sizes) sizes >sizecmp.tab
+# end sizes don't match for any of them
 
 * cenSat_annotation
 Karen Miga
@@ -344,7 +370,8 @@ pslToBigPsl ../synteny.1mb.psl.gz 1mb.bigin
 bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 25kb.bigin ../../genome/t2tChm13_20200727.sizes ../synteny.25kb.bigPsl
 bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin ../../genome/t2tChm13_20200727.sizes ../synteny.1mb.bigPsl
 
-ln  *.bigPsl ../../../hub/t2tChm13_20200727/synteny/
+ln *.bigPsl ../../../hub/t2tChm13_20200727/synteny/
+
 
 ** CAT annotations 2020-09-03
 # run by Marina in AWS and downloaded it to: 
@@ -374,9 +401,20 @@ ln assemblyHub/t2tChm13.hal   ../../../hub/t2tChm13_20200727/CAT/
 attempts to find regions not in GRCh38
 ** with lastz all chains
 # requires 3-column sizes
-tawk '{print $1,$2,"x"}' ../genome/t2tChm13_20200727.sizes >t2tChm13_20200727.sizes3
+tawk '{print $1,$2,"x"}' ../genome/t2tChm13_20200727.sizes >lastz/t2tChm13_20200727.sizes3
 
-(time featureBits -not -bed=lastzUnalignedAll.bed -countGaps -chromSize=t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz )>&log&
+(time featureBits -not -bed=lastz/lastzUnalignedAll.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz )>&log&
+buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedAll.bigBed lastz/lastzUnalignedAll.bed.gz 
+ln lastz/lastzUnalignedAll.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
+** with lastz over chains
+# requires 3-column sizes
+tawk '{print $1,$2,"x"}' ../genome/t2tChm13_20200727.sizes >lastz/t2tChm13_20200727.sizes3
+
+(time featureBits -not -bed=lastz/lastzUnalignedOver.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz )>&log&
+gzip lastz/lastzUnalignedOver.bed 
+buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOver.bigBed lastz/lastzUnalignedOver.bed.gz 
+ln lastz/lastzUnalignedOver.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc

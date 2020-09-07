@@ -276,6 +276,17 @@ linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
 priority 30.1
 group compGeno
 
+track grch38OverChains
+shortLabel GRCh38 Liftover Chains
+longLabel  GRCh38 LASTZ Liftover Alignment Chains
+type bigChain hg38
+color 20,0,220
+visibility hide
+bigDataUrl grch38/t2tChm13_20200727.hg38.over.bigChain
+linkDataUrl grch38/t2tChm13_20200727.hg38.over.bigLink
+priority 31.1
+group compGeno
+
 track grch38Synteny25kb
 shortLabel GRCh38 Synteny 25KB
 longLabel  GRCh38  Synteny 25KB resolution
@@ -295,6 +306,15 @@ visibility hide
 priority 41.1
 bigDataUrl synteny/synteny.1mb.bigPsl
 group compGeno
+
+track lastzUnalignedOver
+shortLabel LASTZ Liftover Unaligned
+longLabel GRCh38 LASTZ Liftover Alignment Chains Unaligned Regions
+group compGeno
+visibility hide
+type bigBed 4
+bigDataUrl uniqRegions/lastzUnalignedOver.bigBed
+priority 50
 
 
 

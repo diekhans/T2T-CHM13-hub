@@ -9,9 +9,11 @@ fi
 targetGenome="$1"
 trackdir=$(realpath .)
 targetGenomeDir=$(realpath ${trackdir}/../genome)
-hg38Dir=/hive/data/genomes/hg38
 
-doBlastzChainNet.pl DEF \
+swapDir=${targetGenomeDir}/swap
+swapOpt=-"-swapDir=${swapDir}"
+
+doBlastzChainNet.pl DEF ${swapOpt} \
     -stop=net -syntenicNet -noDbNameCheck \
     -blastzOutRoot=${trackdir}/${targetGenome} \
     -bigClusterHub=ku -workhorse=hgwdev -priority=15

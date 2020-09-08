@@ -220,13 +220,18 @@ ln -f t2tChm13_20200727.hg38.over.big* ../../../hub/t2tChm13_20200727/grch38/
 
 % chainFilter -q=$(cat hg38-primary.tab | tr '\n' ',') t2tChm13_20200727.hg38.all.chain.gz | bgzip --threads=64 -c >t2tChm13_20200727.hg38.all-primary.chain.gz
 % cd tmp2
-$ hgLoadChain -noBin -test no bigChain ../t2tChm13_20200727.hg38.all-primary.chain.gz
-% sed 's/.000000//' tmp2/chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+% hgLoadChain -noBin -test no bigChain ../t2tChm13_20200727.hg38.all-primary.chain.gz
+% sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
 % bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all-primary.bigChain
 
 % tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
 % bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all-primary.bigLink
 % ln -f t2tChm13_20200727.hg38.all-primary.big* ../../../hub/t2tChm13_20200727/grch38/
+
+
+and if I click on the second lastz entry I get the error
+chr10:48,612,920-48,788,122
+twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
 
 * cenRegions
 Karen Miga
@@ -446,6 +451,23 @@ gzip lastz/lastzUnalignedOver.bed
 buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOver.bigBed lastz/lastzUnalignedOver.bed.gz 
 ln lastz/lastzUnalignedOver.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 
+
+* proseq
+2020-09-08 Savannah Klein
+/team-epigenetics/20200727_PROseq_CHM13
+wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_NEG.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-neg.bigWig &
+wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_POS.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-pos.bigWig &
+ln  proSeq-* ../../../hub/t2tChm13_20200727/proSeq
+
+* liftOff
+Mitchell Robert Vollger  
+t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/bigGenePred.as
+t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/liftoff.html
+t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/t2t-chm13.20200727.all.bed
+t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/t2t-chm13.20200727.orf_only.bed
+I threw my gene annotations in here. There are two bed files, one for genes with ORF and one with all alignments regardless of ORF.
+
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
@@ -464,3 +486,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7073954/
 ** check default assembly in CHM13
 *** report hide bug
 
+*** lastzall all-primary bug
+chr10:48,612,920-48,788,122
+and if I click on the second lastz entry I get the error
+twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)

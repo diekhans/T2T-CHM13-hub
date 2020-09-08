@@ -227,13 +227,6 @@ ln -f cenRegions.bigBed ../../../hub/t2tChm13_20200727
 buildBigBed bed4 t2tChm13_20200727 telomereRegions.bigBed t2t-chm13.20200727.telomere
 ln -f telomereRegions.bigBed ../../../hub/t2tChm13_20200727/
 
-Display name
-Sergey Koren
-Local time
-4:34 PM
-Email address
-sergekoren@gmail.com
-
 * cenSat_annotation
 Karen Miga
 team-satellite/t2t-chm13.20200727.cenSat_annotation.bed
@@ -409,6 +402,16 @@ sort -k1,1 -k2,2n -m --parallel=64 tmp/beds/*.bed >tmp/all_isoseq.bed
 buildBigBed bed12 t2tChm13_20200727 all_isoseq.bigBed tmp/all_isoseq.bed
 ln all_isoseq.bigBed  ../../../hub/t2tChm13_20200727/CAT/
 
+
+* restriction enzyme file:
+- don't build as a track, as this is done on the fly in the browser, but build for Karen for analysis
+cd rebaseData
+curl -A \"Mozilla/4.0\" http://rebase.neb.com/rebase/link_gcgenz > rebase.gcg
+# need to build findCutters.c
+cut -f 1 ../genome/t2tChm13_20200727.sizes | parallel findCutters rebase.gcg ../genome/t2tChm13_20200727.2bit:{} tmp/{}.bed
+# NOTE: can't merge since findCutters output is not sorted :-(
+sort -T /dev/shm --parallel=64 -k 1,1 -k 2,2n tmp/chr*.bed |bgzip --threads=64 -c >rebase.bed.gz &
+tabix -p bed rebase.bed.gz 
 
 * uniqRegions
 attempts to find regions not in GRCh38

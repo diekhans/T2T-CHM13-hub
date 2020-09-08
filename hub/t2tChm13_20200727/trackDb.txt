@@ -494,7 +494,6 @@ priority 4
     #viewLimits 30:70
     type bigWig 0 100
     bigDataUrl proSeq/proSeq-pos.bigWig
-    #html gc5Base
     priority 1
 
     track proSeqNet
@@ -513,7 +512,6 @@ priority 4
     #viewLimits 30:70
     type bigWig 0 100
     bigDataUrl proSeq/proSeq-pos.bigWig
-    #html gc5Base
     priority 2
 
 ##

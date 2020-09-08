@@ -286,6 +286,17 @@ linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
 priority 30.1
 group compGeno
 
+track grch38AllPrimaryChains
+shortLabel GRCh38 All Primary Chains
+longLabel  GRCh38 LASTZ All Alignment Chains from GRCh38 primary assembly
+type bigChain hg38
+color 20,220,0
+visibility hide
+bigDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigChain
+linkDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigLink
+priority 30.2
+group compGeno
+
 track grch38OverChains
 shortLabel GRCh38 Liftover Chains
 longLabel  GRCh38 LASTZ Liftover Alignment Chains

@@ -213,6 +213,21 @@ cd ..
 ln -f t2tChm13_20200727.hg38.over.big* ../../../hub/t2tChm13_20200727/grch38/
 
 
+
+** lastz all primary:
+- drop non-primary and chrY from all lastz
+  hg38-primary.tab
+
+% chainFilter -q=$(cat hg38-primary.tab | tr '\n' ',') t2tChm13_20200727.hg38.all.chain.gz | bgzip --threads=64 -c >t2tChm13_20200727.hg38.all-primary.chain.gz
+% cd tmp2
+$ hgLoadChain -noBin -test no bigChain ../t2tChm13_20200727.hg38.all-primary.chain.gz
+% sed 's/.000000//' tmp2/chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+% bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all-primary.bigChain
+
+% tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
+% bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.all-primary.bigLink
+% ln -f t2tChm13_20200727.hg38.all-primary.big* ../../../hub/t2tChm13_20200727/grch38/
+
 * cenRegions
 Karen Miga
 team-satellite/t2t-chm13.20200727.cenRegions.bed

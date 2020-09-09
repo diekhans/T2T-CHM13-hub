@@ -275,38 +275,62 @@ priority 7
 ##
 # comparative genomics
 ##
-track grch38AllChains
-shortLabel GRCh38 All Chains
-longLabel  GRCh38 LASTZ All Alignment Chains
-type bigChain hg38
-color 20,0,220
+track grch38Lastz
+compositeTrack off
+shortLabel GRCh38 LASTZ Alignment
+longLabel GRCh38 LASTZ Alignments
 visibility hide
-bigDataUrl grch38/t2tChm13_20200727.hg38.all.bigChain
-linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
-priority 30.1
+priority 30
+type bigChain hg38
 group compGeno
 
-track grch38AllPrimaryChains
-shortLabel GRCh38 All Primary Chains
-longLabel  GRCh38 LASTZ All Alignment Chains from GRCh38 primary assembly
-type bigChain hg38
-color 20,220,0
-visibility hide
-bigDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigChain
-linkDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigLink
-priority 30.2
-group compGeno
+    track grch38AllChains
+    parent grch38Lastz
+    shortLabel GRCh38 All Chains
+    longLabel  GRCh38 LASTZ All Alignment Chains
+    type bigChain hg38
+    color 20,0,120
+    visibility hide
+    bigDataUrl grch38/t2tChm13_20200727.hg38.all.bigChain
+    linkDataUrl grch38/t2tChm13_20200727.hg38.all.bigLink
+    priority 1
+    group compGeno
 
-track grch38OverChains
-shortLabel GRCh38 Liftover Chains
-longLabel  GRCh38 LASTZ Liftover Alignment Chains
-type bigChain hg38
-color 20,0,220
-visibility hide
-bigDataUrl grch38/t2tChm13_20200727.hg38.over.bigChain
-linkDataUrl grch38/t2tChm13_20200727.hg38.over.bigLink
-priority 31.1
-group compGeno
+    track grch38AllPrimaryChains
+    parent grch38Lastz
+    shortLabel GRCh38 All Primary Chains
+    longLabel  GRCh38 LASTZ All Alignment Chains from GRCh38 primary assembly
+    type bigChain hg38
+    color 20,120,0
+    visibility hide
+    bigDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigChain
+    linkDataUrl grch38/t2tChm13_20200727.hg38.all-primary.bigLink
+    priority 2
+    group compGeno
+
+    track grch38OverChains
+    parent grch38Lastz
+    shortLabel GRCh38 Liftover Chains
+    longLabel  GRCh38 LASTZ Liftover Alignment Chains
+    type bigChain hg38
+    color 120,20,0
+    visibility hide
+    bigDataUrl grch38/t2tChm13_20200727.hg38.over.bigChain
+    linkDataUrl grch38/t2tChm13_20200727.hg38.over.bigLink
+    priority 3
+    group compGeno
+
+    track grch38OverPrimaryChains
+    parent grch38Lastz
+    shortLabel GRCh38 Liftover Primary Chains
+    longLabel  GRCh38 LASTZ Liftover Primary Alignment Chains
+    type bigChain hg38
+    color 120,0,120
+    visibility hide
+    bigDataUrl grch38/t2tChm13_20200727.hg38.over-primary.bigChain
+    linkDataUrl grch38/t2tChm13_20200727.hg38.over-primary.bigLink
+    priority 4
+    group compGeno
 
 track grch38Synteny25kb
 shortLabel GRCh38 Synteny 25KB
@@ -328,14 +352,36 @@ priority 41.1
 bigDataUrl synteny/synteny.1mb.bigPsl
 group compGeno
 
-track lastzUnalignedOver
-shortLabel LASTZ Liftover Unaligned
-longLabel GRCh38 LASTZ Liftover Alignment Chains Unaligned Regions
-group compGeno
+track uniqueRegions
+compositeTrack off
 visibility hide
+shortLabel Unique Regions
+longLabel  Unique Regions Relative to GRCh38
 type bigBed 4
-bigDataUrl uniqRegions/lastzUnalignedOver.bigBed
+group compGeno
 priority 50
+
+    track lastzUnalignedOver
+    parent uniqueRegions
+    shortLabel LASTZ Liftover Unaligned
+    longLabel GRCh38 LASTZ Liftover Alignment Chains Unaligned Regions
+    color 10,128,189
+    group compGeno
+    visibility dense
+    type bigBed 4
+    bigDataUrl uniqRegions/lastzUnalignedOver.bigBed
+    priority 1
+
+    track lastzUnalignedPrimaryOver
+    parent uniqueRegions
+    shortLabel LASTZ Primary Liftover Unaligned
+    longLabel GRCh38 LASTZ Primary Liftover Alignment Chains Unaligned Regions
+    color 10,128,189
+    group compGeno
+    visibility hide
+    type bigBed 4
+    bigDataUrl uniqRegions/lastzUnalignedOverPrimary.bigBed
+    priority 2
 
 
 

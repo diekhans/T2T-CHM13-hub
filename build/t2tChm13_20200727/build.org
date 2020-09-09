@@ -175,6 +175,8 @@ ln -f t2t-chm13.20200727.kstar.bw kmer_metric.bigWig
 ln -f kmer_metric.bigWig ../../../hub/t2tChm13_20200727/
 
 * hg38Lastz
+
+** lastz run
 # WARNING have query and target reverse, so had to build swap
 # ALSO seems to run at priority 15
 cd hg38Lastz
@@ -213,8 +215,6 @@ bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink
 cd ..
 ln -f t2tChm13_20200727.hg38.over.big* ../../../hub/t2tChm13_20200727/grch38/
 
-
-
 ** lastz all primary:
 - drop non-primary and chrY from all lastz
   hg38-primary.tab
@@ -233,6 +233,18 @@ ln -f t2tChm13_20200727.hg38.over.big* ../../../hub/t2tChm13_20200727/grch38/
 and if I click on the second lastz entry I get the error
 chr10:48,612,920-48,788,122
 twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
+
+** lastz liftover primary:
+% chainFilter -q=$(cat hg38-primary.tab | tr '\n' ',') t2tChm13_20200727.hg38.over.chain.gz | bgzip --threads=64 -c >t2tChm13_20200727.hg38.over-primary.chain.gz
+% cd tmp3
+% hgLoadChain -noBin -test no bigChain ../t2tChm13_20200727.hg38.over-primary.chain.gz
+% sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+% bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.over-primary.bigChain
+
+% tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
+% bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2tChm13_20200727.sizes ../t2tChm13_20200727.hg38.over-primary.bigLink
+% ln -f t2tChm13_20200727.hg38.over-primary.big* ../../../hub/t2tChm13_20200727/grch38/
+
 
 * cenRegions
 Karen Miga
@@ -436,21 +448,21 @@ tabix -p bed rebase.bed.gz
 
 * uniqRegions
 attempts to find regions not in GRCh38
-** with lastz all chains
-# requires 3-column sizes
-tawk '{print $1,$2,"x"}' ../genome/t2tChm13_20200727.sizes >lastz/t2tChm13_20200727.sizes3
-
-(time featureBits -not -bed=lastz/lastzUnalignedAll.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz )>&log&
-buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedAll.bigBed lastz/lastzUnalignedAll.bed.gz 
-ln lastz/lastzUnalignedAll.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 ** with lastz over chains
 # requires 3-column sizes
 tawk '{print $1,$2,"x"}' ../genome/t2tChm13_20200727.sizes >lastz/t2tChm13_20200727.sizes3
 
-(time featureBits -not -bed=lastz/lastzUnalignedOver.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.all.chain.gz )>&log&
+featureBits -not -bed=lastz/lastzUnalignedOver.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.over.chain.gz
 gzip lastz/lastzUnalignedOver.bed 
 buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOver.bigBed lastz/lastzUnalignedOver.bed.gz 
-ln lastz/lastzUnalignedOver.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
+ln -f lastz/lastzUnalignedOver.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
+
+** with primary assembly lastz over chains
+# requires 3-column sizes
+featureBits -not -bed=lastz/lastzUnalignedOverPrimary.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.over-primary.chain.gz
+gzip lastz/lastzUnalignedOverPrimary.bed 
+buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOverPrimary.bigBed lastz/lastzUnalignedOverPrimary.bed.gz 
+ln lastz/lastzUnalignedOverPrimary.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 
 
 * proseq

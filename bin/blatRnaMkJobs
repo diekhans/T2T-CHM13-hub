@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+
+import os.path as osp
+import argparse
+import subprocess
+import glob
+from pycbio.sys import fileOps
+from t2tlib import loadChromNames, bindir
+
+def parseArgs():
+    usage = """generate parasol jobs to align BLAT RNAs by chromosome"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('genomeTwoBit')
+    parser.add_argument('rnaFasta')
+    parser.add_argument('runDir')
+    opts = parser.parse_args()
+    opts.basesPerJob = 20000
+    return opts
+
+def splitFasta(rnaFasta, basesPerJob, runDir):
+    faDir = osp.join(runDir, "fas")
+    fileOps.rmTree(faDir)
+    fileOps.ensureDir(faDir)
+    faPre = osp.join(faDir, "rna")
+    subprocess.check_call(["faSplit", "about", rnaFasta, str(basesPerJob), faPre]),
+    return glob.glob(faPre + "*")
+
+def writeJob(genomeTwoBit, chrom, rnaSplit, pslDir, jobFh, pslListFh):
+    outPsl = osp.join(pslDir, f"{chrom}_{osp.basename(rnaSplit)}.psl")
+    print(f"{bindir}/blatRnaJob {genomeTwoBit} {chrom} {rnaSplit} {{check out exists {outPsl}}}", file=jobFh)
+    print(outPsl, file=pslListFh)
+
+def makeJobs(genomeTwoBit, rnaSplits, pslDir, jobFh, pslListFh):
+    for chrom in loadChromNames(genomeTwoBit):
+        for rnaSplit in rnaSplits:
+            writeJob(genomeTwoBit, chrom, rnaSplit, pslDir, jobFh, pslListFh)
+
+def blatRnaMkJobs(genomeTwoBit, rnaFasta, basesPerJob, runDir):
+    pslDir = osp.join(runDir, "psls")
+    fileOps.ensureDir(pslDir)
+    rnaSplits = splitFasta(rnaFasta, basesPerJob, runDir)
+    with open(osp.join(runDir, "para.jobs"), 'w') as jobFh:
+        with open(osp.join(runDir, "psls.lst"), 'w') as pslListFh:
+            makeJobs(genomeTwoBit, rnaSplits, pslDir, jobFh, pslListFh)
+
+def main(args):
+    blatRnaMkJobs(args.genomeTwoBit, args.rnaFasta, args.basesPerJob, args.runDir)
+
+main(parseArgs())

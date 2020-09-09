@@ -55,14 +55,15 @@ have made the SEDEF segdup tracks  for the new asm if you want to add them to th
    team-segdups/Masker/t2t-chm13.20200727_sedef_out/SDs.lowid.browser.bed
 
 
-bgzip --threads=64 *.bed 
+gzip *.bed
 makeMd5s *.bed.gz
-buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDups.bigBed SDs.browser.bed.gz
-buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDupsLow.bigBed SDs.lowid.browser.bed.gz
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDups.bigBed t2t-chm13.20200727.SDs.bed.gz
+buildBigBed bed9 --as=../../../T2T-CHM13-hub/etc/sedefSegDups.as t2tChm13_20200727 sedefSegDupsLow.bigBed t2t-chm13.20200727.SDs.lowid.bed.gz
 ln -f *.bigBed   ../../../hub/t2tChm13_20200727/sedefSegDups/
 
 2020-07-31 rebuilt due to column name problems
-
+2020-09-08 updated due to being rerun by UQ
+ needed to add:    int sat_bases; "sat_bases" to schema
 
 * as_annotation (as_hor_annotation, as_sf_annotation)
 2020-07-31 from Lev Uralsky
@@ -488,9 +489,11 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7073954/
 **  RNA-seq PE ILMN mydennis
 ** all isoset 
 ** check default assembly in CHM13
-*** report hide bug
+** report hide bug
 
-*** lastzall all-primary bug
+** lastzall all-primary bug
 chr10:48,612,920-48,788,122
 and if I click on the second lastz entry I get the error
 twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
+
+converting to psl and doing a pslCheck shows alignment is fine.

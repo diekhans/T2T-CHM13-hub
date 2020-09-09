@@ -507,7 +507,7 @@ compositeTrack off
 visibility hide
 shortLabel PRO-seq
 longLabel PRO-Seq
-type bigWig
+type bigWig 0:800000
 group rna
 priority 4
 
@@ -516,14 +516,14 @@ priority 4
     shortLabel PRO-seq positive
     longLabel PRO-Seq positive strand
     group rna
-    autoScale Off
+    autoScale on
+    negateValues off
     maxHeightPixels 128:36:16
     graphTypeDefault Bar
     gridDefault OFF
     windowingFunction Mean
     color 0,0,0
     altColor 128,128,128
-    #viewLimits 30:70
     type bigWig 0 100
     bigDataUrl proSeq/proSeq-pos.bigWig
     priority 1
@@ -533,14 +533,14 @@ priority 4
     shortLabel PRO-seq negative
     longLabel PRO-Seq negative strand
     group rna
-    autoScale Off
+    autoScale on
+    negateValues on
     maxHeightPixels 128:36:16
     graphTypeDefault Bar
     gridDefault OFF
     windowingFunction Mean
     color 0,0,0
     altColor 128,128,128
-    #viewLimits 30:70
     type bigWig 0 100
     bigDataUrl proSeq/proSeq-pos.bigWig
     priority 2

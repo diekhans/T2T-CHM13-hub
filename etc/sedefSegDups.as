@@ -36,5 +36,6 @@ table segDups
     uint aln_mismatches;	"aln_mismatches"
     uint aln_gap_bases;	"aln_gap_bases"
     float filter_score;	"filter_score"
+    int sat_bases; "sat_bases"
     )
 

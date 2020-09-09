@@ -455,6 +455,39 @@ labelSeparator " "
 bigDataUrl gencode.bigBlatPsl
 searchIndex name,geneSym,geneId,geneType
 
+track liftOffGenes
+compositeTrack off
+visibility hide
+shortLabel LiftOff Genes
+longLabel  LiftOff Genes Annotations based on GENCODE
+type bigGenePred
+group genes
+priority 12
+
+
+    track liftOffGenesAll
+    parent liftOffGenes on
+    bigDataUrl liftOffGenes/liftOffGenes.all.bigGenePred
+    shortLabel LiftOff Genes (All)
+    longLabel LiftOff Genes - all annotations
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+
+    track liftOffGenesOrf
+    parent liftOffGenes on
+    bigDataUrl liftOffGenes/liftOffGenes.orf_only.bigGenePred
+    shortLabel LiftOff Genes (ORFs)
+    longLabel LiftOff Genes - annotations with ORFs
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+
+
 ##
 # Expression
 ##
@@ -483,7 +516,6 @@ priority 4
     shortLabel PRO-seq positive
     longLabel PRO-Seq positive strand
     group rna
-    visibility hide
     autoScale Off
     maxHeightPixels 128:36:16
     graphTypeDefault Bar
@@ -501,7 +533,6 @@ priority 4
     shortLabel PRO-seq negative
     longLabel PRO-Seq negative strand
     group rna
-    visibility hide
     autoScale Off
     maxHeightPixels 128:36:16
     graphTypeDefault Bar

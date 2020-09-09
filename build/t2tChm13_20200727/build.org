@@ -455,17 +455,21 @@ ln lastz/lastzUnalignedOver.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 * proseq
 2020-09-08 Savannah Klein
 /team-epigenetics/20200727_PROseq_CHM13
-wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_NEG.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-neg.bigWig &
-wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_POS.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-pos.bigWig &
-ln  proSeq-* ../../../hub/t2tChm13_20200727/proSeq
+% wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_NEG.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-neg.bigWig &
+% wigToBigWig CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-100mm-0m-chm13-v1.0_Aligned.sortedByCoord_POS.bedgraph.gz ../genome/t2tChm13_20200727.sizes proSeq-pos.bigWig &
+% ln  proSeq-* ../../../hub/t2tChm13_20200727/proSeq
 
-* liftOff
+* liftOffGenes
 Mitchell Robert Vollger  
 t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/bigGenePred.as
 t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/liftoff.html
 t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/t2t-chm13.20200727.all.bed
 t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/t2t-chm13.20200727.orf_only.bed
-I threw my gene annotations in here. There are two bed files, one for genes with ORF and one with all alignments regardless of ORF.
+
+% bedToBigBed -type=bed12+8 -tab -as=/cluster/home/markd/kent/src/hg/lib/bigGenePred.as t2t-chm13.20200727.all.bed ../genome/t2tChm13_20200727.sizes liftOffGenes.all.bigGenePred
+% bedToBigBed -type=bed12+8 -tab -as=/cluster/home/markd/kent/src/hg/lib/bigGenePred.as t2t-chm13.20200727.orf_only.bed ../genome/t2tChm13_20200727.sizes liftOffGenes.orf_only.bigGenePred
+
+% ln *.bigGenePred  ../../../hub/t2tChm13_20200727/liftOffGenes/
 
 
 * todo

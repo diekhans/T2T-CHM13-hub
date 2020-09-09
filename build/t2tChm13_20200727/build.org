@@ -485,6 +485,11 @@ t2t_globus_share/team-segdups/Assembly_analysis/Liftoff/t2t-chm13.20200727.orf_o
 % ln *.bigGenePred  ../../../hub/t2tChm13_20200727/liftOffGenes/
 
 
+* fosmidABC10
+Mitchell Robert Vollger
+team-segdups/FES_alignments/*
+ln -f *.bb   ../../../hub/t2tChm13_20200727/fosmidABC10/
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc

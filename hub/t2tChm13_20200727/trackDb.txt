@@ -146,6 +146,8 @@ bigDataUrl kmer_metric.bigWig
 group map
 priority 104
 
+include fosmidABC10.txt
+
 ##
 # cenTelo
 ##

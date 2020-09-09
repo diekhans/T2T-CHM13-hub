@@ -1,0 +1,78 @@
+track fosmidABC10
+compositeTrack on
+visibility hide
+shortLabel ABC10 alignment
+longLabel ABC10 fosmid alignment
+type bigBed 12
+group map
+itemRgb on
+searchIndex name
+priority 99
+
+    track ABC10.concordant.best
+    bigDataUrl fosmidABC10/ABC10.concordant.best.bb
+    shortLabel ABC10 concordant best
+    longLabel ABC10 concordant best
+    type bigBed 12
+    parent fosmidABC10
+    group map
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+
+    track ABC10.concordant.tied
+    bigDataUrl fosmidABC10/ABC10.concordant.tied.bb
+    shortLabel ABC10 concordant tied
+    longLabel ABC10 concordant tied
+    type bigBed 12
+    parent fosmidABC10
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+
+    track ABC10.discordant.best
+    bigDataUrl fosmidABC10/ABC10.discordant.best.bb
+    shortLabel ABC10 discordant best
+    longLabel ABC10 discordant best
+    type bigBed 12
+    parent fosmidABC10
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+
+    track ABC10.discordant.tied
+    bigDataUrl fosmidABC10/ABC10.discordant.tied.bb
+    shortLabel ABC10 discordant tied
+    longLabel ABC10 discordant tied
+    type bigBed 12
+    parent fosmidABC10
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+
+    track ABC10.discordanttrans.best.sort
+    bigDataUrl fosmidABC10/ABC10.discordanttrans.best.sort.bb
+    shortLabel ABC10 discordanttrans best sort
+    longLabel ABC10 discordanttrans best sort
+    type bigBed 12
+    parent fosmidABC10
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+
+    track ABC10.discordanttrans.tied.sort
+    bigDataUrl fosmidABC10/ABC10.discordanttrans.tied.sort.bb
+    shortLabel ABC10 discordanttrans tied sort
+    longLabel ABC10 discordanttrans tied sort
+    type bigBed 12
+    parent fosmidABC10
+    visibility squish
+    itemRgb on
+    searchIndex name
+    html fosmidABC10.html
+

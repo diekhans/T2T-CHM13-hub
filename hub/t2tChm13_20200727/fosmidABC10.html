@@ -1,0 +1,41 @@
+<html>
+<h3>Description</h3>
+This track represents the alignments of the fosmid library ABC10 (NA19240).
+<h3>Display convention</h3>
+A clone pair alignment is represented as two thick blocks (end sequence alignment) connected by a line (insert) with arrows indicating the direction of alignment. Alignments are categorized into the following sub-tracks:
+<ul>
+<li>concordant best: Unique concordant alignment (see methods)</li>
+<li>concordant tied: Non-unique concordant (equally likely) alignment</li>
+<li>discordant best: Unique discordant alignment </li>
+<li>discordant tied: Non-unique discordant alignment </li>
+<li>discordant trans: Discordant because emds map to different contigs</li>
+<li>
+</ul>
+<br>The following color key is used: <br>
+<ul>
+<li>Black: concordant </li>
+<li>Blue: discordant; inversion </li>
+<li>Green: discordant; singletons</li>
+<li>Yellow: discordant; inversion</li>
+<li>Red: discordant</li>
+</ul>
+
+<h3>Methods<h3>
+ABC10 end sequences were mapped using MEGABLAST (similarity=0.99, parameters: -D 2 -v 7 -b 7 -e 1e-40 -p 80 -s 90 -W 12 -t 21 -F F) to a repeat-masked genome assembly (parameters:  -e wublast -xsmall -no_is -s -species Homo sapiens). Expected insert size for fosmids was set to (min) 32 Kbp and (max) 48 Kbp. Resulting clone alignments were grouped into the following categories based on uniqueness of the alignment for a given pair of clones, alignment orientation and the inferred insert size from the assembly. 
+<ul>
+<li>Concordant best: unique alignment for clone pair, insert size within expected fosmid range, expected orientation</li>
+<li>Concordant tied: non-unique alignment for clone pair, insert size within expected fosmid range, expected orientation</li>
+<li>Discordant best: unique alignment of clone pair, insert size too small, too large or in opposite expected orientation of expected fosmid clone</li> 
+<li>Discordant tied: non unique alignment for clone pair, insert size too small, too large or in opposite expected orientation of expected fosmid clone</li>
+<li>Discordant trans: clone pair has ends mapping to different contigs</li>
+</ul>
+<HR>
+<h3>Credits</h3>
+Please feel free to contact <a href=mailto:mvollger@uw.edu >Mitchell Vollger</a> or <a href=mailto:eee@uw.edu>Evan Eichler</a> with any questions and/or concerns regarding this or other tracks.
+Thanks to Shwetha Canchi Murali from UW for generating the alignments. 
+<h3>References</h3>
+Zhang Z, Schwartz S, Wagner L, Miller W. A greedy algorithm for aligning DNA sequences. J Comput Biol. 2000;7(1-2):203-214. PMID: 10890397.
+<br><br>
+A Smith, R Hubley, P Green - RepeatMasker Open-4.0, 2013
+<br><br>
+</html>

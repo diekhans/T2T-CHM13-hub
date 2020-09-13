@@ -13,8 +13,9 @@ def parseArgs():
     return parser.parse_args()
 
 def processRec(metaData, rec, outFh):
-    md = metaData.idx.id[rec[3]]
-    print(*rec, md.geneSym, md.geneId, md.hgncId, md.geneType, sep='\t', file=outFh)
+    md = metaData.idx.id.get(rec[3])
+    if md is not None:
+        print(*rec, md.geneSym, md.geneId, md.hgncId, md.geneType, sep='\t', file=outFh)
 
 def main(args):
     metaData = TsvTable(args.metaTsv, uniqKeyCols=('id',))

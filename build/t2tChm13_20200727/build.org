@@ -349,7 +349,7 @@ ln refSeq-curated.bigBlatPsl  ../../../hub/t2tChm13_20200727/
 * gencodeBlat
 - use gencode V33 to match CAT, only do protein code and lncRNAs
 
-cat /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.lncRNA_transcripts.fa.gz /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.pc_transcripts.fa.gz  >tmp/rna.fa.gz
+ /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.lncRNA_transcripts.fa.gz /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.pc_transcripts.fa.gz  >tmp/rna.fa.gz
 blatRnaMkJobs ../genome/t2tChm13_20200727.2bit tmp/rna.fa.gz tmp
 
 # run in parasol
@@ -490,6 +490,17 @@ Mitchell Robert Vollger
 team-segdups/FES_alignments/*
 ln -f *.bb   ../../../hub/t2tChm13_20200727/fosmidABC10/
 
+
+* hg002Aligns 
+/team-variants/assembly_aligns/for_browser_hub/t2tChm13_20200727/HG002_hifiasm_assemblies
+Nancy Hansen
+makeMd5s *.bam *.bam.bai&
+ln -f *.bam *.bai ../../../hub/t2tChm13_20200727/hg002Aligns/
+
+o  11:55 AM
+Hi again, Mark! I've checked over how the nucmer bam files look in the browser (and in fact, found a minor bug in how my delta->sam parser constructs cigar strings, so thanks!) and I've now put minimap2 bams for the HG002 assemblies in the Globus directory as well. Can you load the contents of team-variants/assembly_aligns/for_browser_hub/t2tChm13_20200727/HG002_hifiasm_assemblies into the t2tChm13_20200727 part of the hub? I created a file trackDb.hg002_assemblies.txt with what I think would be the entries in your trackDb.txt, but of course I may have gotten it wrong, so it's probably worth a quick check.
+
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
@@ -514,3 +525,6 @@ and if I click on the second lastz entry I get the error
 twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
 
 converting to psl and doing a pslCheck shows alignment is fine.
+
+
+* Centromere Regions track desc broken

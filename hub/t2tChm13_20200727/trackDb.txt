@@ -273,6 +273,53 @@ bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
 priority 7
 
+track hg002_hifiasm
+shortLabel HG002 hifiasm alignments
+longLabel HG002 hifiasm assembly alignments
+superTrack on hide
+visibility hide
+group varRep
+priority 100
+
+    track hg002_hifiasm_mat_nucmer
+    parent hg002_hifiasm
+    shortLabel HG002 maternal nucmer
+    longLabel HG002 maternal haplotype nucmer alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg002Aligns/HG002-v0.11.mat.nucmer.t2tChm13_20200727.bam
+    group varRep
+
+    track hg002_hifiasm_pat_nucmer
+    parent hg002_hifiasm
+    shortLabel HG002 paternal nucmer
+    longLabel HG002 paternal haplotype nucmer alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg002Aligns/HG002-v0.11.pat.nucmer.t2tChm13_20200727.bam
+    group varRep
+
+    track hg002_hifiasm_mat_minimap2
+    parent hg002_hifiasm
+    shortLabel HG002 maternal minimap2
+    longLabel HG002 maternal haplotype minimap2 alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg002Aligns/HG002-v0.11.mat.minimap2.t2tChm13_20200727.bam
+    group varRep
+
+    track hg002_hifiasm_pat_minimap2
+    parent hg002_hifiasm
+    shortLabel HG002 paternal minimap2
+    longLabel HG002 paternal haplotype minimap2 alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg002Aligns/HG002-v0.11.pat.minimap2.t2tChm13_20200727.bam
+    group varRep
 
 ##
 # comparative genomics
@@ -401,7 +448,7 @@ group genes
     track transMapEnsemblAll
     superTrack transMap pack
     shortLabel TransMap GENCODE (all chains)
-    longLabel TransMap GENCODE Mappings using all LASTZ chains (LOTS OF PARALOGS)
+    longLabel TransMap GENCODE Mappings using all LASTZ chains (sensitive, but not specifiec)
     html transMapEnsemblAll.html
     transMapSrcSet ensembl
     group genes
@@ -429,7 +476,7 @@ group genes
     track transMapRefSeqAll
     superTrack transMap pack
     shortLabel TransMap RefGene (all chains)
-    longLabel TransMap RefSeq Gene Mappings using all LASTZ chains (LOTS OF PARALOGS)
+    longLabel TransMap RefSeq Gene Mappings using all LASTZ chains (sensitive, but not specifiec)
     html transMapRefSeqAll.html
     transMapSrcSet refseq
     group genes
@@ -590,7 +637,7 @@ priority 4
     color 0,0,0
     altColor 128,128,128
     type bigWig 0 100
-    bigDataUrl proSeq/proSeq-pos.bigWig
+    bigDataUrl proSeq/proSeq-neg.bigWig
     priority 2
 
 ##

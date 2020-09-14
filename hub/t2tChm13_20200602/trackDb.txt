@@ -63,8 +63,8 @@ visibility hide
 itemRgb on
 type bigBed 9
 bigDataUrl segdups/segdupslow.bigBed
-html segdup.html
 priority 7
+html segdups.html
 
 track dupmasker
 shortLabel Ancestral Seg Dups

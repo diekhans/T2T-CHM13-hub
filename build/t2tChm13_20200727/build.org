@@ -430,11 +430,13 @@ cnvBedToBam:
   #!/bin/bash -e
   bamToBed -bed12 -i $1 | tawk '{$4="";print}' > $2
 
-find assemblyHub/CHM13 -name '*.bam' | parallel -j 8 ./cnvBedToBam {} tmp/beds/{/}.bed&
+find assemblyHub/CHM13 -name '*.bam' | parallel -j 8 ./cnvBamToBed {} tmp/beds/{/}.bed&
 sort -k1,1 -k2,2n -m --parallel=64 tmp/beds/*.bed >tmp/all_isoseq.bed
 buildBigBed bed12 t2tChm13_20200727 all_isoseq.bigBed tmp/all_isoseq.bed
 ln all_isoseq.bigBed  ../../../hub/t2tChm13_20200727/CAT/
 
+# 2020-09-14 update in bb and databases from
+http://courtyard.gi.ucsc.edu/~mhauknes/t2t/out-chm13-t2t-v5/assemblyHub/hub.txt
 
 * restriction enzyme file:
 - don't build as a track, as this is done on the fly in the browser, but build for Karen for analysis

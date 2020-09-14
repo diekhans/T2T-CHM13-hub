@@ -3,7 +3,7 @@ hubDir = ../../hub
 
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 courtyardUrl = https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-t2tUrl = http://t2t.gi.ucsc.edu/chm13/hub/hub.txt
+t2tUrl = https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
 ifeq ($(shell hostname),hgwdev)
 localUrl = ${hgwdevUrl}
@@ -15,10 +15,14 @@ assemblies = t2tChm13_20200602 t2tChm13_20200611 t2tChm13_20200727 GRCh38
 
 srcs = $(wildcard *.html *.txt) $(foreach a,${assemblies},$(wildcard $a/*.txt $a/*.html $a/*/*.txt $a/*/*.html))
 
+hgdev_udc_dir = ${TMPDIR}/${USER}_t2t_hgwdev_udc
+t2t_udc_dir = ${TMPDIR}/${USER}_t2t_t2t_udc
+
 all: hub
 
 hub: ${srcs:%=${hubDir}/%}
-	hubCheck ${localUrl}
+	@rm -rf ${hgdev_udc_dir}
+	hubCheck -udcDir=${hgdev_udc_dir} ${localUrl}
 
 ${hubDir}/%: %
 	@mkdir -p $(dir $@)
@@ -31,12 +35,8 @@ endef
 sync: sync-t2t
 
 # progress = --progress
-sync-courtyard:
-	${hgwdev_check}
-	cd ../.. && rsync -aH --partial ${progress} hub courtyard.gi.ucsc.edu:/nanopore/markd/t2t-chm13/
-	hubCheck ${courtyardUrl}
-
 sync-t2t:
 	${hgwdev_check}
 	cd ../.. && rsync -aH --partial ${progress} --no-owner --no-group hub t2t.gi.ucsc.edu:/data/chm13
-	hubCheck ${t2tUrl}
+	@rm -rf ${t2t_udc_dir}
+	hubCheck -udcDir=${t2t_udc_dir} ${t2tUrl}

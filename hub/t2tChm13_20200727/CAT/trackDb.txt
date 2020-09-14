@@ -29,6 +29,7 @@ centerLabelsDense on
 visibility hide
 type bigBed 3
 priority 1
+html needTrackDescription.html
 
     track cactus20200727Alignments
     shortLabel Alignments
@@ -47,6 +48,7 @@ priority 1
         type halSnake
         group compGeno
         subGroups view=Snake orgs=CHM13
+        html needTrackDescription.html
 
         track snakeGRCh38
         longLabel GRCh38
@@ -59,4 +61,5 @@ priority 1
         type halSnake
         group compGeno
         subGroups view=Snake orgs=GRCh38
+        html needTrackDescription.html
 

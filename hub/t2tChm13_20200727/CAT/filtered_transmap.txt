@@ -13,4 +13,6 @@ bigDataUrl CAT/filtered_transmap.bb
 labelFields name,name2,geneId,transcriptId
 defaultLabelFields name
 labelSeperator " "
+html needTrackDescription.html
+
 

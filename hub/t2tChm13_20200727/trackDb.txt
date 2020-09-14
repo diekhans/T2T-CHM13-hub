@@ -44,6 +44,7 @@ priority 100
     visibility hide
     bigDataUrl winnowmap_ont/winnowmap_ont_all.bam
     group map
+    html winnowmap_ont_all
 
     track winnowmap_ont_ul
     parent winnowmap_ont
@@ -54,6 +55,7 @@ priority 100
     visibility hide
     bigDataUrl winnowmap_ont/winnowmap_ont_ul.bam
     group map
+    html winnowmap_ont_ul
 
     track winnowmap_ont_all_variants
     parent winnowmap_ont
@@ -65,6 +67,7 @@ priority 100
     priority 3
     visibility hide
     group map
+    html winnowmap_ont_all_variants
 
 track winnowmap_pb
 shortLabel Winnowmap PacBio SVs
@@ -83,16 +86,18 @@ priority 101
     visibility hide
     bigDataUrl winnowmap_pb/winnowmap_pb_clr.bam
     group map
+    html winnowmap_pb_clr.html
 
     track winnowmap_pb_hifi
     parent winnowmap_pb
     shortLabel Winnowmap PacBio HiFi Alignments
     longLabel Winnowmap PacBio HiFi Alignments
-    priority 2x
+    priority 2
     type bam
     visibility hide
     bigDataUrl winnowmap_pb/winnowmap_pb_hifi.bam
     group map
+    html winnowmap_pb_hifi.html
 
 
 track illumina_pcrfree
@@ -102,6 +107,7 @@ superTrack on hide
 visibility hide
 group map
 priority 102
+html illumina_pcrfree.html
 
     track illumina_pcrfree_aligns
     parent illumina_pcrfree
@@ -112,6 +118,7 @@ priority 102
     visibility hide
     bigDataUrl illumina_pcrfree/illumina_pcrfree.bam
     group map
+    html illumina_pcrfree.html
 
     track illumina_pcrfree_variants
     parent illumina_pcrfree
@@ -123,6 +130,7 @@ priority 102
     priority 3
     visibility hide
     group map
+    html illumina_pcrfree_variants.html
 
 track bionano_cover
 shortLabel Bionano Coverage
@@ -260,6 +268,7 @@ maxItems 100000
 type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDups.bigBed
 priority 5
+html sedefSegDups.html
 
 track sedefSegDupsLow
 shortLabel SEDEF Segmental Dups Low Id
@@ -272,6 +281,7 @@ type bigBed 9
 bigDataUrl sedefSegDups/sedefSegDupsLow.bigBed
 html sedefSegDups.html
 priority 7
+html sedefSegDups.html
 
 track hg002_hifiasm
 shortLabel HG002 hifiasm alignments
@@ -280,6 +290,7 @@ superTrack on hide
 visibility hide
 group varRep
 priority 100
+html hg002Aligns.html
 
     track hg002_hifiasm_mat_nucmer
     parent hg002_hifiasm
@@ -290,6 +301,7 @@ priority 100
     visibility hide
     bigDataUrl hg002Aligns/HG002-v0.11.mat.nucmer.t2tChm13_20200727.bam
     group varRep
+    html hg002Aligns.html
 
     track hg002_hifiasm_pat_nucmer
     parent hg002_hifiasm
@@ -300,6 +312,7 @@ priority 100
     visibility hide
     bigDataUrl hg002Aligns/HG002-v0.11.pat.nucmer.t2tChm13_20200727.bam
     group varRep
+    html hg002Aligns.html
 
     track hg002_hifiasm_mat_minimap2
     parent hg002_hifiasm
@@ -310,6 +323,7 @@ priority 100
     visibility hide
     bigDataUrl hg002Aligns/HG002-v0.11.mat.minimap2.t2tChm13_20200727.bam
     group varRep
+    html hg002Aligns.html
 
     track hg002_hifiasm_pat_minimap2
     parent hg002_hifiasm
@@ -320,6 +334,7 @@ priority 100
     visibility hide
     bigDataUrl hg002Aligns/HG002-v0.11.pat.minimap2.t2tChm13_20200727.bam
     group varRep
+    html hg002Aligns.html
 
 ##
 # comparative genomics
@@ -390,6 +405,7 @@ visibility hide
 priority 40.1
 bigDataUrl synteny/synteny.25kb.bigPsl
 group compGeno
+html synteny.html
 
 track grch38Synteny1mb
 shortLabel GRCh38 Synteny 1MB
@@ -400,6 +416,7 @@ visibility hide
 priority 41.1
 bigDataUrl synteny/synteny.1mb.bigPsl
 group compGeno
+html synteny.html
 
 track uniqueRegions
 compositeTrack off

@@ -18,4 +18,5 @@ showDiffBasesMaxZoom 10000.0
 #showCdsAllScales .
 #showCdsMaxZoom 10000.0
 searchIndex name
+html needTrackDescription.html
 

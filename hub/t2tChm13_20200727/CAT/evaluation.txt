@@ -7,4 +7,5 @@ longLabel Consensus indels
 bigDataUrl CAT/evaluation.bb
 visibility hide
 priority 5
+html needTrackDescription.html
 

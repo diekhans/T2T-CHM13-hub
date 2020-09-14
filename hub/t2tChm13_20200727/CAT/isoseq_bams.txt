@@ -13,6 +13,7 @@ showNames off
 bamColorMode gray
 bamGrayMode aliQual
 pairEndsByName on
+html needTrackDescription.html
 
     track 0_ENCFF026VEI.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -21,6 +22,7 @@ pairEndsByName on
     longLabel ENCFF026VEI.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 1_ENCFF185VYD.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -29,6 +31,7 @@ pairEndsByName on
     longLabel ENCFF185VYD.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 2_ENCFF249GFH.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -37,6 +40,7 @@ pairEndsByName on
     longLabel ENCFF249GFH.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 3_ENCFF251CBB.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -45,6 +49,7 @@ pairEndsByName on
     longLabel ENCFF251CBB.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 4_ENCFF318SKH.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -53,6 +58,7 @@ pairEndsByName on
     longLabel ENCFF318SKH.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 5_ENCFF427JDY.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -61,6 +67,7 @@ pairEndsByName on
     longLabel ENCFF427JDY.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 6_ENCFF450VAU.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -69,6 +76,7 @@ pairEndsByName on
     longLabel ENCFF450VAU.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 7_ENCFF471YEK.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -77,6 +85,7 @@ pairEndsByName on
     longLabel ENCFF471YEK.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 8_ENCFF489XQJ.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -85,6 +94,7 @@ pairEndsByName on
     longLabel ENCFF489XQJ.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 9_ENCFF580BQX.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -93,6 +103,7 @@ pairEndsByName on
     longLabel ENCFF580BQX.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 10_ENCFF589SMB.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -101,6 +112,7 @@ pairEndsByName on
     longLabel ENCFF589SMB.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 11_ENCFF595PPR.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -109,6 +121,7 @@ pairEndsByName on
     longLabel ENCFF595PPR.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 12_ENCFF694DIE.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -117,6 +130,7 @@ pairEndsByName on
     longLabel ENCFF694DIE.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 13_ENCFF694INI.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -125,6 +139,7 @@ pairEndsByName on
     longLabel ENCFF694INI.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 14_ENCFF733RRO.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -133,6 +148,7 @@ pairEndsByName on
     longLabel ENCFF733RRO.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 15_ENCFF763VZC.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -141,6 +157,7 @@ pairEndsByName on
     longLabel ENCFF763VZC.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 16_ENCFF770DXN.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -149,6 +166,7 @@ pairEndsByName on
     longLabel ENCFF770DXN.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 17_ENCFF919JFJ.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -157,6 +175,7 @@ pairEndsByName on
     longLabel ENCFF919JFJ.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 18_ENCFF954UFG.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -165,6 +184,7 @@ pairEndsByName on
     longLabel ENCFF954UFG.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 19_ENCFF982WKN.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -173,6 +193,7 @@ pairEndsByName on
     longLabel ENCFF982WKN.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 20_ENCFF988RQM.t2t.sorted.bam_CHM13
     parent bams_CHM13
@@ -181,6 +202,7 @@ pairEndsByName on
     longLabel ENCFF988RQM.t2t.sorted
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 21_chm13_1.sorted.bam_CHM13
     parent bams_CHM13
@@ -189,6 +211,7 @@ pairEndsByName on
     longLabel chm13
     type bam
     priority 10
+    html needTrackDescription.html
 
     track 22_chm13_2.sorted.bam_CHM13
     parent bams_CHM13
@@ -197,6 +220,7 @@ pairEndsByName on
     longLabel chm13
     type bam
     priority 10
+    html needTrackDescription.html
 
 
 track all_isoseq
@@ -209,4 +233,5 @@ spectrum on
 scoreMin 0
 scoreMax 60
 priority 99
+html needTrackDescription.html
 

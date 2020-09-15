@@ -467,6 +467,16 @@ buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOverPrimary.bigBed lastz/
 ln lastz/lastzUnalignedOverPrimary.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 
 
+** chrUn and random now in primary assembly
+cd lastz-unplaced
+tawk '/Un/||/random/{print $1}' /hive/data/genomes/hg38/chrom.sizes> unplaces-random.chroms
+chainFilter -q=$(cat unplaces-random.chroms | tr '\n' ',') ../../hg38Lastz/t2tChm13_20200727.hg38.over.chain.gz | bgzip --threads=64 -c >t2tChm13_20200727.hg38.unplaced-random.chain.gz
+chainToPslBasic t2tChm13_20200727.hg38.unplaced-random.chain.gz stdout | pslToBed stdin hg38.unplaced-random.bed
+
+  169 unplaces-random.chroms
+  158 t2tChm13_20200727.hg38.unplaced-random.bed
+buildBigBed bed12 t2tChm13_20200727  hg38.unplaced-random.bigBed  hg38.unplaced-random.bed
+
 * proseq
 2020-09-08 Savannah Klein
 /team-epigenetics/20200727_PROseq_CHM13

@@ -449,6 +449,17 @@ priority 50
     bigDataUrl uniqRegions/lastzUnalignedOverPrimary.bigBed
     priority 2
 
+    track lastzGrch38UnplacedRandoms
+    parent uniqueRegions
+    shortLabel GRCh38 unplaced
+    longLabel GRCh38 unplaced aligned by LASTZ
+    color 10,182,129
+    group compGeno
+    visibility hide
+    type bigBed 12
+    bigDataUrl uniqRegions/hg38.unplaced-random.bigBed
+    priority 3
+
 
 
 ##

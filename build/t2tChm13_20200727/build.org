@@ -1,9 +1,8 @@
 * general stuff
-t2t-chm13.20200727  v1.0
+t2t-chm13.20200727
 ** URLs
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
+Vhttps://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
 * PATH setup
 export PATH=${HOME}/compbio/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin:${HOME}/compbio/gencode/projs/icedb/intronProspector/bin:${PATH}
@@ -467,15 +466,57 @@ buildBigBed bed4 t2tChm13_20200727 lastz/lastzUnalignedOverPrimary.bigBed lastz/
 ln lastz/lastzUnalignedOverPrimary.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions/
 
 
-** chrUn and random now in primary assembly
-cd lastz-unplaced
-tawk '/Un/||/random/{print $1}' /hive/data/genomes/hg38/chrom.sizes> unplaces-random.chroms
-chainFilter -q=$(cat unplaces-random.chroms | tr '\n' ',') ../../hg38Lastz/t2tChm13_20200727.hg38.over.chain.gz | bgzip --threads=64 -c >t2tChm13_20200727.hg38.unplaced-random.chain.gz
-chainToPslBasic t2tChm13_20200727.hg38.unplaced-random.chain.gz stdout | pslToBed stdin hg38.unplaced-random.bed
+** minimap chrUn and random now in primary assembly
+cd minimap-unplaced
+tawk '/Un/||/random/{print $1}' /hive/data/genomes/hg38/chrom.sizes | sort > unplaced-random.chroms
+tawk '/Un/||/random/{print $1,$2}' /hive/data/genomes/hg38/chrom.sizes | sort> unplaced-random.sizes
 
-  169 unplaces-random.chroms
-  158 t2tChm13_20200727.hg38.unplaced-random.bed
-buildBigBed bed12 t2tChm13_20200727  hg38.unplaced-random.bigBed  hg38.unplaced-random.bed
+cd tmp
+twoBitToFa -seqList=../unplaced-random.chroms /hive/data/genomes/hg38/hg38.2bit hg38.unplaced.fa
+zcat ../../../genome/t2tChm13_20200727.fa.gz >t2tChm13_20200727.fa
+minimap2 -x asm10 -d t2tChm13_20200727.mmi t2tChm13_20200727.fa
+minimap2 -ax asm10 t2tChm13_20200727.fa hg38.unplaced.fa > hg38-unplaced-chm13.sam 
+
+samtools sort hg38-unplaced-chm13.sam | samtools view -b  >hg38-unplaced-chm13.bam
+samtools index hg38-unplaced-chm13.bam 
+cd ..
+bamToBed -bed12 -i hg38-unplaced-chm13.bam >hg38-unplaced-chm13.bed
+
+buildBigBed bed12 t2tChm13_20200727 hg38-unplaced-chm13.bigBed hg38-unplaced-chm13.bed
+
+cut -f 4 hg38-unplaced-chm13.bed | sort -u > placed-unplaced.chroms
+selectById 1 placed-unplaced.chroms 1 unplaced-random.sizes > placed-unplaced.sizes
+selectById -not 1 placed-unplaced.sizes 1 unplaced-random.sizes >still-unplaced.sizes
+
+down to two unplaced, and we don't have chrY
+  chrUn_KI270752v1    27745
+  chrY_KI270740v1_random 37240
+
+ln -f hg38-unplaced-chm13.bigBed  ../../../../hub/t2tChm13_20200727/uniqRegions/
+
+** cactus chrUn/random and unique
+cd uniqRegions/cactus
+
+halStats --bedSequences t2tChm13_20200727 ../../CAT/assemblyHub/t2tChm13.hal  > tmp/chm13.bed
+tawk '{print $0 >"tmp/"$1".chrom.bed"}' tmp/chm13.bed 
+ls -1 tmp/*.chrom.bed |nice parallel halLiftover --outPSL ../../CAT/assemblyHub/t2tChm13.hal t2tChm13_20200727 {} GRCh38 {}.psl
+# opps, did this backwards, with CHM13 being query
+find tmp -name '*.psl' | xargs cat | pslSwap stdin stdout | pslPosTarget stdin stdout | sort --parallel=64 -k14,14 -k16,16n | bgzip --threads=64 >cactus-pairwise.psl.gz
+
+# inverse
+featureBits -not -bed=cactus-unique.bed -countGaps -chromSize=../lastz/t2tChm13_20200727.sizes3 nodb cactus-pairwise.psl.gz &
+buildBigBed bed4 t2tChm13_20200727 cactus-unique.bigBed cactus-unique.bed 
+
+# inverse primary
+zcat cactus-pairwise.psl.gz |tawk '($10!~/_/) && ($10!="chrY")'  |  bgzip --threads=64 >  cactus-pairwise.primary.psl.gz
+featureBits -not -bed=cactus-unique-primary.bed -countGaps -chromSize=../lastz/t2tChm13_20200727.sizes3 nodb cactus-pairwise.primary.psl.gz 
+
+# unplaced
+zcat cactus-pairwise.psl.gz | tawk '$10 ~ /Un|random/' > cactus-unplaced.psl
+pslToBed cactus-unplaced.psl cactus-unplaced.bed 
+buildBigBed bed12 t2tChm13_20200727 cactus-unplaced.bigBed cactus-unplaced.bed 
+
+ln -f *.bigBed  ../../../../hub/t2tChm13_20200727/uniqRegions
 
 * proseq
 2020-09-08 Savannah Klein
@@ -539,4 +580,7 @@ twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
 converting to psl and doing a pslCheck shows alignment is fine.
 
 
-* Centromere Regions track desc broken
+
+* next assembly
+** minimap grch38 with chaining (but this missed chr22:1,093-476,524 dup case)
+** cactus pairwise for unplaced regions

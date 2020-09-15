@@ -1,17 +1,18 @@
 <h2>Description</h2>
 <p>
-  These track shows putative unique regions of T2T CHM13 relative to GRCh38 based on various methods
-  
-  This track shows regions that have no GRCh38 LASTZ Liftover alignment chains
-  (<em>GRCh38 LASTZ Liftover Alignment Chains</em> track).
+  These track shows putative unique regions of T2T CHM13 relative to GRCh38 based on various methods.
+  Also include is alignments of unplaced sequence in GRCh38.
 </p>
 
 <h2>Methods</h2>
-<p> Base-wise negation of LAST alignment chains using <code>featureBits</code>:
+<p> Base-wise negation of alignment chains using <code>featureBits</code>:
   <ul>
-    <li> GRCh38 LASTZ Liftover Alignment Chains - using only liftover changes
-    <li> GRCh38 LASTZ Primary Liftover Alignment Chains - using only GRCh38 chromosomes, excluding chrY.
-    <li> GRCh38 unplaced aligned by LASTZ - unplaced/random sequences in T2T assembly
+    <li> GRCh38 LASTZ Liftover Unaligned Regions - using only LASTZ liftover changes
+    <li> GRCh38 Primary LASTZ Liftover Unaligned Regions - using only GRCh38 primary chromosomes, excluding chrY.
+    <li> GRCh38 Cactus Unaligned Regions - using Cactus alignments
+    <li> GRCh38 Primary Cactus Unaligned Regions - using only GRCh38 primary chromosomes, excluding chrY.
+    <li> GRCh38 unplaced aligned with Cactus  - unplaced/random sequences in T2T assembly aligned with Cactus
+    <li> GRCh38 unplaced aligned with minimap  - unplaced/random sequences in T2T assembly aligned with minimap2
   </ul>
 
 </p>

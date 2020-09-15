@@ -429,8 +429,8 @@ priority 50
 
     track lastzUnalignedOver
     parent uniqueRegions
-    shortLabel LASTZ Liftover Unaligned
-    longLabel GRCh38 LASTZ Liftover Alignment Chains Unaligned Regions
+    shortLabel LASTZ unaligned
+    longLabel GRCh38 LASTZ Liftover Unaligned Regions
     color 10,128,189
     group compGeno
     visibility dense
@@ -440,8 +440,8 @@ priority 50
 
     track lastzUnalignedPrimaryOver
     parent uniqueRegions
-    shortLabel LASTZ Primary Liftover Unaligned
-    longLabel GRCh38 LASTZ Primary Liftover Alignment Chains Unaligned Regions
+    shortLabel LASTZ Primary Unaligned
+    longLabel GRCh38 Primary LASTZ Liftover Unaligned Regions
     color 10,128,189
     group compGeno
     visibility hide
@@ -449,16 +449,49 @@ priority 50
     bigDataUrl uniqRegions/lastzUnalignedOverPrimary.bigBed
     priority 2
 
-    track lastzGrch38UnplacedRandoms
+    track cactusUnaligned
     parent uniqueRegions
-    shortLabel GRCh38 unplaced
-    longLabel GRCh38 unplaced aligned by LASTZ
-    color 10,182,129
+    shortLabel Cactus Unaligned
+    longLabel GRCh38 Cactus Unaligned Regions
+    color 99,128,119
+    group compGeno
+    visibility dense
+    type bigBed 4
+    bigDataUrl uniqRegions/cactus-unique.bigBed
+    priority 3
+
+    track cactusUnalignedPrimary
+    parent uniqueRegions
+    shortLabel Cactus Unaligned Primary
+    longLabel GRCh38 Cactus Unaligned Regions
+    color 99,128,119
+    group compGeno
+    visibility dense
+    type bigBed 4
+    bigDataUrl uniqRegions/cactus-unique-primary.bigBed
+    priority 3
+
+    track cactusGrch38UnplacedRandoms
+    parent uniqueRegions
+    shortLabel unplaced cactus
+    longLabel GRCh38 unplaced aligned with Cactus
+    color 10,129,182
     group compGeno
     visibility hide
     type bigBed 12
-    bigDataUrl uniqRegions/hg38.unplaced-random.bigBed
-    priority 3
+    bigDataUrl uniqRegions/cactus-unplaced.bigBed
+    priority 5
+
+    track minimapGrch38UnplacedRandoms
+    parent uniqueRegions
+    shortLabel unplaced minimap
+    longLabel GRCh38 unplaced aligned with Minimap2
+    color 10,182,129
+    group compGeno
+    visibility hide
+    type bigBed 4
+    bigDataUrl uniqRegions/hg38-unplaced-chm13.bigBed
+    priority 6
 
 
 

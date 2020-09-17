@@ -399,7 +399,7 @@ bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin 
 ln *.bigPsl ../../../hub/t2tChm13_20200727/synteny/
 
 
-** CAT annotations 2020-09-03
+* CAT annotations 2020-09-03
 # run by Marina in AWS and downloaded it to: 
    courtyard.gi.ucsc.edu:/nanopore/marina/out-chm13-t2t/assemblyHub
    source is gencode_v33
@@ -436,6 +436,21 @@ ln all_isoseq.bigBed  ../../../hub/t2tChm13_20200727/CAT/
 
 # 2020-09-14 update in bb and databases from
 http://courtyard.gi.ucsc.edu/~mhauknes/t2t/out-chm13-t2t-v5/assemblyHub/hub.txt
+ln -f assemblyHub/CHM13/*.bb   ../../../hub/t2tChm13_20200727/CAT/
+
+*** WARNING: we found that CAT hand included user-filtered PBs, recreate
+cd CAT/consensus_gene_set
+tawk '$14 != "user_filtered"' CHM13.gp_info >CHM13.no-user_filtered.gp_info
+selectById 2 CHM13.no-user_filterd.gp_info 1 CHM13.gp  > CHM13.no-user_filtered.gp
+
+cd CAT/assemblyHub/CHM13/
+mv consensus.bb  consensus.orig.bb 
+bigBedToBed consensus.orig.bb consensus.orig.bed
+# 37 columns 32 has user_filtered
+tawk '$32 != "user_filtered" ' consensus.orig.bed > consensus.no-user_filtered.bed
+buildBigBed --as=cat.as bed12+20 t2tChm13_20200727 consensus.no-user_filtered.bb consensus.no-user_filtered.bed 
+
+
 
 * restriction enzyme file:
 - don't build as a track, as this is done on the fly in the browser, but build for Karen for analysis
@@ -510,6 +525,7 @@ buildBigBed bed4 t2tChm13_20200727 cactus-unique.bigBed cactus-unique.bed
 # inverse primary
 zcat cactus-pairwise.psl.gz |tawk '($10!~/_/) && ($10!="chrY")'  |  bgzip --threads=64 >  cactus-pairwise.primary.psl.gz
 featureBits -not -bed=cactus-unique-primary.bed -countGaps -chromSize=../lastz/t2tChm13_20200727.sizes3 nodb cactus-pairwise.primary.psl.gz 
+buildBigBed bed4 t2tChm13_20200727 cactus-unique-primary.bigBed cactus-unique-primary.bed 
 
 # unplaced
 zcat cactus-pairwise.psl.gz | tawk '$10 ~ /Un|random/' > cactus-unplaced.psl

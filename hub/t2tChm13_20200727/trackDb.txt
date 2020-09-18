@@ -212,6 +212,17 @@ maxItems 100000
 bigDataUrl as_sf_annotation.bigBed
 priority 4
 
+track as_strand
+shortLabel AS strand
+longLabel alpha satellite higher-order repeats strand orientation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+maxItems 100000
+bigDataUrl as_strand.bigBed
+priority 4.1
+
 track hor_decompositions
 shortLabel HOR annotation
 longLabel Centromere HOR annotation

@@ -83,6 +83,14 @@ ln -f as_*annotation.bigBed  ../../../hub/t2tChm13_20200727/
 # updated 2020-08-02 due to error found in data
 
 
+* as_strand
+2020-09-18 from Lev via google
+t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm-tbl.strand.bed
+
+buildBigBed bed9 t2tChm13_20200727 as_strand.bigBed t2t-chm13.20200727-vs-AS-HORs-hmmer3.0-30072020.hmm-tbl.strand.bed.gz
+ln -f as_strand.bigBed  ../../../hub/t2tChm13_20200727/
+
+
 * gap track 2020-08-02
 ../../../T2T-CHM13-hub/bin/faToGapBed ../genome/t2tChm13_20200727.fa.gz gap.bed
 buildBigBed bed3 t2tChm13_20200727 gap.bigBed gap.bed

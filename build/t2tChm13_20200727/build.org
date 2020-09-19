@@ -549,6 +549,7 @@ featureBits -not -or -bed=combined/cactusLastzUnaligned.bed -countGaps -chromSiz
 featureBits -not -or -bed=combined/cactusLastzPrimaryUnaligned.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.over-primary.chain.gz cactus/cactus-pairwise.primary.psl.gz
 buildBigBed bed4 t2tChm13_20200727 combined/cactusLastzUnaligned.bigBed combined/cactusLastzUnaligned.bed 
 buildBigBed bed4 t2tChm13_20200727 combined/cactusLastzPrimaryUnaligned.bigBed combined/cactusLastzPrimaryUnaligned.bed 
+ln -f combined/*.bigBed  ../../../hub/t2tChm13_20200727/uniqRegions
 
 
 * proseq

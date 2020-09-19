@@ -13,6 +13,7 @@ def parseArgs():
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('--keep', action="store_true")
     parser.add_argument('--as', dest="asFile")
+    parser.add_argument('--extraIndex')
     parser.add_argument('--twoBit',
                         help="optional path to twobit as opposed to finding it via assembly (for pre-repeat mask)")
     parser.add_argument('bedType')
@@ -46,19 +47,21 @@ def createInBed(inBeds, tmpBedFh, chromNames):
     with pipettor.Popen([bedSortCmd], "w", stdout=tmpBedFh) as outBedFh:
         copyBeds(inBeds, outBedFh, chromNames)
 
-def bedToBigBed(tmpBed, bigBedOut, bedType, asFile, genomeTwoBit):
+def bedToBigBed(tmpBed, bigBedOut, bedType, asFile, extraIndex, genomeTwoBit):
     cmd = ["bedToBigBed", "-type=" + bedType, "-tab", "-sizesIs2Bit"]
     if asFile is not None:
         cmd += ["-as=" + asFile]
+    if extraIndex is not None:
+        cmd += ["-extraIndex=" + extraIndex]
     cmd += [tmpBed, genomeTwoBit, bigBedOut]
     pipettor.run(cmd)
 
-def buildBigBed(inBeds, bigBedOut, keep, bedType, asFile, genomeTwoBit, chromNames):
+def buildBigBed(inBeds, bigBedOut, keep, bedType, asFile, extraIndex, genomeTwoBit, chromNames):
     with tempfile.NamedTemporaryFile(delete=not keep) as tmpBedFh:
         if keep:
             print("keeping temporary bed:", tmpBedFh.name, file=sys.stderr)
         createInBed(inBeds, tmpBedFh, chromNames)
-        bedToBigBed(tmpBedFh.name, bigBedOut, bedType, asFile, genomeTwoBit)
+        bedToBigBed(tmpBedFh.name, bigBedOut, bedType, asFile, extraIndex, genomeTwoBit)
 
 def main(args):
     if args.twoBit is not None:
@@ -66,6 +69,6 @@ def main(args):
     else:
         genomeTwoBit = findGenomeTwoBit(args.assembly)
     chromNames = frozenset(loadChromNames(genomeTwoBit))
-    buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.asFile, genomeTwoBit, chromNames)
+    buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.asFile, args.extraIndex, genomeTwoBit, chromNames)
 
 main(parseArgs())

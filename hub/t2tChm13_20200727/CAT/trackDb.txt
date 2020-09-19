@@ -37,8 +37,8 @@ html needTrackDescription.html
     visibility full
     subTrack cactus20200727
 
-        track snakeCHM13
-        longLabel CHM13
+        trackf snakeCHM13
+        longLabel Cactus CHM13
         shortLabel CHM13
         otherSpecies CHM13
         visibility hide
@@ -51,7 +51,7 @@ html needTrackDescription.html
         html needTrackDescription.html
 
         track snakeGRCh38
-        longLabel GRCh38
+        longLabel Cactus GRCh38
         shortLabel GRCh38
         otherSpecies GRCh38
         visibility full

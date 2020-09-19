@@ -517,6 +517,7 @@ down to two unplaced, and we don't have chrY
   chrY_KI270740v1_random 37240
 
 ln -f hg38-unplaced-chm13.bigBed  ../../../../hub/t2tChm13_20200727/uniqRegions/
+# NOT AS USEFUL AS LASTZ
 
 ** cactus chrUn/random and unique
 cd uniqRegions/cactus
@@ -542,6 +543,13 @@ pslToBed cactus-unplaced.psl cactus-unplaced.bed
 buildBigBed bed12 t2tChm13_20200727 cactus-unplaced.bigBed cactus-unplaced.bed 
 
 ln -f *.bigBed  ../../../../hub/t2tChm13_20200727/uniqRegions
+
+** cactus and lastz unique regions combined
+featureBits -not -or -bed=combined/cactusLastzUnaligned.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.over.chain.gz cactus/cactus-pairwise.psl.gz
+featureBits -not -or -bed=combined/cactusLastzPrimaryUnaligned.bed -countGaps -chromSize=lastz/t2tChm13_20200727.sizes3 nodb ../hg38Lastz/t2tChm13_20200727.hg38.over-primary.chain.gz cactus/cactus-pairwise.primary.psl.gz
+buildBigBed bed4 t2tChm13_20200727 combined/cactusLastzUnaligned.bigBed combined/cactusLastzUnaligned.bed 
+buildBigBed bed4 t2tChm13_20200727 combined/cactusLastzPrimaryUnaligned.bigBed combined/cactusLastzPrimaryUnaligned.bed 
+
 
 * proseq
 2020-09-08 Savannah Klein

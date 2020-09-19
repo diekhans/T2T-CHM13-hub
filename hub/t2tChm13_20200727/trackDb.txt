@@ -444,7 +444,7 @@ priority 50
     longLabel GRCh38 LASTZ Liftover Unaligned Regions
     color 10,128,189
     group compGeno
-    visibility dense
+    visibility hide
     type bigBed 4
     bigDataUrl uniqRegions/lastzUnalignedOver.bigBed
     priority 1
@@ -466,7 +466,7 @@ priority 50
     longLabel GRCh38 Cactus Unaligned Regions
     color 99,128,119
     group compGeno
-    visibility dense
+    visibility hide
     type bigBed 4
     bigDataUrl uniqRegions/cactus-unique.bigBed
     priority 3
@@ -474,12 +474,34 @@ priority 50
     track cactusUnalignedPrimary
     parent uniqueRegions
     shortLabel Cactus Unaligned Primary
-    longLabel GRCh38 Cactus Unaligned Regions
+    longLabel GRCh38 Primary Cactus Unaligned Regions
     color 99,128,119
     group compGeno
     visibility dense
     type bigBed 4
     bigDataUrl uniqRegions/cactus-unique-primary.bigBed
+    priority 3
+
+    track cactusLastzUnaligned
+    parent uniqueRegions
+    shortLabel Cactus|LASTZ Unaligned
+    longLabel GRCh38 Cactus or LASTZ Unaligned Regions
+    color 99,128,119
+    group compGeno
+    visibility hide
+    type bigBed 4
+    bigDataUrl uniqRegions/cactusLastzUnaligned.bigBed
+    priority 4
+
+    track cactusLastzUnalignedPrimary
+    parent uniqueRegions
+    shortLabel Cactus|LASTZ Unaligned Primary
+    longLabel GRCh38 Primary Cactus or LASTZ Unaligned Regions
+    color 99,128,119
+    group compGeno
+    visibility dense
+    type bigBed 4
+    bigDataUrl uniqRegions/cactusLastzPrimaryUnaligned.bigBed
     priority 3
 
     track cactusGrch38UnplacedRandoms
@@ -491,7 +513,7 @@ priority 50
     visibility hide
     type bigBed 12
     bigDataUrl uniqRegions/cactus-unplaced.bigBed
-    priority 5
+    priority 8
 
     track minimapGrch38UnplacedRandoms
     parent uniqueRegions
@@ -502,7 +524,7 @@ priority 50
     visibility hide
     type bigBed 4
     bigDataUrl uniqRegions/hg38-unplaced-chm13.bigBed
-    priority 6
+    priority 9
 
 
 

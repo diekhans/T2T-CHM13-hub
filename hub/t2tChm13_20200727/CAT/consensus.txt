@@ -5,6 +5,7 @@ description CAT Gene Annotations
 type bigGenePred
 group genes
 itemRgb on
+color 12,12,120
 priority 1
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId

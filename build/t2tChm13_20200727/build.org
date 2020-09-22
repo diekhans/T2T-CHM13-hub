@@ -446,6 +446,7 @@ ln all_isoseq.bigBed  ../../../hub/t2tChm13_20200727/CAT/
 http://courtyard.gi.ucsc.edu/~mhauknes/t2t/out-chm13-t2t-v5/assemblyHub/hub.txt
 ln -f assemblyHub/CHM13/*.bb   ../../../hub/t2tChm13_20200727/CAT/
 
+
 *** WARNING: we found that CAT hand included user-filtered PBs, recreate
 cd CAT/consensus_gene_set
 tawk '$14 != "user_filtered"' CHM13.gp_info >CHM13.no-user_filtered.gp_info
@@ -640,3 +641,4 @@ converting to psl and doing a pslCheck shows alignment is fine.
 ** minimap grch38 with chaining (but this missed chr22:1,093-476,524 dup case)
 ** cactus pairwise for unplaced regions
 ** include --extraIndex on blat and transmap
+** PRIM2 name search didn't work

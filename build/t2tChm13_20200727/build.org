@@ -253,6 +253,27 @@ twoBitReadSeqFrag in chr10 start (133797422) >= end (46617366)
 % ln -f t2tChm13_20200727.hg38.over-primary.big* ../../../hub/t2tChm13_20200727/grch38/
 
 
+* cactusChains
+GRCh38
+ t2tChm13_20200727
+
+halStats --bedSequences GRCh38 ../CAT/assemblyHub/t2tChm13.hal  >tmp/GRCh38.bed
+
+split -l 1 tmp/GRCh38.bed tmp/GRCh38/chrom.
+find tmp/GRCh38/ -type f | awk '{print "./getChromPairswise", $1}' >tmp/para.jobs
+para create tmp/para.jobs -batch=tmp/b1
+
+  find tmp/t2tChm13_20200727/ -type f | xargs cat | csort -k 10,10  -k12,12n > GRCh38-t2tChm13_20200727.cactus.psl
+  pslToBigPsl GRCh38-t2tChm13_20200727.cactus.psl stdout | sort -k1,1 -k2,2n > tmp/GRCh38-t2tChm13_20200727.cactus.bigPslIn
+  bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as tmp/GRCh38-t2tChm13_20200727.cactus.bigPslIn ../genome/t2tChm13_20200727.sizes GRCh38-t2tChm13_20200727.cactus.bigPsl
+
+  pslSwap GRCh38-t2tChm13_20200727.cactus.psl stdout | axtChain -psl -verbose=0 -scoreScheme=/scratch/data/blastz/human_chimp.v2.q -minScore=5000 -linearGap=medium stdin /hive/data/genomes/hg38/hg38.2bit ../genome/t2tChm13_20200727.2bit stdout | chainSwap stdin tmp/GRCh38-t2tChm13_20200727.cactus.chain
+  chainToPsl tmp/GRCh38-t2tChm13_20200727.cactus.chain ../genome/t2tChm13_20200727.sizes /hive/data/genomes/hg38/chrom.sizes ../genome/t2tChm13_20200727.2bit /hive/data/genomes/hg38/hg38.2bit GRCh38-t2tChm13_20200727.cactus.chained.psl
+  pslToBigPsl GRCh38-t2tChm13_20200727.cactus.chained.psl stdout | sort -k1,1 -k2,2n > tmp/GRCh38-t2tChm13_20200727.cactus.chained.bigPslIn
+  bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as tmp/GRCh38-t2tChm13_20200727.cactus.chained.bigPslIn  ../genome/t2tChm13_20200727.sizes GRCh38-t2tChm13_20200727.cactus.chained.bigPsl
+
+ln -f *.bigPsl ../../../hub/t2tChm13_20200727/grch38/
+
 * cenRegions
 Karen Miga
 team-satellite/t2t-chm13.20200727.cenRegions.bed

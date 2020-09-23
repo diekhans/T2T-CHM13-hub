@@ -358,6 +358,7 @@ visibility hide
 priority 30
 type bigChain hg38
 group compGeno
+html needTrackDescription.html
 
     track grch38AllChains
     parent grch38Lastz
@@ -405,6 +406,38 @@ group compGeno
     bigDataUrl grch38/t2tChm13_20200727.hg38.over-primary.bigChain
     linkDataUrl grch38/t2tChm13_20200727.hg38.over-primary.bigLink
     priority 4
+    group compGeno
+
+track grch38Cactus
+compositeTrack off
+shortLabel GRCh38 Cactus Pairwise
+longLabel GRCh38 Cactus Pairwise
+visibility hide
+priority 32
+type bigChain hg38
+group compGeno
+html needTrackDescription.html
+
+    track grch38CactusAlign
+    parent grch38Cactus
+    shortLabel GRCh38 Cactus Alignments 
+    longLabel  GRCh38 Cactus Alignments (unchained)
+    type bigPsl
+    color 20,120,0
+    visibility hide
+    bigDataUrl grch38/GRCh38-t2tChm13_20200727.cactus.bigPsl
+    priority 1
+    group compGeno
+
+    track grch38CactusChaines
+    parent grch38Cactus
+    shortLabel GRCh38 Cactus Chained
+    longLabel  GRCh38 Cactus Chained Alignments
+    type bigPsl
+    color 20,120,0
+    visibility hide
+    bigDataUrl grch38/GRCh38-t2tChm13_20200727.cactus.chained.bigPsl
+    priority 2
     group compGeno
 
 track grch38Synteny25kb

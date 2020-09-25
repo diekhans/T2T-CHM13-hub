@@ -2,7 +2,7 @@
 t2t-chm13.20200727
 ** URLs
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-Vhttps://t2t.gi.ucsc.edu/chm13/hub/hub.txt
+https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
 * PATH setup
 export PATH=${HOME}/compbio/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin:${HOME}/compbio/gencode/projs/icedb/intronProspector/bin:${PATH}
@@ -631,6 +631,13 @@ gensub2 hg38.chroms queries.lst hg38.tmpl hg38.jobs
 
 
 
+* wssd 
+2020-09-25 from Mitchell Robert Vollger
+ /team-segdups/WSSD/
+
+cd wssd
+ln *.bb ../../../hub/t2tChm13_20200727/wssd/
+
 * todo
 ** RMMaskBed to David, etc
 ** as_sf_annotation.html as_hor_annotation.html reference a google doc
@@ -663,3 +670,7 @@ converting to psl and doing a pslCheck shows alignment is fine.
 ** cactus pairwise for unplaced regions
 ** include --extraIndex on blat and transmap
 ** PRIM2 name search didn't work
+
+
+
+

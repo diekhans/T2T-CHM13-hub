@@ -347,6 +347,8 @@ html hg002Aligns.html
     group varRep
     html hg002Aligns.html
 
+include hgdp_wssd_cn.trackDb.txt
+
 ##
 # comparative genomics
 ##

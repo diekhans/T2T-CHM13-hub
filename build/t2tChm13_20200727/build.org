@@ -361,10 +361,12 @@ cd ..
 blatRnaMkJobs ../genome/t2tChm13_20200727.2bit data/refSeq-curated.fa.gz tmp/
 para make -batch=tmp/b1 tmp/para.jobs >&log&
 
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
+
 # filter 
 faPolyASizes data/GRCh38_latest_rna.fna.gz stdout | gzip -c >data/GRCh38_latest_rna.polya.gz
 
-find tmp/psls -type f | xargs cat | sort -k 15,15 | pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats stdin stdout | sort -k 14,14 -k 16,16n |gzip -9c >refSeq-curated.psl.gz
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
 
 # build bigPsl with extra columns
 zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
@@ -372,9 +374,12 @@ pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl
 bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
 
 bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/t2tChm13_20200727.sizes refSeq-curated.bigBlatPsl
-ln refSeq-curated.bigBlatPsl  ../../../hub/t2tChm13_20200727/
+ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2tChm13_20200727/
+
+# 2020-09-27 discovered error with filter command, so changed above
 
 * gencodeBlat
+# IMPORTANT NEW TIME: need to hack fasta to remove complex id and skip PAR
 - use gencode V33 to match CAT, only do protein code and lncRNAs
 
  /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.lncRNA_transcripts.fa.gz /hive/data/genomes/hg38/bed/gencodeV33/data/release_33/gencode.v33.pc_transcripts.fa.gz  >tmp/rna.fa.gz
@@ -382,22 +387,26 @@ blatRnaMkJobs ../genome/t2tChm13_20200727.2bit tmp/rna.fa.gz tmp
 
 # run in parasol
 
-find tmp/psls -type f | xargs cat | sort -k 15,15 | pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=gencode.stats stdin stdout | sort -k 14,14 -k 16,16n |gzip -9c >gencode.psl.gz
 
-hgsql hg38 -Ne 'select * from wgEncodeGencodeCompV33' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
-hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from wgEncodeGencodeAttrsV33 ga left join wgEncodeGencodeGeneSymbolV33 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >gencode.raw.psl.gz
 
 # forgot to hack fasta file ids like ENST00000669853.1|ENSG00000260923.7|OTTHUMG00000172851.14|OTTHUMT00000505564.1
 # also need to hack _PAR_Y ids
-zcat gencode.psl.gz |tawk '$10~/_PAR_Y/{next} {$10=gensub("\\|.*$","", 1, $10);print $0}' >gencode.psl
-gzip gencode.psl
+zcat gencode.raw.psl.gz |tawk '$10~/_PAR_Y/{next} {$10=gensub("\\|.*$","", 1, $10);print $0}' | pigz -c >tmp/gencode.raw.psl.gz
 zcat tmp/rna.fa.gz |awk '{$0=gensub("\\|.*$","", 1, $0);print $0}' >tmp/rna-fixed.fa
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=gencode.stats gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >gencode.psl.gz
+
+hgsql hg38 -Ne 'select * from wgEncodeGencodeCompV33' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
+hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from wgEncodeGencodeAttrsV33 ga left join wgEncodeGencodeGeneSymbolV33 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
 
 pslToBigPsl -cds=data/gencode.cds -fa=tmp/rna-fixed.fa gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
 bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
 
 bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/g.bigin2 ../genome/t2tChm13_20200727.sizes gencode.bigBlatPsl
-ln gencode.bigBlatPsl  ../../../hub/t2tChm13_20200727/
+ln -f gencode.bigBlatPsl  ../../../hub/t2tChm13_20200727/
+
+# 2020-09-27 discovered error with filter command, so changed above
 
 * synteny  2020-09-04
 cd synteny/tmp

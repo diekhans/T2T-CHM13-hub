@@ -11,7 +11,7 @@ else
 localUrl = ${courtyardUrl}
 endif
 
-assemblies = t2tChm13_20200602 t2tChm13_20200611 t2tChm13_20200727 GRCh38
+assemblies = t2tChm13_20200602 t2tChm13_20200611 t2tChm13_20200727 t2t-chm13-v1.0 GRCh38
 
 srcs = $(wildcard *.html *.txt) $(foreach a,${assemblies},$(wildcard $a/*.txt $a/*.html $a/*/*.txt $a/*/*.html))
 

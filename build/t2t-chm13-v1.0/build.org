@@ -1,4 +1,48 @@
-* Repeat Masking
-20o20-09-25 from Mitchell Robert Vollger
-/team-segdups/Assembly_analysis/Masked/
-Include a copy of GRCh38 chrY.
+* t2t-chm13-v1.0
+
+* rmsk
+** 2020-09-25 from Mitchell Robert Vollger
+/team-segdups/Assembly_analysis/Masked/chm13.draft_v1.0_plus38Y_repeatmasker.out
+Includes a copy of GRCh38 chrY.
+
+pigz chm13.draft_v1.0_plus38Y_repeatmasker.out 
+
+# drop chrY
+(../../../T2T-CHM13-hub/bin/RM2Bed.py chm13.draft_v1.0_plus38Y_repeatmasker.out.gz - | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed |tawk '$1 != "chrY"' | bedSort stdin stdout | gzip -c >rmsk.bed.gz) >&log
+
+# switch to finishing genome before next steps
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmsk.bigBed rmsk.bed.gz
+ln -f rmsk.bigBed ../../../hub/t2t-chm13-v1.0/rmsk/
+
+
+* trf
+** 2020-09-25 from Mitchell Robert Vollger
+/team-segdups/Assembly_analysis/Masked/chm13.draft_v1.0_plus38Y_trf.bed
+Includes a copy of GRCh38 chrY.
+pigz chm13.draft_v1.0_plus38Y_trf.bed
+
+# drop chrY
+zcat chm13.draft_v1.0_plus38Y_trf.bed.gz |tawk '$1!="chrY"' | pigz -c >trf.bed.gz
+
+# switch to finishing genome before next steps
+buildBigBed --as=../../../T2T-CHM13-hub/etc/simpleRepeat2.as bed3+ t2t-chm13-v1.0 trf.bigBed trf.bed.gz
+ln -f trf.bigBed  ../../../hub/t2t-chm13-v1.0/trf/
+
+* genome
+** 2020-09-28
+/assemblies/release/v1.0/chm13.draft_v1.0.fasta
+
+pigz chm13.draft_v1.0.fasta 
+faToTwoBit t2t-chm13-v1.0.unmasked.fa.gz t2t-chm13-v1.0.unmasked.2bit
+
+twoBitMask -type=.bed t2t-chm13-v1.0.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trf.bed.gz ) t2t-chm13-v1.0.2bit
+
+twoBitInfo t2t-chm13-v1.0.2bit t2t-chm13-v1.0.sizes
+twoBitToFa t2t-chm13-v1.0.2bit t2t-chm13-v1.0.fa
+
+nice bgzip  --threads=64 t2t-chm13-v1.0.fa
+samtools faidx t2t-chm13-v1.0.fa.gz 
+
+blat t2t-chm13-v1.0.2bit -makeOoc=t2t-chm13-v1.0.11.ooc /dev/null /dev/null
+ln -f t2t-chm13-v1.0.2bit  ../../../hub/t2t-chm13-v1.0/genome/
+ln -f t2t-chm13-v1.0.fa.gz*  ../../../hub/t2t-chm13-v1.0/genome/

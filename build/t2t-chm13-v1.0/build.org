@@ -1,4 +1,6 @@
 * t2t-chm13-v1.0
+https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 
 * rmsk
 ** 2020-09-25 from Mitchell Robert Vollger
@@ -46,3 +48,18 @@ samtools faidx t2t-chm13-v1.0.fa.gz
 blat t2t-chm13-v1.0.2bit -makeOoc=t2t-chm13-v1.0.11.ooc /dev/null /dev/null
 ln -f t2t-chm13-v1.0.2bit  ../../../hub/t2t-chm13-v1.0/genome/
 ln -f t2t-chm13-v1.0.fa.gz*  ../../../hub/t2t-chm13-v1.0/genome/
+
+* sedefSegDups
+** Mitchell Robert Vollger 2020-09-28
+team-segdups/Assembly_analysis/SEDEF/chm13.draft_v1.0_plus38Y.SDs.bed.bb
+team-segdups/Assembly_analysis/SEDEF/chm13.draft_v1.0_plus38Y.SDs.lowid.bed.bb
+ln -f *.bb ../../../hub/t2t-chm13-v1.0/sedefSegDups/
+
+* liftOffGenes
+** Mitchell Robert Vollger 2020-09-28
+
+team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.all.bb
+team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.orf_only.bb
+ln -f *.bb ../../../hub/t2t-chm13-v1.0/liftOffGenes
+
+* to-do

@@ -22,3 +22,72 @@ type bigBed 4 +
 bigDataUrl trf/trf.bigBed
 priority 2
 
+track sedefSegDups
+compositeTrack off
+shortLabel SEDEF Segmental Dups
+longLabel Segmental Duplications
+priority 10
+group varRep
+    type bigBed 9
+
+    track sedefSegDupsAll
+    parent sedefSegDups
+    shortLabel SEDEF Segmental Dups
+    longLabel Segmental Duplications
+    group varRep
+    visibility pack
+    itemRgb on
+    maxItems 100000
+    type bigBed 9
+    bigDataUrl sedefSegDups/chm13.draft_v1.0_plus38Y.SDs.bed.bb
+    priority 1
+    html sedefSegDups.html
+
+    track sedefSegDupsLow
+    parent sedefSegDups
+    shortLabel SEDEF Segmental Dups Low Id
+    longLabel SEDEF Segmental Duplications Low Identity
+    group varRep
+    visibility hide
+    itemRgb on
+    maxItems 100000
+    type bigBed 2
+    bigDataUrl sedefSegDups/chm13.draft_v1.0_plus38Y.SDs.lowid.bed.bb
+    html sedefSegDups.html
+    priority 7
+    html sedefSegDups.html
+
+##
+# genes
+##
+track liftOffGenes
+compositeTrack off
+visibility hide
+shortLabel LiftOff Genes
+longLabel  LiftOff Genes Annotations based on GENCODE
+type bigGenePred
+group genes
+priority 12
+
+    track liftOffGenesAll
+    parent liftOffGenes on
+    bigDataUrl liftOffGenes/chm13.draft_v1.0_plus38Y.all.bb
+    shortLabel LiftOff Genes (All)
+    longLabel LiftOff Genes - all annotations
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+
+    track liftOffGenesOrf
+    parent liftOffGenes on
+    bigDataUrl liftOffGenes/chm13.draft_v1.0_plus38Y.orf_only.bb
+    shortLabel LiftOff Genes (ORFs)
+    longLabel LiftOff Genes - annotations with ORFs
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+

@@ -1,21 +1,24 @@
 #!/bin/bash -e
 set -beEu -o pipefail
 
-if [ $# != 1 ] ; then
-    echo "wrong number of args: $0 targetGenome" >&2
+if [ $# != 2 ] ; then
+    echo "wrong number of args: $0 fwd|swap targetGenome" >&2
     exit 1
 fi
-
-targetGenome="$1"
+dir=$1
+targetGenome="$2"
 trackdir=$(realpath .)
 targetGenomeDir=$(realpath ${trackdir}/../genome)
 
-swapDir=${targetGenomeDir}/swap
-swapOpt=-"-swapDir=${swapDir}"
+swapOpt=""
+if [ "$dir" = "swap" ] ; then
+    swapDir=$(pwd)/swap
+    swapOpt=-"-swap -swapDir=${swapDir}"
+fi
 
 doBlastzChainNet.pl DEF ${swapOpt} \
     -stop=net -syntenicNet -noDbNameCheck \
     -blastzOutRoot=${trackdir}/${targetGenome} \
-    -bigClusterHub=ku -workhorse=hgwdev -priority=15
+    -bigClusterHub=ku -workhorse=hgwdev
 
 

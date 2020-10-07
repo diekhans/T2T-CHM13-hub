@@ -58,6 +58,31 @@ group varRep
     html sedefSegDups.html
 
 ##
+# cenTelo
+##
+track hors
+shortLabel HORs annotation
+longLabel Centromere HORs annotation
+group cenTelo
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 9
+bigDataUrl hors.bigBed
+priority 5
+
+track superHors
+shortLabel Super HORs annotation
+longLabel Centromere Super HORs annotation
+group cenTelo
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 9
+bigDataUrl superHors.bigBed
+priority 6
+
+##
 # genes
 ##
 track liftOffGenes

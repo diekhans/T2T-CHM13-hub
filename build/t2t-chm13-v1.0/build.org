@@ -1,6 +1,8 @@
 * t2t-chm13-v1.0
 https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
 https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
+** PATH setup
+export PATH=${HOME}/compbio/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin:${HOME}/compbio/gencode/projs/icedb/intronProspector/bin:${PATH}
 
 * rmsk
 ** 2020-09-25 from Mitchell Robert Vollger
@@ -15,7 +17,6 @@ pigz chm13.draft_v1.0_plus38Y_repeatmasker.out
 # switch to finishing genome before next steps
 buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmsk.bigBed rmsk.bed.gz
 ln -f rmsk.bigBed ../../../hub/t2t-chm13-v1.0/rmsk/
-
 
 * trf
 ** 2020-09-25 from Mitchell Robert Vollger
@@ -62,4 +63,95 @@ team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.all.bb
 team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.orf_only.bb
 ln -f *.bb ../../../hub/t2t-chm13-v1.0/liftOffGenes
 
+** HORs and superHORs
+Tatiana Dvorkina  2020-10-05
+/team-satellites/HorAnnotation/release_v1.0/HORs;
+/team-satellites/HorAnnotation/release_v1.0/superHORs
+
+cd hors
+pigz *.bed
+makeMd5s *.gz
+buildBigBed bed9 t2t-chm13-v1.0 hors.bigBed *.gz
+ln -f hors.bigBed ../../../hub/t2t-chm13-v1.0/
+
+cd superHors
+pigz *.bed
+makeMd5s *.gz
+buildBigBed bed9 t2t-chm13-v1.0 superHors.bigBed *.gz
+ln -f superHors.bigBed ../../../hub/t2t-chm13-v1.0/
+
+
+* hg38Lastz
+
+** build alignments
+cd hg38Lastz
+ln -s ../../../T2T-CHM13-hub/build/t2t-chm13-v1.0/hg38Lastz.DEF DEF
+runHg38Lastz fwd t2t-chm13-v1.0 >&log&
+# Can't add netclass, since it relies on repeat database.
+gzip -9 fwd/axtChain/noClass.net
+ln fwd/axtChain/noClass.net.gz fwd/axtChain/t2t-chm13-v1.0.hg38.net.gz
+ln fwd/axtChain/t2t-chm13-v1.0.hg38.* .
+
+# swap
+runHg38Lastz swap t2t-chm13-v1.0 >&log&
+# script put swap in wrong place, so moved back
+
+gzip -9 ./swap/axtChain/noClass.net 
+ln ./swap/axtChain/noClass.net.gz swap/axtChain/hg38.t2t-chm13-v1.0.net.gz
+ln swap/axtChain/hg38.t2t-chm13-v1.0.* .
+
+** create over bigChains 
+
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/t2t-chm13-v1.0.sizes t2t-chm13-v1.0.hg38.over.bigChain
+
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v1.0.sizes t2t-chm13-v1.0.hg38.over.bigLink
+ln -f t2t-chm13-v1.0.hg38.over.big* ../../../hub/t2t-chm13-v1.0/hg38Lastz/
+
+** Also make liftover chains available
+ln -f *.over.chain.gz ../../../hub/t2t-chm13-v1.0/hg38Lastz/
+
+### contact nancy when done
+
+
+** lastz liftover primary:
+% chainFilter -q=$(cat hg38-primary.tab | tr '\n' ',') t2t-chm13-v1.0.hg38.over.chain.gz | bgzip --threads=64 -c >t2t-chm13-v1.0.hg38.over-primary.chain.gz
+% cd tmp3
+% hgLoadChain -noBin -test no bigChain ../t2t-chm13-v1.0.hg38.over-primary.chain.gz
+% sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
+% bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.hg38.over-primary.bigChain
+
+% tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
+% bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.hg38.over-primary.bigLink
+% ln -f t2t-chm13-v1.0.hg38.over-primary.big* ../../../hub/t2t-chm13-v1.0/grch38/
+
+
 * to-do
+** finished lastz
+
+** Nancy Hansen
+Hi Mark--I created a new directory team-variants/assembly_aligns/for_browser_hub/v1.0 on the Globus share with two track hubs containing the HG002 and HG00733 hifiasm alignments to v1.0.
+Let me know if I should try to combine them into one set of tracks.
+
+* * Savannah Hoyt 
+Hi @Mark Diekhans, I uploaded my PRO-seq STAR aligned sorted.bam to Globus: /team-epigenetics/20200922_chm13_PROseq/STAR_alignments/
+I also included an associated track description html with parameters listed.
+Yes, I just updated the directory to, 20200922-v1.0_chm13_PROseq, for clarity!
+
+
+** Christopher Vollmers
+@Mark Diekhans @Glennis Logsdon Here is what Mandalorion thinks the isoform sequences derived from your Iso-Seq reads are. The fasta files are straight consensus sequences generated from the subreads using PacBio consensus tools used slightly off-label. So these sequences should match CHM13 genome sequence. The psl file contains alignments of those consensus sequences to hg38 that are cleaned up, i.e. small indels are removed. One note to the output: Mandalorion will produce multiple isoforms with the same intron-chain if it thinks their ends are consistently different. Naming is Isoform_[running_number]_[number of Iso-Seq reads associated with the isoform].
+
+** Mitchell Robert Vollger
+Hi Mark, we updated the coloring and names for /team-segdups/WSSD/ and it would be great if you could update the browser with the new tracks.
+The Rgb typo is fixed and I am pretty sure all the track names are there and match up with that trackdb.txt.
+Thanks!
+
+I added a new set of tracks here /team-segdups/WSSD_subset/ it would be great if you could add them at some point.
+It is just a subset of /team-segdups/WSSD  that loads on to the browser a little easier.
+:heavy_check_mark:
+1
+
+
+** hg38Lastz - finish

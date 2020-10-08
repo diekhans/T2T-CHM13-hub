@@ -10,2682 +10,2415 @@ maxItems 100000
 group varRep
 html hgdp_wssd_cn.html
 
-    track LP6005443-DNA_A01_wssd
+    track LP6005441-DNA_A01_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A01_wssd.bb
-    shortLabel LP6005443-DNA_A01 wssd CN
-    longLabel LP6005443-DNA_A01 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A01_wssd.bb
+    shortLabel WEA_Adygei_LP6005441-DNA_A01 wssd CN
+    longLabel WEA_Adygei_LP6005441-DNA_A01 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E02_wssd.bb
-    shortLabel LP6005443-DNA_E02 wssd CN
-    longLabel LP6005443-DNA_E02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F01_wssd.bb
-    shortLabel LP6005441-DNA_F01 wssd CN
-    longLabel LP6005441-DNA_F01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G02_wssd.bb
-    shortLabel LP6005443-DNA_G02 wssd CN
-    longLabel LP6005443-DNA_G02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F02_wssd.bb
-    shortLabel LP6005443-DNA_F02 wssd CN
-    longLabel LP6005443-DNA_F02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G02_wssd.bb
-    shortLabel LP6005441-DNA_G02 wssd CN
-    longLabel LP6005441-DNA_G02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H02_wssd.bb
-    shortLabel LP6005441-DNA_H02 wssd CN
-    longLabel LP6005441-DNA_H02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B09_wssd.bb
-    shortLabel LP6005443-DNA_B09 wssd CN
-    longLabel LP6005443-DNA_B09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H08_wssd.bb
-    shortLabel LP6005443-DNA_H08 wssd CN
-    longLabel LP6005443-DNA_H08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track SS6004480_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/SS6004480_wssd.bb
-    shortLabel SS6004480 wssd CN
-    longLabel SS6004480 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_B10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B10_wssd.bb
-    shortLabel LP6005442-DNA_B10 wssd CN
-    longLabel LP6005442-DNA_B10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_A10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A10_wssd.bb
-    shortLabel LP6005442-DNA_A10 wssd CN
-    longLabel LP6005442-DNA_A10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G10_wssd.bb
-    shortLabel LP6005442-DNA_G10 wssd CN
-    longLabel LP6005442-DNA_G10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H10_wssd.bb
-    shortLabel LP6005442-DNA_H10 wssd CN
-    longLabel LP6005442-DNA_H10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_D03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_D03_wssd.bb
-    shortLabel LP6005677-DNA_D03 wssd CN
-    longLabel LP6005677-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_C05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_C05_wssd.bb
-    shortLabel LP6005592-DNA_C05 wssd CN
-    longLabel LP6005592-DNA_C05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F11_wssd.bb
-    shortLabel LP6005442-DNA_F11 wssd CN
-    longLabel LP6005442-DNA_F11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_E11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_E11_wssd.bb
-    shortLabel LP6005442-DNA_E11 wssd CN
-    longLabel LP6005442-DNA_E11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_G01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_G01_wssd.bb
-    shortLabel LP6005677-DNA_G01 wssd CN
-    longLabel LP6005677-DNA_G01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F09_wssd.bb
-    shortLabel LP6005442-DNA_F09 wssd CN
-    longLabel LP6005442-DNA_F09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F07_wssd.bb
-    shortLabel LP6005441-DNA_F07 wssd CN
-    longLabel LP6005441-DNA_F07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E07_wssd.bb
-    shortLabel LP6005441-DNA_E07 wssd CN
-    longLabel LP6005441-DNA_E07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F06_wssd.bb
-    shortLabel LP6005443-DNA_F06 wssd CN
-    longLabel LP6005443-DNA_F06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E06_wssd.bb
-    shortLabel LP6005443-DNA_E06 wssd CN
-    longLabel LP6005443-DNA_E06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A08_wssd.bb
-    shortLabel LP6005441-DNA_A08 wssd CN
-    longLabel LP6005441-DNA_A08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_C03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_C03_wssd.bb
-    shortLabel LP6005592-DNA_C03 wssd CN
-    longLabel LP6005592-DNA_C03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B08_wssd.bb
-    shortLabel LP6005441-DNA_B08 wssd CN
-    longLabel LP6005441-DNA_B08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G11_wssd.bb
-    shortLabel LP6005442-DNA_G11 wssd CN
-    longLabel LP6005442-DNA_G11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H11_wssd.bb
-    shortLabel LP6005442-DNA_H11 wssd CN
-    longLabel LP6005442-DNA_H11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G08_wssd.bb
-    shortLabel LP6005441-DNA_G08 wssd CN
-    longLabel LP6005441-DNA_G08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H08_wssd.bb
-    shortLabel LP6005441-DNA_H08 wssd CN
-    longLabel LP6005441-DNA_H08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005619-DNA_B01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005619-DNA_B01_wssd.bb
-    shortLabel LP6005619-DNA_B01 wssd CN
-    longLabel LP6005619-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005619-DNA_C01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005619-DNA_C01_wssd.bb
-    shortLabel LP6005619-DNA_C01 wssd CN
-    longLabel LP6005619-DNA_C01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B11_wssd.bb
-    shortLabel LP6005441-DNA_B11 wssd CN
-    longLabel LP6005441-DNA_B11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G08_wssd.bb
-    shortLabel LP6005443-DNA_G08 wssd CN
-    longLabel LP6005443-DNA_G08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A11_wssd.bb
-    shortLabel LP6005441-DNA_A11 wssd CN
-    longLabel LP6005441-DNA_A11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B02_wssd.bb
-    shortLabel LP6005441-DNA_B02 wssd CN
-    longLabel LP6005441-DNA__B02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D09_wssd.bb
-    shortLabel LP6005442-DNA_D09 wssd CN
-    longLabel LP6005442-DNA_D09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_B02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B02_wssd.bb
-    shortLabel LP6005442-DNA_B02 wssd CN
-    longLabel LP6005442-DNA_B02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_A02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A02_wssd.bb
-    shortLabel LP6005442-DNA_A02 wssd CN
-    longLabel LP6005442-DNA_A02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_D01_wssd.bb
-    shortLabel LP6005519-DNA_D01 wssd CN
-    longLabel LP6005519-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G06_wssd.bb
-    shortLabel LP6005441-DNA_G06 wssd CN
-    longLabel LP6005441-DNA_G06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H06_wssd.bb
-    shortLabel LP6005441-DNA_H06 wssd CN
-    longLabel LP6005441-DNA_H06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G07_wssd.bb
-    shortLabel LP6005441-DNA_G07 wssd CN
-    longLabel LP6005441-DNA_G07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H07_wssd.bb
-    shortLabel LP6005441-DNA_H07 wssd CN
-    longLabel LP6005441-DNA_H07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E11_wssd.bb
-    shortLabel LP6005443-DNA_E11 wssd CN
-    longLabel LP6005443-DNA_E11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F11_wssd.bb
-    shortLabel LP6005443-DNA_F11 wssd CN
-    longLabel LP6005443-DNA_F11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G11_wssd.bb
-    shortLabel LP6005443-DNA_G11 wssd CN
-    longLabel LP6005443-DNA_G11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H11_wssd.bb
-    shortLabel LP6005443-DNA_H11 wssd CN
-    longLabel LP6005443-DNA_H11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A04_wssd.bb
-    shortLabel LP6005441-DNA_A04 wssd CN
-    longLabel LP6005441-DNA_A04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B04_wssd.bb
-    shortLabel LP6005441-DNA_B04 wssd CN
-    longLabel LP6005441-DNA_B04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F10_wssd.bb
-    shortLabel LP6005441-DNA_F10 wssd CN
-    longLabel LP6005441-DNA_F10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E10_wssd.bb
-    shortLabel LP6005441-DNA_E10 wssd CN
-    longLabel LP6005441-DNA_E10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_E01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_E01_wssd.bb
-    shortLabel LP6005677-DNA_E01 wssd CN
-    longLabel LP6005677-DNA_E01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_F01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_F01_wssd.bb
-    shortLabel LP6005677-DNA_F01 wssd CN
-    longLabel LP6005677-DNA_F01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_G02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_G02_wssd.bb
-    shortLabel LP6005519-DNA_G02 wssd CN
-    longLabel LP6005519-DNA_G02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A12_wssd.bb
-    shortLabel LP6005441-DNA_A12 wssd CN
-    longLabel LP6005441-DNA_A12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B12_wssd.bb
-    shortLabel LP6005441-DNA_B12 wssd CN
-    longLabel LP6005441-DNA_B12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_A12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A12_wssd.bb
-    shortLabel LP6005443-DNA_A12 wssd CN
-    longLabel LP6005443-DNA_A12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_D01_wssd.bb
-    shortLabel LP6005677-DNA_D01 wssd CN
-    longLabel LP6005677-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_C07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_C07_wssd.bb
-    shortLabel LP6005442-DNA_C07 wssd CN
-    longLabel LP6005442-DNA_C07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G05_wssd.bb
-    shortLabel LP6005443-DNA_G05 wssd CN
-    longLabel LP6005443-DNA_G05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_E07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_E07_wssd.bb
-    shortLabel LP6005442-DNA_E07 wssd CN
-    longLabel LP6005442-DNA_E07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_B06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_B06_wssd.bb
-    shortLabel LP6005519-DNA_B06 wssd CN
-    longLabel LP6005519-DNA_B06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_A06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_A06_wssd.bb
-    shortLabel LP6005519-DNA_A06 wssd CN
-    longLabel LP6005519-DNA_A06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H03_wssd.bb
-    shortLabel LP6005441-DNA_H03 wssd CN
-    longLabel LP6005441-DNA_H03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G03_wssd.bb
-    shortLabel LP6005441-DNA_G03 wssd CN
-    longLabel LP6005441-DNA_G03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B01_wssd.bb
-    shortLabel LP6005443-DNA_B01 wssd CN
-    longLabel LP6005443-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_D03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_D03_wssd.bb
-    shortLabel LP6005592-DNA_D03 wssd CN
-    longLabel LP6005592-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D04_wssd.bb
-    shortLabel LP6005441-DNA_D04 wssd CN
-    longLabel LP6005441-DNA_D04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F04_wssd.bb
-    shortLabel LP6005441-DNA_F04 wssd CN
-    longLabel LP6005441-DNA_F04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C01_wssd.bb
-    shortLabel LP6005443-DNA_C01 wssd CN
-    longLabel LP6005443-DNA_C01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D05_wssd.bb
-    shortLabel LP6005441-DNA_D05 wssd CN
-    longLabel LP6005441-DNA_D05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C05_wssd.bb
-    shortLabel LP6005441-DNA_C05 wssd CN
-    longLabel LP6005441-DNA_C05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G05_wssd.bb
-    shortLabel LP6005441-DNA_G05 wssd CN
-    longLabel LP6005441-DNA_G05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H05_wssd.bb
-    shortLabel LP6005441-DNA_H05 wssd CN
-    longLabel LP6005441-DNA_H05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C06_wssd.bb
-    shortLabel LP6005441-DNA_C06 wssd CN
-    longLabel LP6005441-DNA_C06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D06_wssd.bb
-    shortLabel LP6005441-DNA_D06 wssd CN
-    longLabel LP6005441-DNA_D06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_C02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_C02_wssd.bb
-    shortLabel LP6005592-DNA_C02 wssd CN
-    longLabel LP6005592-DNA_C02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D11_wssd.bb
-    shortLabel LP6005442-DNA_D11 wssd CN
-    longLabel LP6005442-DNA_D11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_C11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_C11_wssd.bb
-    shortLabel LP6005442-DNA_C11 wssd CN
-    longLabel LP6005442-DNA_C11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C06_wssd.bb
-    shortLabel LP6005443-DNA_C06 wssd CN
-    longLabel LP6005443-DNA_C06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D06_wssd.bb
-    shortLabel LP6005443-DNA_D06 wssd CN
-    longLabel LP6005443-DNA_D06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E01_wssd.bb
-    shortLabel LP6005443-DNA_E01 wssd CN
-    longLabel LP6005443-DNA_E01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B07_wssd.bb
-    shortLabel LP6005441-DNA_B07 wssd CN
-    longLabel LP6005441-DNA_B07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C08_wssd.bb
-    shortLabel LP6005441-DNA_C08 wssd CN
-    longLabel LP6005441-DNA_C08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D08_wssd.bb
-    shortLabel LP6005441-DNA_D08 wssd CN
-    longLabel LP6005441-DNA_D08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F08_wssd.bb
-    shortLabel LP6005441-DNA_F08 wssd CN
-    longLabel LP6005441-DNA_F08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E08_wssd.bb
-    shortLabel LP6005441-DNA_E08 wssd CN
-    longLabel LP6005441-DNA_E08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E09_wssd.bb
-    shortLabel LP6005443-DNA_E09 wssd CN
-    longLabel LP6005443-DNA_E09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A09_wssd.bb
-    shortLabel LP6005441-DNA_A09 wssd CN
-    longLabel LP6005441-DNA_A09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B09_wssd.bb
-    shortLabel LP6005441-DNA_B09 wssd CN
-    longLabel LP6005441-DNA_B09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E09_wssd.bb
-    shortLabel LP6005441-DNA_E09 wssd CN
-    longLabel LP6005441-DNA_E09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F09_wssd.bb
-    shortLabel LP6005441-DNA_F09 wssd CN
-    longLabel LP6005441-DNA_F09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F01_wssd.bb
-    shortLabel LP6005443-DNA_F01 wssd CN
-    longLabel LP6005443-DNA_F01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G01_wssd.bb
-    shortLabel LP6005443-DNA_G01 wssd CN
-    longLabel LP6005443-DNA_G01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_A07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A07_wssd.bb
-    shortLabel LP6005443-DNA_A07 wssd CN
-    longLabel LP6005443-DNA_A07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B07_wssd.bb
-    shortLabel LP6005443-DNA_B07 wssd CN
-    longLabel LP6005443-DNA_B07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H01_wssd.bb
-    shortLabel LP6005443-DNA_H01 wssd CN
-    longLabel LP6005443-DNA_H01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D12_wssd.bb
-    shortLabel LP6005441-DNA_D12 wssd CN
-    longLabel LP6005441-DNA_D12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_A02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A02_wssd.bb
-    shortLabel LP6005443-DNA_A02 wssd CN
-    longLabel LP6005443-DNA_A02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F12_wssd.bb
-    shortLabel LP6005441-DNA_F12 wssd CN
-    longLabel LP6005441-DNA_F12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B02_wssd.bb
-    shortLabel LP6005443-DNA_B02 wssd CN
-    longLabel LP6005443-DNA_B02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_B01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B01_wssd.bb
-    shortLabel LP6005442-DNA_B01 wssd CN
-    longLabel LP6005442-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C02_wssd.bb
-    shortLabel LP6005443-DNA_C02 wssd CN
-    longLabel LP6005443-DNA_C02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D01_wssd.bb
-    shortLabel LP6005442-DNA_D01 wssd CN
-    longLabel LP6005442-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G01_wssd.bb
-    shortLabel LP6005442-DNA_G01 wssd CN
-    longLabel LP6005442-DNA_G01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H01_wssd.bb
-    shortLabel LP6005442-DNA_H01 wssd CN
-    longLabel LP6005442-DNA_H01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track SS6004478_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/SS6004478_wssd.bb
-    shortLabel SS6004478 wssd CN
-    longLabel SS6004478 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track SS6004477_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/SS6004477_wssd.bb
-    shortLabel SS6004477 wssd CN
-    longLabel SS6004477 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
     visibility dense
 
     track LP6005441-DNA_A03_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_A03_wssd.bb
-    shortLabel LP6005441-DNA_A03 wssd CN
-    longLabel LP6005441-DNA_A03 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel OCN_Bougainville_LP6005441-DNA_A03 wssd CN
+    longLabel OCN_Bougainville_LP6005441-DNA_A03 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005441-DNA_B03_wssd
+    track LP6005441-DNA_A04_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B03_wssd.bb
-    shortLabel LP6005441-DNA_B03 wssd CN
-    longLabel LP6005441-DNA_B03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A04_wssd.bb
+    shortLabel AMR_Piapoco_LP6005441-DNA_A04 wssd CN
+    longLabel AMR_Piapoco_LP6005441-DNA_A04 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_E06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_E06_wssd.bb
-    shortLabel LP6005519-DNA_E06 wssd CN
-    longLabel LP6005519-DNA_E06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_F06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_F06_wssd.bb
-    shortLabel LP6005519-DNA_F06 wssd CN
-    longLabel LP6005519-DNA_F06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_H03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_H03_wssd.bb
-    shortLabel LP6005592-DNA_H03 wssd CN
-    longLabel LP6005592-DNA_H03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_C06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_C06_wssd.bb
-    shortLabel LP6005519-DNA_C06 wssd CN
-    longLabel LP6005519-DNA_C06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_D06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_D06_wssd.bb
-    shortLabel LP6005519-DNA_D06 wssd CN
-    longLabel LP6005519-DNA_D06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_B02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_B02_wssd.bb
-    shortLabel LP6005592-DNA_B02 wssd CN
-    longLabel LP6005592-DNA_B02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H07_wssd.bb
-    shortLabel LP6005443-DNA_H07 wssd CN
-    longLabel LP6005443-DNA_H07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A10_wssd.bb
-    shortLabel LP6005441-DNA_A10 wssd CN
-    longLabel LP6005441-DNA_A10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E07_wssd.bb
-    shortLabel LP6005443-DNA_E07 wssd CN
-    longLabel LP6005443-DNA_E07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D07_wssd.bb
-    shortLabel LP6005443-DNA_D07 wssd CN
-    longLabel LP6005443-DNA_D07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C08_wssd.bb
-    shortLabel LP6005443-DNA_C08 wssd CN
-    longLabel LP6005443-DNA_C08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F07_wssd.bb
-    shortLabel LP6005443-DNA_F07 wssd CN
-    longLabel LP6005443-DNA_F07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_A08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A08_wssd.bb
-    shortLabel LP6005443-DNA_A08 wssd CN
-    longLabel LP6005443-DNA_A08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B10_wssd.bb
-    shortLabel LP6005441-DNA_B10 wssd CN
-    longLabel LP6005441-DNA_B10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F08_wssd.bb
-    shortLabel LP6005443-DNA_F08 wssd CN
-    longLabel LP6005443-DNA_F08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D08_wssd.bb
-    shortLabel LP6005443-DNA_D08 wssd CN
-    longLabel LP6005443-DNA_D08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B08_wssd.bb
-    shortLabel LP6005443-DNA_B08 wssd CN
-    longLabel LP6005443-DNA_B08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E08_wssd.bb
-    shortLabel LP6005443-DNA_E08 wssd CN
-    longLabel LP6005443-DNA_E08 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C07_wssd.bb
-    shortLabel LP6005443-DNA_C07 wssd CN
-    longLabel LP6005443-DNA_C07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G07_wssd.bb
-    shortLabel LP6005443-DNA_G07 wssd CN
-    longLabel LP6005443-DNA_G07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D01_wssd.bb
-    shortLabel LP6005441-DNA_D01 wssd CN
-    longLabel LP6005441-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G09_wssd.bb
-    shortLabel LP6005442-DNA_G09 wssd CN
-    longLabel LP6005442-DNA_G09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H09_wssd.bb
-    shortLabel LP6005442-DNA_H09 wssd CN
-    longLabel LP6005442-DNA_H09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_G03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_G03_wssd.bb
-    shortLabel LP6005519-DNA_G03 wssd CN
-    longLabel LP6005519-DNA_G03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_H03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_H03_wssd.bb
-    shortLabel LP6005519-DNA_H03 wssd CN
-    longLabel LP6005519-DNA_H03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C03_wssd.bb
-    shortLabel LP6005441-DNA_C03 wssd CN
-    longLabel LP6005441-DNA_C03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D03_wssd.bb
-    shortLabel LP6005441-DNA_D03 wssd CN
-    longLabel LP6005441-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F03_wssd.bb
-    shortLabel LP6005441-DNA_F03 wssd CN
-    longLabel LP6005441-DNA_F03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E03_wssd.bb
-    shortLabel LP6005441-DNA_E03 wssd CN
-    longLabel LP6005441-DNA_E03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F05_wssd.bb
-    shortLabel LP6005441-DNA_F05 wssd CN
-    longLabel LP6005441-DNA_F05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E05_wssd.bb
-    shortLabel LP6005441-DNA_E05 wssd CN
-    longLabel LP6005441-DNA_E05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_C05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_C05_wssd.bb
-    shortLabel LP6005519-DNA_C05 wssd CN
-    longLabel LP6005519-DNA_C05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_D05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_D05_wssd.bb
-    shortLabel LP6005519-DNA_D05 wssd CN
-    longLabel LP6005519-DNA_D05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F06_wssd.bb
-    shortLabel LP6005441-DNA_F06 wssd CN
-    longLabel LP6005441-DNA_F06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E06_wssd.bb
-    shortLabel LP6005441-DNA_E06 wssd CN
-    longLabel LP6005441-DNA_E06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_A04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_A04_wssd.bb
-    shortLabel LP6005519-DNA_A04 wssd CN
-    longLabel LP6005519-DNA_A04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_B04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_B04_wssd.bb
-    shortLabel LP6005519-DNA_B04 wssd CN
-    longLabel LP6005519-DNA_B04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_E05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_E05_wssd.bb
-    shortLabel LP6005519-DNA_E05 wssd CN
-    longLabel LP6005519-DNA_E05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D09_wssd.bb
-    shortLabel LP6005443-DNA_D09 wssd CN
-    longLabel LP6005443-DNA_D09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C09_wssd.bb
-    shortLabel LP6005443-DNA_C09 wssd CN
-    longLabel LP6005443-DNA_C09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_H04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_H04_wssd.bb
-    shortLabel LP6005519-DNA_H04 wssd CN
-    longLabel LP6005519-DNA_H04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_G04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_G04_wssd.bb
-    shortLabel LP6005519-DNA_G04 wssd CN
-    longLabel LP6005519-DNA_G04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D07_wssd.bb
-    shortLabel LP6005441-DNA_D07 wssd CN
-    longLabel LP6005441-DNA_D07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C07_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C07_wssd.bb
-    shortLabel LP6005441-DNA_C07 wssd CN
-    longLabel LP6005441-DNA_C07 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_E04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_E04_wssd.bb
-    shortLabel LP6005519-DNA_E04 wssd CN
-    longLabel LP6005519-DNA_E04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_F04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_F04_wssd.bb
-    shortLabel LP6005519-DNA_F04 wssd CN
-    longLabel LP6005519-DNA_F04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C10_wssd.bb
-    shortLabel LP6005441-DNA_C10 wssd CN
-    longLabel LP6005441-DNA_C10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D10_wssd.bb
-    shortLabel LP6005441-DNA_D10 wssd CN
-    longLabel LP6005441-DNA_D10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_A04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_A04_wssd.bb
-    shortLabel LP6005592-DNA_A04 wssd CN
-    longLabel LP6005592-DNA_A04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_B04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_B04_wssd.bb
-    shortLabel LP6005592-DNA_B04 wssd CN
-    longLabel LP6005592-DNA_B04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_A12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A12_wssd.bb
-    shortLabel LP6005442-DNA_A12 wssd CN
-    longLabel LP6005442-DNA_A12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_B12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B12_wssd.bb
-    shortLabel LP6005442-DNA_B12 wssd CN
-    longLabel LP6005442-DNA_B12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_A05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_A05_wssd.bb
-    shortLabel LP6005519-DNA_A05 wssd CN
-    longLabel LP6005519-DNA_A05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_B05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_B05_wssd.bb
-    shortLabel LP6005519-DNA_B05 wssd CN
-    longLabel LP6005519-DNA_B05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H11_wssd.bb
-    shortLabel LP6005441-DNA_H11 wssd CN
-    longLabel LP6005441-DNA_H11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G11_wssd.bb
-    shortLabel LP6005441-DNA_G11 wssd CN
-    longLabel LP6005441-DNA_G11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_C04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_C04_wssd.bb
-    shortLabel LP6005519-DNA_C04 wssd CN
-    longLabel LP6005519-DNA_C04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_D04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_D04_wssd.bb
-    shortLabel LP6005519-DNA_D04 wssd CN
-    longLabel LP6005519-DNA_D04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H02_wssd.bb
-    shortLabel LP6005443-DNA_H02 wssd CN
-    longLabel LP6005443-DNA_H02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_A03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A03_wssd.bb
-    shortLabel LP6005443-DNA_A03 wssd CN
-    longLabel LP6005443-DNA_A03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C03_wssd.bb
-    shortLabel LP6005443-DNA_C03 wssd CN
-    longLabel LP6005443-DNA_C03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B03_wssd.bb
-    shortLabel LP6005443-DNA_B03 wssd CN
-    longLabel LP6005443-DNA_B03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D03_wssd.bb
-    shortLabel LP6005443-DNA_D03 wssd CN
-    longLabel LP6005443-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F03_wssd.bb
-    shortLabel LP6005443-DNA_F03 wssd CN
-    longLabel LP6005443-DNA_F03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G03_wssd.bb
-    shortLabel LP6005443-DNA_G03 wssd CN
-    longLabel LP6005443-DNA_G03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H03_wssd.bb
-    shortLabel LP6005443-DNA_H03 wssd CN
-    longLabel LP6005443-DNA_H03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_C04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_C04_wssd.bb
-    shortLabel LP6005443-DNA_C04 wssd CN
-    longLabel LP6005443-DNA_C04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_F03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_F03_wssd.bb
-    shortLabel LP6005592-DNA_F03 wssd CN
-    longLabel LP6005592-DNA_F03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_B04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B04_wssd.bb
-    shortLabel LP6005443-DNA_B04 wssd CN
-    longLabel LP6005443-DNA_B04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D04_wssd.bb
-    shortLabel LP6005443-DNA_D04 wssd CN
-    longLabel LP6005443-DNA_D04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_F04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F04_wssd.bb
-    shortLabel LP6005443-DNA_F04 wssd CN
-    longLabel LP6005443-DNA_F04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_G04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_G04_wssd.bb
-    shortLabel LP6005443-DNA_G04 wssd CN
-    longLabel LP6005443-DNA_G04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D05_wssd.bb
-    shortLabel LP6005443-DNA_D05 wssd CN
-    longLabel LP6005443-DNA_D05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_E05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E05_wssd.bb
-    shortLabel LP6005443-DNA_E05 wssd CN
-    longLabel LP6005443-DNA_E05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F12_wssd.bb
-    shortLabel LP6005442-DNA_F12 wssd CN
-    longLabel LP6005442-DNA_F12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_E12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_E12_wssd.bb
-    shortLabel LP6005442-DNA_E12 wssd CN
-    longLabel LP6005442-DNA_E12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H12_wssd.bb
-    shortLabel LP6005442-DNA_H12 wssd CN
-    longLabel LP6005442-DNA_H12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G12_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G12_wssd.bb
-    shortLabel LP6005442-DNA_G12 wssd CN
-    longLabel LP6005442-DNA_G12 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D02_wssd.bb
-    shortLabel LP6005443-DNA_D02 wssd CN
-    longLabel LP6005443-DNA_D02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F01_wssd.bb
-    shortLabel LP6005442-DNA_F01 wssd CN
-    longLabel LP6005442-DNA_F01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D02_wssd.bb
-    shortLabel LP6005442-DNA_D02 wssd CN
-    longLabel LP6005442-DNA_D02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_C02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_C02_wssd.bb
-    shortLabel LP6005442-DNA_C02 wssd CN
-    longLabel LP6005442-DNA_C02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B01_wssd.bb
-    shortLabel LP6005441-DNA_B01 wssd CN
-    longLabel LP6005441-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A01_wssd.bb
-    shortLabel LP6005441-DNA_A01 wssd CN
-    longLabel LP6005441-DNA_A01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_B01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_B01_wssd.bb
-    shortLabel LP6005677-DNA_B01 wssd CN
-    longLabel LP6005677-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F02_wssd.bb
-    shortLabel LP6005442-DNA_F02 wssd CN
-    longLabel LP6005442-DNA_F02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G02_wssd.bb
-    shortLabel LP6005442-DNA_G02 wssd CN
-    longLabel LP6005442-DNA_G02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005519-DNA_F03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_F03_wssd.bb
-    shortLabel LP6005519-DNA_F03 wssd CN
-    longLabel LP6005519-DNA_F03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_C02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_C02_wssd.bb
-    shortLabel LP6005441-DNA_C02 wssd CN
-    longLabel LP6005441-DNA_C02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D02_wssd.bb
-    shortLabel LP6005441-DNA_D02 wssd CN
-    longLabel LP6005441-DNA_D02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_E02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_E02_wssd.bb
-    shortLabel LP6005441-DNA_E02 wssd CN
-    longLabel LP6005441-DNA_E02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_F02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_F02_wssd.bb
-    shortLabel LP6005441-DNA_F02 wssd CN
-    longLabel LP6005441-DNA_F02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_A06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_A06_wssd.bb
-    shortLabel LP6005441-DNA_A06 wssd CN
-    longLabel LP6005441-DNA_A06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B06_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B06_wssd.bb
-    shortLabel LP6005441-DNA_B06 wssd CN
-    longLabel LP6005441-DNA_B06 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_A02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_A02_wssd.bb
-    shortLabel LP6005677-DNA_A02 wssd CN
-    longLabel LP6005677-DNA_A02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005677-DNA_B02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_B02_wssd.bb
-    shortLabel LP6005677-DNA_B02 wssd CN
-    longLabel LP6005677-DNA_B02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_A03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A03_wssd.bb
-    shortLabel LP6005442-DNA_A03 wssd CN
-    longLabel LP6005442-DNA_A03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_B03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B03_wssd.bb
-    shortLabel LP6005442-DNA_B03 wssd CN
-    longLabel LP6005442-DNA_B03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D03_wssd.bb
-    shortLabel LP6005442-DNA_D03 wssd CN
-    longLabel LP6005442-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_H05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_H05_wssd.bb
-    shortLabel LP6005443-DNA_H05 wssd CN
-    longLabel LP6005443-DNA_H05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005443-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_D01_wssd.bb
-    shortLabel LP6005443-DNA_D01 wssd CN
-    longLabel LP6005443-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G04_wssd.bb
-    shortLabel LP6005441-DNA_G04 wssd CN
-    longLabel LP6005441-DNA_G04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_E10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_E10_wssd.bb
-    shortLabel LP6005442-DNA_E10 wssd CN
-    longLabel LP6005442-DNA_E10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_F10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F10_wssd.bb
-    shortLabel LP6005442-DNA_F10 wssd CN
-    longLabel LP6005442-DNA_F10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_H03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H03_wssd.bb
-    shortLabel LP6005442-DNA_H03 wssd CN
-    longLabel LP6005442-DNA_H03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_G03_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G03_wssd.bb
-    shortLabel LP6005442-DNA_G03 wssd CN
-    longLabel LP6005442-DNA_G03 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_D10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D10_wssd.bb
-    shortLabel LP6005442-DNA_D10 wssd CN
-    longLabel LP6005442-DNA_D10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005442-DNA_C10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_C10_wssd.bb
-    shortLabel LP6005442-DNA_C10 wssd CN
-    longLabel LP6005442-DNA_C10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_A02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_A02_wssd.bb
-    shortLabel LP6005592-DNA_A02 wssd CN
-    longLabel LP6005592-DNA_A02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_B05_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_B05_wssd.bb
-    shortLabel LP6005441-DNA_B05 wssd CN
-    longLabel LP6005441-DNA_B05 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
     visibility dense
 
     track LP6005441-DNA_A05_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_A05_wssd.bb
-    shortLabel LP6005441-DNA_A05 wssd CN
-    longLabel LP6005441-DNA_A05 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_French_LP6005441-DNA_A05 wssd CN
+    longLabel WEA_French_LP6005441-DNA_A05 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_B04_wssd
+    track LP6005441-DNA_A06_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B04_wssd.bb
-    shortLabel LP6005442-DNA_B04 wssd CN
-    longLabel LP6005442-DNA_B04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A06_wssd.bb
+    shortLabel WEA_Bergamo_LP6005441-DNA_A06 wssd CN
+    longLabel WEA_Bergamo_LP6005441-DNA_A06 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_A04_wssd
+    track LP6005441-DNA_A08_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A04_wssd.bb
-    shortLabel LP6005442-DNA_A04 wssd CN
-    longLabel LP6005442-DNA_A04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A08_wssd.bb
+    shortLabel AFR_Mbuti_LP6005441-DNA_A08 wssd CN
+    longLabel AFR_Mbuti_LP6005441-DNA_A08 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005443-DNA_A06_wssd
+    track LP6005441-DNA_A10_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_A06_wssd.bb
-    shortLabel LP6005443-DNA_A06 wssd CN
-    longLabel LP6005443-DNA_A06 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A10_wssd.bb
+    shortLabel OCN_Papuan_LP6005441-DNA_A10 wssd CN
+    longLabel OCN_Papuan_LP6005441-DNA_A10 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_G07_wssd
+    track LP6005441-DNA_A11_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G07_wssd.bb
-    shortLabel LP6005442-DNA_G07 wssd CN
-    longLabel LP6005442-DNA_G07 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A11_wssd.bb
+    shortLabel AFR_Ju_hoan_North_LP6005441-DNA_A11 wssd CN
+    longLabel AFR_Ju_hoan_North_LP6005441-DNA_A11 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_A08_wssd
+    track LP6005441-DNA_A12_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A08_wssd.bb
-    shortLabel LP6005442-DNA_A08 wssd CN
-    longLabel LP6005442-DNA_A08 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_A12_wssd.bb
+    shortLabel AMR_Surui_LP6005441-DNA_A12 wssd CN
+    longLabel AMR_Surui_LP6005441-DNA_A12 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_B08_wssd
+    track LP6005441-DNA_B01_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B08_wssd.bb
-    shortLabel LP6005442-DNA_B08 wssd CN
-    longLabel LP6005442-DNA_B08 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B01_wssd.bb
+    shortLabel WEA_Adygei_LP6005441-DNA_B01 wssd CN
+    longLabel WEA_Adygei_LP6005441-DNA_B01 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_D08_wssd
+    track LP6005441-DNA_B02_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_D08_wssd.bb
-    shortLabel LP6005442-DNA_D08 wssd CN
-    longLabel LP6005442-DNA_D08 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B02_wssd.bb
+    shortLabel AFR_BantuKenya_LP6005441-DNA_B02 wssd CN
+    longLabel AFR_BantuKenya_LP6005441-DNA_B02 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005443-DNA_B06_wssd
+    track LP6005441-DNA_B03_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B06_wssd.bb
-    shortLabel LP6005443-DNA_B06 wssd CN
-    longLabel LP6005443-DNA_B06 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B03_wssd.bb
+    shortLabel OCN_Bougainville_LP6005441-DNA_B03 wssd CN
+    longLabel OCN_Bougainville_LP6005441-DNA_B03 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005443-DNA_B10_wssd
+    track LP6005441-DNA_B04_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_B10_wssd.bb
-    shortLabel LP6005443-DNA_B10 wssd CN
-    longLabel LP6005443-DNA_B10 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B04_wssd.bb
+    shortLabel AMR_Piapoco_LP6005441-DNA_B04 wssd CN
+    longLabel AMR_Piapoco_LP6005441-DNA_B04 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_C04_wssd
+    track LP6005441-DNA_B05_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_C04_wssd.bb
-    shortLabel LP6005442-DNA_C04 wssd CN
-    longLabel LP6005442-DNA_C04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B05_wssd.bb
+    shortLabel WEA_French_LP6005441-DNA_B05 wssd CN
+    longLabel WEA_French_LP6005441-DNA_B05 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_F01_wssd
+    track LP6005441-DNA_B06_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_F01_wssd.bb
-    shortLabel LP6005592-DNA_F01 wssd CN
-    longLabel LP6005592-DNA_F01 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B06_wssd.bb
+    shortLabel WEA_Bergamo_LP6005441-DNA_B06 wssd CN
+    longLabel WEA_Bergamo_LP6005441-DNA_B06 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_E01_wssd
+    track LP6005441-DNA_B07_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_E01_wssd.bb
-    shortLabel LP6005592-DNA_E01 wssd CN
-    longLabel LP6005592-DNA_E01 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B07_wssd.bb
+    shortLabel EA_Lahu_LP6005441-DNA_B07 wssd CN
+    longLabel EA_Lahu_LP6005441-DNA_B07 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_E04_wssd
+    track LP6005441-DNA_B08_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_E04_wssd.bb
-    shortLabel LP6005442-DNA_E04 wssd CN
-    longLabel LP6005442-DNA_E04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B08_wssd.bb
+    shortLabel AFR_Mbuti_LP6005441-DNA_B08 wssd CN
+    longLabel AFR_Mbuti_LP6005441-DNA_B08 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_G03_wssd
+    track LP6005441-DNA_B09_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_G03_wssd.bb
-    shortLabel LP6005592-DNA_G03 wssd CN
-    longLabel LP6005592-DNA_G03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B09_wssd.bb
+    shortLabel EA_Naxi_LP6005441-DNA_B09 wssd CN
+    longLabel EA_Naxi_LP6005441-DNA_B09 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_F04_wssd
+    track LP6005441-DNA_B10_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_F04_wssd.bb
-    shortLabel LP6005442-DNA_F04 wssd CN
-    longLabel LP6005442-DNA_F04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B10_wssd.bb
+    shortLabel OCN_Papuan_LP6005441-DNA_B10 wssd CN
+    longLabel OCN_Papuan_LP6005441-DNA_B10 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005677-DNA_C03_wssd
+    track LP6005441-DNA_B11_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_C03_wssd.bb
-    shortLabel LP6005677-DNA_C03 wssd CN
-    longLabel LP6005677-DNA_C03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B11_wssd.bb
+    shortLabel AFR_Ju_hoan_North_LP6005441-DNA_B11 wssd CN
+    longLabel AFR_Ju_hoan_North_LP6005441-DNA_B11 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005677-DNA_A03_wssd
+    track LP6005441-DNA_B12_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005677-DNA_A03_wssd.bb
-    shortLabel LP6005677-DNA_A03 wssd CN
-    longLabel LP6005677-DNA_A03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_B12_wssd.bb
+    shortLabel AMR_Surui_LP6005441-DNA_B12 wssd CN
+    longLabel AMR_Surui_LP6005441-DNA_B12 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_G04_wssd
+    track LP6005441-DNA_C02_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_G04_wssd.bb
-    shortLabel LP6005442-DNA_G04 wssd CN
-    longLabel LP6005442-DNA_G04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C02_wssd.bb
+    shortLabel WEA_Basque_LP6005441-DNA_C02 wssd CN
+    longLabel WEA_Basque_LP6005441-DNA_C02 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_H04_wssd
+    track LP6005441-DNA_C03_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_H04_wssd.bb
-    shortLabel LP6005442-DNA_H04 wssd CN
-    longLabel LP6005442-DNA_H04 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C03_wssd.bb
+    shortLabel SA_Brahui_LP6005441-DNA_C03 wssd CN
+    longLabel SA_Brahui_LP6005441-DNA_C03 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005443-DNA_E10_wssd
+    track LP6005441-DNA_C05_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_E10_wssd.bb
-    shortLabel LP6005443-DNA_E10 wssd CN
-    longLabel LP6005443-DNA_E10 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C05_wssd.bb
+    shortLabel EA_Han_LP6005441-DNA_C05 wssd CN
+    longLabel EA_Han_LP6005441-DNA_C05 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005443-DNA_F10_wssd
+    track LP6005441-DNA_C06_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005443-DNA_F10_wssd.bb
-    shortLabel LP6005443-DNA_F10 wssd CN
-    longLabel LP6005443-DNA_F10 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C06_wssd.bb
+    shortLabel EA_Japanese_LP6005441-DNA_C06 wssd CN
+    longLabel EA_Japanese_LP6005441-DNA_C06 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_B01_wssd
+    track LP6005441-DNA_C07_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_B01_wssd.bb
-    shortLabel LP6005592-DNA_B01 wssd CN
-    longLabel LP6005592-DNA_B01 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C07_wssd.bb
+    shortLabel SA_Makrani_LP6005441-DNA_C07 wssd CN
+    longLabel SA_Makrani_LP6005441-DNA_C07 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005441-DNA_D09_wssd
+    track LP6005441-DNA_C08_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D09_wssd.bb
-    shortLabel LP6005441-DNA_D09 wssd CN
-    longLabel LP6005441-DNA_D09 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C08_wssd.bb
+    shortLabel EA_Miao_LP6005441-DNA_C08 wssd CN
+    longLabel EA_Miao_LP6005441-DNA_C08 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
     track LP6005441-DNA_C09_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_C09_wssd.bb
-    shortLabel LP6005441-DNA_C09 wssd CN
-    longLabel LP6005441-DNA_C09 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_Orcadian_LP6005441-DNA_C09 wssd CN
+    longLabel WEA_Orcadian_LP6005441-DNA_C09 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_B03_wssd
+    track LP6005441-DNA_C10_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_B03_wssd.bb
-    shortLabel LP6005592-DNA_B03 wssd CN
-    longLabel LP6005592-DNA_B03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_C10_wssd.bb
+    shortLabel SA_Pathan_LP6005441-DNA_C10 wssd CN
+    longLabel SA_Pathan_LP6005441-DNA_C10 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G09_wssd.bb
-    shortLabel LP6005441-DNA_G09 wssd CN
-    longLabel LP6005441-DNA_G09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H09_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H09_wssd.bb
-    shortLabel LP6005441-DNA_H09 wssd CN
-    longLabel LP6005441-DNA_H09 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_E02_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_E02_wssd.bb
-    shortLabel LP6005592-DNA_E02 wssd CN
-    longLabel LP6005592-DNA_E02 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_G10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_G10_wssd.bb
-    shortLabel LP6005441-DNA_G10 wssd CN
-    longLabel LP6005441-DNA_G10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_H10_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_H10_wssd.bb
-    shortLabel LP6005441-DNA_H10 wssd CN
-    longLabel LP6005441-DNA_H10 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_C01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_C01_wssd.bb
-    shortLabel LP6005592-DNA_C01 wssd CN
-    longLabel LP6005592-DNA_C01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_D01_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_D01_wssd.bb
-    shortLabel LP6005592-DNA_D01 wssd CN
-    longLabel LP6005592-DNA_D01 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005592-DNA_D04_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_D04_wssd.bb
-    shortLabel LP6005592-DNA_D04 wssd CN
-    longLabel LP6005592-DNA_D04 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
-    visibility dense
-
-    track LP6005441-DNA_D11_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005441-DNA_D11_wssd.bb
-    shortLabel LP6005441-DNA_D11 wssd CN
-    longLabel LP6005441-DNA_D11 WSSD Copy Number
-    type bigBed 9 +
-    itemRgb on
-    maxItems 100000
     visibility dense
 
     track LP6005441-DNA_C11_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_C11_wssd.bb
-    shortLabel LP6005441-DNA_C11 wssd CN
-    longLabel LP6005441-DNA_C11 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_Sardinian_LP6005441-DNA_C11 wssd CN
+    longLabel WEA_Sardinian_LP6005441-DNA_C11 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_A11_wssd
+    track LP6005441-DNA_D01_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A11_wssd.bb
-    shortLabel LP6005442-DNA_A11 wssd CN
-    longLabel LP6005442-DNA_A11 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_D01_wssd.bb
+    shortLabel SA_Balochi_LP6005441-DNA_D01 wssd CN
+    longLabel SA_Balochi_LP6005441-DNA_D01 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005442-DNA_B11_wssd
+    track LP6005441-DNA_D02_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_B11_wssd.bb
-    shortLabel LP6005442-DNA_B11 wssd CN
-    longLabel LP6005442-DNA_B11 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_D02_wssd.bb
+    shortLabel WEA_Basque_LP6005441-DNA_D02 wssd CN
+    longLabel WEA_Basque_LP6005441-DNA_D02 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005519-DNA_C03_wssd
+    track LP6005441-DNA_D03_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_C03_wssd.bb
-    shortLabel LP6005519-DNA_C03 wssd CN
-    longLabel LP6005519-DNA_C03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_D03_wssd.bb
+    shortLabel SA_Brahui_LP6005441-DNA_D03 wssd CN
+    longLabel SA_Brahui_LP6005441-DNA_D03 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005519-DNA_D03_wssd
+    track LP6005441-DNA_D04_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005519-DNA_D03_wssd.bb
-    shortLabel LP6005519-DNA_D03 wssd CN
-    longLabel LP6005519-DNA_D03 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005441-DNA_D04_wssd.bb
+    shortLabel EA_Dai_LP6005441-DNA_D04 wssd CN
+    longLabel EA_Dai_LP6005441-DNA_D04 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
+    visibility dense
+
+    track LP6005441-DNA_D05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D05_wssd.bb
+    shortLabel EA_Han_LP6005441-DNA_D05 wssd CN
+    longLabel EA_Han_LP6005441-DNA_D05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D06_wssd.bb
+    shortLabel EA_Japanese_LP6005441-DNA_D06 wssd CN
+    longLabel EA_Japanese_LP6005441-DNA_D06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D07_wssd.bb
+    shortLabel SA_Makrani_LP6005441-DNA_D07 wssd CN
+    longLabel SA_Makrani_LP6005441-DNA_D07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D08_wssd.bb
+    shortLabel EA_Miao_LP6005441-DNA_D08 wssd CN
+    longLabel EA_Miao_LP6005441-DNA_D08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D09_wssd.bb
+    shortLabel WEA_Orcadian_LP6005441-DNA_D09 wssd CN
+    longLabel WEA_Orcadian_LP6005441-DNA_D09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D10_wssd.bb
+    shortLabel SA_Pathan_LP6005441-DNA_D10 wssd CN
+    longLabel SA_Pathan_LP6005441-DNA_D10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D11_wssd.bb
+    shortLabel WEA_Sardinian_LP6005441-DNA_D11 wssd CN
+    longLabel WEA_Sardinian_LP6005441-DNA_D11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_D12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_D12_wssd.bb
+    shortLabel EA_Tu_LP6005441-DNA_D12 wssd CN
+    longLabel EA_Tu_LP6005441-DNA_D12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E02_wssd.bb
+    shortLabel WEA_BedouinB_LP6005441-DNA_E02 wssd CN
+    longLabel WEA_BedouinB_LP6005441-DNA_E02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E03_wssd.bb
+    shortLabel SA_Burusho_LP6005441-DNA_E03 wssd CN
+    longLabel SA_Burusho_LP6005441-DNA_E03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E05_wssd.bb
+    shortLabel SA_Hazara_LP6005441-DNA_E05 wssd CN
+    longLabel SA_Hazara_LP6005441-DNA_E05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E06_wssd.bb
+    shortLabel SA_Kalash_LP6005441-DNA_E06 wssd CN
+    longLabel SA_Kalash_LP6005441-DNA_E06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E07_wssd.bb
+    shortLabel AFR_Mandenka_LP6005441-DNA_E07 wssd CN
+    longLabel AFR_Mandenka_LP6005441-DNA_E07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E08_wssd.bb
+    shortLabel SIB_Mongola_LP6005441-DNA_E08 wssd CN
+    longLabel SIB_Mongola_LP6005441-DNA_E08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E09_wssd.bb
+    shortLabel EA_Oroqen_LP6005441-DNA_E09 wssd CN
+    longLabel EA_Oroqen_LP6005441-DNA_E09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_E10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_E10_wssd.bb
+    shortLabel AMR_Pima_LP6005441-DNA_E10 wssd CN
+    longLabel AMR_Pima_LP6005441-DNA_E10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F01_wssd.bb
+    shortLabel AFR_BantuHerero_LP6005441-DNA_F01 wssd CN
+    longLabel AFR_BantuHerero_LP6005441-DNA_F01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F02_wssd.bb
+    shortLabel WEA_BedouinB_LP6005441-DNA_F02 wssd CN
+    longLabel WEA_BedouinB_LP6005441-DNA_F02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F03_wssd.bb
+    shortLabel SA_Burusho_LP6005441-DNA_F03 wssd CN
+    longLabel SA_Burusho_LP6005441-DNA_F03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F04_wssd.bb
+    shortLabel EA_Daur_LP6005441-DNA_F04 wssd CN
+    longLabel EA_Daur_LP6005441-DNA_F04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F05_wssd.bb
+    shortLabel SA_Hazara_LP6005441-DNA_F05 wssd CN
+    longLabel SA_Hazara_LP6005441-DNA_F05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F06_wssd.bb
+    shortLabel SA_Kalash_LP6005441-DNA_F06 wssd CN
+    longLabel SA_Kalash_LP6005441-DNA_F06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F07_wssd.bb
+    shortLabel AFR_Mandenka_LP6005441-DNA_F07 wssd CN
+    longLabel AFR_Mandenka_LP6005441-DNA_F07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F08_wssd.bb
+    shortLabel SIB_Mongola_LP6005441-DNA_F08 wssd CN
+    longLabel SIB_Mongola_LP6005441-DNA_F08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F09_wssd.bb
+    shortLabel EA_Oroqen_LP6005441-DNA_F09 wssd CN
+    longLabel EA_Oroqen_LP6005441-DNA_F09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F10_wssd.bb
+    shortLabel AMR_Pima_LP6005441-DNA_F10 wssd CN
+    longLabel AMR_Pima_LP6005441-DNA_F10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_F12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_F12_wssd.bb
+    shortLabel EA_Tujia_LP6005441-DNA_F12 wssd CN
+    longLabel EA_Tujia_LP6005441-DNA_F12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G02_wssd.bb
+    shortLabel AFR_Biaka_LP6005441-DNA_G02 wssd CN
+    longLabel AFR_Biaka_LP6005441-DNA_G02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G03_wssd.bb
+    shortLabel EA_Cambodian_LP6005441-DNA_G03 wssd CN
+    longLabel EA_Cambodian_LP6005441-DNA_G03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G04_wssd.bb
+    shortLabel WEA_Druze_LP6005441-DNA_G04 wssd CN
+    longLabel WEA_Druze_LP6005441-DNA_G04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G05_wssd.bb
+    shortLabel EA_Hezhen_LP6005441-DNA_G05 wssd CN
+    longLabel EA_Hezhen_LP6005441-DNA_G05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G06_wssd.bb
+    shortLabel AMR_Karitiana_LP6005441-DNA_G06 wssd CN
+    longLabel AMR_Karitiana_LP6005441-DNA_G06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G07_wssd.bb
+    shortLabel AMR_Mayan_LP6005441-DNA_G07 wssd CN
+    longLabel AMR_Mayan_LP6005441-DNA_G07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G08_wssd.bb
+    shortLabel AFR_Mozabite_LP6005441-DNA_G08 wssd CN
+    longLabel AFR_Mozabite_LP6005441-DNA_G08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G09_wssd.bb
+    shortLabel WEA_Palestinian_LP6005441-DNA_G09 wssd CN
+    longLabel WEA_Palestinian_LP6005441-DNA_G09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G10_wssd.bb
+    shortLabel WEA_Russian_LP6005441-DNA_G10 wssd CN
+    longLabel WEA_Russian_LP6005441-DNA_G10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_G11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_G11_wssd.bb
+    shortLabel SA_Sindhi_LP6005441-DNA_G11 wssd CN
+    longLabel SA_Sindhi_LP6005441-DNA_G11 Copy Number
+    type bigBed
+    itemRgb on
     visibility dense
 
     track LP6005441-DNA_G12_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_G12_wssd.bb
-    shortLabel LP6005441-DNA_G12 wssd CN
-    longLabel LP6005441-DNA_G12 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_Tuscan_LP6005441-DNA_G12 wssd CN
+    longLabel WEA_Tuscan_LP6005441-DNA_G12 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
+    visibility dense
+
+    track LP6005441-DNA_H02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H02_wssd.bb
+    shortLabel AFR_Biaka_LP6005441-DNA_H02 wssd CN
+    longLabel AFR_Biaka_LP6005441-DNA_H02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H03_wssd.bb
+    shortLabel EA_Cambodian_LP6005441-DNA_H03 wssd CN
+    longLabel EA_Cambodian_LP6005441-DNA_H03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H05_wssd.bb
+    shortLabel EA_Hezhen_LP6005441-DNA_H05 wssd CN
+    longLabel EA_Hezhen_LP6005441-DNA_H05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H06_wssd.bb
+    shortLabel AMR_Karitiana_LP6005441-DNA_H06 wssd CN
+    longLabel AMR_Karitiana_LP6005441-DNA_H06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H07_wssd.bb
+    shortLabel AMR_Mayan_LP6005441-DNA_H07 wssd CN
+    longLabel AMR_Mayan_LP6005441-DNA_H07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H08_wssd.bb
+    shortLabel AFR_Mozabite_LP6005441-DNA_H08 wssd CN
+    longLabel AFR_Mozabite_LP6005441-DNA_H08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H09_wssd.bb
+    shortLabel WEA_Palestinian_LP6005441-DNA_H09 wssd CN
+    longLabel WEA_Palestinian_LP6005441-DNA_H09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H10_wssd.bb
+    shortLabel WEA_Russian_LP6005441-DNA_H10 wssd CN
+    longLabel WEA_Russian_LP6005441-DNA_H10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_H11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_H11_wssd.bb
+    shortLabel SA_Sindhi_LP6005441-DNA_H11 wssd CN
+    longLabel SA_Sindhi_LP6005441-DNA_H11 Copy Number
+    type bigBed
+    itemRgb on
     visibility dense
 
     track LP6005441-DNA_H12_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_H12_wssd.bb
-    shortLabel LP6005441-DNA_H12 wssd CN
-    longLabel LP6005441-DNA_H12 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_Tuscan_LP6005441-DNA_H12 wssd CN
+    longLabel WEA_Tuscan_LP6005441-DNA_H12 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track LP6005592-DNA_H01_wssd
+    track LP6005442-DNA_A02_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005592-DNA_H01_wssd.bb
-    shortLabel LP6005592-DNA_H01 wssd CN
-    longLabel LP6005592-DNA_H01 WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005442-DNA_A02_wssd.bb
+    shortLabel AFR_Yoruba_LP6005442-DNA_A02 wssd CN
+    longLabel AFR_Yoruba_LP6005442-DNA_A02 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
+    visibility dense
+
+    track LP6005442-DNA_A03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A03_wssd.bb
+    shortLabel WEA_Bulgarian_LP6005442-DNA_A03 wssd CN
+    longLabel WEA_Bulgarian_LP6005442-DNA_A03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_A04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A04_wssd.bb
+    shortLabel WEA_Georgian_LP6005442-DNA_A04 wssd CN
+    longLabel WEA_Georgian_LP6005442-DNA_A04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_A08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A08_wssd.bb
+    shortLabel WEA_Hungarian_LP6005442-DNA_A08 wssd CN
+    longLabel WEA_Hungarian_LP6005442-DNA_A08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_A10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A10_wssd.bb
+    shortLabel AFR_Esan_LP6005442-DNA_A10 wssd CN
+    longLabel AFR_Esan_LP6005442-DNA_A10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_A11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A11_wssd.bb
+    shortLabel WEA_Spanish_LP6005442-DNA_A11 wssd CN
+    longLabel WEA_Spanish_LP6005442-DNA_A11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_A12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A12_wssd.bb
+    shortLabel SA_Punjabi_LP6005442-DNA_A12 wssd CN
+    longLabel SA_Punjabi_LP6005442-DNA_A12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B01_wssd.bb
+    shortLabel EA_Uygur_LP6005442-DNA_B01 wssd CN
+    longLabel EA_Uygur_LP6005442-DNA_B01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B02_wssd.bb
+    shortLabel AFR_Yoruba_LP6005442-DNA_B02 wssd CN
+    longLabel AFR_Yoruba_LP6005442-DNA_B02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B03_wssd.bb
+    shortLabel WEA_Bulgarian_LP6005442-DNA_B03 wssd CN
+    longLabel WEA_Bulgarian_LP6005442-DNA_B03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B04_wssd.bb
+    shortLabel WEA_Georgian_LP6005442-DNA_B04 wssd CN
+    longLabel WEA_Georgian_LP6005442-DNA_B04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B08_wssd.bb
+    shortLabel WEA_Hungarian_LP6005442-DNA_B08 wssd CN
+    longLabel WEA_Hungarian_LP6005442-DNA_B08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B10_wssd.bb
+    shortLabel AFR_Esan_LP6005442-DNA_B10 wssd CN
+    longLabel AFR_Esan_LP6005442-DNA_B10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B11_wssd.bb
+    shortLabel WEA_Spanish_LP6005442-DNA_B11 wssd CN
+    longLabel WEA_Spanish_LP6005442-DNA_B11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_B12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_B12_wssd.bb
+    shortLabel SA_Punjabi_LP6005442-DNA_B12 wssd CN
+    longLabel SA_Punjabi_LP6005442-DNA_B12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_C02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_C02_wssd.bb
+    shortLabel WEA_Abkhasian_LP6005442-DNA_C02 wssd CN
+    longLabel WEA_Abkhasian_LP6005442-DNA_C02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_C04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_C04_wssd.bb
+    shortLabel WEA_Iranian_LP6005442-DNA_C04 wssd CN
+    longLabel WEA_Iranian_LP6005442-DNA_C04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_C07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_C07_wssd.bb
+    shortLabel EA_Ami_LP6005442-DNA_C07 wssd CN
+    longLabel EA_Ami_LP6005442-DNA_C07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_C10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_C10_wssd.bb
+    shortLabel WEA_Finnish_LP6005442-DNA_C10 wssd CN
+    longLabel WEA_Finnish_LP6005442-DNA_C10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_C11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_C11_wssd.bb
+    shortLabel EA_Kinh_LP6005442-DNA_C11 wssd CN
+    longLabel EA_Kinh_LP6005442-DNA_C11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D01_wssd.bb
+    shortLabel EA_Xibo_LP6005442-DNA_D01 wssd CN
+    longLabel EA_Xibo_LP6005442-DNA_D01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D02_wssd.bb
+    shortLabel WEA_Abkhasian_LP6005442-DNA_D02 wssd CN
+    longLabel WEA_Abkhasian_LP6005442-DNA_D02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D03_wssd.bb
+    shortLabel WEA_Chechen_LP6005442-DNA_D03 wssd CN
+    longLabel WEA_Chechen_LP6005442-DNA_D03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D08_wssd.bb
+    shortLabel WEA_Icelandic_LP6005442-DNA_D08 wssd CN
+    longLabel WEA_Icelandic_LP6005442-DNA_D08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D09_wssd.bb
+    shortLabel AFR_Somali_LP6005442-DNA_D09 wssd CN
+    longLabel AFR_Somali_LP6005442-DNA_D09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D10_wssd.bb
+    shortLabel WEA_Finnish_LP6005442-DNA_D10 wssd CN
+    longLabel WEA_Finnish_LP6005442-DNA_D10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_D11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_D11_wssd.bb
+    shortLabel EA_Kinh_LP6005442-DNA_D11 wssd CN
+    longLabel EA_Kinh_LP6005442-DNA_D11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_E04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_E04_wssd.bb
+    shortLabel WEA_Jordanian_LP6005442-DNA_E04 wssd CN
+    longLabel WEA_Jordanian_LP6005442-DNA_E04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_E07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_E07_wssd.bb
+    shortLabel EA_Atayal_LP6005442-DNA_E07 wssd CN
+    longLabel EA_Atayal_LP6005442-DNA_E07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_E10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_E10_wssd.bb
+    shortLabel WEA_English_LP6005442-DNA_E10 wssd CN
+    longLabel WEA_English_LP6005442-DNA_E10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_E11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_E11_wssd.bb
+    shortLabel AFR_Luhya_LP6005442-DNA_E11 wssd CN
+    longLabel AFR_Luhya_LP6005442-DNA_E11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_E12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_E12_wssd.bb
+    shortLabel SIB_Tubalar_LP6005442-DNA_E12 wssd CN
+    longLabel SIB_Tubalar_LP6005442-DNA_E12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F01_wssd.bb
+    shortLabel SIB_Yakut_LP6005442-DNA_F01 wssd CN
+    longLabel SIB_Yakut_LP6005442-DNA_F01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F02_wssd.bb
+    shortLabel SIB_Altaian_LP6005442-DNA_F02 wssd CN
+    longLabel SIB_Altaian_LP6005442-DNA_F02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F04_wssd.bb
+    shortLabel WEA_Jordanian_LP6005442-DNA_F04 wssd CN
+    longLabel WEA_Jordanian_LP6005442-DNA_F04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F09_wssd.bb
+    shortLabel AFR_Luo_LP6005442-DNA_F09 wssd CN
+    longLabel AFR_Luo_LP6005442-DNA_F09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F10_wssd.bb
+    shortLabel WEA_English_LP6005442-DNA_F10 wssd CN
+    longLabel WEA_English_LP6005442-DNA_F10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F11_wssd.bb
+    shortLabel AFR_Luhya_LP6005442-DNA_F11 wssd CN
+    longLabel AFR_Luhya_LP6005442-DNA_F11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_F12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_F12_wssd.bb
+    shortLabel SIB_Tubalar_LP6005442-DNA_F12 wssd CN
+    longLabel SIB_Tubalar_LP6005442-DNA_F12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G01_wssd.bb
+    shortLabel EA_Yi_LP6005442-DNA_G01 wssd CN
+    longLabel EA_Yi_LP6005442-DNA_G01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G02_wssd.bb
+    shortLabel WEA_Armenian_LP6005442-DNA_G02 wssd CN
+    longLabel WEA_Armenian_LP6005442-DNA_G02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G03_wssd.bb
+    shortLabel WEA_Estonian_LP6005442-DNA_G03 wssd CN
+    longLabel WEA_Estonian_LP6005442-DNA_G03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G04_wssd.bb
+    shortLabel WEA_Lezgin_LP6005442-DNA_G04 wssd CN
+    longLabel WEA_Lezgin_LP6005442-DNA_G04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G07_wssd.bb
+    shortLabel WEA_Greek_LP6005442-DNA_G07 wssd CN
+    longLabel WEA_Greek_LP6005442-DNA_G07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G09_wssd.bb
+    shortLabel SA_Bengali_LP6005442-DNA_G09 wssd CN
+    longLabel SA_Bengali_LP6005442-DNA_G09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G10_wssd.bb
+    shortLabel AFR_Gambian_LP6005442-DNA_G10 wssd CN
+    longLabel AFR_Gambian_LP6005442-DNA_G10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G11_wssd.bb
+    shortLabel AFR_Mende_LP6005442-DNA_G11 wssd CN
+    longLabel AFR_Mende_LP6005442-DNA_G11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_G12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_G12_wssd.bb
+    shortLabel SIB_Ulchi_LP6005442-DNA_G12 wssd CN
+    longLabel SIB_Ulchi_LP6005442-DNA_G12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H01_wssd.bb
+    shortLabel EA_Yi_LP6005442-DNA_H01 wssd CN
+    longLabel EA_Yi_LP6005442-DNA_H01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H03_wssd.bb
+    shortLabel WEA_Estonian_LP6005442-DNA_H03 wssd CN
+    longLabel WEA_Estonian_LP6005442-DNA_H03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H04_wssd.bb
+    shortLabel WEA_Lezgin_LP6005442-DNA_H04 wssd CN
+    longLabel WEA_Lezgin_LP6005442-DNA_H04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H09_wssd.bb
+    shortLabel SA_Bengali_LP6005442-DNA_H09 wssd CN
+    longLabel SA_Bengali_LP6005442-DNA_H09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H10_wssd.bb
+    shortLabel AFR_Gambian_LP6005442-DNA_H10 wssd CN
+    longLabel AFR_Gambian_LP6005442-DNA_H10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H11_wssd.bb
+    shortLabel AFR_Mende_LP6005442-DNA_H11 wssd CN
+    longLabel AFR_Mende_LP6005442-DNA_H11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005442-DNA_H12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_H12_wssd.bb
+    shortLabel SIB_Ulchi_LP6005442-DNA_H12 wssd CN
+    longLabel SIB_Ulchi_LP6005442-DNA_H12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A01_wssd.bb
+    shortLabel AFR_BantuKenya_LP6005443-DNA_A01 wssd CN
+    longLabel AFR_BantuKenya_LP6005443-DNA_A01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A02_wssd.bb
+    shortLabel EA_Tujia_LP6005443-DNA_A02 wssd CN
+    longLabel EA_Tujia_LP6005443-DNA_A02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A03_wssd.bb
+    shortLabel SIB_Aleut_LP6005443-DNA_A03 wssd CN
+    longLabel SIB_Aleut_LP6005443-DNA_A03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A06_wssd.bb
+    shortLabel WEA_Greek_LP6005443-DNA_A06 wssd CN
+    longLabel WEA_Greek_LP6005443-DNA_A06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A07_wssd.bb
+    shortLabel EA_Thai_LP6005443-DNA_A07 wssd CN
+    longLabel EA_Thai_LP6005443-DNA_A07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_A08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_A08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_A12_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_A12_wssd.bb
+    shortLabel AMR_Zapotec_LP6005443-DNA_A12 wssd CN
+    longLabel AMR_Zapotec_LP6005443-DNA_A12 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B01_wssd.bb
+    shortLabel EA_Dai_LP6005443-DNA_B01 wssd CN
+    longLabel EA_Dai_LP6005443-DNA_B01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B02_wssd.bb
+    shortLabel EA_Uygur_LP6005443-DNA_B02 wssd CN
+    longLabel EA_Uygur_LP6005443-DNA_B02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B03_wssd.bb
+    shortLabel SIB_Eskimo_Sireniki_LP6005443-DNA_B03 wssd CN
+    longLabel SIB_Eskimo_Sireniki_LP6005443-DNA_B03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B04_wssd.bb
+    shortLabel SIB_Even_LP6005443-DNA_B04 wssd CN
+    longLabel SIB_Even_LP6005443-DNA_B04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B06_wssd.bb
+    shortLabel WEA_Icelandic_LP6005443-DNA_B06 wssd CN
+    longLabel WEA_Icelandic_LP6005443-DNA_B06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B07_wssd.bb
+    shortLabel EA_Thai_LP6005443-DNA_B07 wssd CN
+    longLabel EA_Thai_LP6005443-DNA_B07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_B08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_B08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B09_wssd.bb
+    shortLabel AFR_Dinka_LP6005443-DNA_B09 wssd CN
+    longLabel AFR_Dinka_LP6005443-DNA_B09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_B10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_B10_wssd.bb
+    shortLabel WEA_Iranian_LP6005443-DNA_B10 wssd CN
+    longLabel WEA_Iranian_LP6005443-DNA_B10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C01_wssd.bb
+    shortLabel EA_Daur_LP6005443-DNA_C01 wssd CN
+    longLabel EA_Daur_LP6005443-DNA_C01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C02_wssd.bb
+    shortLabel EA_Xibo_LP6005443-DNA_C02 wssd CN
+    longLabel EA_Xibo_LP6005443-DNA_C02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C03_wssd.bb
+    shortLabel SIB_Chukchi_LP6005443-DNA_C03 wssd CN
+    longLabel SIB_Chukchi_LP6005443-DNA_C03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C04_wssd.bb
+    shortLabel SIB_Even_LP6005443-DNA_C04 wssd CN
+    longLabel SIB_Even_LP6005443-DNA_C04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C06_wssd.bb
+    shortLabel EA_Korean_LP6005443-DNA_C06 wssd CN
+    longLabel EA_Korean_LP6005443-DNA_C06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_C07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_C07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_C08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_C08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_C09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_C09_wssd.bb
+    shortLabel SA_Kusunda_LP6005443-DNA_C09 wssd CN
+    longLabel SA_Kusunda_LP6005443-DNA_C09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D01_wssd.bb
+    shortLabel WEA_Druze_LP6005443-DNA_D01 wssd CN
+    longLabel WEA_Druze_LP6005443-DNA_D01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D02_wssd.bb
+    shortLabel SIB_Yakut_LP6005443-DNA_D02 wssd CN
+    longLabel SIB_Yakut_LP6005443-DNA_D02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D03_wssd.bb
+    shortLabel SIB_Eskimo_Chaplin_LP6005443-DNA_D03 wssd CN
+    longLabel SIB_Eskimo_Chaplin_LP6005443-DNA_D03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D04_wssd.bb
+    shortLabel SIB_Itelman_LP6005443-DNA_D04 wssd CN
+    longLabel SIB_Itelman_LP6005443-DNA_D04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D05_wssd.bb
+    shortLabel SIB_Tlingit_LP6005443-DNA_D05 wssd CN
+    longLabel SIB_Tlingit_LP6005443-DNA_D05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D06_wssd.bb
+    shortLabel EA_Korean_LP6005443-DNA_D06 wssd CN
+    longLabel EA_Korean_LP6005443-DNA_D06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_D07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_D07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_D08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_D08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_D09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_D09_wssd.bb
+    shortLabel SA_Kusunda_LP6005443-DNA_D09 wssd CN
+    longLabel SA_Kusunda_LP6005443-DNA_D09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E01_wssd.bb
+    shortLabel EA_Lahu_LP6005443-DNA_E01 wssd CN
+    longLabel EA_Lahu_LP6005443-DNA_E01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E02_wssd.bb
+    shortLabel AFR_BantuHerero_LP6005443-DNA_E02 wssd CN
+    longLabel AFR_BantuHerero_LP6005443-DNA_E02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E05_wssd.bb
+    shortLabel SIB_Tlingit_LP6005443-DNA_E05 wssd CN
+    longLabel SIB_Tlingit_LP6005443-DNA_E05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E06_wssd.bb
+    shortLabel AFR_Masai_LP6005443-DNA_E06 wssd CN
+    longLabel AFR_Masai_LP6005443-DNA_E06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_E07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_E07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_E08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_E08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E09_wssd.bb
+    shortLabel EA_Naxi_LP6005443-DNA_E09 wssd CN
+    longLabel EA_Naxi_LP6005443-DNA_E09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E10_wssd.bb
+    shortLabel WEA_North_Ossetian_LP6005443-DNA_E10 wssd CN
+    longLabel WEA_North_Ossetian_LP6005443-DNA_E10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_E11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_E11_wssd.bb
+    shortLabel AMR_Mixe_LP6005443-DNA_E11 wssd CN
+    longLabel AMR_Mixe_LP6005443-DNA_E11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F01_wssd.bb
+    shortLabel EA_She_LP6005443-DNA_F01 wssd CN
+    longLabel EA_She_LP6005443-DNA_F01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F02_wssd.bb
+    shortLabel AFR_BantuTswana_LP6005443-DNA_F02 wssd CN
+    longLabel AFR_BantuTswana_LP6005443-DNA_F02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F03_wssd.bb
+    shortLabel SIB_Eskimo_Naukan_LP6005443-DNA_F03 wssd CN
+    longLabel SIB_Eskimo_Naukan_LP6005443-DNA_F03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F04_wssd.bb
+    shortLabel SIB_Mansi_LP6005443-DNA_F04 wssd CN
+    longLabel SIB_Mansi_LP6005443-DNA_F04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F06_wssd.bb
+    shortLabel AFR_Masai_LP6005443-DNA_F06 wssd CN
+    longLabel AFR_Masai_LP6005443-DNA_F06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_F07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_F07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F08_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_F08 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_F08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F10_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F10_wssd.bb
+    shortLabel WEA_North_Ossetian_LP6005443-DNA_F10 wssd CN
+    longLabel WEA_North_Ossetian_LP6005443-DNA_F10 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_F11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_F11_wssd.bb
+    shortLabel AMR_Mixe_LP6005443-DNA_F11 wssd CN
+    longLabel AMR_Mixe_LP6005443-DNA_F11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G01_wssd.bb
+    shortLabel EA_She_LP6005443-DNA_G01 wssd CN
+    longLabel EA_She_LP6005443-DNA_G01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G02_wssd.bb
+    shortLabel AFR_BantuTswana_LP6005443-DNA_G02 wssd CN
+    longLabel AFR_BantuTswana_LP6005443-DNA_G02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G03_wssd.bb
+    shortLabel SIB_Eskimo_Naukan_LP6005443-DNA_G03 wssd CN
+    longLabel SIB_Eskimo_Naukan_LP6005443-DNA_G03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G04_wssd.bb
+    shortLabel SIB_Mansi_LP6005443-DNA_G04 wssd CN
+    longLabel SIB_Mansi_LP6005443-DNA_G04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G05_wssd.bb
+    shortLabel EA_Ami_LP6005443-DNA_G05 wssd CN
+    longLabel EA_Ami_LP6005443-DNA_G05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_G07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_G07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G08_wssd.bb
+    shortLabel AFR_Ju_hoan_North_LP6005443-DNA_G08 wssd CN
+    longLabel AFR_Ju_hoan_North_LP6005443-DNA_G08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_G11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_G11_wssd.bb
+    shortLabel AMR_Mixtec_LP6005443-DNA_G11 wssd CN
+    longLabel AMR_Mixtec_LP6005443-DNA_G11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H01_wssd.bb
+    shortLabel EA_Tu_LP6005443-DNA_H01 wssd CN
+    longLabel EA_Tu_LP6005443-DNA_H01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H02_wssd.bb
+    shortLabel SIB_Aleut_LP6005443-DNA_H02 wssd CN
+    longLabel SIB_Aleut_LP6005443-DNA_H02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H03_wssd.bb
+    shortLabel SIB_Eskimo_Sireniki_LP6005443-DNA_H03 wssd CN
+    longLabel SIB_Eskimo_Sireniki_LP6005443-DNA_H03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H05_wssd.bb
+    shortLabel WEA_Czech_LP6005443-DNA_H05 wssd CN
+    longLabel WEA_Czech_LP6005443-DNA_H05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H07_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H07_wssd.bb
+    shortLabel OCN_Papuan_LP6005443-DNA_H07 wssd CN
+    longLabel OCN_Papuan_LP6005443-DNA_H07 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H08_wssd.bb
+    shortLabel AFR_Dinka_LP6005443-DNA_H08 wssd CN
+    longLabel AFR_Dinka_LP6005443-DNA_H08 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005443-DNA_H11_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005443-DNA_H11_wssd.bb
+    shortLabel AMR_Mixtec_LP6005443-DNA_H11 wssd CN
+    longLabel AMR_Mixtec_LP6005443-DNA_H11 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_A04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_A04_wssd.bb
+    shortLabel SA_Kapu_LP6005519-DNA_A04 wssd CN
+    longLabel SA_Kapu_LP6005519-DNA_A04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_A05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_A05_wssd.bb
+    shortLabel SA_Relli_LP6005519-DNA_A05 wssd CN
+    longLabel SA_Relli_LP6005519-DNA_A05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_A06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_A06_wssd.bb
+    shortLabel EA_Burmese_LP6005519-DNA_A06 wssd CN
+    longLabel EA_Burmese_LP6005519-DNA_A06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_B04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_B04_wssd.bb
+    shortLabel SA_Kapu_LP6005519-DNA_B04 wssd CN
+    longLabel SA_Kapu_LP6005519-DNA_B04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_B05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_B05_wssd.bb
+    shortLabel SA_Relli_LP6005519-DNA_B05 wssd CN
+    longLabel SA_Relli_LP6005519-DNA_B05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_B06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_B06_wssd.bb
+    shortLabel EA_Burmese_LP6005519-DNA_B06 wssd CN
+    longLabel EA_Burmese_LP6005519-DNA_B06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_C03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_C03_wssd.bb
+    shortLabel WEA_Tajik_LP6005519-DNA_C03 wssd CN
+    longLabel WEA_Tajik_LP6005519-DNA_C03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_C04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_C04_wssd.bb
+    shortLabel SA_Yadava_LP6005519-DNA_C04 wssd CN
+    longLabel SA_Yadava_LP6005519-DNA_C04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_C05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_C05_wssd.bb
+    shortLabel SA_Irula_LP6005519-DNA_C05 wssd CN
+    longLabel SA_Irula_LP6005519-DNA_C05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_C06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_C06_wssd.bb
+    shortLabel OCN_Igorot_LP6005519-DNA_C06 wssd CN
+    longLabel OCN_Igorot_LP6005519-DNA_C06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_D01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_D01_wssd.bb
+    shortLabel AMR_Chane_LP6005519-DNA_D01 wssd CN
+    longLabel AMR_Chane_LP6005519-DNA_D01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_D03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_D03_wssd.bb
+    shortLabel WEA_Tajik_LP6005519-DNA_D03 wssd CN
+    longLabel WEA_Tajik_LP6005519-DNA_D03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_D04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_D04_wssd.bb
+    shortLabel SA_Yadava_LP6005519-DNA_D04 wssd CN
+    longLabel SA_Yadava_LP6005519-DNA_D04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_D05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_D05_wssd.bb
+    shortLabel SA_Irula_LP6005519-DNA_D05 wssd CN
+    longLabel SA_Irula_LP6005519-DNA_D05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_D06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_D06_wssd.bb
+    shortLabel OCN_Igorot_LP6005519-DNA_D06 wssd CN
+    longLabel OCN_Igorot_LP6005519-DNA_D06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_E04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_E04_wssd.bb
+    shortLabel SA_Mala_LP6005519-DNA_E04 wssd CN
+    longLabel SA_Mala_LP6005519-DNA_E04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_E05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_E05_wssd.bb
+    shortLabel SA_Khonda_Dora_LP6005519-DNA_E05 wssd CN
+    longLabel SA_Khonda_Dora_LP6005519-DNA_E05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_E06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_E06_wssd.bb
+    shortLabel OCN_Dusun_LP6005519-DNA_E06 wssd CN
+    longLabel OCN_Dusun_LP6005519-DNA_E06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_F03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_F03_wssd.bb
+    shortLabel WEA_Armenian_LP6005519-DNA_F03 wssd CN
+    longLabel WEA_Armenian_LP6005519-DNA_F03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_F04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_F04_wssd.bb
+    shortLabel SA_Mala_LP6005519-DNA_F04 wssd CN
+    longLabel SA_Mala_LP6005519-DNA_F04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_F06_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_F06_wssd.bb
+    shortLabel OCN_Dusun_LP6005519-DNA_F06 wssd CN
+    longLabel OCN_Dusun_LP6005519-DNA_F06 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_G02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_G02_wssd.bb
+    shortLabel AMR_Quechua_LP6005519-DNA_G02 wssd CN
+    longLabel AMR_Quechua_LP6005519-DNA_G02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_G03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_G03_wssd.bb
+    shortLabel SA_Brahmin_LP6005519-DNA_G03 wssd CN
+    longLabel SA_Brahmin_LP6005519-DNA_G03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_G04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_G04_wssd.bb
+    shortLabel SA_Madiga_LP6005519-DNA_G04 wssd CN
+    longLabel SA_Madiga_LP6005519-DNA_G04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_H03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_H03_wssd.bb
+    shortLabel SA_Brahmin_LP6005519-DNA_H03 wssd CN
+    longLabel SA_Brahmin_LP6005519-DNA_H03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005519-DNA_H04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005519-DNA_H04_wssd.bb
+    shortLabel SA_Madiga_LP6005519-DNA_H04 wssd CN
+    longLabel SA_Madiga_LP6005519-DNA_H04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_A02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_A02_wssd.bb
+    shortLabel WEA_Finnish_LP6005592-DNA_A02 wssd CN
+    longLabel WEA_Finnish_LP6005592-DNA_A02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_A04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_A04_wssd.bb
+    shortLabel SA_Punjabi_LP6005592-DNA_A04 wssd CN
+    longLabel SA_Punjabi_LP6005592-DNA_A04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_B01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_B01_wssd.bb
+    shortLabel WEA_Norwegian_LP6005592-DNA_B01 wssd CN
+    longLabel WEA_Norwegian_LP6005592-DNA_B01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_B02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_B02_wssd.bb
+    shortLabel OCN_Maori_LP6005592-DNA_B02 wssd CN
+    longLabel OCN_Maori_LP6005592-DNA_B02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_B03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_B03_wssd.bb
+    shortLabel WEA_Palestinian_LP6005592-DNA_B03 wssd CN
+    longLabel WEA_Palestinian_LP6005592-DNA_B03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_B04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_B04_wssd.bb
+    shortLabel SA_Punjabi_LP6005592-DNA_B04 wssd CN
+    longLabel SA_Punjabi_LP6005592-DNA_B04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_C01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_C01_wssd.bb
+    shortLabel WEA_Saami_LP6005592-DNA_C01 wssd CN
+    longLabel WEA_Saami_LP6005592-DNA_C01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_C02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_C02_wssd.bb
+    shortLabel EA_Japanese_LP6005592-DNA_C02 wssd CN
+    longLabel EA_Japanese_LP6005592-DNA_C02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_C03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_C03_wssd.bb
+    shortLabel AFR_Mbuti_LP6005592-DNA_C03 wssd CN
+    longLabel AFR_Mbuti_LP6005592-DNA_C03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_C05_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_C05_wssd.bb
+    shortLabel AFR_Khomani_San_LP6005592-DNA_C05 wssd CN
+    longLabel AFR_Khomani_San_LP6005592-DNA_C05 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_D01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_D01_wssd.bb
+    shortLabel WEA_Saami_LP6005592-DNA_D01 wssd CN
+    longLabel WEA_Saami_LP6005592-DNA_D01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_D03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_D03_wssd.bb
+    shortLabel EA_Dai_LP6005592-DNA_D03 wssd CN
+    longLabel EA_Dai_LP6005592-DNA_D03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_D04_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_D04_wssd.bb
+    shortLabel WEA_Samaritan_LP6005592-DNA_D04 wssd CN
+    longLabel WEA_Samaritan_LP6005592-DNA_D04 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_E01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_E01_wssd.bb
+    shortLabel WEA_Iraqi_Jew_LP6005592-DNA_E01 wssd CN
+    longLabel WEA_Iraqi_Jew_LP6005592-DNA_E01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_E02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_E02_wssd.bb
+    shortLabel WEA_Polish_LP6005592-DNA_E02 wssd CN
+    longLabel WEA_Polish_LP6005592-DNA_E02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_F01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_F01_wssd.bb
+    shortLabel WEA_Iraqi_Jew_LP6005592-DNA_F01 wssd CN
+    longLabel WEA_Iraqi_Jew_LP6005592-DNA_F01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_F03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_F03_wssd.bb
+    shortLabel SIB_Even_LP6005592-DNA_F03 wssd CN
+    longLabel SIB_Even_LP6005592-DNA_F03 Copy Number
+    type bigBed
+    itemRgb on
     visibility dense
 
     track LP6005592-DNA_G01_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005592-DNA_G01_wssd.bb
-    shortLabel LP6005592-DNA_G01 wssd CN
-    longLabel LP6005592-DNA_G01 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel WEA_Yemenite_Jew_LP6005592-DNA_G01 wssd CN
+    longLabel WEA_Yemenite_Jew_LP6005592-DNA_G01 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
 
-    track chm13_t2t_wssd
+    track LP6005592-DNA_G03_wssd
     parent hgdp_wssd_cn
-    bigDataUrl wssd/chm13_t2t_wssd.bb
-    shortLabel chm13_t2t wssd CN
-    longLabel chm13_t2t WSSD Copy Number
-    type bigBed 9 +
+    bigDataUrl wssd/LP6005592-DNA_G03_wssd.bb
+    shortLabel WEA_Jordanian_LP6005592-DNA_G03 wssd CN
+    longLabel WEA_Jordanian_LP6005592-DNA_G03 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
+    visibility dense
+
+    track LP6005592-DNA_H01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_H01_wssd.bb
+    shortLabel WEA_Yemenite_Jew_LP6005592-DNA_H01 wssd CN
+    longLabel WEA_Yemenite_Jew_LP6005592-DNA_H01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005592-DNA_H03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005592-DNA_H03_wssd.bb
+    shortLabel OCN_Hawaiian_LP6005592-DNA_H03 wssd CN
+    longLabel OCN_Hawaiian_LP6005592-DNA_H03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005619-DNA_B01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005619-DNA_B01_wssd.bb
+    shortLabel AFR_Saharawi_LP6005619-DNA_B01 wssd CN
+    longLabel AFR_Saharawi_LP6005619-DNA_B01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005619-DNA_C01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005619-DNA_C01_wssd.bb
+    shortLabel AFR_Saharawi_LP6005619-DNA_C01 wssd CN
+    longLabel AFR_Saharawi_LP6005619-DNA_C01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_A02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_A02_wssd.bb
+    shortLabel SIB_Kyrgyz_LP6005677-DNA_A02 wssd CN
+    longLabel SIB_Kyrgyz_LP6005677-DNA_A02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_A03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_A03_wssd.bb
+    shortLabel WEA_Turkish_LP6005677-DNA_A03 wssd CN
+    longLabel WEA_Turkish_LP6005677-DNA_A03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_B01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_B01_wssd.bb
+    shortLabel WEA_Albanian_LP6005677-DNA_B01 wssd CN
+    longLabel WEA_Albanian_LP6005677-DNA_B01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_B02_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_B02_wssd.bb
+    shortLabel SIB_Kyrgyz_LP6005677-DNA_B02 wssd CN
+    longLabel SIB_Kyrgyz_LP6005677-DNA_B02 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_C03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_C03_wssd.bb
+    shortLabel WEA_Turkish_LP6005677-DNA_C03 wssd CN
+    longLabel WEA_Turkish_LP6005677-DNA_C03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_D01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_D01_wssd.bb
+    shortLabel AMR_Zapotec_LP6005677-DNA_D01 wssd CN
+    longLabel AMR_Zapotec_LP6005677-DNA_D01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_D03_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_D03_wssd.bb
+    shortLabel AFR_Khomani_San_LP6005677-DNA_D03 wssd CN
+    longLabel AFR_Khomani_San_LP6005677-DNA_D03 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_E01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_E01_wssd.bb
+    shortLabel AMR_Quechua_LP6005677-DNA_E01 wssd CN
+    longLabel AMR_Quechua_LP6005677-DNA_E01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_F01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_F01_wssd.bb
+    shortLabel AMR_Quechua_LP6005677-DNA_F01 wssd CN
+    longLabel AMR_Quechua_LP6005677-DNA_F01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005677-DNA_G01_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005677-DNA_G01_wssd.bb
+    shortLabel AFR_Luo_LP6005677-DNA_G01 wssd CN
+    longLabel AFR_Luo_LP6005677-DNA_G01 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track SS6004477_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/SS6004477_wssd.bb
+    shortLabel OCN_Australian_SS6004477 wssd CN
+    longLabel OCN_Australian_SS6004477 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track SS6004478_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/SS6004478_wssd.bb
+    shortLabel OCN_Australian_SS6004478 wssd CN
+    longLabel OCN_Australian_SS6004478 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track SS6004480_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/SS6004480_wssd.bb
+    shortLabel AFR_Dinka_SS6004480 wssd CN
+    longLabel AFR_Dinka_SS6004480 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track LP6005441-DNA_A09_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005441-DNA_A09_wssd.bb
+    shortLabel EA_Naxi_LP6005441-DNA_A09 wssd CN
+    longLabel EA_Naxi_LP6005441-DNA_A09 Copy Number
+    type bigBed
+    itemRgb on
+    visibility dense
+
+    track chm13_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/chm13_wssd.bb
+    shortLabel chm13_kmer_chm13 wssd CN
+    longLabel chm13_kmer_chm13 Copy Number
+    type bigBed
+    itemRgb on
     visibility dense
 
     track hg38_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/hg38_wssd.bb
-    shortLabel hg38 wssd CN
-    longLabel hg38 WSSD Copy Number
-    type bigBed 9 +
+    shortLabel hg38_kmer_hg38 wssd CN
+    longLabel hg38_kmer_hg38 Copy Number
+    type bigBed
     itemRgb on
-    maxItems 100000
     visibility dense
+

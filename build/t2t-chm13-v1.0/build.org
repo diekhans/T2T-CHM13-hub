@@ -142,6 +142,7 @@ Yes, I just updated the directory to, 20200922-v1.0_chm13_PROseq, for clarity!
 
 ** Christopher Vollmers
 @Mark Diekhans @Glennis Logsdon Here is what Mandalorion thinks the isoform sequences derived from your Iso-Seq reads are. The fasta files are straight consensus sequences generated from the subreads using PacBio consensus tools used slightly off-label. So these sequences should match CHM13 genome sequence. The psl file contains alignments of those consensus sequences to hg38 that are cleaned up, i.e. small indels are removed. One note to the output: Mandalorion will produce multiple isoforms with the same intron-chain if it thinks their ends are consistently different. Naming is Isoform_[running_number]_[number of Iso-Seq reads associated with the isoform].
+chm13-isoseq--mandalorion/
 
 ** Mitchell Robert Vollger
 Hi Mark, we updated the coloring and names for /team-segdups/WSSD/ and it would be great if you could update the browser with the new tracks.
@@ -153,5 +154,10 @@ It is just a subset of /team-segdups/WSSD  that loads on to the browser a little
 :heavy_check_mark:
 1
 
+** Ann Mc Cartney
+Also, here is the 18kmer repeat bed as requested by @Robin Aguilar and @Karen Miga. It's also available to download from globus at /team-satellites/Repeat_kmers/
+GZip 
+CHM13v1_k18.bed.gz
+620 MB GZip620 MB — Click to download
 
 ** hg38Lastz - finish

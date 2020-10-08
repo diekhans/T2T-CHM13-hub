@@ -645,7 +645,9 @@ gensub2 hg38.chroms queries.lst hg38.tmpl hg38.jobs
  /team-segdups/WSSD/
 
 cd wssd
-ln *.bb ../../../hub/t2tChm13_20200727/wssd/
+ln -f *.bb ../../../hub/t2tChm13_20200727/wssd/
+
+2020-10-07: update of tracks from Mitchell, include a subset trackDb
 
 * todo
 ** RMMaskBed to David, etc

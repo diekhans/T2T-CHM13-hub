@@ -348,6 +348,7 @@ html hg002Aligns.html
     html hg002Aligns.html
 
 include hgdp_wssd_cn.trackDb.txt
+include hgdp_wssd_cn_subset.trackDb.txt
 
 ##
 # comparative genomics

@@ -122,7 +122,7 @@ priority 12
 include cactus.trackDb.txt
 
 track grch38Synteny25kb
-shortLabel GRCh38 Synteny 25KB ARF
+shortLabel GRCh38 Synteny 25KB
 longLabel  GRCh38  Synteny 25KB resolution
 type bigPsl
 color 0,20,180

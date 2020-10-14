@@ -80,7 +80,6 @@ makeMd5s *.gz
 buildBigBed bed9 t2t-chm13-v1.0 superHors.bigBed *.gz
 ln -f superHors.bigBed ../../../hub/t2t-chm13-v1.0/
 
-
 * hg38Lastz
 
 ** build alignments
@@ -125,7 +124,6 @@ ln -f *.over.chain.gz ../../../hub/t2t-chm13-v1.0/hg38Lastz/
 % tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
 % bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.hg38.over-primary.bigLink
 % ln -f t2t-chm13-v1.0.hg38.over-primary.big* ../../../hub/t2t-chm13-v1.0/grch38/
-
 
 * Cactus alignments
 cd cactus
@@ -178,18 +176,23 @@ bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin 
 
 ln -f *.bigPsl ../../../hub/t2t-chm13-v1.0/synteny/
 
+** hg002_hifiasm
+Nancy Hansen
+team-variants/assembly_aligns/for_browser_hub/v1/HG002_hifiasm_assemblies
+mkdir -p ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/
+ln HG002-v0.11.* ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/
 
-
-
+** hg00733_hifiasm
+Nancy Hansen
+team-variants/assembly_aligns/for_browser_hub/v1/HG00733_hifiasm_assemblies
+mkdir -p ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/hg00733_hifiasm/
+ln -f HG00733-v0.11.hap* ../../../hub/t2t-chm13-v1.0/hg00733_hifiasm/
 
 * to-do
-** finished lastz
+** finish lastz
 
-** Nancy Hansen
-Hi Mark--I created a new directory team-variants/assembly_aligns/for_browser_hub/v1.0 on the Globus share with two track hubs containing the HG002 and HG00733 hifiasm alignments to v1.0.
-Let me know if I should try to combine them into one set of tracks.
 
-* * Savannah Hoyt 
+** Savannah Hoyt 
 Hi @Mark Diekhans, I uploaded my PRO-seq STAR aligned sorted.bam to Globus: /team-epigenetics/20200922_chm13_PROseq/STAR_alignments/
 I also included an associated track description html with parameters listed.
 Yes, I just updated the directory to, 20200922-v1.0_chm13_PROseq, for clarity!
@@ -214,5 +217,6 @@ Also, here is the 18kmer repeat bed as requested by @Robin Aguilar and @Karen Mi
 GZip 
 CHM13v1_k18.bed.gz
 620 MB GZip620 MB — Click to download
-
-** hg38Lastz - finish
+** Ann Mc Cartney  1:22 PM
+Hey Mark, at a hackathon for SV calls at the minute. Basically we want our tool to have a track for mappability for GRCh38. I.e regions of good and bad mapping. I'm sure UCSC has such a thing. Do you have any ideas?
+https://bismap.hoffmanlab.org/

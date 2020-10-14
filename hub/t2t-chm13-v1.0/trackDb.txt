@@ -57,6 +57,10 @@ group varRep
     priority 7
     html sedefSegDups.html
 
+include hg002_hifiasm.trackDb.txt
+include hg00733_hifiasm.txt
+
+
 ##
 # cenTelo
 ##

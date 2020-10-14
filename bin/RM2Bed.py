@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# markd: extract from RepeatMaster distribution and modified to add optional output file
 """
     Usage: ./RM2Bed.py [--help] [--out_dir <path>]
                        [--log_level <number>]

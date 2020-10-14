@@ -1,0 +1,47 @@
+track hg00733_hifiasm
+shortLabel HG00733 hifiasm alignments
+longLabel HG00733 hifiasm assembly alignments
+superTrack on hide
+visibility hide
+group varRep
+priority 100
+
+    track hg00733_hifiasm_hap1_nucmer
+    parent hg00733_hifiasm
+    shortLabel HG00733 haplotype 1 nucmer
+    longLabel HG00733 haplotype 1 nucmer alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg00733_hifiasm/HG00733-v0.11.hap1.nucmer.v1.0.bam
+    group varRep
+
+    track hg00733_hifiasm_hap2_nucmer
+    parent hg00733_hifiasm
+    shortLabel HG00733 haplotype 2 nucmer
+    longLabel HG00733 haplotype 2 nucmer alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg00733_hifiasm/HG00733-v0.11.hap2.nucmer.v1.0.bam
+    group varRep
+
+    track hg00733_hifiasm_hap1_minimap2
+    parent hg00733_hifiasm
+    shortLabel HG00733 haplotype 1 minimap2
+    longLabel HG00733 haplotype 1 minimap2 alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg00733_hifiasm/HG00733-v0.11.hap1.minimap2.v1.0.bam
+    group varRep
+
+    track hg00733_hifiasm_hap2_minimap2
+    parent hg00733_hifiasm
+    shortLabel HG00733 haplotype 2 minimap2
+    longLabel HG00733 haplotype 2 minimap2 alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl hg00733_hifiasm/HG00733-v0.11.hap2.minimap2.v1.0.bam
+    group varRep

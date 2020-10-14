@@ -732,7 +732,6 @@ compositeTrack off
 visibility hide
 shortLabel PRO-seq
 longLabel PRO-Seq
-type bigWig 0:800000
 group rna
 priority 4
 

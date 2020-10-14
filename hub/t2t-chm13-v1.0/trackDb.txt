@@ -147,3 +147,25 @@ bigDataUrl synteny/synteny.1mb.bigPsl
 group compGeno
 html synteny.html
 
+
+##
+# Expression
+##
+track proSeq
+compositeTrack off
+visibility hide
+shortLabel PRO-seq
+longLabel PRO-Seq
+type bam
+group rna
+priority 4
+
+    track proSeqAlign
+    parent proSeq on
+    shortLabel PRO-seq alignments
+    longLabel  PRO-seq STAR alignments
+    priority 1
+    type bam
+    visibility hide
+    bigDataUrl proSeq/CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam
+    html proSeq.html

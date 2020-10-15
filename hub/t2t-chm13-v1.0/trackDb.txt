@@ -58,7 +58,8 @@ group varRep
     html sedefSegDups.html
 
 include hg002_hifiasm.trackDb.txt
-include hg00733_hifiasm.txt
+include hg00733_hifiasm.trackDb.txt
+include wssd.trackDb.txt 
 
 
 ##

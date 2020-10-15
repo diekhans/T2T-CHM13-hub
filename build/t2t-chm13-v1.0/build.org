@@ -199,6 +199,11 @@ samtools index CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-ch
 mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeq/
 ln -f CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam* ../../../hub/t2t-chm13-v1.0/proSeq/
 
+** wssd
+Mitchell Robert Vollger
+/team-segdups/WSSD_v1.0/
+
+
 * to-do
 ** finish lastz
 
@@ -208,21 +213,17 @@ ln -f CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200
 @Mark Diekhans @Glennis Logsdon Here is what Mandalorion thinks the isoform sequences derived from your Iso-Seq reads are. The fasta files are straight consensus sequences generated from the subreads using PacBio consensus tools used slightly off-label. So these sequences should match CHM13 genome sequence. The psl file contains alignments of those consensus sequences to hg38 that are cleaned up, i.e. small indels are removed. One note to the output: Mandalorion will produce multiple isoforms with the same intron-chain if it thinks their ends are consistently different. Naming is Isoform_[running_number]_[number of Iso-Seq reads associated with the isoform].
 chm13-isoseq--mandalorion/
 
-** Mitchell Robert Vollger
-Hi Mark, we updated the coloring and names for /team-segdups/WSSD/ and it would be great if you could update the browser with the new tracks.
-The Rgb typo is fixed and I am pretty sure all the track names are there and match up with that trackdb.txt.
-Thanks!
 
-I added a new set of tracks here /team-segdups/WSSD_subset/ it would be great if you could add them at some point.
-It is just a subset of /team-segdups/WSSD  that loads on to the browser a little easier.
-:heavy_check_mark:
-1
+** kmers
+Ann Mc Cartney
+Also, here is the as requested by @Robin Aguilar and @Karen Miga. It's also available to download from globus at /team-satellites/Repeat_kmers/
+ 18kmer repeat bed CHM13v1_k18.bed.gz
 
-** Ann Mc Cartney
-Also, here is the 18kmer repeat bed as requested by @Robin Aguilar and @Karen Miga. It's also available to download from globus at /team-satellites/Repeat_kmers/
-GZip 
-CHM13v1_k18.bed.gz
-620 MB GZip620 MB — Click to download
+buildBigBed bed4 t2t-chm13-v1.0 kmers-18.bigBed CHM13v1_k18.bed.gz 
+mkdir  ../../../hub/t2t-chm13-v1.0/kmers/
+ln -f kmers-18.bigBed ../../../hub/t2t-chm13-v1.0/kmers/
+
 ** Ann Mc Cartney  1:22 PM
 Hey Mark, at a hackathon for SV calls at the minute. Basically we want our tool to have a track for mappability for GRCh38. I.e regions of good and bad mapping. I'm sure UCSC has such a thing. Do you have any ideas?
 https://bismap.hoffmanlab.org/
+

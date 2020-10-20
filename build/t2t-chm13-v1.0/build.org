@@ -176,33 +176,77 @@ bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin 
 
 ln -f *.bigPsl ../../../hub/t2t-chm13-v1.0/synteny/
 
-** hg002_hifiasm
+* hg002_hifiasm
 Nancy Hansen
 team-variants/assembly_aligns/for_browser_hub/v1/HG002_hifiasm_assemblies
 mkdir -p ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/
 ln HG002-v0.11.* ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/
 
-** hg00733_hifiasm
+* hg00733_hifiasm
 Nancy Hansen
 team-variants/assembly_aligns/for_browser_hub/v1/HG00733_hifiasm_assemblies
 mkdir -p ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/hg00733_hifiasm/
 ln -f HG00733-v0.11.hap* ../../../hub/t2t-chm13-v1.0/hg00733_hifiasm/
 
 
-** proSeq
+* proSeq
 Savannah Hoyt
  /team-epigenetics/20200922_chm13_PROseq/STAR_alignments/
+CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam.gz
+CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out_BOTH.bedgraph
+CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Log.final.out
+CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_SJ.out.tab
+CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam.gz
+CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out_BOTH.bedgraph
+CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Log.final.out
+CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_SJ.out.tab
 
-gunzip CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam.gz 
-samtools index CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam
+cd proSeq/STAR
+pigz *.out *.tab *.bedgraph &
+gunzip CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam.gz &
+gunzip CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam.gz &
+samtools index CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam &
+samtools index CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam &
 
 mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeq/
-ln -f CHM13-5A_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam* ../../../hub/t2t-chm13-v1.0/proSeq/
+ln -f CHM13-5*_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam* ../../../hub/t2t-chm13-v1.0/proSeq/
 
-** wssd
+###
+
+* wssd
 Mitchell Robert Vollger
 /team-segdups/WSSD_v1.0/
+cd wssd
+mkdir -p  ../../../hub/t2t-chm13-v1.0/wssd
+ln -f *.bb  ../../../hub/t2t-chm13-v1.0/wssd
 
+
+* kmers
+Ann Mc Cartney
+ /team-satellites/Repeat_kmers/
+   CHM13_Updated_k21.bed 21kmer repeat bed 
+   CHM13_Updated_k21.bg - bigwig file
+   t2t-chm13_k18.bed
+   t2t-chm13_k18.bg
+
+pigz CHM13_Updated_k21.bed 
+buildBigBed bed4 t2t-chm13-v1.0 kmers-21.bigBed CHM13v1_k18.bed.gz 
+ln CHM13_Updated_k21.bg kmers-21.bigWig
+
+pigz t2t-chm13_k18.bed 
+buildBigBed bed4 t2t-chm13-v1.0 kmers-18.bigBed t2t-chm13_k18.bed.gz
+ln t2t-chm13_k18.bg kmers-18.bigWig
+
+mkdir  ../../../hub/t2t-chm13-v1.0/kmers/
+
+ln -f kmers-*  ../../../hub/t2t-chm13-v1.0/kmers/
+
+### LENGTH doesn't match:
+zcat t2t-chm13_k18.bed.gz |head | awk '{print $3-$2, length($4)}'
+37 18
+34 18
+22 18
+48 18
 
 * to-do
 ** finish lastz
@@ -214,16 +258,32 @@ Mitchell Robert Vollger
 chm13-isoseq--mandalorion/
 
 
-** kmers
-Ann Mc Cartney
-Also, here is the as requested by @Robin Aguilar and @Karen Miga. It's also available to download from globus at /team-satellites/Repeat_kmers/
- 18kmer repeat bed CHM13v1_k18.bed.gz
-
-buildBigBed bed4 t2t-chm13-v1.0 kmers-18.bigBed CHM13v1_k18.bed.gz 
-mkdir  ../../../hub/t2t-chm13-v1.0/kmers/
-ln -f kmers-18.bigBed ../../../hub/t2t-chm13-v1.0/kmers/
 
 ** Ann Mc Cartney  1:22 PM
 Hey Mark, at a hackathon for SV calls at the minute. Basically we want our tool to have a track for mappability for GRCh38. I.e regions of good and bad mapping. I'm sure UCSC has such a thing. Do you have any ideas?
 https://bismap.hoffmanlab.org/
 
+
+** proseq
+Savannah Hoyt  1:07 PM
+Hi Mark!
+I just finished uploading the bedgraph for the PRO-seq reads (5A) aligned with STAR on Globus: /team-epigenetics/20200922-v1.0_chm13_PROseq/STAR_alignments/
+
+I also added the duplicate PRO-seq read set (5B) in the same spot, including the sorted.bam, .bedgraph, and associated mapping stat files.
+I only have one track description html up since all the information applies to both duplicate read sets, but I can make separate ones if you’d like!
+And while I processed these duplicates separately and you can certainly display them as separate tracks, you can probably combine them into one larger dataset for a single track as well.
+Let me know if any of this doesn’t make sense or if you’d like anything else from me at this tim
+
+
+** Savannah Hoyt  11:21 AM
+Hi @Mark Diekhans, would you be able to upload a track for me to the browser (whenever you have a chance, of course!) for PRO-seq reads aligned with Bowtie2 and then filtered with the unique 21-mers? I have a (fairly large) bedgraph & associated track description located on Globus at: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
+
+** FIMISH Ann's
+
+** Can you help us upload the new cenAnnotation and cenRegions to v1.0?
+/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_annotation.bed
+Track Descriptions
+https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenSat_annotation.html
+/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_regions.bed
+https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenRegions.html
+hub/t2tChm13_20200727/cenRegions.html

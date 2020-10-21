@@ -117,7 +117,7 @@ tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > t
 bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v1.0.sizes t2t-chm13-v1.0.hg38.over.bigLink
 
 
-ln -f t2t-chm13-v1.0.hg38.*.big* ../../../hub/t2t-chm13-v1.0/hg38Lastz/
+ln -f t2t-chm13-v1.0.hg38.*.big*  t2t-chm13-v1.0.hg38.*chain.gz hg38.t2t-chm13-v1.0.*.chain.gz  ../../../hub/t2t-chm13-v1.0/hg38Lastz/
 
 ** Also make liftover chains available
 ln -f *.over.chain.gz ../../../hub/t2t-chm13-v1.0/hg38Lastz/

@@ -65,6 +65,27 @@ include wssd.trackDb.txt
 ##
 # cenTelo
 ##
+track cenRegions
+shortLabel Centromere Regions
+longLabel Centromere Regions
+group cenTelo
+type bigBed
+visibility hide
+color 218,165,32
+bigDataUrl cenSatRegions.bigBed
+priority 1
+
+track cenSatAnnotation
+shortLabel CenSat Annotation
+longLabel Centromeric Satellite Annotation
+group cenTelo
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 9 +
+bigDataUrl cenSatAnnotation.bigBed
+priority 2
+
 track hors
 shortLabel HORs annotation
 longLabel Centromere HORs annotation

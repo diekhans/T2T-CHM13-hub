@@ -116,25 +116,8 @@ bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigCha
 tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
 bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v1.0.sizes t2t-chm13-v1.0.hg38.over.bigLink
 
-
 ln -f t2t-chm13-v1.0.hg38.*.big*  t2t-chm13-v1.0.hg38.*chain.gz hg38.t2t-chm13-v1.0.*.chain.gz  ../../../hub/t2t-chm13-v1.0/hg38Lastz/
 
-** Also make liftover chains available
-ln -f *.over.chain.gz ../../../hub/t2t-chm13-v1.0/hg38Lastz/
-
-### contact nancy when done
-
-
-** lastz liftover primary:
-% chainFilter -q=$(cat hg38-primary.tab | tr '\n' ',') t2t-chm13-v1.0.hg38.over.chain.gz | bgzip --threads=64 -c >t2t-chm13-v1.0.hg38.over-primary.chain.gz
-% cd tmp3
-% hgLoadChain -noBin -test no bigChain ../t2t-chm13-v1.0.hg38.over-primary.chain.gz
-% sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp.bigChain
-% bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp.bigChain ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.hg38.over-primary.bigChain
-
-% tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp.bigLink
-% bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp.bigLink  ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.hg38.over-primary.bigLink
-% ln -f t2t-chm13-v1.0.hg38.over-primary.big* ../../../hub/t2t-chm13-v1.0/grch38/
 
 * Cactus alignments
 cd cactus
@@ -261,6 +244,17 @@ find . -name '*.txt' | cpio -pdum  /cluster/home/markd/compbio/nanopore/projs/t2
 ln -f *.bam *.bai *.bb ../../../../../hub/t2t-chm13-v1.0/CAT/
 
 
+** cenSat (cenRegions/cenAnnotation
+Karen
+/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_annotation.bed
+/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_regions.bed
+
+pigz *.bed
+# had to modify  ifles asthey had multiple tabs and sometimes space between columns
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t-chm13.v1.0.cenSat_annotation.bed.gz
+buildBigBed bed4 t2t-chm13-v1.0 cenSatRegions.bigBed t2t-chm13.v1.0.cenSat_regions.bed.gz 
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
+
 * to-do
 ** finish lastz
 
@@ -292,14 +286,14 @@ bedGraphToBigWig AllChrs_BOTH_chm13-5A-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-
 
 % Overlap between chr1 90 94 and chr1 90 94.
 
-** finish hg38Lastz
 ** FIMISH Ann's
 
-** Can you help us upload the new cenAnnotation and cenRegions to v1.0?
-/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_annotation.bed
-Track Descriptions
+
+
+** 
+Karen
+
 https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenSat_annotation.html
-/team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_regions.bed
 https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenRegions.html
 hub/t2tChm13_20200727/cenRegions.html
 ** cactus liftover nets with synten

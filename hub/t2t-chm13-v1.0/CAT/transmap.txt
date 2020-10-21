@@ -1,9 +1,10 @@
 track transmap_CHM13
+superTrack catEvidence hide
 shortLabel transMap
 longLabel transMap
-bigDataUrl transmap.bb
+bigDataUrl CAT/transmap.bb
 type bigPsl
-group cat_tracks
+group genes
 itemRgb on
 priority 2
 visibility pack

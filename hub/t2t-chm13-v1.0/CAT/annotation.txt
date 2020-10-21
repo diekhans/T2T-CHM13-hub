@@ -1,15 +1,16 @@
-track CHM13_external_reference_CHM13
-shortLabel CHM13.external_reference
-longLabel CHM13.external_reference
-description CHM13.external_reference
+track isoseq_ref_CHM13
+superTrack catEvidence hide
+shortLabel ISOSeq evidence
+longLabel ISOSeq evidence
+description ISOSeq evidence
 type bigGenePred
-group cat_tracks
+group genes
 itemRgb on
 priority 3
 visibility pack
 searchIndex name,name2,geneId,transcriptId
-bigDataUrl annotation.bb
+bigDataUrl CAT/annotation.bb
 labelFields name,name2,geneId,transcriptId
 defaultLabelFields name
 labelSeperator " "
-
+html CAT/isoseq_ref_CHM13.html

@@ -90,6 +90,8 @@ priority 6
 ##
 # genes
 ##
+include CAT/trackDb.txt
+
 track liftOffGenes
 compositeTrack off
 visibility hide

@@ -3,13 +3,13 @@ shortLabel CAT Annotation
 longLabel CAT Annotation
 description CAT Annotation
 type bigGenePred
-group cat_tracks
+group genes
 itemRgb on
 priority 1
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
-bigDataUrl consensus.bb
+bigDataUrl CAT/consensus.bb
 labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 defaultLabelFields name
 labelSeperator " "
-
+html CAT/consensus_CHM13.html

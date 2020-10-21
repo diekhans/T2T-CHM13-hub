@@ -1,12 +1,13 @@
 track splices_CHM13
+superTrack catEvidence hide
 type bigBed 12
-group expression
+group genes
 shortLabel RNA-seq splices
 longLabel RNA-seq Splice Junctions
-bigDataUrl splices.bb
+bigDataUrl CAT/splices.bb
 visibility hide
 color 45,125,204
 priority 12
 spectrum on
 minGrayLevel 4
-
+html CAT/splices_CHM13.html

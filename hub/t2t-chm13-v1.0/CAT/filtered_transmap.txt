@@ -1,15 +1,16 @@
 track Filtered_transMap_CHM13
+superTrack catEvidence hide
 shortLabel Filtered transMap
 longLabel Filtered transMap
 description Filtered transMap
 type bigGenePred
-group cat_tracks
+group genes
 itemRgb on
 priority 3
 visibility hide
 searchIndex name,name2,geneId,transcriptId
-bigDataUrl filtered_transmap.bb
+bigDataUrl CAT/filtered_transmap.bb
 labelFields name,name2,geneId,transcriptId
 defaultLabelFields name
 labelSeperator " "
-
+html CAT/Filtered_transMap_CHM13.html

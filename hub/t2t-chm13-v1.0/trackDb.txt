@@ -127,6 +127,8 @@ priority 12
 # comparative genomics
 ##
 include cactus.trackDb.txt
+include grch38Lastz.trackDb.txt
+
 
 track grch38Synteny25kb
 shortLabel GRCh38 Synteny 25KB

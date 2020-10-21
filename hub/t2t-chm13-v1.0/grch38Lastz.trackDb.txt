@@ -1,0 +1,34 @@
+track grch38Lastz
+compositeTrack off
+shortLabel GRCh38 LASTZ
+longLabel GRCh38 LASTZ Alignments
+visibility hide
+priority 30
+type bigChain hg38
+group compGeno
+html grch38Lastz.html
+
+    track grch38OverChains
+    parent grch38Lastz
+    shortLabel GRCh38 Liftover Chains
+    longLabel  GRCh38 LASTZ Liftover Alignment Chains
+    type bigChain hg38
+    color 120,20,0
+    visibility hide
+    bigDataUrl hg38Lastz/t2t-chm13-v1.0.hg38.over.bigChain
+    linkDataUrl hg38Lastz/t2t-chm13-v1.0.hg38.over.bigLink
+    priority 1
+    group compGeno
+
+    track grch38AllChains
+    parent grch38Lastz
+    shortLabel GRCh38 All Chains
+    longLabel  GRCh38 LASTZ All Alignment Chains
+    type bigChain hg38
+    color 20,0,120
+    visibility hide
+    bigDataUrl hg38Lastz/t2t-chm13-v1.0.hg38.all.bigChain
+    linkDataUrl hg38Lastz/t2t-chm13-v1.0.hg38.all.bigLink
+    priority 2
+    group compGeno
+

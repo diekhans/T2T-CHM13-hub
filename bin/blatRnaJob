@@ -23,7 +23,7 @@ def parseArgs():
 def runBlat(genomeTwoBit, chrom, rnaFa, outPsl):
     fileOps.ensureFileDir(outPsl)
     ooc = osp.splitext(genomeTwoBit)[0] + ".11.ooc"
-    subprocess.check_call(["blat", "-q=rna", "-t=dna," "-fine", "-minScore=20", "-stepSize=5", "-noHead",
+    subprocess.check_call(["blat", "-q=rna", "-t=dna", "-fine", "-minScore=20", "-stepSize=5", "-noHead",
                           "-ooc=" + ooc, genomeTwoBit + ":" + chrom,
                            rnaFa, outPsl])
 

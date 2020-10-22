@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+import os.path as osp
+import argparse
+from pycbio.sys import fileOps
+from Bio import SeqIO
+
+
+def parseArgs():
+    usage = """fix ids in GENCODE fasta headers and drop PAR_Y transcripts"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('inFa')
+    parser.add_argument('outFa')
+    return parser.parse_args()
+
+def useRec(faRec):
+    return faRec.id.find("_PAR_Y") < 0
+
+def processRec(faRec, outFh):
+    faRec.id = faRec.id.split('|')[0]
+    SeqIO.write(faRec, outFh, "fasta")
+
+def main(args):
+    with fileOps.opengz(args.inFa) as inFh:
+        with fileOps.opengz(args.outFa, "w") as outFh:
+            for faRec in SeqIO.parse(inFh, "fasta"):
+                if useRec(faRec):
+                    processRec(faRec, outFh)
+
+main(parseArgs())

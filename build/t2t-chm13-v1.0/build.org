@@ -213,6 +213,7 @@ cd wssd
 mkdir -p  ../../../hub/t2t-chm13-v1.0/wssd
 ln -f *.bb  ../../../hub/t2t-chm13-v1.0/wssd
 
+2020-10-21 - updated
 
 * kmers
 Ann Mc Cartney
@@ -276,7 +277,6 @@ https://bismap.hoffmanlab.org/
 
 Savannah Hoyt  1:07 PM
 
-
 ** proSeqMeryl
 Savannah Hoyt
 /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
@@ -290,11 +290,90 @@ bedGraphToBigWig AllChrs_BOTH_chm13-5A-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-
 
 
 
-** 
-Karen
 
-https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenSat_annotation.html
-https://github.com/diekhans/T2T-CHM13-hub/blob/master/hub/t2tChm13_20200727/cenRegions.html
-hub/t2tChm13_20200727/cenRegions.html
 ** cactus liftover nets with synten
 ** liftover comparison
+
+
+* refSeqBlat
+cd refSeqBlat/data
+# files from 2020-05-29
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.fna.gz
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_knownrefseq_alignments.bam
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.gbff.gz
+faSize -detailed GRCh38_latest_rna.fna.gz | tawk '/^N/{print $1}' >refSeq-curated.acc
+faSomeRecords GRCh38_latest_rna.fna.gz refSeq-curated.acc stdout | bgzip -@ 64 -c >refSeq-curated.fa.gz
+
+# metadata for later merge (2m16s)
+gbffToTsv data/GRCh38_latest_rna.gbff.gz data/refSeq-curated.meta.tsv.gz >&log&
+
+cd ..
+blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit data/refSeq-curated.fa.gz tmp/
+para make -batch=tmp/b1 tmp/para.jobs >&log&
+
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
+
+# filter 
+faPolyASizes data/GRCh38_latest_rna.fna.gz stdout | gzip -c >data/GRCh38_latest_rna.polya.gz
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
+
+# build bigPsl with extra columns
+zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
+pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl.gz stdout | sort -k1,1 -k2,2n > tmp/rs.bigin1
+bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
+
+bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/t2t-chm13-v1.0.sizes refSeq-curated.bigBlatPsl
+ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
+
+# 2020-09-27 discovered error with filter command, so changed above
+
+* gencodeBlat
+- use gencode V3V to match CAT, only do protein code and lncRNAs
+
+# fix complex ids and skip PAR
+zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.pc_transcripts.fa.gz  /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.lncRNA_transcripts.fa.gz | gencodeFastaEdit /dev/stdin tmp/rna.fa.gz
+
+
+blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit tmp/rna.fa.gz tmp
+
+# run in parasol
+
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >gencode.raw.psl.gz
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=gencode.stats gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >gencode.psl.gz
+
+hgsql hg38 -Ne 'select * from gencodeAnnotV35' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
+hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from gencodeAttrsV35 ga left join gencodeToGeneSymbolV35 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
+
+pslToBigPsl -cds=data/gencode.cds -fa=tmp/rna-fixed.fa gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
+bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
+
+bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/g.bigin2 ../genome/t2t-chm13-v1.0.sizes gencode.bigBlatPsl
+ln -f gencode.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
+
+# 2020-09-27 discovered error with filter command, so changed above
+
+* update
+
+** Mitchell Robert Vollger  4:34 PM
+I pushed some updates to the .bb files in /team-segdups/WSSD_v1.0/ . It would be great if you could update them when you get a chance
+
+
+New
+
+** Lev  4:51 PM
+Hi @Mark Diekhans, I have uploaded alpha satellite HOR, SF, and strand annotations for release v1.0 to the Globus under /team-satellites/AS_Annotation/release_v1.0/ Please add them to our assembly browser.
+
+
+* as_annotation (as_hor_annotation, as_sf_annotation)
+2020-10-22 from Lev Uralsky
+cd as_annotation
+/team-satellites/AS_Annotation/release_v1.0/
+
+
+buildBigBed bed9 t2t-chm13-v1.0 AS_HOR_Annot.bigBed t2t-chm13.release_v1.0-AS-HORs-annotation.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.0 AS_SF_Annot.bigBed t2t-chm13.release_v1.0-AS-SFs-annotation.bed.gz 
+buildBigBed bed9 t2t-chm13-v1.0 AS_strand.bigBed t2t-chm13.release_v1.0-AS-strand.bed.gz 
+ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
+

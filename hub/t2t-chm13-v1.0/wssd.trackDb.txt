@@ -19,6 +19,15 @@ html hgdp_wssd_cn.html
     itemRgb on
     visibility dense
 
+    track hg38_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/hg38_wssd.bb
+    shortLabel hg38_kmer_hg38 wssd CN
+    longLabel hg38_kmer_hg38 Copy Number
+    type bigBed 9 +
+    itemRgb on
+    visibility dense
+
     track LP6005441-DNA_A01_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005441-DNA_A01_wssd.bb
@@ -2457,6 +2466,15 @@ html hgdp_wssd_cn_subset.html
     bigDataUrl wssd/chm13_wssd.bb
     shortLabel chm13_kmer_chm13 wssd CN
     longLabel chm13_kmer_chm13 Copy Number
+    type bigBed 9 +
+    itemRgb on
+    visibility dense
+
+    track hg38_wssd_sub
+    parent hgdp_wssd_cn_sub
+    bigDataUrl wssd/hg38_wssd.bb
+    shortLabel hg38_kmer_hg38 wssd CN
+    longLabel hg38_kmer_hg38 Copy Number
     type bigBed 9 +
     itemRgb on
     visibility dense

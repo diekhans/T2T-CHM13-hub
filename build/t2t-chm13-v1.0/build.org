@@ -256,6 +256,20 @@ buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t-chm13.v1.0.cenSat_an
 buildBigBed bed4 t2t-chm13-v1.0 cenSatRegions.bigBed t2t-chm13.v1.0.cenSat_regions.bed.gz 
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
 
+* as_annotation (as_hor_annotation, as_sf_annotation)
+2020-10-22 from Lev Uralsky
+cd as_annotation
+/team-satellites/AS_Annotation/release_v1.0/
+
+
+buildBigBed bed9 t2t-chm13-v1.0 AS_HOR_Annot.bigBed t2t-chm13.release_v1.0-AS-HORs-annotation.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.0 AS_SF_Annot.bigBed t2t-chm13.release_v1.0-AS-SFs-annotation.bed.gz 
+buildBigBed bed9 t2t-chm13-v1.0 AS_strand.bigBed t2t-chm13.release_v1.0-AS-strand.bed.gz 
+ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
+
+
+
+
 * to-do
 ** finish lastz
 
@@ -270,6 +284,8 @@ chm13-isoseq--mandalorion/
 ** Ann Mc Cartney  1:22 PM
 Hey Mark, at a hackathon for SV calls at the minute. Basically we want our tool to have a track for mappability for GRCh38. I.e regions of good and bad mapping. I'm sure UCSC has such a thing. Do you have any ideas?
 https://bismap.hoffmanlab.org/
+
+** FIMISH Ann's
 
 
 ** proseq
@@ -286,7 +302,6 @@ bedGraphToBigWig AllChrs_BOTH_chm13-5A-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-
 
 % Overlap between chr1 90 94 and chr1 90 94.
 
-** FIMISH Ann's
 
 
 
@@ -364,16 +379,4 @@ New
 
 ** Lev  4:51 PM
 Hi @Mark Diekhans, I have uploaded alpha satellite HOR, SF, and strand annotations for release v1.0 to the Globus under /team-satellites/AS_Annotation/release_v1.0/ Please add them to our assembly browser.
-
-
-* as_annotation (as_hor_annotation, as_sf_annotation)
-2020-10-22 from Lev Uralsky
-cd as_annotation
-/team-satellites/AS_Annotation/release_v1.0/
-
-
-buildBigBed bed9 t2t-chm13-v1.0 AS_HOR_Annot.bigBed t2t-chm13.release_v1.0-AS-HORs-annotation.bed.gz &
-buildBigBed bed9 t2t-chm13-v1.0 AS_SF_Annot.bigBed t2t-chm13.release_v1.0-AS-SFs-annotation.bed.gz 
-buildBigBed bed9 t2t-chm13-v1.0 AS_strand.bigBed t2t-chm13.release_v1.0-AS-strand.bed.gz 
-ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
 

@@ -178,6 +178,32 @@ priority 12
     defaultLabelFields name
     searchIndex name,name2
 
+track gencodeBlat
+shortLabel GENCODE BLAT
+longLabel BLAT of GENCODE RNAs
+html gencodeBlat.html
+group genes
+type bigPsl
+priority 11.001
+color 0,0,100
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl gencodeBlat.bigBlatPsl
+searchIndex name,geneSym,geneId,geneType
+
+
 ##
 # comparative genomics
 ##

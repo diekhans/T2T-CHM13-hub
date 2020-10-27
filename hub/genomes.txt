@@ -7,8 +7,8 @@ organism CHM13 Homo sapiens
 defaultPos chr3:90,755,737-90,789,938
 scientificName Homo sapiens
 htmlPath t2t-chm13-v1.0/description.html
-#blat blatx.soe.ucsc.edu 17879
-#transBlat blatx.soe.ucsc.edu 17878
+blat blatx.soe.ucsc.edu 17881
+transBlat blatx.soe.ucsc.edu 17880
 priority 8.0
 
 genome t2tChm13_20200727

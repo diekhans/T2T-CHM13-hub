@@ -42,6 +42,7 @@ twoBitMask -type=.bed t2t-chm13-v1.0.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ..
 
 twoBitInfo t2t-chm13-v1.0.2bit t2t-chm13-v1.0.sizes
 twoBitToFa t2t-chm13-v1.0.2bit t2t-chm13-v1.0.fa
+tawk '{print $1,$2,"x"}' t2t-chm13-v1.0.sizes > t2t-chm13-v1.0.sizes3
 
 nice bgzip  --threads=64 t2t-chm13-v1.0.fa
 samtools faidx t2t-chm13-v1.0.fa.gz 
@@ -81,6 +82,23 @@ buildBigBed bed9 t2t-chm13-v1.0 superHors.bigBed *.gz
 ln -f superHors.bigBed ../../../hub/t2t-chm13-v1.0/
 
 * hg38Lastz
+Lastz parameters (from human/chimp browser settings)
+v1.03.52
+
+BLASTZ_O=600    --gap=600,150
+BLASTZ_E=150
+BLASTZ_M=254     --masking=254
+BLASTZ_T=2       --seed=12of19 --notransition
+BLASTZ_Y=15000 --ydrop==15000
+BLASTZ_K=4500  --hspthresh=4500
+
+BLASTZ_Q --score=
+    A    C    G    T
+    90 -330 -236 -356
+  -330  100 -318 -236
+  -236 -318  100 -330
+  -356 -236 -330   90
+
 
 ** build alignments
 cd hg38Lastz
@@ -205,6 +223,30 @@ samtools index CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-ch
 mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeq/
 ln -f CHM13-5*_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam* ../../../hub/t2t-chm13-v1.0/proSeq/
 
+* proSeqMeryl
+Savannah Hoyt
+/team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
+PRO-seq reads aligned with Bowtie2 and then filtered with the unique 21-mers?
+
+
+# hand errors:
+Expecting at least 3 words line 852031276 of A.sort.tmp.bed got 2
+Expecting at least 3 words line 130294431 of B.sort.tmp.bed got 2
+A.bad:chr7	52
+B.bad:chr10	992698
+# so remove with awk
+
+# still get overlap errors, so remove with bedGraphLegalize 
+Error - overlapping regions in bedGraph line 28 of A.sort.tmp.bed
+Error - overlapping regions in bedGraph line 9 of B.sort.tmp.bed
+
+zcat AllChrs_BOTH_chm13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_INT_chm13-PCRfree_asm-20200922_21mer-single.bedgraph.gz | csort -k 1,1 -k 2,2n | tawk 'NF==4' | bedGraphLegalize -report=A.error.lst stdin stdout | csort -k 1,1 -k 2,2n >A.sort.tmp.bed &
+zcat AllChrs_BOTH_chm13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_INT_chm13-PCRfree_asm-20200922_21mer-single.bedgraph.gz | csort -k 1,1 -k 2,2n | tawk 'NF==4' | bedGraphLegalize -report=B.error.lst stdin stdout | csort -k 1,1 -k 2,2n >B.sort.tmp.bed &
+
+bedGraphToBigWig A.sort.tmp.bed  ../genome/t2t-chm13-v1.0.sizes proSeqMerylA.bigWig >&A.log &
+bedGraphToBigWig B.sort.tmp.bed  ../genome/t2t-chm13-v1.0.sizes proSeqMerylB.bigWig >&B.log &
+
+
 
 * wssd
 Mitchell Robert Vollger
@@ -215,26 +257,27 @@ ln -f *.bb  ../../../hub/t2t-chm13-v1.0/wssd
 
 2020-10-21 - updated
 
-* kmers
+* kmersTandem
 Ann Mc Cartney
  /team-satellites/Repeat_kmers/
    CHM13_Updated_k21.bed 21kmer repeat bed 
-   CHM13_Updated_k21.bg - bigwig file
-   t2t-chm13_k18.bed
-   t2t-chm13_k18.bg
+   CHM13_Updated_k21.bg - bedgraph file
 
+pigz CHM13_Updated_k21.bg  
 pigz CHM13_Updated_k21.bed 
-buildBigBed bed4 t2t-chm13-v1.0 kmers-21.bigBed CHM13v1_k18.bed.gz 
-ln CHM13_Updated_k21.bg kmers-21.bigWig
-
-pigz t2t-chm13_k18.bed 
-buildBigBed bed4 t2t-chm13-v1.0 kmers-18.bigBed t2t-chm13_k18.bed.gz
-ln t2t-chm13_k18.bg kmers-18.bigWig
+buildBigBed bed4 t2t-chm13-v1.0 kmers-21-tandem.bigBed CHM13v1_k18.bed.gz 
+zcat CHM13_Updated_k21.bg.gz | tail -n +2 | TMDIR=/dev/shm/ sort -k1,1 -k2,2n >tmp.bedgraph
+bedGraphToBigWig tmp.bedgraph ../genome/t2t-chm13-v1.0.sizes kmers-21-tandem.bigWig
 
 mkdir  ../../../hub/t2t-chm13-v1.0/kmers/
-
 ln -f kmers-*  ../../../hub/t2t-chm13-v1.0/kmers/
-## FIXMISH
+
+* kmersUnique 
+/team-genes/chm13v1_Tracks/20200921.single.bed
+pigz 20200921.single.bed
+buildBigBed bed3 t2t-chm13-v1.0 kmers-21-uniq.bigBed 20200921.single.bed.gz
+ln -f kmers-*  ../../../hub/t2t-chm13-v1.0/kmers/
+
 
 * CAT
 Marina
@@ -243,6 +286,10 @@ http://courtyard.gi.ucsc.edu/~mhauknes/t2t_v2/out-chm13-t2t-rebuild/
 cd CAT/assemblyHub/CHM13
 find . -name '*.txt' | cpio -pdum  /cluster/home/markd/compbio/nanopore/projs/t2t-chm13/T2T-CHM13-hub/hub/t2t-chm13-v1.0/CAT
 ln -f *.bam *.bai *.bb ../../../../../hub/t2t-chm13-v1.0/CAT/
+
+cp consensus_gene_set/* ../../../hub/t2t-chm13-v1.0/CAT/consensus_gene_set/
+pigz ../../../hub/t2t-chm13-v1.0/CAT/consensus_gene_set/*
+
 
 
 ** cenSat (cenRegions/cenAnnotation
@@ -269,6 +316,31 @@ ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
 
 
 
+* gencodeBlat
+- use gencode V35 to match CAT, only do protein code and lncRNAs
+
+# fix complex ids and skip PAR
+zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.pc_transcripts.fa.gz  /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.lncRNA_transcripts.fa.gz | gencodeFastaEdit /dev/stdin tmp/rna.fa.gz
+
+blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit tmp/rna.fa.gz tmp
+
+# run in parasol, MUST push all alignments, as exceeds 100000
+
+# sort by query
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >aligns/gencode.raw.psl.gz
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -globalNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=aligns/gencode.stats aligns/gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >aligns/gencode.psl.gz
+
+hgsql hg38 -Ne 'select * from gencodeAnnotV35' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
+hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from gencodeAttrsV35 ga left join gencodeToGeneSymbolV35 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
+
+pslToBigPsl -cds=data/gencode.cds -fa=tmp/rna.fa.gz aligns/gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
+
+bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
+
+bedToBigBed -extraIndex=name,geneSym,geneId -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/g.bigin2 ../genome/t2t-chm13-v1.0.sizes gencodeBlat.bigBlatPsl
+ln -f gencodeBlat.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
+
 
 * to-do
 ** finish lastz
@@ -281,30 +353,10 @@ chm13-isoseq--mandalorion/
 
 
 
-** Ann Mc Cartney  1:22 PM
-Hey Mark, at a hackathon for SV calls at the minute. Basically we want our tool to have a track for mappability for GRCh38. I.e regions of good and bad mapping. I'm sure UCSC has such a thing. Do you have any ideas?
-https://bismap.hoffmanlab.org/
-
-** FIMISH Ann's
-
-
 ** proseq
 ### NEED to FIGURE OUT bedgraph
 
 Savannah Hoyt  1:07 PM
-
-** proSeqMeryl
-Savannah Hoyt
-/team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
-PRO-seq reads aligned with Bowtie2 and then filtered with the unique 21-mers?
-
-bedGraphToBigWig AllChrs_BOTH_chm13-5A-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_INT_chm13-PCRfree_asm-20200922_21mer-single.bedgraph.gz ../genome/t2t-chm13-v1.0.sizes proSeqMeryl.bigWig
-
-% Overlap between chr1 90 94 and chr1 90 94.
-
-
-
-
 
 ** cactus liftover nets with synten
 ** liftover comparison
@@ -343,31 +395,6 @@ ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 
 # 2020-09-27 discovered error with filter command, so changed above
 
-* gencodeBlat
-- use gencode V35 to match CAT, only do protein code and lncRNAs
-
-# fix complex ids and skip PAR
-zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.pc_transcripts.fa.gz  /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.lncRNA_transcripts.fa.gz | gencodeFastaEdit /dev/stdin tmp/rna.fa.gz
-
-blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit tmp/rna.fa.gz tmp
-
-# run in parasol, MUST push all alignments, as exceeds 100000
-
-# sort by query
-find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >aligns/gencode.raw.psl.gz
-
-pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -globalNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=aligns/gencode.stats aligns/gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >aligns/gencode.psl.gz
-
-hgsql hg38 -Ne 'select * from gencodeAnnotV35' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
-hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from gencodeAttrsV35 ga left join gencodeToGeneSymbolV35 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
-
-pslToBigPsl -cds=data/gencode.cds -fa=tmp/rna.fa.gz aligns/gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
-
-bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
-
-bedToBigBed -extraIndex=name,geneSym,geneId -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/g.bigin2 ../genome/t2t-chm13-v1.0.sizes gencodeBlat.bigBlatPsl
-ln -f gencodeBlat.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
-
 
 * Savannah Hoyt  11:59 AM 2020-10-23
 Hi Mark. I just uploaded the two separate PRO-seq duplicates to: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
@@ -378,4 +405,52 @@ Gotcha! I am glad they are helpful!
 Yes, if you take the sorted bams (which are on Globus) and run these commands, it’ll give you POS and NEG stranded bedgraphs:
 bedtools genomecov -bg -strand - -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_NEG.bedgraph
 bedtools genomecov -bg -strand + -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_POS.bedgraph
-The bedgraphs I added in the Bowtie2 alignments are not strand separated either. These tracks were mostly for looking in centromeric/telomeric regions as they are intersected with unique 21-mers. I’m working on generating them as separate strands, but it’s a little more intensive, so just wanted to get these two tracks up there in the interim (as long as it’s not too much trouble!).
+
+The bedgraphs I added in the Bowtie2 alignments are not strand separated
+either. These tracks were mostly for looking in centromeric/telomeric regions
+as they are intersected with unique 21-mers. I’m working on generating them as
+separate strands, but it’s a little more intensive, so just wanted to get
+these two tracks up there in the interim (as long as it’s not too much
+trouble!).
+
+I’m not sure why these overlaps exist. The files were just made by
+using bedtools intersect to intersect the PRO-seq reads with the unique
+k-Mers.
+
+## debug overlapping regions
+Savannah Hoyt  4:18 PM
+I uploaded the three files involved in the intersections to: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
+The files are: (PRO-seq files) 
+   CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bedgraph
+   CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_BOTH.bedgraph
+   (Meryl unique k-mers) IlluminaPCRfree_20200922-assembly_21mers_single.meryl.bed
+-a bedgraph -b kmers
+
+cd tmp
+tawk '$1=="chr22"' CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bedgraph >A.chr22.bedgraph
+ sort  -k 2,2n A.chr22.bedgraph >A.chr22.sort.bedgraph 
+
+bedGraphToBigWig A.chr22.sort.bedgraph ../../genome/t2t-chm13-v1.0.sizes A.chr22.bigwig
+# ok!
+
+tawk '$1=="chr22"' IlluminaPCRfree_20200922-assembly_21mers_single.meryl.bed  >meryl.chr22.bed
+
+
+bedtools intersect -a A.chr22.sort.bedgraph -b meryl.chr22.bed >A.chr22.intersect.bedgraph
+sort -k 2,2n A.chr22.intersect.bedgraph > A.chr22.intersect.sort.bedgraph
+bedGraphToBigWig A.chr22.intersect.sort.bedgraph ../../genome/t2t-chm13-v1.0.sizes A.chr22.intersect.bigWig
+Error - overlapping regions in bedGraph line 2 of A.chr22.intersect.sort.bedgraph
+
+# make tiny example
+  tawk '$2 <=1000' A.chr22.sort.bedgraph >A.tiny.bedgraph
+  tawk '$2 <=1000' meryl.chr22.bed >meryl.tiny.bed 
+
+bedtools intersect -a A.tiny.bedgraph -b meryl.tiny.bed > A-intersect.tiny.bedgraph
+
+* crispr  requested by Karen
+cd crispr
+~/kent/src/hg/utils/automation/doCrispr.pl -stop offTargets -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit NONE  >&log
+
+* hg38:
+** minmap chaining
+** cactus nets

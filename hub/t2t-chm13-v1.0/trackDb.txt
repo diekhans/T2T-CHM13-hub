@@ -1,4 +1,51 @@
 ##
+# map
+## 
+track kmers
+shortLabel K-MERs
+longLabel K-MERs
+superTrack on hide
+visibility hide
+group map
+priority 100
+
+    track kmers21bed
+    parent kmers
+    shortLabel Tandem 21-MERs
+    longLabel Tandem 21-MER
+    group map
+    visibility hide
+    type bigBed 4
+    bigDataUrl kmers/kmers-21-tandem.bigBed
+    priority 1
+    html kmersTandem.html
+
+    track kmers21wig
+    parent kmers
+    shortLabel Tandem 21-MER density
+    longLabel Tandem 21-MER density
+    group map
+    visibility hide
+    type bigWig 0 100
+    bigDataUrl kmers/kmers-21-tandem.bigWig
+    priority 2
+    html kmersTandem.html
+
+    track kmers21uniq
+    parent kmers
+    shortLabel Unique 21-MERs
+    longLabel Unique 21-MERs
+    group map
+    visibility hide
+    type bigBed 3
+    bigDataUrl kmers/kmers-21-uniq.bigBed
+    priority 3
+    html kmersUniq.html
+
+
+
+
+##
 # varRep
 ##
 track rmsk

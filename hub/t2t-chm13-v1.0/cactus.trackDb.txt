@@ -70,7 +70,7 @@ html cactus.html
         type bigPsl
         color 20,120,0
         visibility hide
-        bigDataUrl cactus/GRCh38-t2t-chm13-v1.0.cactus.bigPsl
+        bigDataUrl cactus/t2t-chm13-v1.0.GRCh38.cactus.bigPsl
         priority 8
         group compGeno
         #subGroups view=Simplified orgs=GRCh38
@@ -84,7 +84,7 @@ html cactus.html
         type bigPsl
         color 20,0,120
         visibility hide
-        bigDataUrl cactus/GRCh38-t2t-chm13-v1.0.cactus.chained.bigPsl
+        bigDataUrl cactus/t2t-chm13-v1.0.GRCh38.cactus.chained.bigPsl
         priority 9
         group compGeno
         #subGroups view=Chained orgs=GRCH38

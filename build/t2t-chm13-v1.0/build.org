@@ -143,20 +143,25 @@ t2t-chm13-v1.0.aln1.hal from Marina
 halRenameGenomes t2t-chm13-v1.0.aln1.hal
 
 # build bigBed to cactus for quick browsing
+# use target.query.xxx file nameing convention to match lastz
 cd tmp
 halStats --bedSequences GRCh38 ../t2t-chm13-v1.0.aln1.hal >GRCh38.bed
 split -l 1 GRCh38.bed GRCh38/chrom.
 
 find  GRCh38 -type f | awk '{print "../getChromPairswise", $1}' >para.jobs
 para create para.jobs -batch=b1
-find t2t-chm13-v1.0/ -type f | xargs cat | csort -k 10,10  -k12,12n > GRCh38-t2t-chm13-v1.0.cactus.psl
-pslToBigPsl GRCh38-t2t-chm13-v1.0.cactus.psl stdout | sort -k1,1 -k2,2n > GRCh38-t2t-chm13-v1.0.cactus.bigPslIn 
-bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as GRCh38-t2t-chm13-v1.0.cactus.bigPslIn ../../genome/t2t-chm13-v1.0.sizes ../GRCh38-t2t-chm13-v1.0.cactus.bigPsl
+find t2t-chm13-v1.0/ -type f | xargs cat | csort -k 10,10  -k12,12n > t2t-chm13-v1.0.GRCh38.cactus.psl
+pslToBigPsl t2t-chm13-v1.0.GRCh38.cactus.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.0.GRCh38.cactus.bigPslIn 
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.0.GRCh38.cactus.bigPslIn ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.GRCh38.cactus.bigPsl
 
-pslSwap GRCh38-t2t-chm13-v1.0.cactus.psl stdout | axtChain -psl -verbose=0 -scoreScheme=/scratch/data/blastz/human_chimp.v2.q -minScore=5000 -linearGap=medium stdin /hive/data/genomes/hg38/hg38.2bit ../../genome/t2t-chm13-v1.0.2bit stdout | chainSwap stdin GRCh38-t2t-chm13-v1.0.cactus.chain
-chainToPsl GRCh38-t2t-chm13-v1.0.cactus.chain ../../genome/t2t-chm13-v1.0.sizes /hive/data/genomes/hg38/chrom.sizes ../../genome/t2t-chm13-v1.0.2bit /hive/data/genomes/hg38/hg38.2bit GRCh38-t2t-chm13-v1.0.cactus.chained.psl
-pslToBigPsl GRCh38-t2t-chm13-v1.0.cactus.chained.psl stdout | sort -k1,1 -k2,2n > GRCh38-t2t-chm13-v1.0.cactus.chained.bigPslIn
-bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as GRCh38-t2t-chm13-v1.0.cactus.chained.bigPslIn  ../../genome/t2t-chm13-v1.0.sizes ../GRCh38-t2t-chm13-v1.0.cactus.chained.bigPsl
+pslSwap t2t-chm13-v1.0.GRCh38.cactus.psl stdout | axtChain -psl -verbose=0 -scoreScheme=/scratch/data/blastz/human_chimp.v2.q -minScore=5000 -linearGap=medium stdin /hive/data/genomes/hg38/hg38.2bit ../../genome/t2t-chm13-v1.0.2bit stdout | chainSwap stdin t2t-chm13-v1.0.GRCh38.cactus.chain
+chainToPsl t2t-chm13-v1.0.GRCh38.cactus.chain ../../genome/t2t-chm13-v1.0.sizes /hive/data/genomes/hg38/chrom.sizes ../../genome/t2t-chm13-v1.0.2bit /hive/data/genomes/hg38/hg38.2bit t2t-chm13-v1.0.GRCh38.cactus.chained.psl
+pslToBigPsl t2t-chm13-v1.0.GRCh38.cactus.chained.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.0.GRCh38.cactus.chained.bigPslIn
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.0.GRCh38.cactus.chained.bigPslIn  ../../genome/t2t-chm13-v1.0.sizes ../t2t-chm13-v1.0.GRCh38.cactus.chained.bigPsl
+
+# make syntenic chains
+chainNet 
+netSyntenic 
 
 ln -f *.bigPsl *.hal ../../../hub/t2t-chm13-v1.0/cactus/
 

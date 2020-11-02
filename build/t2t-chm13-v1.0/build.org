@@ -223,30 +223,24 @@ samtools index CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-ch
 mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeq/
 ln -f CHM13-5*_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam* ../../../hub/t2t-chm13-v1.0/proSeq/
 
+# how previous wiggle tracks were generate:
+bedtools genomecov -bg -strand - -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_NEG.bedgraph
+bedtools genomecov -bg -strand + -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_POS.bedgraph
+
+
 * proSeqMeryl
 Savannah Hoyt
 /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
-PRO-seq reads aligned with Bowtie2 and then filtered with the unique 21-mers?
 
+# redone with overlap select
+AllChrs_BOTH_IlluminaPCRfree_20200922-assembly_21mers_single_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz
+AllChrs_BOTH_IlluminaPCRfree_20200922-assembly_21mers_single_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz
 
-# hand errors:
-Expecting at least 3 words line 852031276 of A.sort.tmp.bed got 2
-Expecting at least 3 words line 130294431 of B.sort.tmp.bed got 2
-A.bad:chr7	52
-B.bad:chr10	992698
-# so remove with awk
+buildBigBed bed6 t2t-chm13-v1.0 proSeqMerylA.bigBed AllChrs_BOTH_IlluminaPCRfree_20200922-assembly_21mers_single_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz &
+buildBigBed bed6 t2t-chm13-v1.0 proSeqMerylB.bigBed AllChrs_BOTH_IlluminaPCRfree_20200922-assembly_21mers_single_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz &
 
-# still get overlap errors, so remove with bedGraphLegalize 
-Error - overlapping regions in bedGraph line 28 of A.sort.tmp.bed
-Error - overlapping regions in bedGraph line 9 of B.sort.tmp.bed
-
-zcat AllChrs_BOTH_chm13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_INT_chm13-PCRfree_asm-20200922_21mer-single.bedgraph.gz | csort -k 1,1 -k 2,2n | tawk 'NF==4' | bedGraphLegalize -report=A.error.lst stdin stdout | csort -k 1,1 -k 2,2n >A.sort.tmp.bed &
-zcat AllChrs_BOTH_chm13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_INT_chm13-PCRfree_asm-20200922_21mer-single.bedgraph.gz | csort -k 1,1 -k 2,2n | tawk 'NF==4' | bedGraphLegalize -report=B.error.lst stdin stdout | csort -k 1,1 -k 2,2n >B.sort.tmp.bed &
-
-bedGraphToBigWig A.sort.tmp.bed  ../genome/t2t-chm13-v1.0.sizes proSeqMerylA.bigWig >&A.log &
-bedGraphToBigWig B.sort.tmp.bed  ../genome/t2t-chm13-v1.0.sizes proSeqMerylB.bigWig >&B.log &
-
-
+mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeqMeryl/
+ln proSeqMeryl*  ../../../hub/t2t-chm13-v1.0/proSeqMeryl/
 
 * wssd
 Mitchell Robert Vollger
@@ -400,57 +394,14 @@ ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 Hi Mark. I just uploaded the two separate PRO-seq duplicates to: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
 Let me know if those give you any issues!
 
-* Savannah Hoyt  11
-Gotcha! I am glad they are helpful!
-Yes, if you take the sorted bams (which are on Globus) and run these commands, it’ll give you POS and NEG stranded bedgraphs:
-bedtools genomecov -bg -strand - -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_NEG.bedgraph
-bedtools genomecov -bg -strand + -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_POS.bedgraph
-
-The bedgraphs I added in the Bowtie2 alignments are not strand separated
-either. These tracks were mostly for looking in centromeric/telomeric regions
-as they are intersected with unique 21-mers. I’m working on generating them as
-separate strands, but it’s a little more intensive, so just wanted to get
-these two tracks up there in the interim (as long as it’s not too much
-trouble!).
-
-I’m not sure why these overlaps exist. The files were just made by
-using bedtools intersect to intersect the PRO-seq reads with the unique
-k-Mers.
-
-## debug overlapping regions
-Savannah Hoyt  4:18 PM
-I uploaded the three files involved in the intersections to: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
-The files are: (PRO-seq files) 
-   CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bedgraph
-   CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_BOTH.bedgraph
-   (Meryl unique k-mers) IlluminaPCRfree_20200922-assembly_21mers_single.meryl.bed
--a bedgraph -b kmers
-
-cd tmp
-tawk '$1=="chr22"' CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bedgraph >A.chr22.bedgraph
- sort  -k 2,2n A.chr22.bedgraph >A.chr22.sort.bedgraph 
-
-bedGraphToBigWig A.chr22.sort.bedgraph ../../genome/t2t-chm13-v1.0.sizes A.chr22.bigwig
-# ok!
-
-tawk '$1=="chr22"' IlluminaPCRfree_20200922-assembly_21mers_single.meryl.bed  >meryl.chr22.bed
-
-
-bedtools intersect -a A.chr22.sort.bedgraph -b meryl.chr22.bed >A.chr22.intersect.bedgraph
-sort -k 2,2n A.chr22.intersect.bedgraph > A.chr22.intersect.sort.bedgraph
-bedGraphToBigWig A.chr22.intersect.sort.bedgraph ../../genome/t2t-chm13-v1.0.sizes A.chr22.intersect.bigWig
-Error - overlapping regions in bedGraph line 2 of A.chr22.intersect.sort.bedgraph
-
-# make tiny example
-  tawk '$2 <=1000' A.chr22.sort.bedgraph >A.tiny.bedgraph
-  tawk '$2 <=1000' meryl.chr22.bed >meryl.tiny.bed 
-
-bedtools intersect -a A.tiny.bedgraph -b meryl.tiny.bed > A-intersect.tiny.bedgraph
-
 * crispr  requested by Karen
 cd crispr
 ~/kent/src/hg/utils/automation/doCrispr.pl -stop offTargets -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit NONE  >&log
 
-* hg38:
-** minmap chaining
-** cactus nets
+** hg38:
+*** minmap chaining
+*** cactus nets
+
+**  RNA-seq data
+Hi @Mark Diekhans quick question: did you (or anyone from your gene-team) ever map the ILMN RNA-seq data from @mydennis?
+

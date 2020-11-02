@@ -296,7 +296,7 @@ priority 4
     track proSeqAlignA
     parent proSeq on
     shortLabel PRO-seq (A)
-    longLabel  PRO-seq STAR alignments set A
+    longLabel  PRO-seq STAR alignments (set A)
     priority 1
     type bam
     visibility hide
@@ -306,10 +306,41 @@ priority 4
     track proSeqAlignB
     parent proSeq on
     shortLabel PRO-seq (B)
-    longLabel  PRO-seq STAR alignments set B
+    longLabel  PRO-seq STAR alignments (set B)
     priority 1
     type bam
     visibility hide
     bigDataUrl proSeq/CHM13-5B_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200922_Aligned_sort.out.bam
+    html proSeq.html
+
+
+track proSeqMeryl
+compositeTrack off
+visibility hide
+shortLabel PRO-seq Meryl
+longLabel PRO-Seq Meryl
+type bigBed 4
+group rna
+priority 5
+html proSeq.html
+
+    track proSeqMerylA
+    parent proSeqMeryl on
+    shortLabel PRO-seq Meryl (A)
+    longLabel  PRO-seq BowTie intersected with unique 21-mers (set A)
+    priority 1
+    type bigBed 4
+    visibility hide
+    bigDataUrl proSeqMeryl/proSeqMerylA.bigBed
+    html proSeq.html
+
+    track proSeqMerylB
+    parent proSeqMeryl on
+    shortLabel PRO-seq Meryl (B)
+    longLabel  PRO-seq BowTie intersected with unique 21-mers (set B)
+    priority 2
+    type bigBed 4
+    visibility hide
+    bigDataUrl proSeqMeryl/proSeqMerylB.bigBed
     html proSeq.html
 

@@ -300,7 +300,11 @@ pigz *.bed
 # had to modify  ifles asthey had multiple tabs and sometimes space between columns
 buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t-chm13.v1.0.cenSat_annotation.bed.gz
 buildBigBed bed4 t2t-chm13-v1.0 cenSatRegions.bigBed t2t-chm13.v1.0.cenSat_regions.bed.gz 
-ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/ls 
+
+# 2020-11-10 with t2t-chm13.v1.0.1110.cenSat_annotation.bed
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed  t2t-chm13.v1.0.1110.cenSat_annotation.bed.gz 
+
 
 * as_annotation (as_hor_annotation, as_sf_annotation)
 2020-10-22 from Lev Uralsky
@@ -316,6 +320,8 @@ ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
 
 
 * gencodeBlat
+### NOTE for next time, the RNA FASTAs don't include sequences on unplaced/randoms!!
+
 - use gencode V35 to match CAT, only do protein code and lncRNAs
 
 # fix complex ids and skip PAR
@@ -340,6 +346,18 @@ bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
 bedToBigBed -extraIndex=name,geneSym,geneId -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/g.bigin2 ../genome/t2t-chm13-v1.0.sizes gencodeBlat.bigBlatPsl
 ln -f gencodeBlat.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 
+* GC percent 
+cd gc5Base
+hgGcPercent -noLoad -wigOut -doGaps -win=5 -file=stdout -verbose=0 NODB ../genome/t2t-chm13-v1.0.2bit  | gzip -c > gc5Base.wigVarStep.gz
+wigToBigWig gc5Base.wigVarStep.gz  ../genome/t2t-chm13-v1.0.sizes gc5Base.bigWig
+ln -f gc5Base.bigWig  ../../../hub/t2t-chm13-v1.0/
+
+* gap track
+cd gap
+../../../T2T-CHM13-hub/bin/faToGapBed ../genome/t2t-chm13-v1.0.fa.gz gap.bed
+buildBigBed bed3 t2t-chm13-v1.0 gap.bigBed gap.bed
+ln -f gap.bigBed  ../../../hub/t2t-chm13-v1.0
+
 
 * to-do
 ** finish lastz
@@ -352,10 +370,6 @@ chm13-isoseq--mandalorion/
 
 
 
-** proseq
-### NEED to FIGURE OUT bedgraph
-
-Savannah Hoyt  1:07 PM
 
 ** cactus liftover nets with synten
 ** liftover comparison
@@ -395,13 +409,33 @@ ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 # 2020-09-27 discovered error with filter command, so changed above
 
 
-* Savannah Hoyt  11:59 AM 2020-10-23
-Hi Mark. I just uploaded the two separate PRO-seq duplicates to: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_Meryl-Intersections/
-Let me know if those give you any issues!
 
-* crispr  requested by Karen
+** crispr  requested by Karen
 cd crispr
-~/kent/src/hg/utils/automation/doCrispr.pl -stop offTargets -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit NONE  >&log
+~/compbio/nanopore/projs/t2t-chm13/kent/src/hg/utils/automation/doCrispr.pl -forHub -continue indexFa -stop indexFa -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit t2t-chm13-v1.0 >&log
+
+# code somewhere still wannts:
+/hive/data/outside/crisprTrack/crispor/genomes/t2t-chm13-v1.0/t2t-chm13-v1.0.fa
+so make 
+  ln -s /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/crispr/build/genomes/t2t-chm13-v1.0 /hive/data/outside/crisprTrack/crispor/genomes/
+
+indexFa :-)
+ranges :-)
+guides - run failed jobs with 16gb, then 32gb, then finish runGuides.bash by remove used of 
+specScoreJobList :-)
+specScores :-)
+ 
+
+effScores :-)
+needed:
+  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit /hive/data/genomes/t2t-chm13-v1.0
+  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes /hive/data/genomes/t2t-chm13-v1.0/chrom.sizes
+
+offTargets :-)
+
+
+~/compbio/nanopore/projs/t2t-chm13/kent/src/hg/utils/automation/doCrispr.pl -continue  -stop  -forHub -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit t2t-chm13-v1.0 >&log &
+
 
 ** hg38:
 *** minmap chaining
@@ -410,3 +444,12 @@ cd crispr
 **  RNA-seq data
 Hi @Mark Diekhans quick question: did you (or anyone from your gene-team) ever map the ILMN RNA-seq data from @mydennis?
 
+
+** winnowmap ONT
+# currently for Karen, don't have track desc yet
+/team-curation/alignments/20200921_v1.0/ont/
+    ont.bam, ont.bam.bai
+
+cd winnowmap_ont/
+mkdir -p ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
+ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/

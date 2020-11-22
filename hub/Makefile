@@ -37,6 +37,6 @@ sync: sync-t2t
 # progress = --progress
 sync-t2t: ${srcs:%=${hubDir}/%}
 	${hgwdev_check}
-	cd ../.. && rsync -aH --partial ${progress} --no-owner --no-group hub t2t.gi.ucsc.edu:/data/chm13
+	cd ../.. && rsync -v -aH --partial ${progress} --no-owner --no-group hub t2t.gi.ucsc.edu:/data/chm13
 	@rm -rf ${t2t_udc_dir}
 	hubCheck -udcDir=${t2t_udc_dir} ${t2tUrl}

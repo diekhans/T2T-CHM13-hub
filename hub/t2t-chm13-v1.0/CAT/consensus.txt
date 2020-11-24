@@ -6,6 +6,7 @@ type bigGenePred
 group genes
 itemRgb on
 priority 1
+maxItems 100000
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 bigDataUrl CAT/consensus.bb

@@ -217,6 +217,7 @@ priority 12
 # genes
 ##
 include CAT/trackDb.txt
+include crispr.trackDb.txt
 
 track liftOffGenes
 compositeTrack off

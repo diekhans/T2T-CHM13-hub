@@ -64,7 +64,7 @@ team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.all.bb
 team-segdups/Assembly_analysis/Liftoff/chm13.draft_v1.0_plus38Y.orf_only.bb
 ln -f *.bb ../../../hub/t2t-chm13-v1.0/liftOffGenes
 
-** HORs and superHORs
+* HORs and superHORs
 Tatiana Dvorkina  2020-10-05
 /team-satellites/HorAnnotation/release_v1.0/HORs;
 /team-satellites/HorAnnotation/release_v1.0/superHORs
@@ -290,7 +290,6 @@ cp consensus_gene_set/* ../../../hub/t2t-chm13-v1.0/CAT/consensus_gene_set/
 pigz ../../../hub/t2t-chm13-v1.0/CAT/consensus_gene_set/*
 
 
-
 ** cenSat (cenRegions/cenAnnotation
 Karen
 /team-satellites/cenSat_Annotation/t2t-chm13.v1.0.cenSat_annotation.bed
@@ -320,7 +319,8 @@ ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
 
 
 * gencodeBlat
-### NOTE for next time, the RNA FASTAs don't include sequences on unplaced/randoms!!
+### NOTE for next time, the RNA FASTAs don't include sequences on unplaced/randoms, also didn't include
+### pseudogenes
 
 - use gencode V35 to match CAT, only do protein code and lncRNAs
 
@@ -358,6 +358,38 @@ cd gap
 buildBigBed bed3 t2t-chm13-v1.0 gap.bigBed gap.bed
 ln -f gap.bigBed  ../../../hub/t2t-chm13-v1.0
 
+* crispr
+cd crispr
+
+# added -forHub option
+~/compbio/nanopore/projs/t2t-chm13/kent/src/hg/utils/automation/doCrispr.pl -continue XXX  -stop XXX  -forHub -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit t2t-chm13-v1.0 >&log &
+
+
+for each of
+    indexFa
+    ranges
+    guides - run failed jobs with 16gb, then 32gb, then finish runGuides.bash
+    specScoreJobList
+    specScores
+    effScores
+    offTargets
+    effScores
+
+
+# couldn't modify out-of-sync with git scripts in /hive/data/outside/crisprTrack/scripts, so
+# had to nakje make these links
+
+
+  ln -s /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/crispr/build/genomes/t2t-chm13-v1.0 /hive/data/outside/crisprTrack/crispor/genomes/
+  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit /hive/data/genomes/t2t-chm13-v1.0/
+  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes /hive/data/genomes/t2t-chm13-v1.0/chrom.sizes
+  ln build/indexFa/t2t-chm13-v1.0.fa* /data/outside/crisprTrack/crispor/genomes/t2t-chm13-v1.0//
+
+ #  
+ln build/crispr.bb .
+ln build/crisprDetails.tab .
+
+ln -f build/crispr.bb build/crisprDetails.tab ../../../hub/t2t-chm13-v1.0/crispr/
 
 * to-do
 ** finish lastz
@@ -410,32 +442,6 @@ ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 
 
 
-** crispr  requested by Karen
-cd crispr
-~/compbio/nanopore/projs/t2t-chm13/kent/src/hg/utils/automation/doCrispr.pl -forHub -continue indexFa -stop indexFa -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit t2t-chm13-v1.0 >&log
-
-# code somewhere still wannts:
-/hive/data/outside/crisprTrack/crispor/genomes/t2t-chm13-v1.0/t2t-chm13-v1.0.fa
-so make 
-  ln -s /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/crispr/build/genomes/t2t-chm13-v1.0 /hive/data/outside/crisprTrack/crispor/genomes/
-
-indexFa :-)
-ranges :-)
-guides - run failed jobs with 16gb, then 32gb, then finish runGuides.bash by remove used of 
-specScoreJobList :-)
-specScores :-)
- 
-
-effScores :-)
-needed:
-  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit /hive/data/genomes/t2t-chm13-v1.0
-  ln /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes /hive/data/genomes/t2t-chm13-v1.0/chrom.sizes
-
-offTargets :-)
-
-
-~/compbio/nanopore/projs/t2t-chm13/kent/src/hg/utils/automation/doCrispr.pl -continue  -stop  -forHub -buildDir $(pwd)/build -twoBit $(pwd)/../genome/t2t-chm13-v1.0.2bit t2t-chm13-v1.0 >&log &
-
 
 ** hg38:
 *** minmap chaining
@@ -453,3 +459,5 @@ Hi @Mark Diekhans quick question: did you (or anyone from your gene-team) ever m
 cd winnowmap_ont/
 mkdir -p ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
+
+** hg38 alignments

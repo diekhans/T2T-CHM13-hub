@@ -5,7 +5,7 @@ longLabel ISOSeq evidence
 description ISOSeq evidence
 type bigGenePred
 group genes
-itemRgb on
+color 200,0,165
 priority 3
 visibility pack
 searchIndex name,name2,geneId,transcriptId

@@ -1,8 +1,6 @@
 track crisprTargets
 shortLabel CRISPR Targets
 longLabel CRISPR/Cas9 -NGG Targets
-group genes
-visibility hide
 type bigBed 9 +
 itemRgb on
 maxItems 100000

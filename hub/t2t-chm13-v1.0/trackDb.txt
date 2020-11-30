@@ -369,3 +369,16 @@ html proSeqMeryl.html
     bigDataUrl proSeqMeryl/proSeqMerylB.bigBed
     html proSeqMeryl.html
 
+##
+# regulation
+##
+track methyFreq 
+shortLabel Methylation Frequency
+longLabel Methylation Frequency
+group regulation
+visibility hide
+type bigWig 0 1
+bigDataUrl methyFreq.bigWig
+priority 2
+html methyFreq.html
+

@@ -461,3 +461,9 @@ mkdir -p ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 
 ** hg38 alignments
+
+** Ariel Gershman 
+Hi Mark, I put a methylation bigwig on globus /team-epigenetics/20200727_methylation/v1.0_methylation/methylation_frequency.bigwig would it be possible for you to put that on the t2t browser? Thank you
+
+
+** Karen do you have a self-alignment track for CHM13v1

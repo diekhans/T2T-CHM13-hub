@@ -4,7 +4,6 @@ longLabel CRISPR/Cas9 Sp. Pyog. target sites
 group genes
 visibility hide
 itemRgb on
-type bigBed 3
 superTrack on
 html crispr
 
@@ -14,7 +13,7 @@ html crispr
     visibility dense
     color 110,110,110
     itemRgb on
-    type bigBed 3
+    type bigBed 9 +
     parent crispr
     html crispr
     bigDataUrl crispr/crispr.bb

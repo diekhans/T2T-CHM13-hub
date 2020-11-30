@@ -1,36 +1,16 @@
-track crispr
-shortLabel CRISPR
-longLabel CRISPR/Cas9 Sp. Pyog. target sites
+track crisprTargets
+shortLabel CRISPR Targets
+longLabel CRISPR/Cas9 -NGG Targets
 group genes
 visibility hide
+type bigBed 9 +
 itemRgb on
-superTrack on
+maxItems 100000
+bigDataUrl crispr/crispr.bb
+mouseOverField _mouseOver
+scoreLabel MIT Guide Specificity Score
 html crispr
-
-    track crisprRanges
-    shortLabel CRISPR Regions
-    longLabel Genome regions processed to find CRISPR/Cas9 target sites
-    visibility dense
-    color 110,110,110
-    itemRgb on
-    type bigBed 9 +
-    parent crispr
-    html crispr
-    bigDataUrl crispr/crispr.bb
-
-    #  does't work with hubCheck
-    # track crisprTargets
-    # shortLabel CRISPR Targets
-    # longLabel CRISPR/Cas9 -NGG Targets
-    # visibility dense
-    # type bigBed 9 +
-    # itemRgb on
-    # parent crispr
-    # mouseOverField _mouseOver
-    # scoreLabel MIT Guide Specificity Score
-    # # details page is not using a mysql table but a tab-sep file
-    # detailsTabUrls _offset=/gbdb/$db/crispr/crisprDetails.tab
-    # #url http://crispor.org/crispor.py?org=$D&pos=$S:${&pam=NGG
-    # #urlLabel Click here to show this guide on Crispor.org, with expression oligos, validation primers and more
-    # html crispr
-
+# details page is not using a mysql table but a tab-sep file
+#detailsTabUrls _offset=/gbdb/$db/crispr/crisprDetails.tab
+#url http://crispor.org/crispor.py?org=$D&pos=$S:${&pam=NGG
+#urlLabel Click here to show this guide on Crispor.org, with expression oligos, validation primers and more

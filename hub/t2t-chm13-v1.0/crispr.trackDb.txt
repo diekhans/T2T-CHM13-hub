@@ -2,6 +2,7 @@ track crisprTargets
 shortLabel CRISPR Targets
 longLabel CRISPR/Cas9 -NGG Targets
 type bigBed 9 +
+group genes
 itemRgb on
 maxItems 100000
 bigDataUrl crispr/crispr.bb

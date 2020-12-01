@@ -136,6 +136,8 @@ bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink
 
 ln -f t2t-chm13-v1.0.hg38.*.big*  t2t-chm13-v1.0.hg38.*chain.gz hg38.t2t-chm13-v1.0.*.chain.gz  ../../../hub/t2t-chm13-v1.0/hg38Lastz/
 
+# make source chains available
+ln -f *.all.chain.gz  ../../../hub/t2t-chm13-v1.0/hg38Lastz/
 
 * Cactus alignments
 cd cactus

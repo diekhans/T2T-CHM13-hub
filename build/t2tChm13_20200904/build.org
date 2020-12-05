@@ -1,0 +1,31 @@
+This build is only to align refseqs for Ann & Arang
+
+* genome
+/assemblies/drafts/20200904/
+pigz t2t-chm13.20200904.fasta
+faToTwoBit t2t-chm13.20200904.fasta.gz t2tChm13_20200904.unmasked.2bit
+ln -s t2tChm13_20200904.unmasked.2bit t2tChm13_20200904.2bit
+
+twoBitInfo t2tChm13_20200904.2bit t2tChm13_20200904.sizes
+tawk '{print $1,$2,"x"}' t2tChm13_20200904.sizes > t2tChm13_20200904.sizes3
+
+blat t2tChm13_20200904.2bit -makeOoc=t2tChm13_20200904.11.ooc /dev/null /dev/null
+
+* RefSeq blat
+For Ann & Arang to compare RefSeq of  20200904 and v1.0
+
+cd refSeqBlat
+ln -s ../../t2t-chm13-v1.0/refSeqBlat/data .
+
+blatRnaMkJobs ../genome/t2tChm13_20200904.2bit data/refSeq-curated.fa.gz tmp/
+para make -batch=tmp/b1 tmp/para.jobs >&log&
+
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
+
+(cat header.sam; zcat refSeq-curated.psl.gz |psl2sam.pl) | samtools view -b >refSeq-curated.bam
+
+# get genePred to look at frame
+mrnaToGene -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
+pigz *.gp

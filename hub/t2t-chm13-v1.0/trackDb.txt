@@ -273,6 +273,31 @@ labelFields name,geneSym,geneId,geneType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl gencodeBlat.bigBlatPsl
+searchIndex name,geneSym,geneId
+
+track refSeqBlat
+shortLabel RefSeq BLAT
+longLabel BLAT of RefSeq curated RNAs
+html refSeqBlat.html
+group genes
+type bigPsl
+priority 12.001
+color 0,0,100
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl refSeq-curated.bigBlatPsl
 searchIndex name,geneSym,geneId,geneType
 
 

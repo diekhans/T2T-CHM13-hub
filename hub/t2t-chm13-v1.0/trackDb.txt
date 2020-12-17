@@ -68,6 +68,17 @@ priority 100
     priority 3
     html kmersUniq.html
 
+    track kmers51uniq
+    parent kmers
+    shortLabel Unique 51-MERs
+    longLabel Unique 51-MERs
+    group map
+    visibility hide
+    type bigBed 3
+    bigDataUrl kmers/kmers-51-uniq.bigBed
+    priority 4
+    html kmersUniq.html
+
 
 ##
 # varRep
@@ -374,9 +385,9 @@ group rna
 priority 5
 html proSeqMeryl.html
 
-    track proSeqMerylA
+    track proSeqMeryl21A
     parent proSeqMeryl on
-    shortLabel PRO-seq Meryl (A)
+    shortLabel PRO-seq Meryl 21 (A)
     longLabel  PRO-seq BowTie intersected with unique 21-mers (set A)
     priority 1
     type bigBed 4
@@ -384,14 +395,34 @@ html proSeqMeryl.html
     bigDataUrl proSeqMeryl/proSeqMerylA.bigBed
     html proSeqMeryl.html
 
-    track proSeqMerylB
+    track proSeqMeryl21B
     parent proSeqMeryl on
-    shortLabel PRO-seq Meryl (B)
+    shortLabel PRO-seq Meryl 21 (B)
     longLabel  PRO-seq BowTie intersected with unique 21-mers (set B)
     priority 2
     type bigBed 4
     visibility hide
     bigDataUrl proSeqMeryl/proSeqMerylB.bigBed
+    html proSeqMeryl.html
+
+    track proSeqMeryl51A
+    parent proSeqMeryl on
+    shortLabel PRO-seq Meryl 51 (A)
+    longLabel  PRO-seq BowTie intersected with unique 51-mers (set A)
+    priority 3
+    type bigBed 5
+    visibility hide
+    bigDataUrl proSeqMeryl/proSeqMeryl51A.bigBed
+    html proSeqMeryl.html
+
+    track proSeqMeryl51B
+    parent proSeqMeryl on
+    shortLabel PRO-seq Meryl 51 (B)
+    longLabel  PRO-seq BowTie intersected with unique 51-mers (set B)
+    priority 4
+    type bigBed 6
+    visibility hide
+    bigDataUrl proSeqMeryl/proSeqMeryl51B.bigBed
     html proSeqMeryl.html
 
 ##

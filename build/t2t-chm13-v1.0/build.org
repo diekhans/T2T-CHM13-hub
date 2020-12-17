@@ -247,7 +247,14 @@ buildBigBed bed6 t2t-chm13-v1.0 proSeqMerylA.bigBed AllChrs_BOTH_IlluminaPCRfree
 buildBigBed bed6 t2t-chm13-v1.0 proSeqMerylB.bigBed AllChrs_BOTH_IlluminaPCRfree_20200922-assembly_21mers_single_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz &
 
 mkdir -p  ../../../hub/t2t-chm13-v1.0/proSeqMeryl/
-ln proSeqMeryl*  ../../../hub/t2t-chm13-v1.0/proSeqMeryl/
+ln -f proSeqMeryl*.bigBed  ../../../hub/t2t-chm13-v1.0/proSeqMeryl/
+
+2020-12-16 51-MER  Savannah Hoyt
+PRO-seq/Meryl 51-mer overlaps to the browser (both replicates & track description: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_51mer-Meryl-Intersections/), as well as the Meryl 51-mers themselves (which I believe are here from Arang: /team-curation/marker_assisted/20200921_v1/).
+IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed
+IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed
+
+buildBigBed bed6 t2t-chm13-v1.0 proSeqMeryl51A.bigBed  IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922.bed.gz &
 
 * wssd
 Mitchell Robert Vollger
@@ -279,6 +286,10 @@ pigz 20200921.single.bed
 buildBigBed bed3 t2t-chm13-v1.0 kmers-21-uniq.bigBed 20200921.single.bed.gz
 ln -f kmers-*  ../../../hub/t2t-chm13-v1.0/kmers/
 
+# 2020-12-16 add 51 base unique kmers
+/team-curation/marker_assisted/20200921_v1/chm13.v1.single.k51.mrg.bed
+ chm13.v1.single.k51.mrg.bed 
+ buildBigBed bed3 t2t-chm13-v1.0 kmers-51-uniq.bigBed chm13.v1.single.k51.mrg.bed.gz
 
 * CAT
 Marina
@@ -479,3 +490,4 @@ ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
 # get genePred to look at frame
 mrnaToGene -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
 pigz *.gp
+

@@ -4,7 +4,7 @@ shortLabel CACTUS
 longLabel Cactus Alignment Tracks
 group compGeno
 subGroup1 view Track_Type Snake=Alignments Simplified=Simplified Chained=Chained
-subGroup2 orgs Organisms CHM13=CHM13 GRCh38=GRCh38
+subGroup2 orgs Organisms t2t-chm13-v1.0=t2t-chm13-v1.0 GRCh38=GRCh38
 dragAndDrop subTracks
 dimensions dimensionX=view dimensionY=orgs
 noInherit on
@@ -33,17 +33,17 @@ html cactus.html
         subGroups view=Snake orgs=GRCh38
         html cactus.html
 
-        track snakeCHM13
-        longLabel Cactus CHM13
-        shortLabel CHM13
-        otherSpecies CHM13
+        track snaket2t-chm13-v1.0
+        longLabel Cactus t2t-chm13-v1.0
+        shortLabel t2t-chm13-v1.0
+        otherSpecies t2t-chm13-v1.0
         visibility hide
         parent cactusAlignments off
         priority 2
         bigDataUrl cactus/t2t-chm13-v1.0.aln1.hal
         type halSnake
         group compGeno
-        subGroups view=Snake orgs=CHM13
+        subGroups view=Snake orgs=t2t-chm13-v1.0
         html cactus.html
 
 track cactusSimplified

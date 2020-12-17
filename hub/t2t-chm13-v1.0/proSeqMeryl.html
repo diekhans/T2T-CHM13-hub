@@ -1,12 +1,12 @@
 <h2>Description</h2>
-<p>Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 21-mers found in assembly-filtered PCR-free WGS reads</p>
+<p>Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 21-mers or 51-mers found in assembly-filtered PCR-free WGS reads</p>
 
 <h2>Methods</h2>
 <p>The PRO-seq experiment was done on CHM13 cells and sequenced for 75bp single-ended reads.</p>
 <p>Reads were trimmed and filtered and then aligned to the T2T CHM13 v1.0 assembly (released on 20200922) using bowtie2/2.3.5.1 with the following parameters:</p>
 <p>-N 0</p>
 <p>-k 100</p>
-<p>Following alignment, the reads were anchored to single-copy 21-mers found in assembly-filtered PCR-free WGS reads generated with meryl/1.0</p>
+<p>Following alignment, the reads were anchored to single-copy 21-mers or 51-mers found in assembly-filtered PCR-free WGS reads generated with meryl/1.0</p>
 
 <h2>Display Conventions and Configuration</h2>
 <!-- if there are special conventions, like colors, describe them here -->
@@ -20,6 +20,7 @@
 <h2>Release history</h2>
 <ol>
   <li>2020-09-22: CHM13 v1.0 release (chm13.draft_v1.0.fasta)
+  <li>2020-12-16: added 51-MER 
 </ol>
 
 <h2>Contacts</h2>

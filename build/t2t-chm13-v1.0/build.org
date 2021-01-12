@@ -207,7 +207,6 @@ team-variants/assembly_aligns/for_browser_hub/v1/HG00733_hifiasm_assemblies
 mkdir -p ../../../hub/t2t-chm13-v1.0/hg002_hifiasm/hg00733_hifiasm/
 ln -f HG00733-v0.11.hap* ../../../hub/t2t-chm13-v1.0/hg00733_hifiasm/
 
-
 * proSeq
 Savannah Hoyt
  /team-epigenetics/20200922_chm13_PROseq/STAR_alignments/
@@ -233,7 +232,6 @@ ln -f CHM13-5*_proseq_cutadapt-2_bt2-vs_filtered_STAR-MDiekhansParam-chm13-20200
 # how previous wiggle tracks were generate:
 bedtools genomecov -bg -strand - -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_NEG.bedgraph
 bedtools genomecov -bg -strand + -ibam CHM13_PROseq_sort.out.bam > CHM13_PROseq_sort.out_POS.bedgraph
-
 
 * proSeqMeryl
 Savannah Hoyt
@@ -316,7 +314,6 @@ ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/ls
 
 # 2020-11-10 with t2t-chm13.v1.0.1110.cenSat_annotation.bed
 buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed  t2t-chm13.v1.0.1110.cenSat_annotation.bed.gz 
-
 
 * as_annotation (as_hor_annotation, as_sf_annotation)
 2020-10-22 from Lev Uralsky
@@ -410,6 +407,11 @@ methylation bigwig on globus /team-epigenetics/20200727_methylation/v1.0_methyla
 
 ln -f methylation_frequency.bigwig   ../../../hub/t2t-chm13-v1.0/methyFreq.bigWig
 
+* salmonQuant
+2021-01-12 from Colin Shew <cshewr@ucdavis.edu>
+team-epigenetics/chm13_rnaseq/salmon_quant
+ln -f chm13.CATv1.salmonQuant.bb  ../../../hub/t2t-chm13-v1.0/
+
 * to-do
 ** finish lastz
 
@@ -450,7 +452,7 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 
 ** Karen do you have a self-alignment track for CHM13v1
 
-* refSeqBlat
+** refSeqBlat
 For Ann & Arang to compare RefSeq of  20200904 and v1.0
 
 cd refSeqBlat/data

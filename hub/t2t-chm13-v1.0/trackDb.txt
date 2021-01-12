@@ -425,6 +425,18 @@ html proSeqMeryl.html
     bigDataUrl proSeqMeryl/proSeqMeryl51B.bigBed
     html proSeqMeryl.html
 
+track salmonQuant 
+shortLabel Salmon expression
+longLabel Salmon Transcript-level expression estimates
+group rna
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 12
+bigDataUrl chm13.CATv1.salmonQuant.bb
+priority 8
+
+
 ##
 # regulation
 ##

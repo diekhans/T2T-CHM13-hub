@@ -1,7 +1,7 @@
 track consensus_CHM13
-shortLabel CAT Annotation
-longLabel CAT Annotation
-description CAT Annotation
+shortLabel CAT Genes
+longLabel CAT Gene Annotations
+description CAT Gene Annotations
 type bigGenePred
 group genes
 itemRgb on

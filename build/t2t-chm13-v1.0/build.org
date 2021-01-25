@@ -412,6 +412,52 @@ ln -f methylation_frequency.bigwig   ../../../hub/t2t-chm13-v1.0/methyFreq.bigWi
 team-epigenetics/chm13_rnaseq/salmon_quant
 ln -f chm13.CATv1.salmonQuant.bb  ../../../hub/t2t-chm13-v1.0/
 
+
+** refSeqBlat
+For Ann & Arang to compare RefSeq of  20200904 and v1.0
+
+cd refSeqBlat/data
+# files dated from 2020-08-19  but same as when download 2020-05-29
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.fna.gz
+wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.gbff.gz
+faSize -detailed GRCh38_latest_rna.fna.gz | tawk '/^N/{print $1}' >refSeq-curated.acc
+faSomeRecords GRCh38_latest_rna.fna.gz refSeq-curated.acc stdout | pigz -c >refSeq-curated.fa.gz
+faSize -detailed data/refSeq-curated.fa.gz >data/refSeq-curated.sizes
+
+# metadata for later merge
+gbffToTsv GRCh38_latest_rna.gbff.gz refSeq-curated.meta.tsv.gz >&log&
+faPolyASizes GRCh38_latest_rna.fna.gz stdout | pigz -c >GRCh38_latest_rna.polya.gz
+# CDS too
+gbToFaRa /dev/null /dev/null GRCh38_latest_rna.ra /dev/null GRCh38_latest_rna.gbff.gz 
+tawko '$1=="acc"{acc=$2} $1=="cds"{print acc,$2}' GRCh38_latest_rna.ra  >refSeq-curated.cds
+pigz data/refSeq-curated.cds data/GRCh38_latest_rna.ra 
+
+cd ..
+blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit data/refSeq-curated.fa.gz tmp/
+para make -batch=tmp/b1 tmp/para.jobs >&log&
+
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
+
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001 -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
+
+# build bigPsl with extra columns
+zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
+pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl.gz stdout | sort -k1,1 -k2,2n > tmp/rs.bigin1
+bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
+
+bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/t2t-chm13-v1.0.sizes refSeq-curated.bigBlatPsl
+ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
+
+# build a BAM for Ann
+tawk 'BEGIN{print "@HD", "VN:1.6","SO:coordinate"} {print "@SQ", "SN:"$1, "LN:"$2}' ../genome/t2t-chm13-v1.0.sizes >header.sam
+(cat header.sam; zcat refSeq-curated.psl.gz |psl2sam.pl) | samtools view -b >refSeq-curated.bam
+
+# get genePred to look at frame
+mrnaToGene -quiet -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
+pigz *.gp
+
+
+
 * to-do
 ** finish lastz
 
@@ -451,45 +497,4 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 
 
 ** Karen do you have a self-alignment track for CHM13v1
-
-** refSeqBlat
-For Ann & Arang to compare RefSeq of  20200904 and v1.0
-
-cd refSeqBlat/data
-# files from 2020-05-29
-wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.fna.gz
-wget -nv https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_rna.gbff.gz
-faSize -detailed GRCh38_latest_rna.fna.gz | tawk '/^N/{print $1}' >refSeq-curated.acc
-faSomeRecords GRCh38_latest_rna.fna.gz refSeq-curated.acc stdout | pigz -c >refSeq-curated.fa.gz
-
-# metadata for later merge
-gbffToTsv GRCh38_latest_rna.gbff.gz refSeq-curated.meta.tsv.gz >&log&
-faPolyASizes GRCh38_latest_rna.fna.gz stdout | pigz -c >GRCh38_latest_rna.polya.gz
-# CDS too
-gbToFaRa /dev/null /dev/null GRCh38_latest_rna.ra /dev/null GRCh38_latest_rna.gbff.gz 
-tawko '$1=="acc"{acc=$2} $1=="cds"{print acc,$2}' GRCh38_latest_rna.ra  >refSeq-curated.cds
-pigz data/refSeq-curated.cds data/GRCh38_latest_rna.ra 
-
-cd ..
-blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit data/refSeq-curated.fa.gz tmp/
-para make -batch=tmp/b1 tmp/para.jobs >&log&
-
-find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
-
-pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001 -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
-
-# build bigPsl with extra columns
-zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
-pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl.gz stdout | sort -k1,1 -k2,2n > tmp/rs.bigin1
-bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
-
-bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/t2t-chm13-v1.0.sizes refSeq-curated.bigBlatPsl
-ln -f refSeq-curated.bigBlatPsl  ../../../hub/t2t-chm13-v1.0/
-
-# build a BAM for Ann
-(cat header.sam; zcat refSeq-curated.psl.gz |psl2sam.pl) | samtools view -b >refSeq-curated.bam
-
-# get genePred to look at frame
-mrnaToGene -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
-pigz *.gp
 

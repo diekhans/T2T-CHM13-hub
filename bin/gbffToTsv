@@ -57,7 +57,7 @@ def findCds(rec):
         return str(loc.start) + '..' + str(loc.end)
 
 def prHeader(fh):
-    print('id', 'geneSym', 'geneId', 'hgncId', 'geneType', 'cds', 'chroms', sep='\t', file=fh)
+    print('id', 'geneSym', 'geneId', 'hgncId', 'geneType', 'cds', 'chroms', 'maneSelect', sep='\t', file=fh)
 
 def processRec(rec, fh):
     geneFeat = getFeature(rec, 'gene')
@@ -66,7 +66,9 @@ def processRec(rec, fh):
     geneType = "coding" if rec.id.startswith('NM_') else "nonCoding"
     cds = findCds(rec)
     chroms = findQualfiers(getFeature(rec, 'source'), 'chromosome')
-    print(rec.id, geneSym, geneId, hgncId, geneType, cds, ",".join(chroms), sep='\t', file=fh)
+    keywords = rec.annotations.get("keywords")
+    maneSelect = (keywords is not None) and ('MANE Select' in keywords)
+    print(rec.id, geneSym, geneId, hgncId, geneType, cds, ",".join(chroms), maneSelect, sep='\t', file=fh)
 
 def processRecs(gbffFh, tsvFh):
     for rec in SeqIO.parse(gbffFh, "genbank"):

@@ -89,10 +89,10 @@ longLabel Repeating Elements by RepeatMasker
 group varRep
 visibility hide
 itemRgb on
-maxItems 100000
+maxItems 1000000
+maxWindowToDraw 100000000
 type bigBed 9 +
 bigDataUrl rmsk/rmsk.bigBed
-maxWindowToDraw 10000000
 priority 1
 
 track simpleRepeat

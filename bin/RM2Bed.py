@@ -445,8 +445,8 @@ def main(*args):
         file_prefix = args.out_prefix
     else:
         fpath, fname = os.path.split(args.rm_file)
-        fname = re.sub('\.out$', '', fname, flags=re.IGNORECASE)
-        fname = re.sub('\.align$', '', fname, flags=re.IGNORECASE)
+        fname = re.sub(r'\.out$', '', fname, flags=re.IGNORECASE)
+        fname = re.sub(r'\.align$', '', fname, flags=re.IGNORECASE)
         file_prefix = fname
 
     if ( args.out_dir ):
@@ -477,7 +477,7 @@ def main(*args):
     ##   below detects changes in the ID number and corrects them.
     ##
     o_rm_file = openOptGzipFile(args.rm_file, modes='r')
-    summary_line_RE = re.compile('^\s*\d+\s+\d+\.\d+\s+\d+\.\d+')
+    summary_line_RE = re.compile(r'^\s*\d+\s+\d+\.\d+\s+\d+\.\d+')
     results = []
     cmax_id = 0
     last_rm_id = 0

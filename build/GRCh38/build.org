@@ -1,0 +1,43 @@
+* overview
+for V1.0 paper, need to compare genes, do this with BLAT of refseq
+this is the GRCh38 baselines to compare
+* genome
+
+# get only primary assembly and chrM
+twoBitInfo /hive/data/genomes/hg38/hg38.2bit stdout | tawk '!/_/{print $1}' > chroms.lst
+twoBitToFa -seqList=chroms.lst /hive/data/genomes/hg38/hg38.2bit stdout | faToTwoBit stdin GRCh38.2bit
+
+twoBitInfo GRCh38.2bit GRCh38.sizes
+blat GRCh38.2bit -makeOoc=GRCh38.11.ooc /dev/null /dev/null
+
+* refSeqBlat
+# must be comparible to v1.0, so use same sequences
+ln -s ../../t2t-chm13-v1.0/refSeqBlat/data .
+
+# same as before
+blatRnaMkJobs ../genome/GRCh38.2bit data/refSeq-curated.fa.gz tmp/
+para make -batch=tmp/b1 tmp/para.jobs >&log&
+find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >refSeq-curated.raw.gz
+
+** below has not been done
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -polyASizes=data/GRCh38_latest_rna.polya.gz  -localNearBest=0.001 -minId=0.92 -minCover=0.75 -statsOut=refSeq-curated.stats refSeq-curated.raw.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >refSeq-curated.psl.gz
+
+# build bigPsl with extra columns
+zcat data/refSeq-curated.meta.tsv.gz | tawk '$6!=""{print $1,$6}' > tmp/rs.cds
+pslToBigPsl -cds=tmp/rs.cds -fa=data/GRCh38_latest_rna.fna.gz refSeq-curated.psl.gz stdout | sort -k1,1 -k2,2n > tmp/rs.bigin1
+bigBlatPslAddColumns data/refSeq-curated.meta.tsv.gz tmp/rs.bigin1 tmp/rs.bigin2
+
+bedToBigBed -type=bed12+17 -tab -as=../../../T2T-CHM13-hub/etc/bigBlatPsl.as tmp/rs.bigin2 ../genome/GRCh38.sizes refSeq-curated.bigBlatPsl
+
+# build a BAM for Ann
+tawk 'BEGIN{print "@HD", "VN:1.6","SO:coordinate"} {print "@SQ", "SN:"$1, "LN:"$2}' ../genome/GRCh38.sizes >header.sam
+(cat header.sam; zcat refSeq-curated.psl.gz |psl2sam.pl) | samtools view -b >refSeq-curated.bam
+
+# get genePred to look at frame
+mrnaToGene -quiet -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
+pigz *.gp
+
+pslStats -queryStats -queries=data/refSeq-curated.sizes refSeq-curated.psl.gz refSeq-curated.qstats
+
+
+

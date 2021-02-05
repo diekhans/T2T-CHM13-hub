@@ -79,6 +79,14 @@ priority 100
     priority 4
     html kmersUniq.html
 
+track illuminaMarkerDeserts
+shortLabel Marker Deserts
+longLabel Illumina Marker Deserts
+group map
+visibility hide
+type bigBed 4
+bigDataUrl illuminaMarkerDeserts.bigBed
+
 
 ##
 # varRep

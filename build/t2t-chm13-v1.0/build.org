@@ -457,6 +457,11 @@ mrnaToGene -quiet -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeS
 pigz *.gp
 
 
+* illuminaMarkerDeserts
+Ann Mc Cartney
+/team-genes/bed_tracks/illumina_marker_deserts.bed
+
+buildBigBed bed4 t2t-chm13-v1.0 illuminaMarkerDeserts.bigBed illumina_marker_deserts.bed.gz 
 
 * to-do
 ** finish lastz

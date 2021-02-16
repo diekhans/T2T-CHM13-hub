@@ -9,6 +9,7 @@ scientificName Homo sapiens
 htmlPath t2t-chm13-v1.0/description.html
 blat blatx.soe.ucsc.edu 17881
 transBlat blatx.soe.ucsc.edu 17880
+isPcr blatx.soe.ucsc.edu 17881
 priority 8.0
 
 genome t2tChm13_20200727
@@ -22,6 +23,7 @@ scientificName Homo sapiens
 htmlPath t2tChm13_20200727/description.html
 blat blatx.soe.ucsc.edu 17879
 transBlat blatx.soe.ucsc.edu 17878
+isPcr blatx.soe.ucsc.edu 17879
 priority 10.0
 
 genome GRCh38

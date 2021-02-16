@@ -1,12 +1,15 @@
 <h2>Description</h2>
-<p>Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 21-mers or 51-mers found in assembly-filtered PCR-free WGS reads</p>
+<p>Native RNA Sequencing Bowtie2 alignment anchored to single-copy 51-mers found in assembly-filtered PCR-free WGS reads</p>
 
 <h2>Methods</h2>
-<p>The PRO-seq experiment was done on CHM13 cells and sequenced for 75bp single-ended reads.</p>
+<p>The native RNA-seq libraries were done on CHM13 cells using oligodT during library prep and sequenced for 150bp paired-end reads.</p>
 <p>Reads were trimmed and filtered and then aligned to the T2T CHM13 v1.0 assembly (released on 20200922) using bowtie2/2.3.5.1 with the following parameters:</p>
 <p>-N 0</p>
 <p>-k 100</p>
-<p>Following alignment, the reads were anchored to single-copy 21-mers or 51-mers found in assembly-filtered PCR-free WGS reads generated with meryl/1.0</p>
+<p>Following alignment, the reads were filtered through samtools F1548 to retain properly paired reads only</p>
+<p>Following filtering, the reads were anchored to single-copy 51-mers found in assembly-filtered PCR-free WGS reads generated with meryl/1.2 using GenomeBrowser/20180626 overlapSelect with the following parameters:</p>
+<p>-overlapBases=51</p>
+
 
 <h2>Display Conventions and Configuration</h2>
 <!-- if there are special conventions, like colors, describe them here -->
@@ -20,7 +23,6 @@
 <h2>Release history</h2>
 <ol>
   <li>2020-09-22: CHM13 v1.0 release (chm13.draft_v1.0.fasta)
-  <li>2020-12-16: added 51-MER 
 </ol>
 
 <h2>Contacts</h2>
@@ -29,6 +31,8 @@
   <li><a href="mailto:savannah.klein@uconn.edu">Savannah Hoyt &lt;savannah.klein@uconn.edu&gt;</a>
 </ul>
 <h2>Credits</h2>
-<p>Rachel O'Neill</p>
-<p>Savannah Hoyt</p>
+<p>Megan Dennis (library prep & sequencing)</p>
+<p>Colin Shew (library prep & sequencing)</p>
+<p>Rachel O'Neill (mapping & filtering)</p>
+<p>Savannah Hoyt (mapping & filtering)</p>
 <p>Arang Rhie (Meryl software)</p>

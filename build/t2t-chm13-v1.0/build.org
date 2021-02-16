@@ -463,6 +463,54 @@ Ann Mc Cartney
 
 buildBigBed bed4 t2t-chm13-v1.0 illuminaMarkerDeserts.bigBed illumina_marker_deserts.bed.gz 
 
+* proSeqV2
+2021-02-15
+####PROseq and RNAseq data on UCSC T2T v1.0 browser
+##As of FEB 15th, 2021
+##Mapped & filtered by Savannah Hoyt (UCONN)
+
+** PROseq (50bp SE):
+
+*** PROseq_BT2 Mapped only (Bowtie2 -N 0 -k 100): /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_only/
+	#Name in browser: PROseq_BT2
+	#PROseq_BT2-N0-k100_chm13-v1.0_trackDescription.html
+	#CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sorted.bigwig
+	#CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sorted.bigwig
+
+*** PROseq_BT2_Meryl-21mers Mapped and filtered through Meryl unique 21mers (overlapSelect -overlapBases=21): /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_21mer-Meryl-Intersections/
+	#Name in browser: PROseq_BT2_Meryl-21mers
+	#PROseq_BT2-N0-k100_Meryl-uniq-21mer_PCRfree-assembly-chm13-v1.0_trackDescription.html
+	#IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+	#IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+*** PROseq_BT2_Meryl-51mers Mapped and filtered through Meryl unique 51mers (overlapSelect -overlapBases=51): /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2-aligned_51mer-Meryl-Intersections/
+	#Name in browser: PROseq_BT2_Meryl-51mers
+	#PROseq_BT2-N0-k100_Meryl-uniq-51mer_PCRfree-assembly-chm13-v1.0_trackDescription.html
+	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+** RNAseq (150bp PE):
+
+*** RNAseq_BT2 Mapped only (Bowtie2 -N 0 -k 100; samtools F1548): /team-epigenetics/20200922-v1.0_chm13_PROseq/CHM13_RNAseq_analysis/Bowtie2-aligned_F1548/
+	#Name in browser: RNAseq_BT2
+	#RNAseq_BT2-N0-k100_chm13-v1.0_trackDescription.html
+	#CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+	#CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+*** RNAseq_BT2_Meryl-21mers Mapped and filtered through Meryl unique 21mers (overlapSelect -overlapBases=21): /team-epigenetics/20200922-v1.0_chm13_PROseq/CHM13_RNAseq_analysis/Bowtie2-aligned_21mer-Meryl-Intersections/
+	#Name in browser: RNAseq_BT2_Meryl-21mers
+	#RNAseq_BT2-N0-k100_Meryl-uniq-21mer_PCRfree-assembly-chm13-v1.0_trackDescription.html
+	#IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+	#IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+*** RNAseq_BT2_Meryl-51mers Mapped and filtered through Meryl unique 51mers (overlapSelect -overlapBases=51): /team-epigenetics/20200922-v1.0_chm13_PROseq/CHM13_RNAseq_analysis/Bowtie2-aligned_51mer-Meryl-Intersections/
+	#Name in browser: RNAseq_BT2_Meryl-51mers
+	#RNAseq_BT2-N0-k100_Meryl-uniq-51mer_PCRfree-assembly-chm13-v1.0_trackDescription.html
+	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+** install
+find . -name '*.bigwig' | cpio -pduml  ../../../hub/t2t-chm13-v1.0/
+
 * to-do
 ** finish lastz
 

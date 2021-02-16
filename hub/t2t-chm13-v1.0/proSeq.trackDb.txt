@@ -1,0 +1,142 @@
+track proSeq
+compositeTrack off
+visibility hide
+shortLabel PRO-seq
+longLabel PRO-Seq
+type bigWig
+group rna
+priority 4
+
+    track PROseq_BT2_A
+    parent proSeq
+    shortLabel PROSeq (A)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 1
+    html PROseq_BT2.html
+    bigDataUrl PROseq_BT2/CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sorted.bigwig
+
+    track PROseq_BT2_B
+    parent proSeq
+    shortLabel PROSeq (B)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 1.5
+    html PROseq_BT2.html
+    bigDataUrl PROseq_BT2/CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sorted.bigwig
+
+    track PROseq_BT2_Meryl-21mers_A
+    parent proSeq
+    shortLabel PROSeq unique 21-mer (A)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 21-mers (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 2
+    html PROseq_BT2_Meryl-21mers.html
+    bigDataUrl PROseq_BT2_Meryl-21mers/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+    track PROseq_BT2_Meryl-21mers_B
+    parent proSeq
+    shortLabel PROSeq unique 21-mer (B)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 21-mers (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 2.5
+    html PROseq_BT2_Meryl-21mers.html
+    bigDataUrl PROseq_BT2_Meryl-21mers/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+
+    track PROseq_BT2_Meryl-51mers_A
+    parent proSeq
+    shortLabel PROSeq unique 51-mer (A)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 51-mers (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 3
+    html PROseq_BT2_Meryl-51mers.html
+    bigDataUrl PROseq_BT2_Meryl-51mers/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+    track PROseq_BT2_Meryl-51mers_B
+    parent proSeq
+    shortLabel PROSeq unique 51-mer (B)
+    longLabel Precision Run-On (PRO) Sequencing Bowtie2 alignment anchored to single-copy 51-mers (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 3.5
+    html PROseq_BT2_Meryl-51mers.html
+    bigDataUrl PROseq_BT2_Meryl-51mers/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort.bigwig
+
+    track RNAseq_BT2_A
+    parent proSeq
+    shortLabel Native RNA-Seq (A)
+    longLabel Native RNA-Seq Bowtie2 alignment (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 4
+    html RNAseq_BT2.html
+    bigDataUrl RNAseq_BT2/CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+    track RNAseq_BT2_B
+    parent proSeq
+    shortLabel Native RNA-Seq (B)
+    longLabel Native RNA-Seq Bowtie2 alignment (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 4.5
+    html RNAseq_BT2.html
+    bigDataUrl RNAseq_BT2/CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+    track RNAseq_BT2_Meryl-21mers_A
+    parent proSeq
+    shortLabel Native RNA-Seq unique 21-mer (A)
+    longLabel Native RNA-Seq Bowtie2 alignment anchored to single-copy 21-mers (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 5
+    html RNAseq_BT2_Meryl-21mers.html
+    bigDataUrl RNAseq_BT2_Meryl-21mers/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+    track RNAseq_BT2_Meryl-21mers_B
+    parent proSeq
+    shortLabel Native RNA-Seq unique 21-mer (B)
+    longLabel Native RNA-Seq Bowtie2 alignment anchored to single-copy 21-mers (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 5.5
+    html RNAseq_BT2_Meryl-21mers.html
+    bigDataUrl RNAseq_BT2_Meryl-21mers/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+    track RNAseq_BT2_Meryl-51mers_A
+    parent proSeq
+    shortLabel Native RNA-Seq unique 51-mer (A)
+    longLabel Native RNA-Seq Bowtie2 alignment anchored to single-copy 51-mers (replicate A)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 6
+    html RNAseq_BT2_Meryl-51mers.html
+    bigDataUrl RNAseq_BT2_Meryl-51mers/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
+    track RNAseq_BT2_Meryl-51mers_B
+    parent proSeq
+    shortLabel Native RNA-Seq unique 51-mer (B)
+    longLabel Native RNA-Seq Bowtie2 alignment anchored to single-copy 51-mers (replicate B)
+    group rna
+    visibility hide
+    type bigWig 0 250
+    priority 6
+    html RNAseq_BT2_Meryl-51mers.html
+    bigDataUrl RNAseq_BT2_Meryl-51mers/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+

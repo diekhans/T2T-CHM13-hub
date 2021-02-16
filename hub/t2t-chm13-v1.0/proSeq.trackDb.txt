@@ -1,8 +1,8 @@
 track proSeq
 compositeTrack off
 visibility hide
-shortLabel PRO-seq
-longLabel PRO-Seq
+shortLabel PROseq/RNAseq
+longLabel PROseq/RNAseq
 type bigWig
 group rna
 priority 4

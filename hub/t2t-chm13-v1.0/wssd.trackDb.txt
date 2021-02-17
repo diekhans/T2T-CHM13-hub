@@ -793,15 +793,6 @@ html hgdp_wssd_cn.html
     itemRgb on
     visibility dense
 
-    track LP6005442-DNA_A08_wssd
-    parent hgdp_wssd_cn
-    bigDataUrl wssd/LP6005442-DNA_A08_wssd.bb
-    shortLabel WEA_Hungarian_LP6005442-DNA_A08 wssd CN
-    longLabel WEA_Hungarian_LP6005442-DNA_A08 Copy Number
-    type bigBed 9 +
-    itemRgb on
-    visibility dense
-
     track LP6005442-DNA_A10_wssd
     parent hgdp_wssd_cn
     bigDataUrl wssd/LP6005442-DNA_A10_wssd.bb
@@ -2449,6 +2440,25 @@ html hgdp_wssd_cn.html
     itemRgb on
     visibility dense
 
+    # track CHM13_Illumina_wssd
+    # parent hgdp_wssd_cn
+    # bigDataUrl wssd/CHM13_Illumina_wssd.bb
+    # shortLabel CHM13 Illumina wssd CN
+    # longLabel CHM13 Illumina Copy Number
+    # type bigBed 9 +
+    # itemRgb on
+    # visibility dense
+
+    track LP6005442-DNA_A08_wssd
+    parent hgdp_wssd_cn
+    bigDataUrl wssd/LP6005442-DNA_A08_wssd.bb
+    shortLabel WEA_Hungarian_NA15202 wssd CN
+    longLabel WEA_Hungarian_NA15202 Copy Number
+    type bigBed 9 +
+    itemRgb on
+    visibility dense
+
+
 track hgdp_wssd_cn_sub
 compositeTrack off
 shortLabel HGDP WSSD CN Subset
@@ -2461,27 +2471,27 @@ maxItems 100000
 group varRep
 html hgdp_wssd_cn_subset.html
 
-    track chm13_wssd_sub
-    parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/chm13_wssd.bb
-    shortLabel chm13_kmer_chm13 wssd CN
-    longLabel chm13_kmer_chm13 Copy Number
-    type bigBed 9 +
-    itemRgb on
-    visibility dense
-
     track hg38_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/hg38_wssd.bb
+    bigDataUrl wssd_sub/hg38_wssd_sub.bb
     shortLabel hg38_kmer_hg38 wssd CN
     longLabel hg38_kmer_hg38 Copy Number
     type bigBed 9 +
     itemRgb on
     visibility dense
 
+    track chm13_wssd_sub
+    parent hgdp_wssd_cn_sub
+    bigDataUrl wssd_sub/chm13_wssd_sub.bb
+    shortLabel chm13_kmer_chm13 wssd CN
+    longLabel chm13_kmer_chm13 Copy Number
+    type bigBed 9 +
+    itemRgb on
+    visibility dense
+
     track LP6005443-DNA_H11_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_H11_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_H11_wssd_sub.bb
     shortLabel AMR_Mixtec_LP6005443-DNA_H11 wssd CN
     longLabel AMR_Mixtec_LP6005443-DNA_H11 Copy Number
     type bigBed 9 +
@@ -2490,7 +2500,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_H07_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_H07_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_H07_wssd_sub.bb
     shortLabel AMR_Mayan_LP6005441-DNA_H07 wssd CN
     longLabel AMR_Mayan_LP6005441-DNA_H07 Copy Number
     type bigBed 9 +
@@ -2499,7 +2509,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_A12_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_A12_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_A12_wssd_sub.bb
     shortLabel AMR_Zapotec_LP6005443-DNA_A12 wssd CN
     longLabel AMR_Zapotec_LP6005443-DNA_A12 Copy Number
     type bigBed 9 +
@@ -2508,7 +2518,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_G06_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_G06_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_G06_wssd_sub.bb
     shortLabel AMR_Karitiana_LP6005441-DNA_G06 wssd CN
     longLabel AMR_Karitiana_LP6005441-DNA_G06 Copy Number
     type bigBed 9 +
@@ -2517,7 +2527,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_G01_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_G01_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_G01_wssd_sub.bb
     shortLabel EA_She_LP6005443-DNA_G01 wssd CN
     longLabel EA_She_LP6005443-DNA_G01 Copy Number
     type bigBed 9 +
@@ -2526,7 +2536,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_E02_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_E02_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_E02_wssd_sub.bb
     shortLabel WEA_BedouinB_LP6005441-DNA_E02 wssd CN
     longLabel WEA_BedouinB_LP6005441-DNA_E02 Copy Number
     type bigBed 9 +
@@ -2535,7 +2545,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005519-DNA_C03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005519-DNA_C03_wssd.bb
+    bigDataUrl wssd_sub/LP6005519-DNA_C03_wssd_sub.bb
     shortLabel WEA_Tajik_LP6005519-DNA_C03 wssd CN
     longLabel WEA_Tajik_LP6005519-DNA_C03 Copy Number
     type bigBed 9 +
@@ -2544,7 +2554,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005442-DNA_G03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005442-DNA_G03_wssd.bb
+    bigDataUrl wssd_sub/LP6005442-DNA_G03_wssd_sub.bb
     shortLabel WEA_Estonian_LP6005442-DNA_G03 wssd CN
     longLabel WEA_Estonian_LP6005442-DNA_G03 Copy Number
     type bigBed 9 +
@@ -2553,7 +2563,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_B08_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_B08_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_B08_wssd_sub.bb
     shortLabel OCN_Papuan_LP6005443-DNA_B08 wssd CN
     longLabel OCN_Papuan_LP6005443-DNA_B08 Copy Number
     type bigBed 9 +
@@ -2562,7 +2572,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_F07_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_F07_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_F07_wssd_sub.bb
     shortLabel OCN_Papuan_LP6005443-DNA_F07 wssd CN
     longLabel OCN_Papuan_LP6005443-DNA_F07 Copy Number
     type bigBed 9 +
@@ -2571,7 +2581,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_D07_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_D07_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_D07_wssd_sub.bb
     shortLabel OCN_Papuan_LP6005443-DNA_D07 wssd CN
     longLabel OCN_Papuan_LP6005443-DNA_D07 Copy Number
     type bigBed 9 +
@@ -2580,7 +2590,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_B10_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_B10_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_B10_wssd_sub.bb
     shortLabel OCN_Papuan_LP6005441-DNA_B10 wssd CN
     longLabel OCN_Papuan_LP6005441-DNA_B10 Copy Number
     type bigBed 9 +
@@ -2589,7 +2599,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005519-DNA_E04_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005519-DNA_E04_wssd.bb
+    bigDataUrl wssd_sub/LP6005519-DNA_E04_wssd_sub.bb
     shortLabel SA_Mala_LP6005519-DNA_E04 wssd CN
     longLabel SA_Mala_LP6005519-DNA_E04 Copy Number
     type bigBed 9 +
@@ -2598,7 +2608,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005519-DNA_H04_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005519-DNA_H04_wssd.bb
+    bigDataUrl wssd_sub/LP6005519-DNA_H04_wssd_sub.bb
     shortLabel SA_Madiga_LP6005519-DNA_H04 wssd CN
     longLabel SA_Madiga_LP6005519-DNA_H04 Copy Number
     type bigBed 9 +
@@ -2607,7 +2617,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_D03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_D03_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_D03_wssd_sub.bb
     shortLabel SA_Brahui_LP6005441-DNA_D03 wssd CN
     longLabel SA_Brahui_LP6005441-DNA_D03 Copy Number
     type bigBed 9 +
@@ -2616,7 +2626,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_F05_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_F05_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_F05_wssd_sub.bb
     shortLabel SA_Hazara_LP6005441-DNA_F05 wssd CN
     longLabel SA_Hazara_LP6005441-DNA_F05 Copy Number
     type bigBed 9 +
@@ -2625,7 +2635,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005442-DNA_E12_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005442-DNA_E12_wssd.bb
+    bigDataUrl wssd_sub/LP6005442-DNA_E12_wssd_sub.bb
     shortLabel SIB_Tubalar_LP6005442-DNA_E12 wssd CN
     longLabel SIB_Tubalar_LP6005442-DNA_E12 Copy Number
     type bigBed 9 +
@@ -2634,7 +2644,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005442-DNA_G12_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005442-DNA_G12_wssd.bb
+    bigDataUrl wssd_sub/LP6005442-DNA_G12_wssd_sub.bb
     shortLabel SIB_Ulchi_LP6005442-DNA_G12 wssd CN
     longLabel SIB_Ulchi_LP6005442-DNA_G12 Copy Number
     type bigBed 9 +
@@ -2643,7 +2653,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_A03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_A03_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_A03_wssd_sub.bb
     shortLabel SIB_Aleut_LP6005443-DNA_A03 wssd CN
     longLabel SIB_Aleut_LP6005443-DNA_A03 Copy Number
     type bigBed 9 +
@@ -2652,7 +2662,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_C04_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_C04_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_C04_wssd_sub.bb
     shortLabel SIB_Even_LP6005443-DNA_C04 wssd CN
     longLabel SIB_Even_LP6005443-DNA_C04 Copy Number
     type bigBed 9 +
@@ -2661,7 +2671,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_B01_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_B01_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_B01_wssd_sub.bb
     shortLabel WEA_Adygei_LP6005441-DNA_B01 wssd CN
     longLabel WEA_Adygei_LP6005441-DNA_B01 Copy Number
     type bigBed 9 +
@@ -2670,7 +2680,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005677-DNA_C03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005677-DNA_C03_wssd.bb
+    bigDataUrl wssd_sub/LP6005677-DNA_C03_wssd_sub.bb
     shortLabel WEA_Turkish_LP6005677-DNA_C03 wssd CN
     longLabel WEA_Turkish_LP6005677-DNA_C03 Copy Number
     type bigBed 9 +
@@ -2679,7 +2689,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_E10_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_E10_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_E10_wssd_sub.bb
     shortLabel WEA_North_Ossetian_LP6005443-DNA_E10 wssd CN
     longLabel WEA_North_Ossetian_LP6005443-DNA_E10 Copy Number
     type bigBed 9 +
@@ -2688,7 +2698,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005592-DNA_H01_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005592-DNA_H01_wssd.bb
+    bigDataUrl wssd_sub/LP6005592-DNA_H01_wssd_sub.bb
     shortLabel WEA_Yemenite_Jew_LP6005592-DNA_H01 wssd CN
     longLabel WEA_Yemenite_Jew_LP6005592-DNA_H01 Copy Number
     type bigBed 9 +
@@ -2697,7 +2707,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_G02_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_G02_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_G02_wssd_sub.bb
     shortLabel AFR_Biaka_LP6005441-DNA_G02 wssd CN
     longLabel AFR_Biaka_LP6005441-DNA_G02 Copy Number
     type bigBed 9 +
@@ -2706,7 +2716,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_H02_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_H02_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_H02_wssd_sub.bb
     shortLabel AFR_Biaka_LP6005441-DNA_H02 wssd CN
     longLabel AFR_Biaka_LP6005441-DNA_H02 Copy Number
     type bigBed 9 +
@@ -2715,7 +2725,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005592-DNA_C03_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005592-DNA_C03_wssd.bb
+    bigDataUrl wssd_sub/LP6005592-DNA_C03_wssd_sub.bb
     shortLabel AFR_Mbuti_LP6005592-DNA_C03 wssd CN
     longLabel AFR_Mbuti_LP6005592-DNA_C03 Copy Number
     type bigBed 9 +
@@ -2724,7 +2734,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005441-DNA_B08_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005441-DNA_B08_wssd.bb
+    bigDataUrl wssd_sub/LP6005441-DNA_B08_wssd_sub.bb
     shortLabel AFR_Mbuti_LP6005441-DNA_B08 wssd CN
     longLabel AFR_Mbuti_LP6005441-DNA_B08 Copy Number
     type bigBed 9 +
@@ -2733,7 +2743,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_H08_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_H08_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_H08_wssd_sub.bb
     shortLabel AFR_Dinka_LP6005443-DNA_H08 wssd CN
     longLabel AFR_Dinka_LP6005443-DNA_H08 Copy Number
     type bigBed 9 +
@@ -2742,7 +2752,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_G08_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_G08_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_G08_wssd_sub.bb
     shortLabel AFR_Ju_hoan_North_LP6005443-DNA_G08 wssd CN
     longLabel AFR_Ju_hoan_North_LP6005443-DNA_G08 Copy Number
     type bigBed 9 +
@@ -2751,7 +2761,7 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005443-DNA_G02_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005443-DNA_G02_wssd.bb
+    bigDataUrl wssd_sub/LP6005443-DNA_G02_wssd_sub.bb
     shortLabel AFR_BantuTswana_LP6005443-DNA_G02 wssd CN
     longLabel AFR_BantuTswana_LP6005443-DNA_G02 Copy Number
     type bigBed 9 +
@@ -2760,11 +2770,204 @@ html hgdp_wssd_cn_subset.html
 
     track LP6005442-DNA_B02_wssd_sub
     parent hgdp_wssd_cn_sub
-    bigDataUrl wssd/LP6005442-DNA_B02_wssd.bb
+    bigDataUrl wssd_sub/LP6005442-DNA_B02_wssd_sub.bb
     shortLabel AFR_Yoruba_LP6005442-DNA_B02 wssd CN
     longLabel AFR_Yoruba_LP6005442-DNA_B02 Copy Number
     type bigBed 9 +
     itemRgb on
     visibility dense
+
+
+track t2tdp_wssd_cn
+compositeTrack off
+shortLabel T2TDP WSSD CN
+longLabel  T2T Diversity Panel number estimates
+visibility hide
+priority 30
+type bigBed 9 +
+itemRgb on
+maxItems 100000
+group varRep
+html t2tdp_wssd_cn.html
+
+    track AG07107_MMU_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/AG07107_MMU_wssd_dp.bb
+    shortLabel AG07107_MMU_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for AG07107 Macaca mulatta (macaque) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track CHM13_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/CHM13_wssd_dp.bb
+    shortLabel CHM13_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for CHM13 from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track CHM1_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/CHM1_wssd_dp.bb
+    shortLabel CHM1_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for CHM1 from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track Clint_PTR_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/Clint_PTR_wssd_dp.bb
+    shortLabel Clint_PTR_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Clint Pan Troglodytes (chimpanzee) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG002_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG002_wssd_dp.bb
+    shortLabel HG002_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG002 Ashkenazim Jewish (M) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG00514_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG00514_wssd_dp.bb
+    shortLabel HG00514_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG00514 Han Chinese (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG00733_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG00733_wssd_dp.bb
+    shortLabel HG00733_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG00733 Puerto Rican (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG01109_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG01109_wssd_dp.bb
+    shortLabel HG01109_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG01109 Puerto Rican (M) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG01243_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG01243_wssd_dp.bb
+    shortLabel HG01243_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG01243 Puerto Rican (M) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG02080_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG02080_wssd_dp.bb
+    shortLabel HG02080_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG02080 Vietnamese (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG02723_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG02723_wssd_dp.bb
+    shortLabel HG02723_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG02723 Gambian (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG03125_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG03125_wssd_dp.bb
+    shortLabel HG03125_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG03125 Esan (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track HG03492_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/HG03492_wssd_dp.bb
+    shortLabel HG03492_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for HG03492 Punjabi (M) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track Kamilah_GGO_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/Kamilah_GGO_wssd_dp.bb
+    shortLabel Kamilah_GGO_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Kamilah Gorilla gorilla from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track Karenina_SSY_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/Karenina_SSY_wssd_dp.bb
+    shortLabel Karenina_SSY_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Karenina Sumatran siamang from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track Mhudiblu_PPA_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/Mhudiblu_PPA_wssd_dp.bb
+    shortLabel Mhudiblu_PPA_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Mhudiblu Pan paniscus (bonobo) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track NA12878_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/NA12878_wssd_dp.bb
+    shortLabel NA12878_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for NA12878 Utah (CEPH) (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track NA19240_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/NA19240_wssd_dp.bb
+    shortLabel NA19240_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for NA19240 Yoruba (F) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track OwlMonkey_ANA_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/OwlMonkey_ANA_wssd_dp.bb
+    shortLabel OwlMonkey_ANA_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Owl Monkey from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
+
+    track Susie_PAB_wssd
+    parent t2tdp_wssd_cn
+    bigDataUrl t2tdp/Susie_PAB_wssd_dp.bb
+    shortLabel Susie_PAB_wssd_dp wssd CN
+    longLabel WSSD Copy number estimates for Susie Pongo abelii (orangutan) from Illumina library
+    type bigBed 9 +
+    visibility dense
+    itemRgb on
 
 

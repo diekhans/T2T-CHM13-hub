@@ -413,7 +413,7 @@ team-epigenetics/chm13_rnaseq/salmon_quant
 ln -f chm13.CATv1.salmonQuant.bb  ../../../hub/t2t-chm13-v1.0/
 
 
-** refSeqBlat
+* refSeqBlat
 For Ann & Arang to compare RefSeq of  20200904 and v1.0
 
 cd refSeqBlat/data
@@ -510,6 +510,23 @@ buildBigBed bed4 t2t-chm13-v1.0 illuminaMarkerDeserts.bigBed illumina_marker_des
 	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
 ** install
 find . -name '*.bigwig' | cpio -pduml  ../../../hub/t2t-chm13-v1.0/
+
+* WSSD_20210216 (wssd update)
+Mitchell Robert Vollger
+I have updated the two WSSD annotation sets and added an additional one. Could you update the browser for these three new / modified tracks?
+/team-segdups/WSSD_20210216/
+
+# move directories up a level and link subset to save disk space
+ln wssd_sub/* wssd/
+find . | cpio -pduml  ../../../hub/t2t-chm13-v1.0/
+
+** cenSatV2 (cenRegions/cenAnnotation) update v2.021621
+directly from Karen
+
+pigz *.bed
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t_cenAnnotation.v2.021621.bed.gz
+buildBigBed bed4 t2t-chm13-v1.0 cenSatRegions.bigBed t2t_cenRegions.v2.021621.bed.gz
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
 
 * to-do
 ** finish lastz

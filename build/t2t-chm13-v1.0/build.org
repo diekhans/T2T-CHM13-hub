@@ -524,9 +524,61 @@ find . | cpio -pduml  ../../../hub/t2t-chm13-v1.0/
 directly from Karen
 
 pigz *.bed
-buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t_cenAnnotation.v2.021621.bed.gz
-buildBigBed bed4 t2t-chm13-v1.0 cenSatRegions.bigBed t2t_cenRegions.v2.021621.bed.gz
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed  t2t_cenAnnotation.v2.021721.bed.gz 
+buildBigBed bed9 t2t-chm13-v1.0 cenSatRegions.bigBed t2t_cenRegions.v2.021621.bed.gz
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
+
+
+
+* cutnrun 2021-02-17
+Savannah
+Track description html for ALL files
+** Location of files on Globus (one directory per sample): T2T_CutnRun_MappedandFiltered.txt
+####Cut & Run data on UCSC T2T v1.0 browser
+##As of FEB 17th, 2021
+##Data from Gina Caldas: 150bp Paired-end
+##Mapped & samtools filtered (F1548) by Karen Miga: bwa mem -k 50 -c 1000000
+##Unique k-mer filtered by Savannah Hoyt: overlapSelect -overlapBases=[size_of_kmer]
+##Unique 21mers and 51mers from Meryl software (Arang Rhie)
+##Unique 100mers (Michael Sauria)
+
+###CENPA: /team-satellites/122920_CUTRUN/bams_F1548/CENPA/
+	#CHM13_CA_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_CA_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CA_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CA_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+	
+###CENPB: /team-satellites/122920_CUTRUN/bams_F1548/CENPB/
+	#CHM13_CB_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_CB_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CB_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CB_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+	
+###CENPC: /team-satellites/122920_CUTRUN/bams_F1548/CENPC/
+	#CHM13_CC_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_CC_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CC_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_CC_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+	
+###H3K4me2: /team-satellites/122920_CUTRUN/bams_F1548/H3K4me2/
+	#CHM13_H3K4me2_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_H3K4me2_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_H3K4me2_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_H3K4me2_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+	
+###H3K9me3: /team-satellites/122920_CUTRUN/bams_F1548/H3K9me3/
+	#CHM13_H3K9me3_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_H3K9me3_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_H3K9me3_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_H3K9me3_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+	
+###IgG: /team-satellites/122920_CUTRUN/bams_F1548/IgG/
+	#CHM13_IgG_cutnrun_hi_losalt_trimmed_q20_2.chm13.draft_v1.0.F1548.sorted.bigwig
+	#CHM13_IgG_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+	#CHM13_IgG_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+	#CHM13_IgG_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
+** The edited trackDb file (which I listed all files and edited the track names, short labels and long labels; I did not adjust any of the other settings listed though!)
+
 
 * to-do
 ** finish lastz

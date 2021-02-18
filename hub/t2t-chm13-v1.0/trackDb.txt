@@ -351,9 +351,10 @@ html synteny.html
 
 
 ##
-# Expression
+# Expression/transcription/rna
 ##
 include proSeq.trackDb.txt
+include cutnrun.trackDb.txt
 
 track salmonQuant 
 shortLabel Salmon expression

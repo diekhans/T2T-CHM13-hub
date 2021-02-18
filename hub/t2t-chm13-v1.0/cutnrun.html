@@ -1,0 +1,34 @@
+<h2>Description</h2>
+<p>CHM13 Cut and Run BWA alignments and Meryl unique k-mer filtering</p>
+
+<h2>Methods</h2>
+<p>The Cut and Run experiments were done on CHM13 cells and sequenced for 150bp paired-end reads.</p>
+<p>Reads were trimmed and filtered (q20) before mapped with bwa mem -k 50 -c 1000000 and samtools filtered (F1548) for properly paired reads</p>
+<p>High and low salt data was merged following mapping, prior to kmer filtering</p>
+<p>Hi-losalt mapped reads were then filtered through three different sets of genome-wide unique k-mers: 21mers, 51mers, 100mers</p>
+
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p></p>
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li>2020-09-22: CHM13 v1.0 release (chm13.draft_v1.0.fasta)
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:savannah.klein@uconn.edu">Savannah Hoyt &lt;savannah.klein@uconn.edu&gt;</a>
+</ul>
+<h2>Credits</h2>
+<p>Gina Caldas (Cut & Run experiments)</p>
+<p>Karen Miga (mapping and Samtools filtering)</p>
+<p>Savannah Hoyt; Rachel O'Neill (k-mer filtering)</p>
+<p>Arang Rhie (Meryl software; unique 21mer and 51mers)</p>
+<p>Michael Sauria (unique 100mers)</p>

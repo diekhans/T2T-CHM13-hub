@@ -528,7 +528,9 @@ buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed  t2t_cenAnnotation.v2.02
 buildBigBed bed9 t2t-chm13-v1.0 cenSatRegions.bigBed t2t_cenRegions.v2.021621.bed.gz
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
 
-
+# 2021-02-19 updated
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t_cenAnnotation.v2.021921.bed.bz2 
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/
 
 * cutnrun 2021-02-17
 Savannah
@@ -578,6 +580,11 @@ Track description html for ALL files
 	#CHM13_IgG_cutnrun_hisalt_losalt.q20.F1548.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
 	#CHM13_IgG_cutnrun_hisalt_losalt.q20.F1548.over.chm13v1_unique_100mers_sort.bigwig
 ** The edited trackDb file (which I listed all files and edited the track names, short labels and long labels; I did not adjust any of the other settings listed though!)
+
+find . | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun
+
+** replaced 2021-02-22
+find CENP* H3K* IgG | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun
 
 
 * to-do

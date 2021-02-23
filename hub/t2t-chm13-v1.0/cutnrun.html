@@ -1,9 +1,9 @@
 <h2>Description</h2>
-<p>CHM13 Cut and Run BWA alignments and Meryl unique k-mer filtering</p>
+<p>CHM13 Cut and Run BWA-F3852 alignments and Meryl unique k-mer filtering</p>
 
 <h2>Methods</h2>
 <p>The Cut and Run experiments were done on CHM13 cells and sequenced for 150bp paired-end reads.</p>
-<p>Reads were trimmed and filtered (q20) before mapped with bwa mem -k 50 -c 1000000 and samtools filtered (F1548) for properly paired reads</p>
+<p>Reads were trimmed and filtered (q20) before mapped with bwa mem -k 50 -c 1000000 and samtools filtered (F3852) for properly paired reads</p>
 <p>High and low salt data was merged following mapping, prior to kmer filtering</p>
 <p>Hi-losalt mapped reads were then filtered through three different sets of genome-wide unique k-mers: 21mers, 51mers, 100mers</p>
 
@@ -28,7 +28,7 @@
 </ul>
 <h2>Credits</h2>
 <p>Gina Caldas (Cut & Run experiments)</p>
-<p>Karen Miga (mapping and Samtools filtering)</p>
+<p>Glennis (mapping and Samtools filtering)</p>
 <p>Savannah Hoyt; Rachel O'Neill (k-mer filtering)</p>
 <p>Arang Rhie (Meryl software; unique 21mer and 51mers)</p>
 <p>Michael Sauria (unique 100mers)</p>

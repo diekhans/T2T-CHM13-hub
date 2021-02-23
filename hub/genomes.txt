@@ -12,6 +12,20 @@ transBlat blatx.soe.ucsc.edu 17880
 isPcr blatx.soe.ucsc.edu 17881
 priority 8.0
 
+genome HG002-X-v1.0
+trackDb HG002-X-v1.0/trackDb.txt
+groups HG002-X-v1.0/groups.txt
+description CHM13 + HG002-X + hg38-Y
+twoBitPath HG002-X-v1.0/genome/HG002-X-v1.0.2bit
+organism  CHM13+HG002+hg38
+defaultPos chr3:90,755,737-90,789,938
+scientificName Homo sapiens
+htmlPath HG002-X-v1.0/description.html
+blat blatx.soe.ucsc.edu 17881
+#transBlat blatx.soe.ucsc.edu 17880
+#isPcr blatx.soe.ucsc.edu 17881
+priority 9.0
+
 genome t2tChm13_20200727
 trackDb t2tChm13_20200727/trackDb.txt
 groups t2tChm13_20200727/groups.txt
@@ -36,5 +50,5 @@ defaultPos chr1:1-200000
 scientificName Homo sapiens
 groups GRCh38/groups.txt
 htmlPath GRCh38/description.html
-priority 13.0
+priority 20.0
 

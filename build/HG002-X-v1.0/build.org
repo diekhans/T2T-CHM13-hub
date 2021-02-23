@@ -1,0 +1,13 @@
+HG002-X-v1.0: CHM13 + HG002-X + hg38Y  frankengenome
+
+* genome
+/public/groups/nanopore/karen/t2t-chm13/tmp/t2t-chm13.20200921.withGRCh38chrY.fasta
+
+pigz t2t-chm13.20200921.withGRCh38chrY.fasta
+faToTwoBit t2t-chm13.20200921.withGRCh38chrY.fasta.gz  HG002-X-v1.0.unmasked.2bit
+ln HG002-X-v1.0.unmasked.2bit HG002-X-v1.0.2bit
+
+twoBitInfo HG002-X-v1.0.2bit HG002-X-v1.0.sizes
+tawk '{print $1,$2,"x"}' HG002-X-v1.0.sizes > HG002-X-v1.0.sizes3
+
+ln -f HG002-X-v1.0.2bit  ../../../hub/HG002-X-v1.0/genome/

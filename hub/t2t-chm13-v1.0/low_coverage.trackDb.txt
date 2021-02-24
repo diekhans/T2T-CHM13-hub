@@ -1,0 +1,42 @@
+track low_coverage
+compositeTrack off
+shortLabel Low coverage
+longLabel  Low coverage
+visibility hide
+priority 30
+type bigBed 9
+group map
+html low_coverage.html
+
+    track low_coverage_all
+    parent low_coverage
+    shortLabel Low coverage (all)
+    longLabel  Low coverage (all)
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl low_coverage/low_coverage.bigBed
+    priority 1
+    group map
+
+    track low_coverage_30k
+    parent low_coverage
+    shortLabel Low coverage (30k)
+    longLabel  Low coverage (30k)
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl low_coverage/low_coverage.30k.bigBed
+    priority 2
+    group map
+
+    track low_coverage_100k
+    parent low_coverage
+    shortLabel Low coverage (100k)
+    longLabel  Low coverage (100k)
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl low_coverage/low_coverage.100k.bigBed
+    priority 2
+    group map

@@ -586,6 +586,12 @@ find . | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun
 ** replaced 2021-02-22
 find CENP* H3K* IgG | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun
 
+* low-coverage
+Arang Rhie team-curation/tracks/v1/issues
+
+buildBigBed bed9 t2t-chm13-v1.0 low_coverage.bigBed low_coverage.bed.gz
+buildBigBed bed9 t2t-chm13-v1.0 low_coverage.30k.bigBed low_coverage.30k.bed.gz
+buildBigBed bed9 t2t-chm13-v1.0 low_coverage.100k.bigBed low_coverage.100k.bed.gz
 
 * to-do
 ** finish lastz

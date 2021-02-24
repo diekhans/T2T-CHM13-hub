@@ -87,6 +87,7 @@ visibility hide
 type bigBed 4
 bigDataUrl illuminaMarkerDeserts.bigBed
 
+include low_coverage.trackDb.txt
 
 ##
 # varRep

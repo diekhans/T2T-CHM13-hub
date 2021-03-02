@@ -4,7 +4,7 @@ This build is only to align refseqs for Ann & Arang
 /assemblies/drafts/20200904/
 pigz t2t-chm13.20200904.fasta
 faToTwoBit t2t-chm13.20200904.fasta.gz t2tChm13_20200904.unmasked.2bit
-ln -s t2tChm13_20200904.unmasked.2bit t2tChm13_20200904.2bit
+ln t2tChm13_20200904.unmasked.2bit t2tChm13_20200904.2bit
 
 twoBitInfo t2tChm13_20200904.2bit t2tChm13_20200904.sizes
 tawk '{print $1,$2,"x"}' t2tChm13_20200904.sizes > t2tChm13_20200904.sizes3
@@ -29,3 +29,24 @@ pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -p
 # get genePred to look at frame
 mrnaToGene -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
 pigz *.gp
+
+* v1.0Lastz
+requested by Ann
+build alignments
+cd v1.0Lastz
+ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200904/v1.0Lastz.DEF DEF
+runLastz fwd t2t-chm13-v1.0 >&log&
+
+----
+# Can't add netclass, since it relies on repeat database.
+gzip -9 fwd/axtChain/noClass.net
+ln fwd/axtChain/noClass.net.gz fwd/axtChain/t2t-chm13-v1.0.hg38.net.gz
+ln fwd/axtChain/t2t-chm13-v1.0.hg38.* .
+
+# swap
+runHg38Lastz swap t2t-chm13-v1.0 >&log&
+# script put swap in wrong place, so moved back
+
+gzip -9 ./swap/axtChain/noClass.net 
+ln ./swap/axtChain/noClass.net.gz swap/axtChain/hg38.t2t-chm13-v1.0.net.gz
+ln swap/axtChain/hg38.t2t-chm13-v1.0.* .

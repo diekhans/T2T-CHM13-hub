@@ -592,6 +592,116 @@ Arang Rhie team-curation/tracks/v1/issues
 buildBigBed bed9 t2t-chm13-v1.0 low_coverage.bigBed low_coverage.bed.gz
 buildBigBed bed9 t2t-chm13-v1.0 low_coverage.30k.bigBed low_coverage.30k.bed.gz
 buildBigBed bed9 t2t-chm13-v1.0 low_coverage.100k.bigBed low_coverage.100k.bed.gz
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage/
+* jaspar:
+** https://github.com/wassermanlab/JASPAR-UCSC-tracks
+
+python3 -m virtualenv venv
+pyenv venv
+pip install Biopython==1.73
+pip install NumPy pyfaidx tqdm
+cd venv/
+wget https://raw.githubusercontent.com/wassermanlab/JASPAR-UCSC-tracks/master/install-pwmscan.sh
+bash -x install-pwmscan.sh 
+git clone git@github.com:wassermanlab/JASPAR-UCSC-tracks.git
+ln -s ../bin JASPAR-UCSC-tracks/
+zcat ../../../genome/t2t-chm13-v1.0.fa.gz >../t2t-chm13-v1.0.fa
+
+# hack code to check errors
+nice JASPAR-UCSC-tracks/scan_sequence.py --fasta-file ../t2t-chm13-v1.0.fa --dummy-dir=/data/tmp --profiles-dir JASPAR-UCSC-tracks/profiles/ --output-dir ../beds --threads 32 --latest --taxon vertebrates >&log
+
+(nice ./JASPAR-UCSC-tracks/scans2bigBed -d /data/tmp -c ../../../genome/t2t-chm13-v1.0.sizes -i ../beds -o ../jaspar.bigBed -t 32) >&log2&
+
+ln -f jaspar.bigBed ../../../hub/t2t-chm13-v1.0/jaspar/
+
+
+* cutnrun-losalt/ 2021-03-01
+Savannah
+** ####CHM13 Cut & Run data on Globus
+##As of MARCH 1st, 2021
+##Low salt only data from Gina Caldas/Nick Altemose: 150bp Paired-end
+##Mapped & samtools filtered (F3852) by Karen Miga: bwa mem -k 50 -c 1000000
+##Unique k-mer filtered by Savannah Hoyt: overlapSelect -overlapBases=[size_of_kmer]
+##Unique 21mers and 51mers from Meryl software (Arang Rhie)
+##Unique 100mers (Michael Sauria)
+
+#######Sequenced in DEC 2020:
+
+###CENPA: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPA/
+CHM13_CA_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###CENPB: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPB/
+CHM13_CB_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CB_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###CENPC: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPC/
+CHM13_CC_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CC_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CC_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CC_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###H3K4me2: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/H3K4me2/
+CHM13_H3K4me2_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K4me2_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###H3K9me3: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/H3K9me3/
+CHM13_H3K9me3_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_H3K9me3_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K9me3_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K9me3_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###IgG: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/IgG/
+CHM13_IgG_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+CHM13_IgG_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_IgG_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_IgG_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+#######Sequenced in FEB 2021:
+
+###CENPA: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPA/
+CHM13_CA_ADGCCR06-E_S5_L001.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CA_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###CENPB: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPB/
+CHM13_CB_ADGCCR09-A_S96_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CB_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CB_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CB_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###CENPC: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPC/
+CHM13_CC_ADGCCR09-B_S97_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CC_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CC_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CC_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###H3K27me3: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/H3K27me3/
+CHM13_K27me3_ADGCCR09-E_S100_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+####H3K9me3: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/H3K9me3/
+CHM13_K9Me3_ADGCCR09-D_S99_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+####IgG: /team-satellites/022021_CUTRUN/bams/CHM13_F3852_noMAPQ-filtering_bigwigs/IgG/
+CHM13_IgG_ADGCCR09-C_S98_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_IgG_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_IgG_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_IgG_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+find CENP* H3K* IgG | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun-losalt/
 
 * to-do
 ** finish lastz

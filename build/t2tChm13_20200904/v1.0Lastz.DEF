@@ -1,0 +1,34 @@
+# human vs chimp
+BLASTZ=/cluster/bin/penn/lastz-distrib-1.03.52/bin/lastz
+BLASTZ_O=600
+BLASTZ_E=150
+# maximum M allowed with lastz is only 254
+BLASTZ_M=254
+
+BLASTZ_T=2
+BLASTZ_Y=15000
+BLASTZ_K=4500
+BLASTZ_Q=/hive/data/staging/data/blastz/human_chimp.v2.q
+#    A    C    G    T
+#    90 -330 -236 -356
+#  -330  100 -318 -236
+#  -236 -318  100 -330
+#  -356 -236 -330   90
+
+# TARGET: t2tChm13_20200904
+SEQ1_DIR=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/genome/t2tChm13_20200904.2bit 
+SEQ1_LEN=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/genome/t2tChm13_20200904.sizes
+SEQ1_CHUNK=10000000
+SEQ1_LAP=10000
+SEQ1_IN_CONTIGS=0
+
+# QUERY: t2t-chm13-v1.0
+SEQ2_DIR=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit
+SEQ2_LEN=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes
+SEQ2_CHUNK=10000000
+SEQ2_LAP=0
+SEQ2_LIMIT=200
+SEQ2_IN_CONTIGS=0
+
+BASE=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/hg38Lastz
+TMPDIR=/dev/shm

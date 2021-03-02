@@ -1,0 +1,393 @@
+track CutnRun-losalt-F3852
+compositeTrack off
+shortLabel CutnRun (losalt)
+longLabel CHM13 CutnRun low salt bwa-F3852 mapped (with no MAPQ filtering) and unique genome-wide kmer filtering from DEC 2020 and FEB 2021 runs
+visibility hide
+priority 30
+type bigWig
+group rna
+html cutnrun-losalt.html
+    
+    track CENPA_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 DEC20
+    longLabel CENPA CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+        
+    track CENPA_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPA_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig    
+    visibility dense
+
+    track CENPA_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 DEC20
+    longLabel CENPB CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+    
+    track CENPC_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 DEC20
+    longLabel CENPC CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K4me2_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K4me2/CHM13_H3K4me2_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel H3K4me2 CutnRun losalt bwa-F3852 DEC20
+    longLabel H3K4me2 CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K4me2_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K4me2/CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K4me2 CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel H3K4me2 CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K4me2_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K4me2/CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K4me2 CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel H3K4me2 CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K4me2_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K4me2/CHM13_H3K4me2_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel H3K4me2 CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel H3K4me2 CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+    
+    track H3K9me3_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 DEC20
+    longLabel H3K9me3 CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+    
+    track IgG_CutnRun-losalt_bwa-F3852_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_ADGCCR09-C_S98_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 DEC20
+    longLabel IgG CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_21mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 21mer-filt DEC20
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 21mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_100mer-filt_DEC20
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 100mer-filt DEC20
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 100mer filtering DEC 2020
+    type bigWig
+    visibility dense
+    
+    track CENPA_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_ADGCCR06-E_S5_L001.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 FEB21
+    longLabel CENPA CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+    
+    track CENPA_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPA_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig    
+    visibility dense
+
+    track CENPA_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPA/CHM13_CA_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPA CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel CENPA CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_ADGCCR09-A_S96_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 FEB21
+    longLabel CENPB CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPB/CHM13_CB_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPB CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel CENPB CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense
+    
+    track CENPC_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_ADGCCR09-B_S97_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 FEB21
+    longLabel CENPC CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPC_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/CENPC/CHM13_CC_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel CENPC CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel CENPC CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense
+    
+    track H3K27me3_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K27me3/CHM13_K27me3_ADGCCR09-E_S100_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel H3K27me3 CutnRun losalt bwa-F3852 FEB21
+    longLabel H3K27me3 CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K27me3_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K27me3/CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K27me3 CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel H3K27me3 CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K27me3_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K27me3/CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K27me3 CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel H3K27me3 CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K27me3_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K27me3/CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel H3K27me3 CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel H3K27me3 CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense
+    
+    track H3K9me3_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_K9Me3_ADGCCR09-D_S99_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 FEB21
+    longLabel H3K9me3 CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/H3K9me3/CHM13_H3K9me3_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel H3K9me3 CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel H3K9me3 CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_ADGCCR09-C_S98_L002_2.chm13.draft_v1.0F3852_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 FEB21
+    longLabel IgG CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_21mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 21mer-filt FEB21
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 21mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_100mer-filt_FEB21
+    parent CutnRun-losalt-F3852
+    bigDataUrl cutnrun-losalt/IgG/CHM13_IgG_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+    shortLabel IgG CutnRun losalt bwa-F3852 100mer-filt FEB21
+    longLabel IgG CutnRun bwa-F3852 unique genome-wide 100mer filtering FEB 2021
+    type bigWig
+    visibility dense

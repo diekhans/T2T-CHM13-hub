@@ -356,6 +356,7 @@ html synteny.html
 ##
 include proSeq.trackDb.txt
 include cutnrun.trackDb.txt
+include cutnrun-losalt.trackDb.txt
 
 track salmonQuant 
 shortLabel Salmon expression
@@ -381,4 +382,14 @@ type bigWig 0 1
 bigDataUrl methyFreq.bigWig
 priority 2
 html methyFreq.html
+
+track jaspar
+shortLabel JASPAR TFBS
+longLabel  JASPAR TFBS
+group regulation
+visibility hide
+type bigBed 6
+bigDataUrl jaspar/jaspar.bigBed
+priority 4
+html jaspar.html
 

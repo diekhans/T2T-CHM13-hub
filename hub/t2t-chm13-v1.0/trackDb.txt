@@ -355,6 +355,7 @@ html synteny.html
 # Expression/transcription/rna
 ##
 include proSeq.trackDb.txt
+include proSeq_F3852.trackDb.txt
 include cutnrun.trackDb.txt
 include cutnrun-losalt.trackDb.txt
 

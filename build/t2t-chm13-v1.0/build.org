@@ -387,7 +387,7 @@ for each of
 
 
 # couldn't modify out-of-sync with git scripts in /hive/data/outside/crisprTrack/scripts, so
-# had to nakje make these links
+# had to make make these links
 
 
   ln -s /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/crispr/build/genomes/t2t-chm13-v1.0 /hive/data/outside/crisprTrack/crispor/genomes/
@@ -703,6 +703,69 @@ CHM13_IgG_cutnrun-202021_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
 
 find CENP* H3K* IgG | cpio -pduml  ../../../hub/t2t-chm13-v1.0/cutnrun-losalt/
 
+
+* proSeq_F3852
+Savannah Hoyt 2021-03-04
+** ####PROseq and RNAseq data on UCSC T2T v1.0 browser
+##As of MARCH 2, 2021
+##Bowtie2 mapped, Samtools filtered (F3852), unique 21-mer and 51-mer filtered (Savannah Hoyt)
+##PRO-seq experiment and sequencing done by Savannah Hoyt
+##RNA-seq experiment (with oligoDT) and sequencing done by Megan Dennis and Colin Shew
+
+###PROseq (75bp SE):
+
+##Mapped only (Bowtie2 -N 0 -k 100; F3852): /team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/PROseq/not-kmer_filtered/
+	#Bed files:
+		CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+		CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+	
+##Mapped and filtered through Meryl unique 21mers (overlapSelect -overlapBases=21): /team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/PROseq/kmer_filtered/
+	#Bed files:
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		
+##Mapped and filtered through Meryl unique 51mers (overlapSelect -overlapBases=51):/team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/PROseq/kmer_filtered/
+	#Bed files:
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+
+###RNAseq (150bp PE):
+
+##Mapped only (Bowtie2 -N 0 -k 100; samtools F3852): /team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/RNAseq/not-kmer_filtered/
+	#Bed files:
+		CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+		CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+	
+##Mapped and filtered through Meryl unique 21mers (overlapSelect -overlapBases=21): /team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/RNAseq/kmer_filtered/
+	#Bed files:
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852.bed
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+	
+##Mapped and filtered through Meryl unique 51mers (overlapSelect -overlapBases=51): /team-epigenetics/20200922-v1.0_chm13_PROseq/PROseq_RNAseq_Bowtie2_F3852/RNAseq/kmer_filtered/
+	#Bed files:
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852.bed
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852.bed
+	#Bigwigs:
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+		IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+	
+** build
+find PROseq RNAseq | cpio -pduml  ../../../hub/t2t-chm13-v1.0/proSeq_F3852
 * to-do
 ** finish lastz
 

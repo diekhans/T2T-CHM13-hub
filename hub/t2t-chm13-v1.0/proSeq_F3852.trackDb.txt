@@ -1,0 +1,105 @@
+track proSeq_F3852
+compositeTrack off
+shortLabel PROseq RNAseq bt2 F3852 kmerFilt
+longLabel CHM13 PROseq & RNAseq Bowtie2-F3852 mapped and unique genome-wide kmer filtering
+visibility hide
+priority 5
+type bigWig
+group rna
+html proSeq_F3852.html
+    
+    track PROseq-A_F3852
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/not-kmer_filtered/CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-A bt2-F3852
+    longLabel PROseq-A bt2-F3852 no kmer filtering
+    type bigWig 
+    visibility dense
+        
+    track PROseq-B_F3852
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/not-kmer_filtered/CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-B bt2-F3852
+    longLabel PROseq-B bt2-F3852 no kmer filtering
+    type bigWig
+    visibility dense
+
+    track PROseq-A_F3852_21mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-A bt2-F3852 21mer-filt
+    longLabel PROseq-B bt2-F3852 unique genome-wide 21mer filtering 
+    type bigWig    
+    visibility dense
+
+    track PROseq-B_F3852_21mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-B bt2-F3852 21mer-filt
+    longLabel PROseq-B bt2-F3852 unique genome-wide 21mer filtering 
+    type bigWig
+    visibility dense
+
+    track PROseq-A_F3852_51mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-A bt2-F3852 51mer-filt
+    longLabel PROseq-A bt2-F3852 unique genome-wide 51mer filtering 
+    type bigWig
+    visibility dense
+
+    track PROseq-B_F3852_51mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/PROseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel PROseq-B bt2-F3852 51mer-filt
+    longLabel PROseq-B bt2-F3852 unique genome-wide 51mer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-A_F3852
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/not-kmer_filtered/CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-A bt2-F3852 
+    longLabel RNAseq-A bt2-F3852 no kmer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-B_F3852
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/not-kmer_filtered/CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-B bt2-F3852 
+    longLabel RNAseq-B bt2-F3852 no kmer filtering
+    type bigWig
+    visibility dense
+    
+    track RNAseq-A_F3852_21mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-A bt2-F3852 21mer-filt
+    longLabel RNAseq-A bt2-F3852 unique genome-wide 21mer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-B_F3852_21mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-B bt2-F3852 21mer-filt
+    longLabel RNAseq-B bt2-F3852 unique genome-wide 21mer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-A_F3852_51mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-A bt2-F3852 51mer-filt
+    longLabel RNAseq-A bt2-F3852 unique genome-wide 51mer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-B_F3852_51mer-filt
+    parent proSeq_F3852
+    bigDataUrl proSeq_F3852/RNAseq/kmer_filtered/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F3852_sort.bigwig
+    shortLabel RNAseq-B bt2-F3852 51mer-filt
+    longLabel RNAseq-B bt2-F3852 unique genome-wide 51mer filtering
+    type bigWig
+    visibility dense

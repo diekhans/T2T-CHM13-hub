@@ -1,15 +1,24 @@
 This build is only to align refseqs for Ann & Arang
+20200904 aka v0.9
+
+* repeat masker (rmsk)
+** 2021-03-04
+https://eichlerlab.gs.washington.edu/help/mvollger/share/t2t_share/
+https://eichlerlab.gs.washington.edu/help/mvollger/share/t2t_share/chm13.draft_v0.9_repeatmasker.out.bed
+https://eichlerlab.gs.washington.edu/help/mvollger/share/t2t_share/chm13.draft_v0.9_trf.bed
 
 * genome
 /assemblies/drafts/20200904/
 pigz t2t-chm13.20200904.fasta
 faToTwoBit t2t-chm13.20200904.fasta.gz t2tChm13_20200904.unmasked.2bit
-ln t2tChm13_20200904.unmasked.2bit t2tChm13_20200904.2bit
+zcat ../rmsk/chm13.draft_v0.9_*.bed.gz| twoBitMask -type=.bed t2tChm13_20200904.unmasked.2bit stdin t2tChm13_20200904.2bit
 
 twoBitInfo t2tChm13_20200904.2bit t2tChm13_20200904.sizes
 tawk '{print $1,$2,"x"}' t2tChm13_20200904.sizes > t2tChm13_20200904.sizes3
 
 blat t2tChm13_20200904.2bit -makeOoc=t2tChm13_20200904.11.ooc /dev/null /dev/null
+
+
 
 * RefSeq blat
 For Ann & Arang to compare RefSeq of  20200904 and v1.0

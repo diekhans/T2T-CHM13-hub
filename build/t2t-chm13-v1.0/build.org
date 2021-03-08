@@ -766,6 +766,12 @@ Savannah Hoyt 2021-03-04
 	
 ** build
 find PROseq RNAseq | cpio -pduml  ../../../hub/t2t-chm13-v1.0/proSeq_F3852
+
+* liftOff fill in
+Alaina Shumate  14 days ago
+here is a new file with missing genes/extra copies that liftoff picked up.  This should be the set that can be added to the CAT annotations to form the union. Nothing in this set overlaps any other CAT annotations
+ftp://ftp.ccb.jhu.edu//pub/ashumate/CHM13_Liftoff/v2/CHM13.liftoff.unique.gff3
+cd CAT/liftOffFill
 * to-do
 ** finish lastz
 

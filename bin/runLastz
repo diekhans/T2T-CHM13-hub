@@ -16,6 +16,7 @@ if [ "$dir" = "swap" ] ; then
     swapOpt=-"-swap -swapDir=${swapDir}"
 fi
 
+set -x
 doBlastzChainNet.pl DEF ${swapOpt} \
     -stop=net -syntenicNet -noDbNameCheck \
     -blastzOutRoot=${trackdir}/${targetGenome} \

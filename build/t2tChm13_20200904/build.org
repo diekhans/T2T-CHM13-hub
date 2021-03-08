@@ -44,7 +44,8 @@ requested by Ann
 build alignments
 cd v1.0Lastz
 ln -s ../../../T2T-CHM13-hub/build/t2tChm13_20200904/v1.0Lastz.DEF DEF
-runLastz fwd t2t-chm13-v1.0 >&log&
+runLastz fwd t2t-chm13-v1.0 >&1.log&
+runLastz swap t2t-chm13-v1.0 >&2.log&
 
 ----
 # Can't add netclass, since it relies on repeat database.
@@ -59,3 +60,7 @@ runHg38Lastz swap t2t-chm13-v1.0 >&log&
 gzip -9 ./swap/axtChain/noClass.net 
 ln ./swap/axtChain/noClass.net.gz swap/axtChain/hg38.t2t-chm13-v1.0.net.gz
 ln swap/axtChain/hg38.t2t-chm13-v1.0.* .
+
+* catLift
+liftOver -genePred  ../../t2t-chm13-v1.0/CAT/consensus_gene_set/CHM13.gp ../v1.0Lastz/t2tChm13_20200904.t2t-chm13-v1.0.over.chain.gz cat.lift.gp cat.nolift.gp
+

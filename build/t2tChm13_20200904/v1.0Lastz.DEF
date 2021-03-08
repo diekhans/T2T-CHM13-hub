@@ -16,7 +16,7 @@ BLASTZ_Q=/hive/data/staging/data/blastz/human_chimp.v2.q
 #  -356 -236 -330   90
 
 # TARGET: t2tChm13_20200904
-SEQ1_DIR=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/genome/t2tChm13_20200904.2bit 
+SEQ1_DIR=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/genome/t2tChm13_20200904.2bit
 SEQ1_LEN=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/genome/t2tChm13_20200904.sizes
 SEQ1_CHUNK=10000000
 SEQ1_LAP=10000
@@ -30,5 +30,5 @@ SEQ2_LAP=0
 SEQ2_LIMIT=200
 SEQ2_IN_CONTIGS=0
 
-BASE=/hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/hg38Lastz
+BASE=/cluster/home/markd/compbio/nanopore/projs/t2t-chm13/build/t2tChm13_20200904/v1.0Lastz/tmp
 TMPDIR=/dev/shm

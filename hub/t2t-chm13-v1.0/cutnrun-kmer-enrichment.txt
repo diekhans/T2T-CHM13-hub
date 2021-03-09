@@ -1,0 +1,65 @@
+track cutnrun-kmer-enrichment
+compositeTrack off
+shortLabel CutnRun KMER enrichment
+longLabel  CutnRun KMER enrichment over IgG
+visibility hide
+priority 32
+type bigWig
+group rna
+html cutnrun-kmer-enrichment.html
+
+    track CENPB_CutnRun_Enrich_51
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/CENP-B.enriched.unique.51-mer.bw
+    shortLabel CENPB 51-MER enrichment
+    longLabel CENPB 51-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.1
+    visibility dense
+
+    track CENPB_CutnRun_Enrich_100
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/CENP-B.enriched.unique.100-mer.bw
+    shortLabel CENPB 100-MER enrichment
+    longLabel CENPB 100-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.2
+    visibility dense
+
+    track CENPC_CutnRun_Enrich_51
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/CENP-C.enriched.unique.51-mer.bw
+    shortLabel CENPC 51-MER enrichment
+    longLabel CENPC 51-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.3
+    visibility dense
+
+    track CENPC_CutnRun_Enrich_100
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/CENP-C.enriched.unique.100-mer.bw
+    shortLabel CENPC 100-MER enrichment
+    longLabel CENPC 100-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.4
+    visibility dense
+
+    track K9me3_CutnRun_Enrich_51
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/K9me3.enriched.unique.51-mer.bw
+    shortLabel K9me3 51-MER enrichment
+    longLabel K9me3 51-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.5
+    visibility dense
+
+    track K9me3_CutnRun_Enrich_100
+    parent cutnrun-kmer-enrichment
+    bigDataUrl cutnrun-kmer-enrichment/K9me3.enriched.unique.100-mer.bw
+    shortLabel K9me3 100-MER enrichment
+    longLabel K9me3 100-MER CutnRun enrichment over IgG
+    type bigWig
+    priority 32.6
+    visibility dense
+
+

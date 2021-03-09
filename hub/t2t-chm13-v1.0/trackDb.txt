@@ -358,6 +358,7 @@ include proSeq.trackDb.txt
 include proSeq_F3852.trackDb.txt
 include cutnrun.trackDb.txt
 include cutnrun-losalt.trackDb.txt
+include cutnrun-kmer-enrichment.txt
 
 track salmonQuant 
 shortLabel Salmon expression

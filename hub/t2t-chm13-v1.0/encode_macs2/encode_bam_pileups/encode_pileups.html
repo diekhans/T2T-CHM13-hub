@@ -1,0 +1,26 @@
+<h2>Description</h2>
+<p>These tracks contain bam pileups for Encode histone ChIP-seq experiments remapped using the T2T CHM13 v1.0 genome assembly.</p>
+
+<h2>Methods</h2>
+<p>All reads were downloaded from the Encode data portal. Reads were aligned to the T2T CHM13 v1.0 assembly (released on 20200922) using bowtie2 and the parameters "--no-discordant --no-mixed --very-sensitive --no-unal --omit-sec-seq --xeq".Mapped reads were filtered using samtools with the parameters "-F 1804 -f 2 -q 2". Mapped reads were then filtered for duplicates using picard and the parameters "VALIDATION_STRINGENCY=LENIENT ASSUME_SORT_ORDER=queryname REMOVE_DUPLICATES=true". Finally, mapped reads were filtered to only those containing at least one unique k-mer on either end.</p>
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p></p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li>03/09/2021
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:msauria@jhu.edu">Michael Sauria &lt;msauria@jhu.edu&gt;</a>
+</ul>
+<h2>Credits</h2>
+<p></p>

@@ -11,9 +11,11 @@ else
 localUrl = ${courtyardUrl}
 endif
 
-assemblies = t2tChm13_20200602 HG002-X-v1.0 t2tChm13_20200611 t2tChm13_20200727 t2t-chm13-v1.0 GRCh38
+assemblies = HG002-X-v1.0 t2tChm13_20200727 t2t-chm13-v1.0 GRCh38
+# t2tChm13_20200602 t2tChm13_20200611
 
-srcs = $(wildcard *.html *.txt) $(foreach a,${assemblies},$(wildcard $a/*.txt $a/*.html $a/*/*.txt $a/*/*.html))
+
+srcs = $(wildcard *.html *.txt) $(foreach a,${assemblies},$(wildcard $a/*.txt $a/*.html $a/*/*.txt $a/*/*.html $a/*.html $a/*/*/*.txt $a/*/*/*.html))
 
 hgdev_udc_dir = ${TMPDIR}/${USER}_t2t_hgwdev_udc
 t2t_udc_dir = ${TMPDIR}/${USER}_t2t_t2t_udc
@@ -22,7 +24,12 @@ all: hub
 
 hub: ${srcs:%=${hubDir}/%}
 	@rm -rf ${hgdev_udc_dir}
-	hubCheck -udcDir=${hgdev_udc_dir} ${localUrl}
+	${MAKE} hubCheckAll
+
+hubCheckAll: ${assemblies:%=hubCheck_%}
+
+hubCheck_%:
+	hubCheck -genome=$* -udcDir=${hgdev_udc_dir} ${localUrl}
 
 ${hubDir}/%: %
 	@mkdir -p $(dir $@)

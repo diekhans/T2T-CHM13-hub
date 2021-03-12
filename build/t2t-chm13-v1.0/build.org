@@ -780,6 +780,14 @@ Pragya Sidhwani 2021-03-08
 globus:/team-satellites/ref_free_enriched_kmers/
 ln *.bw ../../../hub/t2t-chm13-v1.0/cutnrun-kmer-enrichment/
 
+
+* encode_macs2 2021-03-11
+Michael Sauria
+I've put all of the files and the track descriptions on the T2T Finishing Workshop endpoint at /team-epigenetics/031121_chm13_encode_macs2/. If you can create a composite track (encode_analysis.html) of 3 composite tracks (encode_pileups,html, encode_macs2_peaks.html, and encode_macs2_liftover_peaks.html),
+
+makeTrackDb generate most of trackDb
+find . -name '*.bb' -o -name '*.bw' | cpio -pduml ../../../hub/t2t-chm13-v1.0/encode_macs2
+
 * to-do
 ** finish lastz
 

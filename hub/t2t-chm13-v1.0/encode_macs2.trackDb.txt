@@ -1,0 +1,1546 @@
+track encode_macs2
+compositeTrack off
+shortLabel ENCODE macs2
+longLabel ENCODE macs2
+visibility hide
+priority 30
+type bigBed
+group  expression
+html hgdp_wssd_cn.html
+
+
+    track 22Rv1_Control.chm13v1
+    parent encode_macs2
+    shortLabel 22Rv1_Control.chm13v1
+    longLabel 22Rv1_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 100
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/22Rv1_Control.chm13v1.bw
+
+
+    track 22Rv1_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel 22Rv1_H3K27ac.chm13v1
+    longLabel 22Rv1_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 101
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/22Rv1_H3K27ac.chm13v1.bw
+
+
+    track BE2C_Control.chm13v1
+    parent encode_macs2
+    shortLabel BE2C_Control.chm13v1
+    longLabel BE2C_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 102
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/BE2C_Control.chm13v1.bw
+
+
+    track BE2C_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel BE2C_H3K27me3.chm13v1
+    longLabel BE2C_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 103
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/BE2C_H3K27me3.chm13v1.bw
+
+
+    track BE2C_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel BE2C_H3K36me3.chm13v1
+    longLabel BE2C_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 104
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/BE2C_H3K36me3.chm13v1.bw
+
+
+    track BE2C_H3K4me1.chm13v1
+    parent encode_macs2
+    shortLabel BE2C_H3K4me1.chm13v1
+    longLabel BE2C_H3K4me1.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 105
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/BE2C_H3K4me1.chm13v1.bw
+
+
+    track BE2C_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel BE2C_H3K9me3.chm13v1
+    longLabel BE2C_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 106
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/BE2C_H3K9me3.chm13v1.bw
+
+
+    track C4-2B_Control.chm13v1
+    parent encode_macs2
+    shortLabel C4-2B_Control.chm13v1
+    longLabel C4-2B_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 107
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/C4-2B_Control.chm13v1.bw
+
+
+    track C4-2B_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel C4-2B_H3K27ac.chm13v1
+    longLabel C4-2B_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 108
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/C4-2B_H3K27ac.chm13v1.bw
+
+
+    track Caco-2_Control.chm13v1
+    parent encode_macs2
+    shortLabel Caco-2_Control.chm13v1
+    longLabel Caco-2_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 109
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/Caco-2_Control.chm13v1.bw
+
+
+    track Caco-2_H3K4me1.chm13v1
+    parent encode_macs2
+    shortLabel Caco-2_H3K4me1.chm13v1
+    longLabel Caco-2_H3K4me1.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 110
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/Caco-2_H3K4me1.chm13v1.bw
+
+
+    track Caco-2_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel Caco-2_H3K9me3.chm13v1
+    longLabel Caco-2_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 111
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/Caco-2_H3K9me3.chm13v1.bw
+
+
+    track HAP-1_Control.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_Control.chm13v1
+    longLabel HAP-1_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 112
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_Control.chm13v1.bw
+
+
+    track HAP-1_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K27ac.chm13v1
+    longLabel HAP-1_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 113
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K27ac.chm13v1.bw
+
+
+    track HAP-1_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K27me3.chm13v1
+    longLabel HAP-1_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 114
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K27me3.chm13v1.bw
+
+
+    track HAP-1_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K36me3.chm13v1
+    longLabel HAP-1_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 115
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K36me3.chm13v1.bw
+
+
+    track HAP-1_H3K4me1.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me1.chm13v1
+    longLabel HAP-1_H3K4me1.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 116
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K4me1.chm13v1.bw
+
+
+    track HAP-1_H3K4me3.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me3.chm13v1
+    longLabel HAP-1_H3K4me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 117
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K4me3.chm13v1.bw
+
+
+    track HAP-1_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel HAP-1_H3K9me3.chm13v1
+    longLabel HAP-1_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 118
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HAP-1_H3K9me3.chm13v1.bw
+
+
+    track HL-60_Control.chm13v1
+    parent encode_macs2
+    shortLabel HL-60_Control.chm13v1
+    longLabel HL-60_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 119
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HL-60_Control.chm13v1.bw
+
+
+    track HL-60_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel HL-60_H3K27ac.chm13v1
+    longLabel HL-60_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 120
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/HL-60_H3K27ac.chm13v1.bw
+
+
+    track MG63_Control.chm13v1
+    parent encode_macs2
+    shortLabel MG63_Control.chm13v1
+    longLabel MG63_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 121
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/MG63_Control.chm13v1.bw
+
+
+    track MG63_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel MG63_H3K27me3.chm13v1
+    longLabel MG63_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 122
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/MG63_H3K27me3.chm13v1.bw
+
+
+    track MG63_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel MG63_H3K36me3.chm13v1
+    longLabel MG63_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 123
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/MG63_H3K36me3.chm13v1.bw
+
+
+    track MG63_H3K4me3.chm13v1
+    parent encode_macs2
+    shortLabel MG63_H3K4me3.chm13v1
+    longLabel MG63_H3K4me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 124
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/MG63_H3K4me3.chm13v1.bw
+
+
+    track MG63_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel MG63_H3K9me3.chm13v1
+    longLabel MG63_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 125
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/MG63_H3K9me3.chm13v1.bw
+
+
+    track RWPE1_Control.chm13v1
+    parent encode_macs2
+    shortLabel RWPE1_Control.chm13v1
+    longLabel RWPE1_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 126
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/RWPE1_Control.chm13v1.bw
+
+
+    track RWPE1_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel RWPE1_H3K27ac.chm13v1
+    longLabel RWPE1_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 127
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/RWPE1_H3K27ac.chm13v1.bw
+
+
+    track RWPE2_Control.chm13v1
+    parent encode_macs2
+    shortLabel RWPE2_Control.chm13v1
+    longLabel RWPE2_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 128
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/RWPE2_Control.chm13v1.bw
+
+
+    track RWPE2_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel RWPE2_H3K27ac.chm13v1
+    longLabel RWPE2_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 129
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/RWPE2_H3K27ac.chm13v1.bw
+
+
+    track RWPE2_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel RWPE2_H3K36me3.chm13v1
+    longLabel RWPE2_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 130
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/RWPE2_H3K36me3.chm13v1.bw
+
+
+    track SJCRH30_Control.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_Control.chm13v1
+    longLabel SJCRH30_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 131
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_Control.chm13v1.bw
+
+
+    track SJCRH30_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27ac.chm13v1
+    longLabel SJCRH30_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 132
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K27ac.chm13v1.bw
+
+
+    track SJCRH30_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27me3.chm13v1
+    longLabel SJCRH30_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 133
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K27me3.chm13v1.bw
+
+
+    track SJCRH30_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K36me3.chm13v1
+    longLabel SJCRH30_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 134
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K36me3.chm13v1.bw
+
+
+    track SJCRH30_H3K4me1.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me1.chm13v1
+    longLabel SJCRH30_H3K4me1.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 135
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K4me1.chm13v1.bw
+
+
+    track SJCRH30_H3K4me3.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me3.chm13v1
+    longLabel SJCRH30_H3K4me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 136
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K4me3.chm13v1.bw
+
+
+    track SJCRH30_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K9me3.chm13v1
+    longLabel SJCRH30_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 137
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJCRH30_H3K9me3.chm13v1.bw
+
+
+    track SJSA1_Control.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_Control.chm13v1
+    longLabel SJSA1_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 138
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_Control.chm13v1.bw
+
+
+    track SJSA1_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_H3K27ac.chm13v1
+    longLabel SJSA1_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 139
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_H3K27ac.chm13v1.bw
+
+
+    track SJSA1_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_H3K27me3.chm13v1
+    longLabel SJSA1_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 140
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_H3K27me3.chm13v1.bw
+
+
+    track SJSA1_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_H3K36me3.chm13v1
+    longLabel SJSA1_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 141
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_H3K36me3.chm13v1.bw
+
+
+    track SJSA1_H3K4me3.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_H3K4me3.chm13v1
+    longLabel SJSA1_H3K4me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 142
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_H3K4me3.chm13v1.bw
+
+
+    track SJSA1_H3K9me3.chm13v1
+    parent encode_macs2
+    shortLabel SJSA1_H3K9me3.chm13v1
+    longLabel SJSA1_H3K9me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 143
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/SJSA1_H3K9me3.chm13v1.bw
+
+
+    track VCaP_Control.chm13v1
+    parent encode_macs2
+    shortLabel VCaP_Control.chm13v1
+    longLabel VCaP_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 144
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/VCaP_Control.chm13v1.bw
+
+
+    track VCaP_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel VCaP_H3K27ac.chm13v1
+    longLabel VCaP_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 145
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/VCaP_H3K27ac.chm13v1.bw
+
+
+    track brain_microvascular_endothelial_cell_Control.chm13v1
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_Control.chm13v1
+    longLabel brain_microvascular_endothelial_cell_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 146
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/brain_microvascular_endothelial_cell_Control.chm13v1.bw
+
+
+    track brain_microvascular_endothelial_cell_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27ac.chm13v1
+    longLabel brain_microvascular_endothelial_cell_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 147
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/brain_microvascular_endothelial_cell_H3K27ac.chm13v1.bw
+
+
+    track brain_microvascular_endothelial_cell_H3K27me3.chm13v1
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27me3.chm13v1
+    longLabel brain_microvascular_endothelial_cell_H3K27me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 148
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/brain_microvascular_endothelial_cell_H3K27me3.chm13v1.bw
+
+
+    track brain_microvascular_endothelial_cell_H3K36me3.chm13v1
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K36me3.chm13v1
+    longLabel brain_microvascular_endothelial_cell_H3K36me3.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 149
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/brain_microvascular_endothelial_cell_H3K36me3.chm13v1.bw
+
+
+    track epithelial_cell_of_prostate_male_Control.chm13v1
+    parent encode_macs2
+    shortLabel epithelial_cell_of_prostate_male_Control.chm13v1
+    longLabel epithelial_cell_of_prostate_male_Control.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 150
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/epithelial_cell_of_prostate_male_Control.chm13v1.bw
+
+
+    track epithelial_cell_of_prostate_male_H3K27ac.chm13v1
+    parent encode_macs2
+    shortLabel epithelial_cell_of_prostate_male_H3K27ac.chm13v1
+    longLabel epithelial_cell_of_prostate_male_H3K27ac.chm13v1
+    group expression
+    visibility hide
+    type bigWig
+    priority 151
+    html encode_macs2/encode_bam_pileups/encode_bam_pileups.html
+    bigDataUrl encode_macs2/encode_bam_pileups/epithelial_cell_of_prostate_male_H3K27ac.chm13v1.bw
+
+
+    track BE2C_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel BE2C_H3K36me3_GRCh38p13LO_peaks
+    longLabel BE2C_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/BE2C_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 200
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track BE2C_H3K4me1_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel BE2C_H3K4me1_GRCh38p13LO_peaks
+    longLabel BE2C_H3K4me1_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/BE2C_H3K4me1_GRCh38p13LO_peaks.bb
+    priority 201
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track BE2C_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel BE2C_H3K9me3_GRCh38p13LO_peaks
+    longLabel BE2C_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/BE2C_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 202
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track C4-2B_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel C4-2B_H3K27ac_GRCh38p13LO_peaks
+    longLabel C4-2B_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/C4-2B_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 203
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track Caco-2_H3K4me1_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel Caco-2_H3K4me1_GRCh38p13LO_peaks
+    longLabel Caco-2_H3K4me1_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/Caco-2_H3K4me1_GRCh38p13LO_peaks.bb
+    priority 204
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track Caco-2_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel Caco-2_H3K9me3_GRCh38p13LO_peaks
+    longLabel Caco-2_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/Caco-2_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 205
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K27ac_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 206
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K27me3_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 207
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K36me3_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 208
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K4me1_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me1_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K4me1_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K4me1_GRCh38p13LO_peaks.bb
+    priority 209
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K4me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me3_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K4me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K4me3_GRCh38p13LO_peaks.bb
+    priority 210
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HAP-1_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HAP-1_H3K9me3_GRCh38p13LO_peaks
+    longLabel HAP-1_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HAP-1_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 211
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track HL-60_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel HL-60_H3K27ac_GRCh38p13LO_peaks
+    longLabel HL-60_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/HL-60_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 212
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track MG63_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel MG63_H3K27me3_GRCh38p13LO_peaks
+    longLabel MG63_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/MG63_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 213
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track MG63_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel MG63_H3K36me3_GRCh38p13LO_peaks
+    longLabel MG63_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/MG63_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 214
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track MG63_H3K4me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel MG63_H3K4me3_GRCh38p13LO_peaks
+    longLabel MG63_H3K4me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/MG63_H3K4me3_GRCh38p13LO_peaks.bb
+    priority 215
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track MG63_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel MG63_H3K9me3_GRCh38p13LO_peaks
+    longLabel MG63_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/MG63_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 216
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track RWPE1_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel RWPE1_H3K27ac_GRCh38p13LO_peaks
+    longLabel RWPE1_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/RWPE1_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 217
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track RWPE2_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel RWPE2_H3K27ac_GRCh38p13LO_peaks
+    longLabel RWPE2_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/RWPE2_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 218
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track RWPE2_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel RWPE2_H3K36me3_GRCh38p13LO_peaks
+    longLabel RWPE2_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/RWPE2_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 219
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27ac_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 220
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27me3_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 221
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K36me3_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 222
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K4me1_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me1_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K4me1_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K4me1_GRCh38p13LO_peaks.bb
+    priority 223
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K4me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me3_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K4me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K4me3_GRCh38p13LO_peaks.bb
+    priority 224
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJCRH30_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJCRH30_H3K9me3_GRCh38p13LO_peaks
+    longLabel SJCRH30_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJCRH30_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 225
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJSA1_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJSA1_H3K27ac_GRCh38p13LO_peaks
+    longLabel SJSA1_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJSA1_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 226
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJSA1_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJSA1_H3K27me3_GRCh38p13LO_peaks
+    longLabel SJSA1_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJSA1_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 227
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJSA1_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJSA1_H3K36me3_GRCh38p13LO_peaks
+    longLabel SJSA1_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJSA1_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 228
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJSA1_H3K4me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJSA1_H3K4me3_GRCh38p13LO_peaks
+    longLabel SJSA1_H3K4me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJSA1_H3K4me3_GRCh38p13LO_peaks.bb
+    priority 229
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track SJSA1_H3K9me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel SJSA1_H3K9me3_GRCh38p13LO_peaks
+    longLabel SJSA1_H3K9me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/SJSA1_H3K9me3_GRCh38p13LO_peaks.bb
+    priority 230
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track VCaP_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel VCaP_H3K27ac_GRCh38p13LO_peaks
+    longLabel VCaP_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/VCaP_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 231
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27ac_GRCh38p13LO_peaks
+    longLabel brain_microvascular_endothelial_cell_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/brain_microvascular_endothelial_cell_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 232
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27me3_GRCh38p13LO_peaks
+    longLabel brain_microvascular_endothelial_cell_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/brain_microvascular_endothelial_cell_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 233
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K36me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K36me3_GRCh38p13LO_peaks
+    longLabel brain_microvascular_endothelial_cell_H3K36me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/brain_microvascular_endothelial_cell_H3K36me3_GRCh38p13LO_peaks.bb
+    priority 234
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track epithelial_cell_of_prostate_male_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel epithelial_cell_of_prostate_male_H3K27ac_GRCh38p13LO_peaks
+    longLabel epithelial_cell_of_prostate_male_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_liftover_peaks/epithelial_cell_of_prostate_male_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 235
+    html encode_macs2/encode_macs2_liftover_peaks/encode_macs2_liftover_peaks.html
+
+
+    track 22Rv1_H3K27ac
+    parent encode_macs2
+    shortLabel 22Rv1_H3K27ac
+    longLabel 22Rv1_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/22Rv1_H3K27ac.chm13v1_peaks.bb
+    priority 200
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track 22Rv1_H3K27ac_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel 22Rv1_H3K27ac_GRCh38p13LO_peaks
+    longLabel 22Rv1_H3K27ac_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/22Rv1_H3K27ac_GRCh38p13LO_peaks.bb
+    priority 201
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track BE2C_H3K27me3
+    parent encode_macs2
+    shortLabel BE2C_H3K27me3
+    longLabel BE2C_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/BE2C_H3K27me3.chm13v1_peaks.bb
+    priority 202
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track BE2C_H3K27me3_GRCh38p13LO_peaks
+    parent encode_macs2
+    shortLabel BE2C_H3K27me3_GRCh38p13LO_peaks
+    longLabel BE2C_H3K27me3_GRCh38p13LO_peaks
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/BE2C_H3K27me3_GRCh38p13LO_peaks.bb
+    priority 203
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track BE2C_H3K36me3
+    parent encode_macs2
+    shortLabel BE2C_H3K36me3
+    longLabel BE2C_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/BE2C_H3K36me3.chm13v1_peaks.bb
+    priority 204
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track BE2C_H3K4me1
+    parent encode_macs2
+    shortLabel BE2C_H3K4me1
+    longLabel BE2C_H3K4me1
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/BE2C_H3K4me1.chm13v1_peaks.bb
+    priority 205
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track BE2C_H3K9me3
+    parent encode_macs2
+    shortLabel BE2C_H3K9me3
+    longLabel BE2C_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/BE2C_H3K9me3.chm13v1_peaks.bb
+    priority 206
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track C4-2B_H3K27ac
+    parent encode_macs2
+    shortLabel C4-2B_H3K27ac
+    longLabel C4-2B_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/C4-2B_H3K27ac.chm13v1_peaks.bb
+    priority 207
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track Caco-2_H3K4me1
+    parent encode_macs2
+    shortLabel Caco-2_H3K4me1
+    longLabel Caco-2_H3K4me1
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/Caco-2_H3K4me1.chm13v1_peaks.bb
+    priority 208
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track Caco-2_H3K9me3
+    parent encode_macs2
+    shortLabel Caco-2_H3K9me3
+    longLabel Caco-2_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/Caco-2_H3K9me3.chm13v1_peaks.bb
+    priority 209
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K27ac
+    parent encode_macs2
+    shortLabel HAP-1_H3K27ac
+    longLabel HAP-1_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K27ac.chm13v1_peaks.bb
+    priority 210
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K27me3
+    parent encode_macs2
+    shortLabel HAP-1_H3K27me3
+    longLabel HAP-1_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K27me3.chm13v1_peaks.bb
+    priority 211
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K36me3
+    parent encode_macs2
+    shortLabel HAP-1_H3K36me3
+    longLabel HAP-1_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K36me3.chm13v1_peaks.bb
+    priority 212
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K4me1
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me1
+    longLabel HAP-1_H3K4me1
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K4me1.chm13v1_peaks.bb
+    priority 213
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K4me3
+    parent encode_macs2
+    shortLabel HAP-1_H3K4me3
+    longLabel HAP-1_H3K4me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K4me3.chm13v1_peaks.bb
+    priority 214
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HAP-1_H3K9me3
+    parent encode_macs2
+    shortLabel HAP-1_H3K9me3
+    longLabel HAP-1_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HAP-1_H3K9me3.chm13v1_peaks.bb
+    priority 215
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track HL-60_H3K27ac
+    parent encode_macs2
+    shortLabel HL-60_H3K27ac
+    longLabel HL-60_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/HL-60_H3K27ac.chm13v1_peaks.bb
+    priority 216
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track MG63_H3K27me3
+    parent encode_macs2
+    shortLabel MG63_H3K27me3
+    longLabel MG63_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/MG63_H3K27me3.chm13v1_peaks.bb
+    priority 217
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track MG63_H3K36me3
+    parent encode_macs2
+    shortLabel MG63_H3K36me3
+    longLabel MG63_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/MG63_H3K36me3.chm13v1_peaks.bb
+    priority 218
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track MG63_H3K4me3
+    parent encode_macs2
+    shortLabel MG63_H3K4me3
+    longLabel MG63_H3K4me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/MG63_H3K4me3.chm13v1_peaks.bb
+    priority 219
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track MG63_H3K9me3
+    parent encode_macs2
+    shortLabel MG63_H3K9me3
+    longLabel MG63_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/MG63_H3K9me3.chm13v1_peaks.bb
+    priority 220
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track RWPE1_H3K27ac
+    parent encode_macs2
+    shortLabel RWPE1_H3K27ac
+    longLabel RWPE1_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/RWPE1_H3K27ac.chm13v1_peaks.bb
+    priority 221
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track RWPE2_H3K27ac
+    parent encode_macs2
+    shortLabel RWPE2_H3K27ac
+    longLabel RWPE2_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/RWPE2_H3K27ac.chm13v1_peaks.bb
+    priority 222
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track RWPE2_H3K36me3
+    parent encode_macs2
+    shortLabel RWPE2_H3K36me3
+    longLabel RWPE2_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/RWPE2_H3K36me3.chm13v1_peaks.bb
+    priority 223
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K27ac
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27ac
+    longLabel SJCRH30_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K27ac.chm13v1_peaks.bb
+    priority 224
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K27me3
+    parent encode_macs2
+    shortLabel SJCRH30_H3K27me3
+    longLabel SJCRH30_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K27me3.chm13v1_peaks.bb
+    priority 225
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K36me3
+    parent encode_macs2
+    shortLabel SJCRH30_H3K36me3
+    longLabel SJCRH30_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K36me3.chm13v1_peaks.bb
+    priority 226
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K4me1
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me1
+    longLabel SJCRH30_H3K4me1
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K4me1.chm13v1_peaks.bb
+    priority 227
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K4me3
+    parent encode_macs2
+    shortLabel SJCRH30_H3K4me3
+    longLabel SJCRH30_H3K4me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K4me3.chm13v1_peaks.bb
+    priority 228
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJCRH30_H3K9me3
+    parent encode_macs2
+    shortLabel SJCRH30_H3K9me3
+    longLabel SJCRH30_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJCRH30_H3K9me3.chm13v1_peaks.bb
+    priority 229
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJSA1_H3K27ac
+    parent encode_macs2
+    shortLabel SJSA1_H3K27ac
+    longLabel SJSA1_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJSA1_H3K27ac.chm13v1_peaks.bb
+    priority 230
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJSA1_H3K27me3
+    parent encode_macs2
+    shortLabel SJSA1_H3K27me3
+    longLabel SJSA1_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJSA1_H3K27me3.chm13v1_peaks.bb
+    priority 231
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJSA1_H3K36me3
+    parent encode_macs2
+    shortLabel SJSA1_H3K36me3
+    longLabel SJSA1_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJSA1_H3K36me3.chm13v1_peaks.bb
+    priority 232
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJSA1_H3K4me3
+    parent encode_macs2
+    shortLabel SJSA1_H3K4me3
+    longLabel SJSA1_H3K4me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJSA1_H3K4me3.chm13v1_peaks.bb
+    priority 233
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track SJSA1_H3K9me3
+    parent encode_macs2
+    shortLabel SJSA1_H3K9me3
+    longLabel SJSA1_H3K9me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/SJSA1_H3K9me3.chm13v1_peaks.bb
+    priority 234
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track VCaP_H3K27ac
+    parent encode_macs2
+    shortLabel VCaP_H3K27ac
+    longLabel VCaP_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/VCaP_H3K27ac.chm13v1_peaks.bb
+    priority 235
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K27ac
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27ac
+    longLabel brain_microvascular_endothelial_cell_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/brain_microvascular_endothelial_cell_H3K27ac.chm13v1_peaks.bb
+    priority 236
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K27me3
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K27me3
+    longLabel brain_microvascular_endothelial_cell_H3K27me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/brain_microvascular_endothelial_cell_H3K27me3.chm13v1_peaks.bb
+    priority 237
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track brain_microvascular_endothelial_cell_H3K36me3
+    parent encode_macs2
+    shortLabel brain_microvascular_endothelial_cell_H3K36me3
+    longLabel brain_microvascular_endothelial_cell_H3K36me3
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/brain_microvascular_endothelial_cell_H3K36me3.chm13v1_peaks.bb
+    priority 238
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+
+
+    track epithelial_cell_of_prostate_male_H3K27ac
+    parent encode_macs2
+    shortLabel epithelial_cell_of_prostate_male_H3K27ac
+    longLabel epithelial_cell_of_prostate_male_H3K27ac
+    group expression
+    visibility hide
+    type bigBed 9
+    bigDataUrl encode_macs2/encode_macs2_peaks/epithelial_cell_of_prostate_male_H3K27ac.chm13v1_peaks.bb
+    priority 239
+    html encode_macs2/encode_macs2_peaks/encode_macs2_peaks.html
+

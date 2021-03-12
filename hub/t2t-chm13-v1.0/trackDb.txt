@@ -395,3 +395,5 @@ bigDataUrl jaspar/jaspar.bigBed
 priority 4
 html jaspar.html
 
+
+include encode_macs2.trackDb.txt 

@@ -16,8 +16,8 @@ html proSeqSplitStrands.html
     type bigWig 
     visibility dense
     priority 31.1
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues off
 
     track PROseq-A_NEG
@@ -28,8 +28,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.2
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues on
 
     track PROseq-A_51mer-filt_POS
@@ -40,8 +40,8 @@ html proSeqSplitStrands.html
     type bigWig    
     visibility dense
     priority 31.3
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues off
 
     track PROseq-A_51mer-filt_NEG
@@ -52,8 +52,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.4
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues on
 
     track PROseq-B_POS
@@ -64,8 +64,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.5
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues off
 
     track PROseq-B_NEG
@@ -76,8 +76,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.6
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues on
 
     track PROseq-B_51mer-filt_POS
@@ -88,8 +88,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.7
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues off
 
     track PROseq-B_51mer-filt_NEG
@@ -100,6 +100,6 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     priority 31.8
-    color 0,0,255
-    altColor 255,0,0
+    altColor 0,0,255
+    color 255,0,0
     negateValues on

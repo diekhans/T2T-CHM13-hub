@@ -11,6 +11,8 @@ def parseArgs():
 results match etc/rmskBed.as
 """
     parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument("--info", action="store_true",
+                        help="print colors and exit")
     parser.add_argument('inBed', nargs='?', default=sys.stdin,
                         type=argparse.FileType('r'),
                         help="input BED file")
@@ -73,8 +75,14 @@ def editBedRec(rec):
     rec.score = "0"
     return rec
 
+def printColors():
+    for r, c in repColorTable.items():
+        print(r, c.toRgb8Str(), sep='\t')
 
 def main(args):
+    if args.info:
+        printColors()
+        return 0
     for rec in BedReader(args.inBed, numStdCols=6):
         editBedRec(rec).write(args.outBed)
     args.outBed.close()

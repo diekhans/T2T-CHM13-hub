@@ -788,13 +788,29 @@ I've put all of the files and the track descriptions on the T2T Finishing Worksh
 makeTrackDb generate most of trackDb
 find . -name '*.bb' -o -name '*.bw' | cpio -pduml ../../../hub/t2t-chm13-v1.0/encode_macs2
 
-* liftOff2
+* liftOffJhu
 Alaina Shumate  
 /team-genes/t2t-chm13-v1.0/Liftoff
+2021-03-19 updated to correct missing exons on some transcripts
 
 * proSeqSplitStrands
 2021-03-17 Savannah
 /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_split-strands/
+
+ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands/
+
+* rmskV2 new repeat master
+2021-03-19 Savannah
+/team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
+# note, has C form - strand, that must be edits
+
+(zcat chm13-v1_Repeatmasker_polish_031921_track_v2.bed.gz |../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | gzip -c >rmskV2.bed.gz )>&log
+
+# checked for warnings, but did not update known defaults or colors
+
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmskV2.bigBed rmskV2.bed.gz
+ln -f rmskV2.bigBed ../../../hub/t2t-chm13-v1.0/rmskV2/
+
 
 * to-do
 ** finish lastz

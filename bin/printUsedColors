@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+
+# quick one-off to find colors used in in RM + cenSat
+
+from pycbio.sys.color import Color
+from pycbio.sys.svgcolors import SvgColors
+
+def mkColor(s):
+    return Color.fromHtmlColor(s)
+# either class or name here
+repColorTable = {
+    "(CATTC)n": mkColor("#E87C71"),
+    "(GAATC)n": mkColor("#E28455"),
+    "ALR/Alpha": mkColor("#D78C32"),
+    "BSR/Beta": mkColor("#E370AB"),
+    "CER": mkColor("#CE9334"),
+    "DNA": mkColor("#C19935"),
+    "GSAT": mkColor("#B3A033"),
+    "HSAT": mkColor("#A2A638"),
+    "LINE": mkColor("#8CAC3E"),
+    "Low_complexity": mkColor("#75B042"),
+    "LSAU": mkColor("#54B346"),
+    "LTR": mkColor("#51B756"),
+    "RC/Helitron": mkColor("#53BB73"),
+    "Retroposon": mkColor("#55BE8D"),
+    "RNA": mkColor("#54C0A5"),
+    "rRNA": mkColor("#52BEBB"),
+    "SAR": mkColor("#51BDCE"),
+    "Satellite/acro": mkColor("#4EB8DF"),
+    "Satellite/telo": mkColor("#53B0E3"),
+    "SATR1": mkColor("#5AA5DA"),
+    "scRNA": mkColor("#6B9AD2"),
+    "Simple repeat": mkColor("#8992C8"),
+    "SINE": mkColor("#9A8AC1"),
+    "snRNA": mkColor("#A885BC"),
+    "srpRNA": mkColor("#B67EB6"),
+    "SSTI": mkColor("#C378B2"),
+    "SUBTEL_sa": mkColor("#D173AF"),
+    "tRNA": mkColor("#ED72A5"),
+    "Unknown": mkColor("#EF768C"),
+}
+
+
+cenAnnotation_colors = [Color.fromRgb8Str(c) for c in
+    ("0,0,0",
+     "0,0,153",
+     "0,0,250",
+     "0,128,250",
+     "0,153,76",
+     "0,204,204",
+     "0,51,102",
+     "102,128,255",
+     "153,0,0",
+     "224,224,224",
+     "250,0,0",
+     "250,0,250",
+     "250,153,255",
+     "255,204,153")
+]
+
+centRegionColors = [Color.fromRgb8Str("255,128,0")]
+
+all_colors = list(repColorTable.values()) + cenAnnotation_colors + centRegionColors
+
+for c in all_colors:
+    print(SvgColors.getClosestName(c))

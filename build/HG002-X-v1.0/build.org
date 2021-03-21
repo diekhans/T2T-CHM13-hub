@@ -11,3 +11,9 @@ twoBitInfo HG002-X-v1.0.2bit HG002-X-v1.0.sizes
 tawk '{print $1,$2,"x"}' HG002-X-v1.0.sizes > HG002-X-v1.0.sizes3
 
 ln -f HG002-X-v1.0.2bit  ../../../hub/HG002-X-v1.0/genome/
+
+* methylation
+Ariel Gershman  12:04 AM
+Hi Mark, here is the methylation track for the HG002 browser /team-epigenetics/20200727_methylation/CHM13_HG002_chrX/HG002_20kb_methylation_frequency.bigwig
+
+

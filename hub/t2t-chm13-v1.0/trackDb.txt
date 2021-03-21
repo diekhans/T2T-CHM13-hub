@@ -92,9 +92,21 @@ include low_coverage.trackDb.txt
 ##
 # varRep
 ##
+track rmskV2
+shortLabel RepeatMasker V2
+longLabel Repeating Elements by RepeatMasker V2
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9 +
+bigDataUrl rmskV2/rmskV2.bigBed
+priority 1
+
 track rmsk
-shortLabel RepeatMasker
-longLabel Repeating Elements by RepeatMasker
+shortLabel RepeatMasker V1
+longLabel Repeating Elements by RepeatMasker V1
 group varRep
 visibility hide
 itemRgb on
@@ -102,7 +114,7 @@ maxItems 1000000
 maxWindowToDraw 100000000
 type bigBed 9 +
 bigDataUrl rmsk/rmsk.bigBed
-priority 1
+priority 1.5
 
 track simpleRepeat
 shortLabel Simple Repeats

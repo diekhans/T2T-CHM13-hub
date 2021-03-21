@@ -812,6 +812,16 @@ buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t
 ln -f rmskV2.bigBed ../../../hub/t2t-chm13-v1.0/rmskV2/
 
 
+# BSR is different, fixed in code.
+V2 name                     BSR             
+Class of repeat             Beta
+Subclass repeat             Satellite
+
+V1 name                     BSR/Beta
+Class of repeat             Satellite
+Family of repeat            unknown
+
+
 * to-do
 ** finish lastz
 

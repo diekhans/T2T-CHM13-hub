@@ -45,6 +45,7 @@ repColorTable = {
     "(GAATC)n": mkColor("#E28455"),
     "ALR/Alpha": mkColor("#D78C32"),
     "BSR/Beta": mkColor("#E370AB"),
+    "BSR": mkColor("#E370AB"),  # FIXME tmp hack for V2
     "CER": mkColor("#CE9334"),
     "DNA": mkColor("#C19935"),
     "GSAT": mkColor("#B3A033"),

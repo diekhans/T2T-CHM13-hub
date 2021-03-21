@@ -1,0 +1,11 @@
+
+track methylation
+shortLabel Methylation Frequency
+longLabel Methylation Frequency
+group regulation
+visibility hide
+type bigWig 0 1
+bigDataUrl methylation/HG002_20kb_methylation_frequency.bigwig
+priority 2
+html empty.html
+

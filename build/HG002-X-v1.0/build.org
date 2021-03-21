@@ -17,3 +17,4 @@ Ariel Gershman  12:04 AM
 Hi Mark, here is the methylation track for the HG002 browser /team-epigenetics/20200727_methylation/CHM13_HG002_chrX/HG002_20kb_methylation_frequency.bigwig
 
 
+ln -f HG002_20kb_methylation_frequency.bigwig ../../../hub/HG002-X-v1.0/methylation/

@@ -249,6 +249,7 @@ priority 12
 # genes
 ##
 include CAT/trackDb.txt
+include CAT_V2/trackDb.txt
 include crispr.trackDb.txt
 
 track liftOffV2
@@ -257,7 +258,7 @@ shortLabel LiftOff Genes V2
 longLabel LiftOff Genes V2
 type bigGenePred
 group genes
-priority 12.0
+priority 10
 labelFields name, geneName, name2
 defaultLabelFields geneName
 searchIndex name,name2,geneName
@@ -269,7 +270,7 @@ shortLabel LiftOff Genes V1
 longLabel  LiftOff Genes Annotations V1 based on GENCODE
 type bigGenePred
 group genes
-priority 12.1
+priority 11
 
     track liftOffGenesAll
     parent liftOffGenes on
@@ -299,7 +300,7 @@ longLabel BLAT of GENCODE RNAs
 html gencodeBlat.html
 group genes
 type bigPsl
-priority 11.001
+priority 15
 color 0,0,100
 canPack on
 visibility hide
@@ -324,7 +325,7 @@ longLabel BLAT of RefSeq curated RNAs
 html refSeqBlat.html
 group genes
 type bigPsl
-priority 12.001
+priority 16
 color 0,0,100
 canPack on
 visibility hide

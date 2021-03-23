@@ -1,0 +1,89 @@
+track cutnrun
+compositeTrack off
+shortLabel HG002_CutnRun-losalt-F3852_DEC20andFEB21
+longLabel HG002 CutnRun low salt bwa-F3852 mapped (with no MAPQ filtering) and unique genome-wide kmer filtering from DEC 2020 and FEB 2021 runs
+visibility hide
+priority 30
+type bigWig
+group rna
+html cutnrun.html
+    
+    track CENPA_CutnRun-losalt_bwa-F3852_DEC20
+    parent cutnrun
+    bigDataUrl cutnrun/dec/CENPA/HG002_CA_cutnrun_losalt_trimmed_q20_2.chm13_HG002X_HG38YF1548F3852.sort.bigwig
+    shortLabel HG002 CENPA CutnRun losalt bwa-F3852 DEC20
+    longLabel HG002 CENPA CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPA_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent cutnrun
+    bigDataUrl cutnrun/dec/CENPA/HG002_CA_cutnrun-losalt_chm13_HG002X_HG38YF1548F3852.over.IlluminaPCRfree-chm13-v1-autosome_hg002-chrX_51mers_mrg-meryl_sort.bigwig
+    shortLabel HG002 CENPA CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel HG002 CENPA CutnRun bwa-F3852 unique 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_DEC20
+    parent cutnrun
+    bigDataUrl cutnrun/dec/IgG/HG002_IgG_cutnrun_losalt_trimmed_q20_2.chm13_HG002X_HG38YF1548F3852.sort.bigwig
+    shortLabel HG002 IgG CutnRun losalt bwa-F3852 DEC20
+    longLabel HG002 IgG CutnRun bwa-F3852 no kmer filtering DEC 2020
+    type bigWig    
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_51mer-filt_DEC20
+    parent cutnrun
+    bigDataUrl cutnrun/dec/IgG/HG002_IgG_cutnrun-losalt_chm13_HG002X_HG38YF1548F3852.over.IlluminaPCRfree-chm13-v1-autosome_hg002-chrX_51mers_mrg-meryl_sort.bigwig
+    shortLabel HG002 IgG CutnRun losalt bwa-F3852 51mer-filt DEC20
+    longLabel HG002 IgG CutnRun bwa-F3852 unique 51mer filtering DEC 2020
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/CENPB/HG2_CB_ADGCCR09-F_S101_L002_2.chm13_HG002X_HG38YF3852_sort.bigwig
+    shortLabel HG002 CENPB CutnRun losalt bwa-F3852 FEB21
+    longLabel HG002 CENPB CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track CENPB_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/CENPB/HG002_CB_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree-chm13-v1-autosome_hg002-chrX_51mers_mrg-meryl_sort.bigwig
+    shortLabel HG002 CENPB CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel HG002 CENPB CutnRun bwa-F3852 unique 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/H3K9me3/HG2_K9Me3_ADGCCR09-H_S103_L002_2.chm13_HG002X_HG38YF3852_sort.bigwig
+    shortLabel HG002 H3K9me3 CutnRun losalt bwa-F3852 FEB21
+    longLabel HG002 H3K9me3 CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track H3K9me3_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/H3K9me3/HG002_H3K9me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree-chm13-v1-autosome_hg002-chrX_51mers_mrg-meryl_sort.bigwig
+    shortLabel HG002 H3K9me3 CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel HG002 H3K9me3 CutnRun bwa-F3852 unique 51mer filtering FEB 2021
+    type bigWig
+    visibility dense
+    
+    track IgG_CutnRun-losalt_bwa-F3852_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/IgG/HG2_IgG_ADGCCR09-G_S102_L002_2.chm13_HG002X_HG38YF3852_sort.bigwig
+    shortLabel HG002 IgG CutnRun losalt bwa-F3852 FEB21
+    longLabel HG002 IgG CutnRun bwa-F3852 no kmer filtering FEB 2021
+    type bigWig
+    visibility dense
+
+    track IgG_CutnRun-losalt_bwa-F3852_51mer-filt_FEB21
+    parent cutnrun
+    bigDataUrl cutnrun/feb/IgG/HG002_IgG_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree-chm13-v1-autosome_hg002-chrX_51mers_mrg-meryl_sort.bigwig
+    shortLabel HG002 IgG CutnRun losalt bwa-F3852 51mer-filt FEB21
+    longLabel HG002 IgG CutnRun bwa-F3852 unique 51mer filtering FEB 2021
+    type bigWig
+    visibility dense

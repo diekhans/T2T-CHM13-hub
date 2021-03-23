@@ -6,7 +6,7 @@ group genes
 visibility hide
 shortLabel CAT Evidence
 longLabel CAT Gene Annotation Evidence
-priority 2
+priority 2.1
 html CAT/catEvidence.html
 
 include transmap.txt

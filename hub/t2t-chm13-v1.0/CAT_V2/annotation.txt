@@ -1,0 +1,16 @@
+track CHM13_external_reference_CHM13_V2
+superTrack catEvidence_V2 hide
+shortLabel CHM13.external_reference V2
+longLabel CHM13.external_reference V2
+description CHM13.external_reference V2
+type bigGenePred
+group genes
+itemRgb on
+priority 3
+visibility hide
+searchIndex name,name2,geneId,transcriptId
+bigDataUrl CAT_V2/annotation.bb
+labelFields name,name2,geneId,transcriptId
+defaultLabelFields name
+labelSeperator " "
+html CAT_V2/annotation.html

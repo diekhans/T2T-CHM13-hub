@@ -12,9 +12,46 @@ tawk '{print $1,$2,"x"}' HG002-X-v1.0.sizes > HG002-X-v1.0.sizes3
 
 ln -f HG002-X-v1.0.2bit  ../../../hub/HG002-X-v1.0/genome/
 
+# 2021-03-23: Karen gave the wrong sequence, 
+/public/groups/nanopore/karen/t2t-chm13/tmp/cutrun/HG002/chm13_HG002X_HG38Y.fasta
+faToTwoBit chm13_HG002X_HG38Y.fasta.gz  HG002-X-v1.0.unmasked.2bit
+ln HG002-X-v1.0.unmasked.2bit HG002-X-v1.0.2bit
+
+twoBitInfo HG002-X-v1.0.2bit HG002-X-v1.0.sizes
+tawk '{print $1,$2,"x"}' HG002-X-v1.0.sizes > HG002-X-v1.0.sizes3
+
+ln -f HG002-X-v1.0.2bit  ../../../hub/HG002-X-v1.0/genome/
+
 * methylation
 Ariel Gershman  12:04 AM
 Hi Mark, here is the methylation track for the HG002 browser /team-epigenetics/20200727_methylation/CHM13_HG002_chrX/HG002_20kb_methylation_frequency.bigwig
 
 
 ln -f HG002_20kb_methylation_frequency.bigwig ../../../hub/HG002-X-v1.0/methylation/
+mkdir  ../../../hub/HG002-X-v1.0/cutnrun
+find CENPA IgG | cpio -pduml ../../../hub/HG002-X-v1.0/cutnrun/
+
+* cutnrun
+Savannah Hoyt
+here: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/
+
+
+Ohh, the first two sets (CENPA and IgG) are in that
+directory(/team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/)
+but the other 3 sets (CENPB, IgG, H3K9me3) are in the FEB directory
+(/team-satellites/022021_CUTRUN/bams/HG002_F3852_noMAPQ-filtering_bigwigs/).
+
+ Since both are in /team-satellites/, but
+different subdirectories should it be: 
+DEC IgG:
+/HG002_CutnRun-losalt-F3852/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/filename.bigwig
+FEB IgG: 
+/HG002_CutnRun-losalt-F3852/022021_CUTRUN/bams/HG002_F3852_noMAPQ-filtering_bigwigs/IgG/filename.bigwig
+If possible, I’d like to keep them in separate subdirectories to stay
+consistent with how Karen has separated the CutnRun data by DEC vs. FEB.
+
+
+ /team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/
+-> cutnrun/dec
+
+find CENPA IgG | cpio -pduml ../../../hub/HG002-X-v1.0/cutnrun/

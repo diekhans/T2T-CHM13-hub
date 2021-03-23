@@ -1,6 +1,7 @@
 track crisprTargets
 shortLabel CRISPR Targets
 longLabel CRISPR/Cas9 -NGG Targets
+priority 25
 type bigBed 9 +
 group genes
 itemRgb on

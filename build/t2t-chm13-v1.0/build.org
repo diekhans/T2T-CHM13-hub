@@ -833,10 +833,19 @@ Family of repeat            unknown
 
 
 * CAT_V2
-gencode v35
 Marina
-ok, that worked, everything is updated! all the relevant files here http://courtyard.gi.ucsc.edu/~mhauknes/t2t_v2/out-chm13-draft_v1-full-isoseq-chm13-only/analysis/con
 
+gencode v35
+ok, that worked, everything is updated! all the relevant files here
+http://courtyard.gi.ucsc.edu/~mhauknes/t2t_v2/out-chm13-draft_v1-full-isoseq-chm13-only/analysis/consensus_v2/
+
+new big bed, I think this worked better, let me know if not: http://courtyard.gi.ucsc.edu/~mhauknes/t2t_v2/out-chm13-draft_v1-full-isoseq-chm13-only/analysis/consensus_v2/CHM13.combined.v2.bb
+
+# copy over and munge entire hub
+# a bunch of editing of trackDb files
+mkdir ../../../hub/t2t-chm13-v1.0/CAT_V2
+ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../../../hub/t2t-chm13-v1.0/CAT_V2
+find consensus_gene_set | cpio -pduml ../../../hub/t2t-chm13-v1.0/CAT_V2/
 * to-do
 ** finish lastz
 

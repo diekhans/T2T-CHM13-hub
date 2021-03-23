@@ -1,16 +1,16 @@
-track consensus_CHM13
-shortLabel CAT Genes
-longLabel CAT Gene Annotations
-description CAT Gene Annotations
+track consensus_CHM13_V2
+shortLabel CAT Genes V2
+longLabel CAT Gene Annotations V2
+description CAT Gene Annotations V2
 type bigGenePred
 group genes
 itemRgb on
-priority 2
-maxItems 100000
+priority 1
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
-bigDataUrl CAT/consensus.bb
+bigDataUrl CAT_V2/CHM13.combined.v2.bb
+html CAT_V2/consensus_CHM13.html
 labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 defaultLabelFields name
 labelSeperator " "
-html CAT/consensus_CHM13.html
+

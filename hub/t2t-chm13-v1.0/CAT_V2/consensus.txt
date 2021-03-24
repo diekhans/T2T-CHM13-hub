@@ -1,7 +1,7 @@
 track consensus_CHM13_V2
-shortLabel CAT Genes V2
-longLabel CAT Gene Annotations V2
-description CAT Gene Annotations V2
+shortLabel CAT Genes + LiftOff V2
+longLabel CAT Gene + LiftOff Annotations V2
+description CAT Gene + LiftOff Annotations V2
 type bigGenePred
 group genes
 itemRgb on

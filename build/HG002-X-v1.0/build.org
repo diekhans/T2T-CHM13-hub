@@ -36,9 +36,10 @@ Savannah Hoyt
 here: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/
 
 
-Ohh, the first two sets (CENPA and IgG) are in that
-directory(/team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/)
-but the other 3 sets (CENPB, IgG, H3K9me3) are in the FEB directory
+Ohh, the first two sets (CENPA and IgG) are in
+/team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/
+
+the other 3 sets (CENPB, IgG, H3K9me3) are in the FEB directory
 (/team-satellites/022021_CUTRUN/bams/HG002_F3852_noMAPQ-filtering_bigwigs/).
 
  Since both are in /team-satellites/, but
@@ -54,4 +55,4 @@ consistent with how Karen has separated the CutnRun data by DEC vs. FEB.
  /team-satellites/122920_CUTRUN/0222_LowSaltOnly/HG002_F3852_noMAPQ-filtering_bigwigs/
 -> cutnrun/dec
 
-find CENPA IgG | cpio -pduml ../../../hub/HG002-X-v1.0/cutnrun/
+find dec feb | cpio -pduml ../../../hub/HG002-X-v1.0/cutnrun/

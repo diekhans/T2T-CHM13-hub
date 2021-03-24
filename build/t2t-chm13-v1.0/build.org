@@ -846,6 +846,8 @@ new big bed, I think this worked better, let me know if not: http://courtyard.gi
 mkdir ../../../hub/t2t-chm13-v1.0/CAT_V2
 ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../../../hub/t2t-chm13-v1.0/CAT_V2
 find consensus_gene_set | cpio -pduml ../../../hub/t2t-chm13-v1.0/CAT_V2/
+
+** create data set for gencode V35 source transcripts
 * to-do
 ** finish lastz
 

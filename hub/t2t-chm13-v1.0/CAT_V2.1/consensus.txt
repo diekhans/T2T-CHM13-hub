@@ -1,0 +1,16 @@
+track consensus_CHM13_V2.1
+shortLabel CAT Genes + LiftOff V2.1
+longLabel CAT Gene + LiftOff Annotations V2.1
+description CAT Gene + LiftOff Annotations V2.1
+type bigGenePred
+group genes
+itemRgb on
+priority 1
+visibility pack
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl CAT_V2.1/CHM13.combined.v2.1.bb
+html CAT_V2.1/consensus_CHM13.html
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name
+labelSeperator " "
+

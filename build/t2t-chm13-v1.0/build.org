@@ -847,7 +847,26 @@ mkdir ../../../hub/t2t-chm13-v1.0/CAT_V2
 ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../../../hub/t2t-chm13-v1.0/CAT_V2
 find consensus_gene_set | cpio -pduml ../../../hub/t2t-chm13-v1.0/CAT_V2/
 
+** tmp browser for liftoff regions
+bedToHtmlDir -title 'liftoff fill' -hub https://t2t.gi.ucsc.edu/chm13/hub/hub.txt -sort-by-loc t2t-chm13-v1.0 CHM13.liftoff.unique.v2.bed  ~/public_html/t2t/tmp/liftOffFill/
 ** create data set for gencode V35 source transcripts
+
+* CAT_V2.1
+# fix to liftoff metadata
+Marina: /nanopore/marina/t2t_v2/out-chm13-draft_v1-full-isoseq-chm13-only/analysis/consensus_v2/CHM13.combined.v2.bb
+
+# build bed 
+genePredToBed consensus_gene_set/CHM13.combined.v2.1.gp.gz  consensus_gene_set/CHM13.combined.v2.1.bed
+pigz consensus_gene_set/CHM13.combined.v2.1.bed 
+
+# 
+# hard link CAT_V2 files
+ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../../../hub/t2t-chm13-v1.0/CAT_V2.1/
+pigz consensus_gene_set/CHM13.combined.v2.1.bed 
+
+# copy to globus
+find CAT_V2.1 | cpio -pdl ../tmp/
+
 * to-do
 ** finish lastz
 

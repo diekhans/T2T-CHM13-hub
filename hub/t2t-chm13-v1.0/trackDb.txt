@@ -249,7 +249,7 @@ priority 12
 # genes
 ##
 include CAT/trackDb.txt
-include CAT_V2/trackDb.txt
+include CAT_V2.1/trackDb.txt
 include crispr.trackDb.txt
 
 track liftOffV2

@@ -112,6 +112,8 @@ html proSeqSplitStrands.html
     type bigWig 
     visibility dense
     negateValues off
+    altColor 0,0,255
+    color 255,0,0
       
     track PROseq-AB_NEG
     parent proSeqSplitStrands
@@ -121,6 +123,8 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     negateValues on
+    altColor 0,0,255
+    color 255,0,0
     
     track PROseq-AB_51mer-filt_POS
     parent proSeqSplitStrands
@@ -130,6 +134,8 @@ html proSeqSplitStrands.html
     type bigWig    
     visibility dense
     negateValues off
+    altColor 0,0,255
+    color 255,0,0
    
     track PROseq-AB_51mer-filt_NEG
     parent proSeqSplitStrands
@@ -139,3 +145,5 @@ html proSeqSplitStrands.html
     type bigWig
     visibility dense
     negateValues on
+    altColor 0,0,255
+    color 255,0,0

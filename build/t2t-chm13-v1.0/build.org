@@ -508,8 +508,11 @@ buildBigBed bed4 t2t-chm13-v1.0 illuminaMarkerDeserts.bigBed illumina_marker_des
 	#RNAseq_BT2-N0-k100_Meryl-uniq-51mer_PCRfree-assembly-chm13-v1.0_trackDescription.html
 	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
 	#IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-N0-k100-chm13-20200922_F1548_sort.bigwig
+
 ** install
 find . -name '*.bigwig' | cpio -pduml  ../../../hub/t2t-chm13-v1.0/
+
+** additional files 2021-03-28
 
 * WSSD_20210216 (wssd update)
 Mitchell Robert Vollger

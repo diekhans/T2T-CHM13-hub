@@ -103,3 +103,39 @@ html proSeqSplitStrands.html
     altColor 0,0,255
     color 255,0,0
     negateValues on
+
+    track PROseq-AB_POS
+    parent proSeqSplitStrands
+    bigDataUrl proSeqSplitStrands/CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_POS.bigwig
+    shortLabel PROseq-AB bt2 POS
+    longLabel PROseq-AB bt2 no kmer filtering Positive-strand
+    type bigWig 
+    visibility dense
+    negateValues off
+      
+    track PROseq-AB_NEG
+    parent proSeqSplitStrands
+    bigDataUrl proSeqSplitStrands/CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_NEG.bigwig
+    shortLabel PROseq-AB bt2 NEG
+    longLabel PROseq-AB bt2 no kmer filtering Negative-strand
+    type bigWig
+    visibility dense
+    negateValues on
+    
+    track PROseq-AB_51mer-filt_POS
+    parent proSeqSplitStrands
+    bigDataUrl proSeqSplitStrands/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_POS.bigwig
+    shortLabel PROseq-AB bt2 51mer-filt POS
+    longLabel PROseq-AB bt2 51mer-filt Positive-strand
+    type bigWig    
+    visibility dense
+    negateValues off
+   
+    track PROseq-AB_51mer-filt_NEG
+    parent proSeqSplitStrands
+    bigDataUrl proSeqSplitStrands/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_NEG.bigwig
+    shortLabel PROseq-AB bt2 51mer-filt NEG
+    longLabel PROseq-AB bt2 51mer-filt Negative-strand
+    type bigWig
+    visibility dense
+    negateValues on

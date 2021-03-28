@@ -809,6 +809,16 @@ gencode v35
 
 ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands/
 
+## 2021-03-27 - 4 more files
+CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_NEG.bigwig
+CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_POS.bigwig
+IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_NEG.bigwig
+IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-N0-k100-chm13-20200922_sort_POS.bigwig
+
+ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands/
+
+
+
 * rmskV2 new repeat master
 2021-03-19 Savannah
 /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed

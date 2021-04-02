@@ -1,0 +1,11 @@
+track error_CHM13_V3
+superTrack catEvidence_V3 hide
+type bigBed 6
+group genes
+shortLabel Consensus indels V3
+longLabel Consensus indels V3
+bigDataUrl CAT_V3/evaluation.bb
+html CAT_V3/error_CHM13.html
+visibility hide
+priority 5
+

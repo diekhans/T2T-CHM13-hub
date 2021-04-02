@@ -115,6 +115,10 @@ repColorTable = {
     # known defaults
     "Satellite": defaultColor,
     "Simple_repeat": defaultColor,
+    # FIXME: hack around
+    # warning: ('Eulor2B', 'DNA?/Eulor2B', 'DNA?/undefined', 'DNA?') does not have a defined color
+    # warning: ('MER124', 'DNA?/MER124', 'DNA?/undefined', 'DNA?') does not have a defined color
+    "DNA?": mkColor("#C19935"),
 }
 
 warnedDefaultColors = set()

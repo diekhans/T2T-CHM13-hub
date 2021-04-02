@@ -844,6 +844,15 @@ V1 name                     BSR/Beta
 Class of repeat             Satellite
 Family of repeat            unknown
 
+** 2021-03-31
+update from Savannah that fixed a bug
+team-TE/Repeatmasker_polished-033121/chm13v1_polish-033121_track.bed 
+
+# one bad record with spaces, fix with sed
+zcat chm13v1_polish-033121_track.bed.gz | sed -e 's/chr10   27055808 /chr10\t27055808/' | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | pigz -c >rmskV2.bed.gz
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmskV2.bigBed rmskV2.bed.gz
+ln -f rmskV2.bigBed ../../../hub/t2t-chm13-v1.0/rmskV2/
+
 
 * CAT_V2
 Marina
@@ -879,6 +888,19 @@ pigz consensus_gene_set/CHM13.combined.v2.1.bed
 
 # copy to globus
 find CAT_V2.1 | cpio -pdl ../tmp/
+
+* CAT_V3
+2021-04-01 add in all paralogs from liftOff 
+
+/nanopore/marina/t2t_v2/out-chm13-draft_v1-full-isoseq-chm13-only/analysis/consensus_v3
+
+# make the bed
+genePredToBed consensus_gene_set/CHM13.combined.v3.gp.gz  consensus_gene_set/CHM13.combined.v3.bed
+pigz consensus_gene_set/CHM13.combined.v3.bed 
+
+ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../../../hub/t2t-chm13-v1.0/CAT_V3/
+mkdir  ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
+ln -f consensus_gene_set/* ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
 
 * to-do
 ** finish lastz

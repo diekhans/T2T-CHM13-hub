@@ -1,0 +1,17 @@
+track Filtered_transMap_CHM13_V3
+superTrack catEvidence_V3 hide
+shortLabel Filtered transMap V3
+longLabel Filtered transMap V3
+description Filtered transMap V3
+type bigGenePred
+group genes
+itemRgb on
+priority 3
+visibility hide
+searchIndex name,name2,geneId,transcriptId
+bigDataUrl CAT_V3/filtered_transmap.bb
+html CAT_V3/Filtered_transmap_CHM13.html
+labelFields name,name2,geneId,transcriptId
+defaultLabelFields name
+labelSeperator " "
+

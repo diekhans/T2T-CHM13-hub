@@ -421,5 +421,17 @@ bigDataUrl jaspar/jaspar.bigBed
 priority 4
 html jaspar.html
 
+track cpgIsland
+shortLabel CpG Islands
+longLabel CpG Islands (Islands < 300 Bases are Light Green)
+group regulation
+visibility hide
+color 0,100,0
+altColor 128,228,128
+type bigBed 4 +
+priority 4
+bigDataUrl t2t-chm13-v1.0.cpgIslandExt.bb
+
+
 
 include encode_macs2.trackDb.txt 

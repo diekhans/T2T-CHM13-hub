@@ -902,6 +902,17 @@ ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../
 mkdir  ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
 ln -f consensus_gene_set/* ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
 
+
+* CpG islands:
+cd cpgIslands
+
+# this fails and only does hardmasked anyway
+##doCpgIslands.pl -stop makeBed -buildDir /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/cpgIslands -maskedSeq /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit  -chromSizes /hive/users/markd/nanopore/projs/t2t-chm13/build/t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes t2t-chm13-v1.0 >&log&
+
+
+twoBitToFa ../genome/t2t-chm13-v1.0.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
+./my-doMakeBed.csh 
+ln t2t-chm13-v1.0.cpgIslandExt.bb ../../../hub/t2t-chm13-v1.0/
 * to-do
 ** finish lastz
 

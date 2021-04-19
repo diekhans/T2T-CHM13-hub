@@ -807,7 +807,7 @@ ln -f liftOffV2.bigGenePred  ../../../hub/t2t-chm13-v1.0/liftOffV2/
 gencode v35
 
 * proSeqSplitStrands
-2021-03-17 Savannah
+** 2021-03-17 Savannah
 /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_split-strands/
 
 ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands/
@@ -820,7 +820,13 @@ IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq
 
 ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands/
 
+* proSeqSplitStrands2
+** 2021-04-19 update from Savannah
+All 16 files are here: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/PROseq/
+They are strand-separated so I included the color and altColor in the trackDB.
+ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands2/
 
+# replaces previous proSeqSplitStrands 
 
 * rmskV2 new repeat master
 2021-03-19 Savannah
@@ -913,6 +919,7 @@ cd cpgIslands
 twoBitToFa ../genome/t2t-chm13-v1.0.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
 ./my-doMakeBed.csh 
 ln t2t-chm13-v1.0.cpgIslandExt.bb ../../../hub/t2t-chm13-v1.0/
+
 * to-do
 ** finish lastz
 

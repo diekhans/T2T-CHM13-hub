@@ -1,0 +1,93 @@
+track readCoverage
+superTrack on hide
+shortLabel HifI/ONT read coverage
+longLabel  HifI/ONT read coverage
+visibility hide
+priority 30
+type bigWig
+group map
+html readCoverage.html
+
+    track readCoverageHiFi
+    container multiWig
+    noInherit on
+    parent readCoverage
+    shortLabel HiFi coverage
+    longLabel HiFi read coverage
+    aggregate transparentOverlay
+    type bigWig
+    showSubtrackColorOnUi on
+    maxHeightPixels 70:70:8
+    visibility full
+    priority 1
+    group map
+    html readCoverage.html
+
+        track readCoverageHiFiPri
+        parent readCoverageHiFi
+        bigDataUrl readCoverage/hifi.pri.cov.bigWig
+        shortLabel HiFi Pri coverage
+        longLabel HiFi Primary read coverage
+        color 255,182,193
+        type bigWig 0 70
+        maxHeightPixels 70:70:8
+        visibility full
+        priority 1.1
+        group map
+        html readCoverage.html
+
+        track readCoverageHiFiMarker
+        parent readCoverageHiFi
+        bigDataUrl readCoverage/hifi_markersandlength.cov.bigWig
+        shortLabel HiFi marker assist coverage
+        longLabel  HiFi marker assisted read coverage
+        color 240,128,128
+        type bigWig 0 70
+        maxHeightPixels 70:70:8
+        visibility full
+        priority 1.2
+        group map
+        html readCoverage.html
+
+    track readCoverageONT
+    container multiWig
+    noInherit on
+    parent readCoverage
+    shortLabel ONT coverage
+    longLabel  ONT read coverage
+    aggregate transparentOverlay
+    showSubtrackColorOnUi on
+    type bigWig
+    maxHeightPixels 200:200:8
+    visibility full
+    priority 2
+    group map
+    html readCoverage.html
+
+        track readCoverageONTPri
+        parent readCoverageONT
+        bigDataUrl readCoverage/ont.pri.len1k_idy85.cov.bigWig
+        shortLabel ONT Pri coverage
+        longLabel  ONT Primary read coverage
+        color 173,216,230
+        type bigWig 0 200
+        maxHeightPixels 70:200:8
+        visibility full
+        priority 2.1
+        group map
+        html readCoverage.html
+
+        track readCoverageONTMarker
+        parent readCoverageONT
+        bigDataUrl readCoverage/ont.markersandlength.cov.bigWig
+        shortLabel ONT marker assist coverage
+        longLabel  ONT marker assisted read coverage
+        color 100,149,237
+        type bigWig 0 200
+        maxHeightPixels 70:200:8
+        visibility full
+        priority 2.1
+        group map
+        html readCoverage.html
+
+

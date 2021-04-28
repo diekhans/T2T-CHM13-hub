@@ -828,6 +828,14 @@ ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/proSeqSplitStrands2/
 
 # replaces previous proSeqSplitStrands 
 
+* rnaSeqKmerFilt2
+** 2021-04-19 update from Savannah
+
+/team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/RNAseq/
+
+ln -f *.bigwig ../../../hub/t2t-chm13-v1.0/rnaSeqKmerFilt2/
+# replaces proSeq_F3852.trackDb.txt
+
 * rmskV2 new repeat master
 2021-03-19 Savannah
 /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
@@ -919,6 +927,20 @@ cd cpgIslands
 twoBitToFa ../genome/t2t-chm13-v1.0.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
 ./my-doMakeBed.csh 
 ln t2t-chm13-v1.0.cpgIslandExt.bb ../../../hub/t2t-chm13-v1.0/
+
+
+* readCoverage
+2021-04-20 Arang Rhie
+team-curation/tracks/v1/coverage/*.wig has the wig files. There are pri and markerandlength wig files for hifi and ont.
+for f in *.wig ; do wigToBigWig -clip $f ../genome/t2t-chm13-v1.0.sizes $(basename $f .wig).bigWig ; done
+ln -f *.bigWig ../../../hub/t2t-chm13-v1.0/readCoverage/
+
+and set the track height max to 70 for hifi, 200 for ONT?
+
+HiFi Pri: lightpink 255,182,193
+HiFi Marker: lightcoral 240,128,128
+ONT Pri: lightblue 173,216,230
+ONT Marker: cornflowerblue 100,149,237
 
 * to-do
 ** finish lastz

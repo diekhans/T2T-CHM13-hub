@@ -1,0 +1,81 @@
+track RNAseq_BT2-k100
+compositeTrack off
+shortLabel RNAseq_bt2-100_kmerFilt
+longLabel CHM13 RNAseq Bowtie2-k100 mapped and unique genome-wide kmer filtering
+visibility hide
+priority 30
+type bigWig
+group rna
+html rnaSeqKmerFilt2.html
+    
+    track RNAseq-A
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/CHM13_1_S182_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-A bt2-k100
+    longLabel RNAseq-A bt2-k100 no kmer filtering
+    type bigWig 
+    visibility dense
+        
+    track RNAseq-B
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/CHM13_2_S183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-B bt2-k100
+    longLabel RNAseq-B bt2-k100 no kmer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-A_21mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-A bt2-k100 21mer-filt
+    longLabel RNAseq-A bt2-k100 unique genome-wide 21mer filtering 
+    type bigWig    
+    visibility dense
+
+    track RNAseq-B_21mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-B bt2-k100 21mer-filt
+    longLabel RNAseq-B bt2-k100 unique genome-wide 21mer filtering 
+    type bigWig
+    visibility dense
+
+    track RNAseq-A_51mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_1_S182_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-A bt2-k100 51mer-filt
+    longLabel RNAseq-A bt2-k100 unique genome-wide 51mer filtering 
+    type bigWig
+    visibility dense
+
+    track RNAseq-B_51mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_2_S183_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-B bt2-k100 51mer-filt
+    longLabel RNAseq-B bt2-k100 unique genome-wide 51mer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-AB
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/CHM13_S182-183_RNAseq_cutadapt-m100_bt2-vs-filtered_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-AB bt2-k100 
+    longLabel RNAseq-AB bt2-k100 no kmer filtering
+    type bigWig
+    visibility dense
+
+    track RNAseq-AB_21mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13_S182-183_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-AB bt2-k100 21mer-filt
+    longLabel RNAseq-AB bt2-k100 unique genome-wide 21mer filtering
+    type bigWig
+    visibility dense
+    
+    track RNAseq-AB_51mer-filt
+    parent RNAseq_BT2-k100
+    bigDataUrl rnaSeqKmerFilt2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_S182-183_RNAseq_cutadapt-m100_bt2-k100-chm13-20200922_F1548.bigwig
+    shortLabel RNAseq-AB bt2-k100 51mer-filt
+    longLabel RNAseq-AB bt2-k100 unique genome-wide 51mer filtering
+    type bigWig
+    visibility dense

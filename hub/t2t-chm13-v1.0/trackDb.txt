@@ -88,6 +88,7 @@ type bigBed 4
 bigDataUrl illuminaMarkerDeserts.bigBed
 
 include low_coverage.trackDb.txt
+include readCoverage.trackDb.txt
 
 ##
 # varRep
@@ -379,10 +380,8 @@ html synteny.html
 ##
 # Expression/transcription/rna
 ##
-include proSeq.trackDb.txt
-include proSeq_F3852.trackDb.txt
-# replaced by below:
-#   include proSeqSplitStrands.trackDb.txt
+#include proSeq.trackDb.txt
+include rnaSeqKmerFilt2.trackDb.txt
 include proSeqSplitStrands2.trackDb.txt
 include cutnrun.trackDb.txt
 include cutnrun-losalt.trackDb.txt

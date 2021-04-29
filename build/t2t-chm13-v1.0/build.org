@@ -942,6 +942,19 @@ HiFi Marker: lightcoral 240,128,128
 ONT Pri: lightblue 173,216,230
 ONT Marker: cornflowerblue 100,149,237
 
+
+* low-coverage2
+Arang Rhie
+Can we retire the Low support tracks, and replace this to https://github.com/marbl/CHM13-issues/blob/main/v1.0/hifi.pri.issues.bed
+The description.html is here: https://github.com/marbl/CHM13-issues/blob/main/description.html
+
+** download
+hifi.pri.clipped.bed
+hifi.pri.issues.bed
+ont.pri.len1k_idy85.clipped.bed
+ont.pri.len1k_idy85.issues.bed
+for f in *.gz ; do buildBigBed bed9 t2t-chm13-v1.0 $(basename $f .bed.gz).bigBed $f ; done
+ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage2/
 * to-do
 ** finish lastz
 

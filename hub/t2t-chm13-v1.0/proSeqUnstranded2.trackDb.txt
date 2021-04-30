@@ -1,0 +1,80 @@
+track proSeqUnstranded2
+compositeTrack off
+visibility hide
+shortLabel PROseq_bt2_kmerFilt_notStranded
+longLabel CHM13 PROseq Bowtie2 -k100 mapped and unique genome-wide kmer filtering notStranded
+type bigWig
+group rna
+priority 30
+
+    track PROseq-A
+    parent proSeqUnstranded2
+    shortLabel PROseq-A bt2
+    longLabel PROseq-A bt2 no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-B
+    parent proSeqUnstranded2
+    shortLabel PROseq-B bt2
+    longLabel PROseq-B bt2 no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-AB
+    parent proSeqUnstranded2
+    shortLabel PROseq-AB bt2
+    longLabel PROseq-AB bt2 no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/CHM13-5A-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+    
+    track PROseq-A_21mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-A bt2 21-mer
+    longLabel PROseq-A bt2 21-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-B_21mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-B bt2 21-mer
+    longLabel PROseq-B bt2 21-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-AB_21mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-AB bt2 21-mer
+    longLabel PROseq-AB bt2 21-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_21mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-A_51mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-A bt2 51-mer
+    longLabel PROseq-A bt2 51-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-B_51mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-B bt2 51-mer
+    longLabel PROseq-A bt2 51-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig
+
+    track PROseq-AB_51mer
+    parent proSeqUnstranded2
+    shortLabel PROseq-AB bt2 51-mer
+    longLabel PROseq-AB bt2 51-mer filtered
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqUnstranded2/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A-B_proseq_cutadapt-2_bt2-vs-filtered_bt2-k100-chm13-v1.bigwig

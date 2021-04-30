@@ -955,6 +955,13 @@ ont.pri.len1k_idy85.clipped.bed
 ont.pri.len1k_idy85.issues.bed
 for f in *.gz ; do buildBigBed bed9 t2t-chm13-v1.0 $(basename $f .bed.gz).bigBed $f ; done
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage2/
+
+*  proSeqUnstranded2
+from Savannah
+
+ /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/PROseq/Not_stranded/
+ln *.bigwig  ../../../hub/t2t-chm13-v1.0/proSeqUnstranded2/
+ 
 * to-do
 ** finish lastz
 

@@ -56,3 +56,13 @@ consistent with how Karen has separated the CutnRun data by DEC vs. FEB.
 -> cutnrun/dec
 
 find dec feb | cpio -pduml ../../../hub/HG002-X-v1.0/cutnrun/
+* rmskV2
+from Savannah
+
+/team-TE/Repeatmasker_polished-033121/Frankenstein_assembly/chm13-autosomes-chrM_hg002-chrX_hg38-chrY_track.bed
+
+zcat chm13-autosomes-chrM_hg002-chrX_hg38-chrY_track.bed.gz  | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | pigz -c >rmskV2.bed.gz
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/HG002-X-v1.0.2bit bed9+ t2t-chm13-v1.0 rmskV2.bigBed rmskV2.bed.gz
+mkdir ../../../hub/HG002-X-v1.0/rmskV2/
+ln -f rmskV2.bigBed ../../../hub/HG002-X-v1.0/rmskV2/
+

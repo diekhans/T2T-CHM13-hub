@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+from pycbio.sys import fileOps
 from pycbio.sys.color import Color
 from pycbio.sys.svgcolors import SvgColors
 from pycbio.hgdata.bed import BedReader
@@ -26,11 +27,9 @@ results match etc/rmskBed.as
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument("--info", action="store_true",
                         help="print colors and exit")
-    parser.add_argument('inBed', nargs='?', default=sys.stdin,
-                        type=argparse.FileType('r'),
+    parser.add_argument('inBed', nargs='?', default='/dev/stdin',
                         help="input BED file")
-    parser.add_argument('outBed', nargs='?', default=sys.stdout,
-                        type=argparse.FileType('w'),
+    parser.add_argument('outBed', nargs='?', default='/dev/stdout',
                         help="output BED file")
     return parser.parse_args()
 
@@ -185,8 +184,8 @@ def main(args):
     if args.info:
         printColors()
         return 0
-    for rec in BedReader(args.inBed, numStdCols=6):
-        editBedRec(rec).write(args.outBed)
-    args.outBed.close()
+    with fileOps.opengz(args.outBed, "w") as outFh:
+        for rec in BedReader(args.inBed, numStdCols=6):
+            editBedRec(rec).write(outFh)
 
 main(parseArgs())

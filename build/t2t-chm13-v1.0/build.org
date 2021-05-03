@@ -864,8 +864,8 @@ team-TE/Repeatmasker_polished-033121/chm13v1_polish-033121_track.bed
 
 # one bad record with spaces, fix with sed
 zcat chm13v1_polish-033121_track.bed.gz | sed -e 's/chr10   27055808 /chr10\t27055808/' | ../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | pigz -c >rmskV2.bed.gz
-buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmskV2.bigBed rmskV2.bed.gz
-ln -f rmskV2.bigBed ../../../hub/t2t-chm13-v1.0/rmskV2/
+buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/HG002-X-v1.0.unmasked.2bit bed9+ HG002-X-v1.0 rmskV2.bigBed rmskV2.bed.gz
+ln -f rmskV2.bigBed ../../../hub/HG002-X-v1.0/rmskV2/
 
 
 * CAT_V2

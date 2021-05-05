@@ -367,6 +367,10 @@ cd gap
 ../../../T2T-CHM13-hub/bin/faToGapBed ../genome/t2t-chm13-v1.0.fa.gz gap.bed
 buildBigBed bed3 t2t-chm13-v1.0 gap.bigBed gap.bed
 ln -f gap.bigBed  ../../../hub/t2t-chm13-v1.0
+** 2021-05-03
+# edit file to add name rDNA
+buildBigBed bed4 t2t-chm13-v1.0 gap.bigBed gap.bed
+ln -f gap.bigBed  ../../../hub/t2t-chm13-v1.0
 
 * crispr
 cd crispr
@@ -930,7 +934,7 @@ ln t2t-chm13-v1.0.cpgIslandExt.bb ../../../hub/t2t-chm13-v1.0/
 
 
 * readCoverage
-2021-04-20 Arang Rhie
+** 2021-04-20 Arang Rhie
 team-curation/tracks/v1/coverage/*.wig has the wig files. There are pri and markerandlength wig files for hifi and ont.
 for f in *.wig ; do wigToBigWig -clip $f ../genome/t2t-chm13-v1.0.sizes $(basename $f .wig).bigWig ; done
 ln -f *.bigWig ../../../hub/t2t-chm13-v1.0/readCoverage/
@@ -942,6 +946,9 @@ HiFi Marker: lightcoral 240,128,128
 ONT Pri: lightblue 173,216,230
 ONT Marker: cornflowerblue 100,149,237
 
+** Arang Rhie
+I realized the marker assisted mapping had dropped the chrX! 
+team-curation/tracks/v1/coverage/*.markersandlength.cov.wig
 
 * low-coverage2
 Arang Rhie
@@ -961,7 +968,7 @@ from Savannah
 
  /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/PROseq/Not_stranded/
 ln *.bigwig  ../../../hub/t2t-chm13-v1.0/proSeqUnstranded2/
- 
+
 * to-do
 ** finish lastz
 
@@ -1002,3 +1009,5 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 
 ** Karen do you have a self-alignment track for CHM13v1
 
+* @MarkD I realized the marker assisted mapping had dropped the chrX! :see_no_evil: I've updated the .wig files on globus:
+team-curation/tracks/v1/coverage/*.markersandlength.cov.wig

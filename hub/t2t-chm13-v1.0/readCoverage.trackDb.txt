@@ -38,7 +38,7 @@ html readCoverage.html
 
         track readCoverageHiFiMarker
         parent readCoverageHiFi
-        bigDataUrl readCoverage/hifi_markersandlength.cov.bigWig
+        bigDataUrl readCoverage/hifi.markersandlength.cov.bigWig
         shortLabel HiFi marker assist coverage
         longLabel  HiFi marker assisted read coverage
         color 240,128,128

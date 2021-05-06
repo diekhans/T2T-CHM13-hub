@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import argparse
+from pycbio.sys import fileOps
+from pycbio.tsv import TabFileReader
+from pycbio.hgdata.psl import Psl, PslBlock
+
+def parseArgs():
+    usage = """make PSL with one-to-one mappings of identical chromsomes"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--skipChrom', action="append", default=[],
+                        help="skip chromosomes, maybe repeated")
+    parser.add_argument('chromSizes')
+    parser.add_argument('pslOut')
+    return parser.parse_args()
+
+
+def loadSizes(chromSizes):
+    return [(r[0], int(r[1])) for r in TabFileReader(chromSizes)]
+
+def buildPsl(chrom, size):
+    p = Psl(qName=chrom, qSize=size, qStart=0, qEnd=size,
+            tName=chrom, tSize=size, tStart=0, tEnd=size, strand='+')
+    p.addBlock(PslBlock(0, 0, size))
+    p.match = size
+    return p
+
+def buildPsls(skipChroms, chromSizes):
+    return [buildPsl(cs[0], cs[1]) for cs in chromSizes
+            if cs[0] not in skipChroms]
+
+def main(args):
+    chromSizes = loadSizes(args.chromSizes)
+    psls = buildPsls(set(args.skipChrom), chromSizes)
+    with open(args.pslOut, 'w') as fh:
+        for psl in psls:
+            psl.write(fh)
+
+main(parseArgs())

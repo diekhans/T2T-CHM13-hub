@@ -920,6 +920,19 @@ ln -f assemblyHub/CHM13/*.bam assemblyHub/CHM13/*.bai assemblyHub/CHM13/*.bb ../
 mkdir  ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
 ln -f consensus_gene_set/* ../../../hub/t2t-chm13-v1.0/CAT_V3/consensus_gene_set/
 
+* CAT_V4
+
+mkdir -p assemblyHub/CHM13 assemblyHub/GRCh38/
+
+ln -f ../CAT_V3/assemblyHub/CHM13/* assemblyHub/CHM13/
+rm assemblyHub/CHM13/CHM13.combined.v3.bb 
+ln -f consensus_gene_set/CHM13.combined.v4.bb assemblyHub/CHM13/
+ln -f ../CAT/assemblyHub/GRCh38/* assemblyHub/GRCh38/
+
+mkdir -p  ../../../hub/t2t-chm13-v1.0/CAT_V4/
+ln -f assemblyHub/CHM13/*  ../../../hub/t2t-chm13-v1.0/CAT_V4/
+find consensus_gene_set | cpio -pduml ../../../hub/t2t-chm13-v1.0/CAT_V4
+
 
 * CpG islands:
 cd cpgIslands
@@ -946,7 +959,7 @@ HiFi Marker: lightcoral 240,128,128
 ONT Pri: lightblue 173,216,230
 ONT Marker: cornflowerblue 100,149,237
 
-** Arang Rhie
+** 2021-05-05 Arang Rhie
 I realized the marker assisted mapping had dropped the chrX! 
 team-curation/tracks/v1/coverage/*.markersandlength.cov.wig
 

@@ -1,0 +1,24 @@
+track proSeqDefault
+compositeTrack off
+visibility hide
+shortLabel PROseq_bt2-default_kmerFilt_notStranded
+longLabel CHM13 PROseq Bowtie2 default mapped and unique genome-wide kmer filtering notStranded
+type bigWig
+group rna
+priority 30
+
+    track PROseqDefault-AB
+    parent proSeqDefault
+    shortLabel PROseq-AB bt2-dflt
+    longLabel PROseq-AB bt2 default no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqDefault/CHM13-5AB_proseq_cutadapt-2_bt2-vs-filtered_bt2-chm13-v1.bigwig
+
+    track PROseqDefault-AB_51mer
+    parent proSeqDefault
+    shortLabel PROseq-AB dflt 51mer
+    longLabel PROseq-AB bt2 51mer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl proSeqDefault/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5AB_proseq_cutadapt-2_bt2-vs-filtered_bt2-default-chm13-v1.bigwig

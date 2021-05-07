@@ -933,6 +933,8 @@ mkdir -p  ../../../hub/t2t-chm13-v1.0/CAT_V4/
 ln -f assemblyHub/CHM13/*  ../../../hub/t2t-chm13-v1.0/CAT_V4/
 find consensus_gene_set | cpio -pduml ../../../hub/t2t-chm13-v1.0/CAT_V4
 
+cd CAT_V4/frameShifts/
+../../../../gene-annotation/t2t-chm13-gene-analysis/bin/genePredFrameShifts --catMetaTsv=../consensus_gene_set/CHM13.combined.v4.gp_info.gz ../consensus_gene_set/CHM13.combined.v4.gp.gz CAT_V4.frameshifts.tsv CAT_V4.frameshifted.gp  CAT_V4.frameshifts.bed
 
 * CpG islands:
 cd cpgIslands
@@ -981,6 +983,9 @@ from Savannah
 
  /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/PROseq/Not_stranded/
 ln *.bigwig  ../../../hub/t2t-chm13-v1.0/proSeqUnstranded2/
+*  proSeqDefault
+from Savannah
+/team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_default/
 
 * to-do
 ** finish lastz
@@ -1022,5 +1027,4 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 
 ** Karen do you have a self-alignment track for CHM13v1
 
-* @MarkD I realized the marker assisted mapping had dropped the chrX! :see_no_evil: I've updated the .wig files on globus:
-team-curation/tracks/v1/coverage/*.markersandlength.cov.wig
+

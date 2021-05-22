@@ -1,0 +1,44 @@
+<h2>Description</h2>
+Transcript-level expression estimates (CHM13).
+<p></p>
+
+<h2>Methods</h2>
+TPM estimated using Salmon 1.3.0, CHM13 polyA RNA-seq (2 replicates combined), CHM13 v1.0 assembly, and CAT v4 + liftOff annotation.
+<p></p>
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+Colored according to log2(TPM + 1e-6) in the following intervals:<br>
+<ul>
+  <li>Dark blue: (-19.97,-14.54]</li>
+  <li>Medium blue: (-14.54,-9.15]</li>
+  <li>Light blue: (-9.15,-3.76]</li>
+  <li>Gray: (-3.76,1.63]</li>
+  <li>Light red: (1.63,7.02]</li>
+  <li>Medium red: (7.02,12.41]</li>
+  <li>Red: (12.41,17.84]</li>
+</ul><br>
+The value of each feature corresponds to the raw TPM, rounded to the nearest integer and truncated at 1000 (BED convention).
+<p></p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+Transcript- and gene-level TPM tables can be found on Globus here:<br>
+9db1f0a6-a05a-11ea-8f06-0a21f750d19b:team-epigenetics/chm13_rnaseq/salmon_quant/CHM13.CATv4.quant.sf
+9db1f0a6-a05a-11ea-8f06-0a21f750d19b:team-epigenetics/chm13_rnaseq/CHM13.CATv4.allTPM.tsv
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li>21 May 2021: track created
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:cshewr@ucdavis.edu">Colin Shew &lt;cshew@ucdavis.edu&gt;</a>
+</ul>
+<h2>Credits</h2>
+Raw data generated at UC Davis (Megan Dennis Lab).
+<p></p>

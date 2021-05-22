@@ -390,15 +390,15 @@ include cutnrun.trackDb.txt
 include cutnrun-losalt.trackDb.txt
 include cutnrun-kmer-enrichment.txt
 
-track salmonQuant 
+track salmonQuantV4
 shortLabel Salmon expression
-longLabel Salmon Transcript-level expression estimates
+longLabel Salmon Transcript-level expression estimates (CAT V4)
 group rna
 visibility hide
 itemRgb on
 maxItems 100000
 type bigBed 12
-bigDataUrl chm13.CATv1.salmonQuant.bb
+bigDataUrl CHM13.CATv4.salmonQuant.bb
 priority 8
 
 

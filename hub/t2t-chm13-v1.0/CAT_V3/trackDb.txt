@@ -6,7 +6,7 @@ group genes
 visibility hide
 shortLabel CAT Evidence V3
 longLabel CAT Gene Annotation Evidence V3
-priority 1.1
+priority 400.1
 html CAT_V3/catEvidence.html
 
 include isoseq_bams.txt

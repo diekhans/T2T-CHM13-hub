@@ -5,7 +5,7 @@ description CAT Gene + LiftOff Annotations V3
 type bigGenePred
 group genes
 itemRgb on
-priority 1
+priority 400
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 bigDataUrl CAT_V3/CHM13.combined.v3.bb

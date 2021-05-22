@@ -273,7 +273,7 @@ shortLabel LiftOff Genes V1
 longLabel  LiftOff Genes Annotations V1 based on GENCODE
 type bigGenePred
 group genes
-priority 11
+priority 800
 
     track liftOffGenesAll
     parent liftOffGenes on

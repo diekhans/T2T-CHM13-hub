@@ -1012,8 +1012,9 @@ ln -f ../proSeqUnstranded2/* .
 
 mkdir -p ../../../hub/t2t-chm13-v1.0/proSeq3
 ln -f * ../../../hub/t2t-chm13-v1.0/proSeq3/
-* proSeqDefault3
-** Savannah: 
+* proSeqDefault
+
+** Savannah:
 I’d like to add more tracks to this superset PROseq_bt2-default_kmerFilt_notStranded. 
 
 This will essentially be the same thing as the merged superset in (proSeq3), but
@@ -1026,7 +1027,8 @@ Can rename to: PROseq_bt2-default_kmerFilt
 
 add ones from /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_default
 
-
+** update existing directory and tracks
+ln -f * ../../../dev/t2t-chm13-v1.0/proSeqDefault/
 
 * rnaSeq3
 ** Savannah Finishing up the the last superset to be added, which will be RNAseq (none of which is stranded)

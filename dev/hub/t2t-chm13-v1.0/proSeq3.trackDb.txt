@@ -1,7 +1,7 @@
 track proSeq3
 compositeTrack off
-shortLabel PROseq_bt2_kmerFilt_split-strands
-longLabel CHM13 PROseq Bowtie2 -k100 mapped and unique genome-wide kmer filtering
+shortLabel PROseq_bt2-k100-kmerFilt
+longLabel CHM13 PROseq Bowtie2 k100 mapped and unique genome-wide kmer filtering
 visibility hide
 priority 30
 type bigWig

@@ -1,5 +1,5 @@
 
-hubDir = ../../../hub
+hubDir = ../../../dev
 
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/dev/hub.txt
 t2tUrl = https://t2t.gi.ucsc.edu/chm13/dev/hub.txt
@@ -39,6 +39,6 @@ sync: sync-t2t
 # progress = --progress
 sync-t2t: ${srcs:%=${hubDir}/%}
 	${hgwdev_check}
-	cd ../.. && rsync -v -aH --partial ${progress} --no-owner --no-group hub t2t.gi.ucsc.edu:/data/chm13
+	cd ../../.. && rsync -v -aH --partial ${progress} --no-owner --no-group dev/ t2t.gi.ucsc.edu:/data/chm13/dev/
 	@rm -rf ${t2t_udc_dir}
 	hubCheck -udcDir=${t2t_udc_dir} ${t2tUrl}

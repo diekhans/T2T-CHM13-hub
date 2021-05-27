@@ -63,16 +63,16 @@ priority 30
     
     track PROseq-A_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-AB bt2 default no kmer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 default no kmer filtering
     type bigWig 
     visibility dense
     bigDataUrl proSeqDefault/CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-chm13-v1.bigwig
 
     track PROseq-A_POS_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-AB bt2 default no kmer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 default no kmer filtering
     type bigWig 
     visibility dense
     negateValues off
@@ -80,8 +80,8 @@ priority 30
 
     track PROseq-A_NEG_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-AB bt2 default no kmer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 default no kmer filtering
     type bigWig 
     visibility dense
     negateValues on
@@ -89,16 +89,16 @@ priority 30
 
     track PROseq-A_51mer_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-B bt2 51mer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 51mer filtering
     type bigWig 
     visibility dense
     bigDataUrl proSeqDefault/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5A_proseq_cutadapt-2_bt2-vs-filtered_bt2-default-chm13-v1.bigwig
     
     track PROseq-A_51mer_POS_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-B bt2 51mer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 51mer filtering
     type bigWig 
     visibility dense
     negateValues off
@@ -106,8 +106,8 @@ priority 30
 
     track PROseq-A_51mer_NEG_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-B bt2 51mer filtering
+    shortLabel PROseq-A bt2-dflt
+    longLabel PROseq-A bt2 51mer filtering
     type bigWig 
     visibility dense
     negateValues on
@@ -115,16 +115,16 @@ priority 30
 
     track PROseq-B_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
-    longLabel PROseq-AB bt2 default no kmer filtering
+    shortLabel PROseq-B bt2-dflt
+    longLabel PROseq-B bt2 default no kmer filtering
     type bigWig 
     visibility dense
     bigDataUrl proSeqDefault/CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-chm13-v1.bigwig
     
     track PROseq-B_POS_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt POS
-    longLabel PROseq-AB bt2 default no kmer filtering POS
+    shortLabel PROseq-B bt2-dflt POS
+    longLabel PROseq-B bt2 default no kmer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -132,8 +132,8 @@ priority 30
     
     track PROseq-B_NEG_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt NEG
-    longLabel PROseq-AB bt2 default no kmer filtering NEG
+    shortLabel PROseq-B bt2-dflt NEG
+    longLabel PROseq-B bt2 default no kmer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -141,7 +141,7 @@ priority 30
 
     track PROseq-B_51mer_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt
+    shortLabel PROseq-B bt2-dflt
     longLabel PROseq-B bt2 51mer filtering
     type bigWig 
     visibility dense
@@ -149,7 +149,7 @@ priority 30
     
     track PROseq-B_51mer_POS_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt POS
+    shortLabel PROseq-B bt2-dflt POS
     longLabel PROseq-B bt2 51mer filtering POS
     type bigWig 
     visibility dense
@@ -158,9 +158,10 @@ priority 30
 
     track PROseq-B_51mer_NEG_dflt
     parent proSeqDefault
-    shortLabel PROseq-AB bt2-dflt NEG
+    shortLabel PROseq-B bt2-dflt NEG
     longLabel PROseq-B bt2 51mer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
     bigDataUrl proSeqDefault/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13-5B_proseq_cutadapt-2_bt2-vs-filtered_bt2-default-chm13-v1_NEG.bigwig
+

@@ -984,16 +984,56 @@ ont.pri.len1k_idy85.issues.bed
 for f in *.gz ; do buildBigBed bed9 t2t-chm13-v1.0 $(basename $f .bed.gz).bigBed $f ; done
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage2/
 
-*  proSeqUnstranded2
+* proSeqUnstranded2
 from Savannah
 
  /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_k100/PROseq/Not_stranded/
 ln *.bigwig  ../../../hub/t2t-chm13-v1.0/proSeqUnstranded2/
-*  proSeqDefault
+* proSeqDefault
 from Savannah
 /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_default/
 ln -f *.bigwig  ../../../hub/t2t-chm13-v1.0/proSeqDefault
 
+* proSeq3 update and merge
+
+** Savannah: If so, I’d like to combine PROseq_bt2_kmerFilt_notStranded and PROseq_bt2_kmerFilt_split-strands. 
+Keeping all tracks,
+but still retaining the blue/red colors for the split stranded ones and black for the notStranded (if you can do that). Can call it: PROseq_bt2-k100_kmerFilt
+combine these:
+
+PROseq_bt2_kmerFilt_split-strands
+PROseq_bt2_kmerFilt_notStranded
+
+
+** build track
+# link in existing datafiles
+ln -f ../proSeqSplitStrands2/* .
+ln -f ../proSeqUnstranded2/* .
+
+mkdir -p ../../../hub/t2t-chm13-v1.0/proSeq3
+ln -f * ../../../hub/t2t-chm13-v1.0/proSeq3/
+* proSeqDefault3
+** Savannah: 
+I’d like to add more tracks to this superset PROseq_bt2-default_kmerFilt_notStranded. 
+
+This will essentially be the same thing as the merged superset in (proSeq3), but
+with different mapping parameters and will also include a mix of stranded
+(red/blue colored) and not stranded (black).
+
+I’ve attached the track database and description.html for this. 
+All files are here: /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_default/ 
+Can rename to: PROseq_bt2-default_kmerFilt
+
+add ones from /team-epigenetics/20200922-v1.0_chm13_PROseq/Bowtie2_default
+
+
+
+* rnaSeq3
+** Savannah Finishing up the the last superset to be added, which will be RNAseq (none of which is stranded)
+
+All files are here: /team-epigenetics/20200922-v1.0_chm13_PROseq/CHM13_RNAseq_analysis/Bowtie2_default/
+Can call this:  RNAseq_bt2-default_kmerFilt
+No special coloring here. All black tracks.
 
 * to-do
 ** finish lastz

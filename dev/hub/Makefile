@@ -1,15 +1,10 @@
 
-hubDir = ../../hub
+hubDir = ../../../hub
 
-hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-courtyardUrl = https://courtyard.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
-t2tUrl = https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
+hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/dev/hub.txt
+t2tUrl = https://t2t.gi.ucsc.edu/chm13/dev/hub.txt
 
-ifeq ($(shell hostname),hgwdev)
 localUrl = ${hgwdevUrl}
-else
-localUrl = ${courtyardUrl}
-endif
 
 assemblies = HG002-X-v1.0 t2tChm13_20200727 t2t-chm13-v1.0 GRCh38
 # t2tChm13_20200602 t2tChm13_20200611

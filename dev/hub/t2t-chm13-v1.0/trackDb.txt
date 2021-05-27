@@ -381,10 +381,8 @@ html synteny.html
 ##
 # Expression/transcription/rna
 ##
-#include proSeq.trackDb.txt
 include rnaSeqKmerFilt2.trackDb.txt
-include proSeqSplitStrands2.trackDb.txt
-include proSeqUnstranded2.trackDb.txt
+include proSeq3.trackDb.txt
 include proSeqDefault.trackDb.txt
 include cutnrun.trackDb.txt
 include cutnrun-losalt.trackDb.txt

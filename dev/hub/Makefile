@@ -6,7 +6,8 @@ t2tUrl = https://t2t.gi.ucsc.edu/chm13/dev/hub.txt
 
 localUrl = ${hgwdevUrl}
 
-assemblies = HG002-X-v1.0 t2tChm13_20200727 t2t-chm13-v1.0 GRCh38
+assemblies = HG002-X-v1.0 t2t-chm13-v1.0 GRCh38
+# t2tChm13_20200727
 # t2tChm13_20200602 t2tChm13_20200611
 
 

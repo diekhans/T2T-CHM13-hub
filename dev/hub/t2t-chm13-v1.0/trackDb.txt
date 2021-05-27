@@ -190,61 +190,61 @@ type bigBed 9 +
 bigDataUrl cenSatAnnotation.bigBed
 priority 2
 
-track hors
-shortLabel HORs annotation
-longLabel Centromere HORs annotation
-group cenTelo
-visibility hide
-itemRgb on
-maxItems 100000
-type bigBed 9
-bigDataUrl hors.bigBed
-priority 5
-
-track superHors
-shortLabel Super HORs annotation
-longLabel Centromere Super HORs annotation
-group cenTelo
-visibility hide
-itemRgb on
-maxItems 100000
-type bigBed 9
-bigDataUrl superHors.bigBed
-priority 6
-
-track AS_HOR_Annot
-shortLabel AS HOR annotation
-longLabel Alpha satellite higher-order repeats annotation
-group cenTelo
-visibility hide
-type bigBed 9
-itemRgb on
-maxItems 100000
-bigDataUrl as_annotation/AS_HOR_Annot.bigBed
-priority 10
-
-track AS_SF_Annot
-shortLabel AS SF annotation
-longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
-group cenTelo
-visibility hide
-type bigBed 9
-itemRgb on
-maxItems 100000
-bigDataUrl as_annotation/AS_SF_Annot.bigBed
-priority 11
-
-track AS_strand
-shortLabel AS strand
-longLabel alpha satellite higher-order repeats strand orientation
-group cenTelo
-visibility hide
-type bigBed 9
-itemRgb on
-maxItems 100000
-bigDataUrl as_annotation/AS_strand.bigBed
-priority 12
-
+# track hors
+# shortLabel HORs annotation
+# longLabel Centromere HORs annotation
+# group cenTelo
+# visibility hide
+# itemRgb on
+# maxItems 100000
+# type bigBed 9
+# bigDataUrl hors.bigBed
+# priority 5
+# 
+# track superHors
+# shortLabel Super HORs annotation
+# longLabel Centromere Super HORs annotation
+# group cenTelo
+# visibility hide
+# itemRgb on
+# maxItems 100000
+# type bigBed 9
+# bigDataUrl superHors.bigBed
+# priority 6
+# 
+# track AS_HOR_Annot
+# shortLabel AS HOR annotation
+# longLabel Alpha satellite higher-order repeats annotation
+# group cenTelo
+# visibility hide
+# type bigBed 9
+# itemRgb on
+# maxItems 100000
+# bigDataUrl as_annotation/AS_HOR_Annot.bigBed
+# priority 10
+# 
+# track AS_SF_Annot
+# shortLabel AS SF annotation
+# longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
+# group cenTelo
+# visibility hide
+# type bigBed 9
+# itemRgb on
+# maxItems 100000
+# bigDataUrl as_annotation/AS_SF_Annot.bigBed
+# priority 11
+# 
+# track AS_strand
+# shortLabel AS strand
+# longLabel alpha satellite higher-order repeats strand orientation
+# group cenTelo
+# visibility hide
+# type bigBed 9
+# itemRgb on
+# maxItems 100000
+# bigDataUrl as_annotation/AS_strand.bigBed
+# priority 12
+# 
 
 ##
 # genes
@@ -384,9 +384,9 @@ html synteny.html
 include rnaSeqKmerFilt2.trackDb.txt
 include proSeq3.trackDb.txt
 include proSeqDefault.trackDb.txt
-include cutnrun.trackDb.txt
-include cutnrun-losalt.trackDb.txt
-include cutnrun-kmer-enrichment.txt
+#include cutnrun.trackDb.txt
+#include cutnrun-losalt.trackDb.txt
+#include cutnrun-kmer-enrichment.txt
 
 track salmonQuantV4
 shortLabel Salmon expression

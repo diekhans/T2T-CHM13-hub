@@ -9,7 +9,7 @@ bigDataUrl methylation/HG002_20kb_methylation_frequency.bigwig
 priority 2
 html empty.html
 
-include cutnrun.trackDb.txt
+#include cutnrun.trackDb.txt
 
 ##
 # varRep

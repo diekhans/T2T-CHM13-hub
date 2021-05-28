@@ -1037,6 +1037,8 @@ All files are here: /team-epigenetics/20200922-v1.0_chm13_PROseq/CHM13_RNAseq_an
 Can call this:  RNAseq_bt2-default_kmerFilt
 No special coloring here. All black tracks.
 
+mkdir ../../../dev/t2t-chm13-v1.0/rnaSeq3
+ln -f * ../../../dev/t2t-chm13-v1.0/rnaSeq3
 * to-do
 ** finish lastz
 

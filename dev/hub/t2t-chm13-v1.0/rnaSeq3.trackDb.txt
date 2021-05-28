@@ -7,7 +7,7 @@ type bigWig
 group rna
 priority 30
 
-    track RNAseq-AB
+    track RNAseq-AB_dflt
     parent rnaSeq3
     shortLabel RNAseq-AB bt2-dflt
     longLabel RNAseq-AB bt2 default no kmer filtering
@@ -15,7 +15,7 @@ priority 30
     visibility dense
     bigDataUrl rnaSeq3/CHM13_S182-S183_cutadapt-m100_chm13v1-BT2-F1548.bigwig
 
-    track RNAseq-AB_51mer
+    track RNAseq-AB_51mer_dflt
     parent rnaSeq3
     shortLabel RNAseq-AB bt2-dflt-51mer
     longLabel RNAseq-AB bt2 default 51mer filtering
@@ -23,7 +23,7 @@ priority 30
     visibility dense
     bigDataUrl rnaSeq3/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_S182-183_RNAseq_cutadapt-m100_bt2-chm13-20200922_F1548.bigwig
         
-    track RNAseq-A
+    track RNAseq-A_dflt
     parent rnaSeq3
     shortLabel RNAseq-A bt2-dflt
     longLabel RNAseq-A bt2 default no kmer filtering
@@ -31,7 +31,7 @@ priority 30
     visibility dense
     bigDataUrl rnaSeq3/CHM13_1_S182_cutadapt-m100_chm13v1-BT2-F1548.bigwig
 
-    track RNAseq-A_51mer
+    track RNAseq-A_51mer_dflt
     parent rnaSeq3
     shortLabel RNAseq-A bt2-dflt-51mer
     longLabel RNAseq-A bt2 default 51mer filtering
@@ -39,7 +39,7 @@ priority 30
     visibility dense
     bigDataUrl rnaSeq3/IlluminaPCRfree_20200922-assembly_51mers_single_mrg_meryl.over.CHM13_S182_RNAseq_cutadapt-m100_bt2-chm13-20200922_F1548.bigwig
 	
-    track RNAseq-B
+    track RNAseq-B_dflt
     parent rnaSeq3
     shortLabel RNAseq-B bt2-dflt
     longLabel RNAseq-B bt2 default no kmer filtering
@@ -47,7 +47,7 @@ priority 30
     visibility dense
     bigDataUrl rnaSeq3/CHM13_2_S183_cutadapt-m100_chm13v1-BT2-F1548.bigwig
 	
-    track RNAseq-B_51mer
+    track RNAseq-B_51mer_dflt
     parent rnaSeq3
     shortLabel RNAseq-B bt2-dflt-51mer
     longLabel RNAseq-B bt2 default 51mer filtering

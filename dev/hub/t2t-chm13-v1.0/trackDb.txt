@@ -384,6 +384,7 @@ html synteny.html
 include proSeq3.trackDb.txt
 include proSeqDefault.trackDb.txt
 include rnaSeq3.trackDb.txt
+include rnaSeqKmerFilt2.trackDb.txt
 #include cutnrun.trackDb.txt
 #include cutnrun-losalt.trackDb.txt
 #include cutnrun-kmer-enrichment.txt

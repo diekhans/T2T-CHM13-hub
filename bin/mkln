@@ -1,0 +1,17 @@
+#!/bin/bash
+# create target directory if it doesn't exist and hardlink files into it
+set -beEu -o pipefail
+
+if [ $# -lt 2 ] ; then
+    echo "wrong number of args: $0 file .. targetdir" >&2
+    exit 1
+fi
+targetdir=${@:$#} # last parameter
+parentdir=$(dirname $targetdir)
+if [ ! -d ${parentdir} ] ; then
+    echo "parent directory of target directory doesn't exist: ${parentdir} " >&/dev/stderr
+    exit 1
+fi
+
+mkdir -p $targetdir
+ln -f $@

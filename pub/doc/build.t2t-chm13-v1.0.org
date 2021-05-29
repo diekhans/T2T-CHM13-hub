@@ -4,12 +4,16 @@
 ==== t2t-chm13-v1.0 public browser hub ====
 * Info:
 ** URLs
-https://hgwdev.gi.ucsc.edu/~markd/t2t/T2T-CHM13/hub.txt
+https://hgwdev.gi.ucsc.edu/~markd/t2t/pub/hub.txt
+https://t2t.gi.ucsc.edu/chm13/pub/hub.txt
+
+- shared link
 https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
-** most tracks copied from initial (now dev) build and updated.  Instructions copied here for reference
+
+** most tracks copied from initial (now dev) build and updated.
 ** list of tracks to make public
 https://docs.google.com/document/d/1QmOwTN_ay8_6S-Lo9Clcj7gLZTLGnBxNMBrNN7rScO0/edit
-
+** build dir: projs/t2t-chm13/build/pub/t2t-chm13-v1.0
 * tracks to add (as of 2021-05-25T12:54:57-0700)
 ** Winnowmap alignments (v2.01): primary alignments
 *** HiFi (team-curation/alignments/20200921_v1.0/hifi/*.wig, med when multiple available) (SK has description)
@@ -79,25 +83,34 @@ need to clear with NCBI
 https://t2t-consortium.slack.com/archives/C014HC8NCLW/p1622058780104900?thread_ts=1621882203.094500&cid=C014HC8NCLW
 * Track build log
 * rmsk
-rmskv2 in dev browser
-2021-03-19 Savannah
-/team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
-# note, has C form - strand, that must be edits
+from Savannah /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
 
-(zcat chm13-v1_Repeatmasker_polish_031921_track_v2.bed.gz |../../../T2T-CHM13-hub/bin/editRepeatMaskerBed | bedSort stdin stdout | gzip -c >rmskV2.bed.gz )>&log
+** pub move, rename rmskV2* to rmsk
+ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/chm13v1_polish-033121_track.bed.gz .
+ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/rmskV2.bed.gz rmsk.bed.gz 
+ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/rmskV2.bigBed rmsk.bigBed 
 
-# checked for warnings, but did not update known defaults or colors
+ln -f rmsk.bigBed ../../../../pub/t2t-chm13-v1.0/rmsk/
+* trf
+from Mitchell Robert Vollger
+/team-segdups/Assembly_analysis/Masked/chm13.draft_v1.0_plus38Y_trf.bed
 
-buildBigBed  --as=../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.0.unmasked.2bit bed9+ t2t-chm13-v1.0 rmskV2.bigBed rmskV2.bed.gz
-ln -f rmskV2.bigBed ../../../hub/t2t-chm13-v1.0/rmskV2/
+** pub
+ln -f ../../../dev/t2t-chm13-v1.0/trf/trf.bigBed .
+ln -f trf.bigBed ../../../../pub/t2t-chm13-v1.0/trf/
+* genome
+** pub move
+note: was never updated to latest repeat masker; but leave as-is to match release
+ln -f ../../../dev/t2t-chm13-v1.0/genome/* .
 
+mkln t2t-chm13-v1.0.*  ../../../../pub/t2t-chm13-v1.0/genome/
+* gc5Base
+** pub move
+ln -f ../../../dev/t2t-chm13-v1.0/gc5Base/gc5Base.* .
+mkln gc5Base.bigWig  ../../../../pub/t2t-chm13-v1.0/gc5Base
 
-# BSR is different, fixed in code.
-V2 name                     BSR             
-Class of repeat             Beta
-Subclass repeat             Satellite
-
-V1 name                     BSR/Beta
-Class of repeat             Satellite
-Family of repeat            unknown
+* gap
+** pub move
+ln -f ../../../dev/t2t-chm13-v1.0/gap/* .
+mkln gap.bigBed  ../../../../pub/t2t-chm13-v1.0/gap
 

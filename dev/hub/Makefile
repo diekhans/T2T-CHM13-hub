@@ -37,9 +37,9 @@ endef
 
 sync: sync-t2t
 
-# progress = --progress
+# sync both pub and dev so identical files are synced
 sync-t2t: ${srcs:%=${hubDir}/%}
 	${hgwdev_check}
-	cd ../../.. && rsync -v -aH --partial ${progress} --no-owner --no-group dev/ t2t.gi.ucsc.edu:/data/chm13/dev/
+	cd ../../.. && rsync -v -aH --partial --no-owner --no-group dev pub t2t.gi.ucsc.edu:/data/chm13/
 	@rm -rf ${t2t_udc_dir}
 	hubCheck -udcDir=${t2t_udc_dir} ${t2tUrl}

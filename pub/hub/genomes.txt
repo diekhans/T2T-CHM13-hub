@@ -1,6 +1,6 @@
 genome t2t-chm13-v1.0
 trackDb t2t-chm13-v1.0/trackDb.txt
-groups t2t-chm13-v1.0/groups.txt
+groups groups.txt
 description T2T CHM13 (v1.0)
 twoBitPath t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit
 organism CHM13 Homo sapiens
@@ -11,44 +11,4 @@ blat blatx.soe.ucsc.edu 17881
 transBlat blatx.soe.ucsc.edu 17880
 isPcr blatx.soe.ucsc.edu 17881
 priority 8.0
-
-genome HG002-X-v1.0
-trackDb HG002-X-v1.0/trackDb.txt
-groups HG002-X-v1.0/groups.txt
-description CHM13 + HG002-X + hg38-Y
-twoBitPath HG002-X-v1.0/genome/HG002-X-v1.0.2bit
-organism  CHM13+HG002+hg38 Frankenstein
-defaultPos chr3:90,755,737-90,789,938
-scientificName Homo sapiens
-htmlPath HG002-X-v1.0/description.html
-blat blatx.soe.ucsc.edu 17881
-#transBlat blatx.soe.ucsc.edu 17880
-#isPcr blatx.soe.ucsc.edu 17881
-priority 9.0
-
-genome t2tChm13_20200727
-trackDb t2tChm13_20200727/trackDb.txt
-groups t2tChm13_20200727/groups.txt
-description T2T CHM13 (20200727)
-twoBitPath t2tChm13_20200727/t2tChm13_20200727.2bit
-organism CHM13 Homo sapiens
-defaultPos chr3:90,755,737-90,789,938
-scientificName Homo sapiens
-htmlPath t2tChm13_20200727/description.html
-blat blatx.soe.ucsc.edu 17879
-transBlat blatx.soe.ucsc.edu 17878
-isPcr blatx.soe.ucsc.edu 17879
-priority 10.0
-
-genome GRCh38
-twoBitPath GRCh38/GRCh38.2bit
-trackDb GRCh38/trackDb.txt
-organism GRCh38
-description GRCh38 (CAT annotation sources)
-scientificName GRCh38
-defaultPos chr1:1-200000
-scientificName Homo sapiens
-groups GRCh38/groups.txt
-htmlPath GRCh38/description.html
-priority 20.0
 

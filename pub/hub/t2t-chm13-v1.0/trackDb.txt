@@ -1,0 +1,53 @@
+
+##
+# map
+## 
+track gap
+shortLabel Gap
+longLabel Gap Locations
+group map
+visibility hide
+type bigBed 3
+bigDataUrl gap/gap.bigBed
+
+track gc5Base
+shortLabel GC Percent
+longLabel GC Percent in 5-Base Windows
+group map
+visibility hide
+autoScale Off
+maxHeightPixels 128:36:16
+graphTypeDefault Bar
+gridDefault OFF
+windowingFunction Mean
+color 0,0,0
+altColor 128,128,128
+viewLimits 30:70
+type bigWig 0 100
+bigDataUrl gc5Base/gc5Base.bigWig
+html gc5Base
+
+##
+# varRep
+##
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9 +
+bigDataUrl rmsk/rmsk.bigBed
+priority 1
+
+track simpleRepeat
+shortLabel Simple Repeats
+longLabel Simple Tandem Repeats by TRF
+group varRep
+visibility hide
+type bigBed 4 +
+bigDataUrl trf/trf.bigBed
+priority 2
+

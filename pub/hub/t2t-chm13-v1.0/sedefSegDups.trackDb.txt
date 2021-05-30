@@ -1,0 +1,34 @@
+track sedefSegDups
+compositeTrack off
+shortLabel SEDEF Segmental Dups
+longLabel Segmental Duplications
+priority 10
+group varRep
+type bigBed 9
+
+    track sedefSegDupsAll
+    parent sedefSegDups
+    shortLabel SEDEF Segmental Dups
+    longLabel Segmental Duplications
+    group varRep
+    visibility pack
+    itemRgb on
+    maxItems 100000
+    type bigBed 9
+    bigDataUrl sedefSegDups/chm13.draft_v1.0_plus38Y.SDs.bed.bb
+    html sedefSegDups.html
+    priority 1
+
+    track sedefSegDupsLow
+    parent sedefSegDups
+    shortLabel SEDEF Segmental Dups Low Id
+    longLabel SEDEF Segmental Duplications Low Identity
+    group varRep
+    visibility hide
+    itemRgb on
+    maxItems 100000
+    type bigBed 2
+    bigDataUrl sedefSegDups/chm13.draft_v1.0_plus38Y.SDs.lowid.bed.bb
+    html sedefSegDups.html
+    priority 7
+

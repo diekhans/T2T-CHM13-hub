@@ -51,3 +51,37 @@ type bigBed 4 +
 bigDataUrl trf/trf.bigBed
 priority 2
 
+include sedefSegDups.trackDb.txt
+
+##
+# cenTelo
+##
+include cenSat.trackDb.txt
+
+##
+# genes
+##
+include CAT/trackDb.txt
+
+##
+# comparative genomics
+##
+
+##
+# Expression/transcription/rna
+##
+
+##
+# regulation
+##
+track cpgIslands
+shortLabel CpG Islands
+longLabel CpG Islands (Islands < 300 Bases are Light Green)
+group regulation
+visibility hide
+color 0,100,0
+altColor 128,228,128
+type bigBed 4 +
+priority 1
+bigDataUrl cpgIslands/t2t-chm13-v1.0.cpgIslandExt.bb
+

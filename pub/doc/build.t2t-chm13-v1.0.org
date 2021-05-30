@@ -1,5 +1,5 @@
 #+STARTUP: nologdone
-#+SEQ_TODO: TODO ACTIVE PAUSED | DONE CANCELED
+#+SEQ_TODO: TODO ACTIVE | DONE
 
 ==== t2t-chm13-v1.0 public browser hub ====
 * Info:
@@ -48,8 +48,8 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** Illumina PCR-free (.bw) team-curation/tracks/v1.0/chm13.draft_v1.0.illumina.bw 
 ** Sequence Features:
 *** GC/GA/CT/AT (team-curation/tracks/v1/pattern/*.wig) (SK has description)
-*** GpG islands (already in browser)
-*** GC percent (already in browser)
+*** DONE GpG islands (already in browser)
+*** DONE GC percent (already in browser)
 ** GRCh38 alignments
 *** Regions missing from GRCh38 (bed) (team-curation/tracks/v1/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed) (SK has HTML)
 *** Lifted over GRCh38 issues (team-variants/grch38_issues/hg38.parsedissues.bed) (SK has html)
@@ -62,9 +62,9 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** Already in browser
 *** Includes IsoSeq
 ** CutnRun (losalt CENP-A only) (already in browser) 
-** CenSat (bed) (already in browser)
-** RepeatMasker v2 (already in browser)
-** SEDEF SegDup (bed) (already in browser)
+** DONE CenSat (bed) (already in browser)
+** DONE RepeatMasker v2 (already in browser)
+** DONE SEDEF SegDup (bed) (already in browser)
 ** Methylation frequency (already in browser)
 ** Human population data
 *** HGDP WSSD (already in browser)
@@ -81,36 +81,50 @@ need to clear with NCBI
 ** Sergey Koren  5 hours ago
 @MarkD see above for the 1000G variant call track info
 https://t2t-consortium.slack.com/archives/C014HC8NCLW/p1622058780104900?thread_ts=1621882203.094500&cid=C014HC8NCLW
+* Track Html from tracks.tar.gz 
+chm13_liftedoverGRCh38_issues.html
+chm13_uncovered_byGRCh38.html
+gc_ga_ct_at_track.html
+mapping.html
+merfin_hifi_track.html
+merfin_illumina_track.html
+merqury_asmonly.html
+unique_21_51_mer.html
+v1.0_to_v1.1.html
 * Track build log
-* rmsk
+** rmsk
 from Savannah /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
-
-** pub move, rename rmskV2* to rmsk
 ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/chm13v1_polish-033121_track.bed.gz .
 ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/rmskV2.bed.gz rmsk.bed.gz 
 ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/rmskV2.bigBed rmsk.bigBed 
-
 ln -f rmsk.bigBed ../../../../pub/t2t-chm13-v1.0/rmsk/
-* trf
+** trf
 from Mitchell Robert Vollger
 /team-segdups/Assembly_analysis/Masked/chm13.draft_v1.0_plus38Y_trf.bed
-
-** pub
 ln -f ../../../dev/t2t-chm13-v1.0/trf/trf.bigBed .
 ln -f trf.bigBed ../../../../pub/t2t-chm13-v1.0/trf/
-* genome
-** pub move
+** genome
 note: was never updated to latest repeat masker; but leave as-is to match release
 ln -f ../../../dev/t2t-chm13-v1.0/genome/* .
 
 mkln t2t-chm13-v1.0.*  ../../../../pub/t2t-chm13-v1.0/genome/
-* gc5Base
-** pub move
+** gc5Base
 ln -f ../../../dev/t2t-chm13-v1.0/gc5Base/gc5Base.* .
 mkln gc5Base.bigWig  ../../../../pub/t2t-chm13-v1.0/gc5Base
-
-* gap
-** pub move
+** gap
 ln -f ../../../dev/t2t-chm13-v1.0/gap/* .
 mkln gap.bigBed  ../../../../pub/t2t-chm13-v1.0/gap
 
+** cpgIslands
+ln -f ../../../dev/t2t-chm13-v1.0/cpgIslands/t2t-chm13-v1.0.cpgIslandExt.bb .
+** sedefSegDups
+ln -f ../../../dev/t2t-chm13-v1.0/sedefSegDups/chm13.draft_v1.0_plus38Y.SDs.* .
+mkln * ../../../../pub/t2t-chm13-v1.0/sedefSegDups
+** cenSat
+ln -f ../../../dev/t2t-chm13-v1.0/cenSatV2/* .
+mkln *.bigBed ../../../../pub/t2t-chm13-v1.0/cenSat
+** CAT
+(cd   ../../../dev/t2t-chm13-v1.0/CAT_V4/ && find . | cpio -pduml ../../../pub/t2t-chm13-v1.0/CAT/)
+
+mkln assemblyHub/CHM13/* ../../../../pub/t2t-chm13-v1.0/CAT/
+mkln consensus_gene_set/*  ../../../../pub/t2t-chm13-v1.0/CAT/consensus_gene_set/

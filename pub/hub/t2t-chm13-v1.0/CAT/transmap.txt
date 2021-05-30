@@ -1,0 +1,22 @@
+track transmap_CHM13
+superTrack catEvidence hide
+shortLabel transMap V4
+longLabel transMap V4
+bigDataUrl CAT/transmap.bb
+html CAT/transmap_CHM13.html
+type bigPsl
+group genes
+itemRgb on
+priority 2
+visibility hide
+baseColorUseSequence lfExtra
+baseColorDefault genomicCodons
+baseColorUseCds given
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+#showCdsAllScales .
+#showCdsMaxZoom 10000.0
+searchIndex name
+

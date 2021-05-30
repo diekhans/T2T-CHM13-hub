@@ -1,0 +1,58 @@
+# note: colors consistent with paper
+#   GA: 5369FF  83,105,255
+#   TC: 660066  102,0,102
+#   GC: BC7313  188,115,19
+#   AT: 336600  51,102,0
+
+track microSatRepeats
+container multiWig
+shortLabel Micro Sat Repeats
+longLabel  Micro Satellite Repeats
+visibility hide
+priority 10
+type bigWig
+autoScale group
+graphTypeDefault line
+aggregate solidOverlay
+showSubtrackColorOnUi on
+group varRep
+ 
+    track microSatRepeats_GA
+    parent microSatRepeats
+    shortLabel GA dimers
+    longLabel GA dimers
+    type bigWig
+    bigDataUrl microSatRepeats/v1.GA.128.bigWig
+    color 83,105,255
+    priority 10.1
+    visibility pack
+
+    track microSatRepeats_TC
+    parent microSatRepeats
+    shortLabel TC dimers
+    longLabel TC dimers
+    type bigWig
+    bigDataUrl microSatRepeats/v1.TC.128.bigWig
+    color 102,0,102
+    priority 10.2
+    visibility pack
+
+    track microSatRepeats_GC
+    parent microSatRepeats
+    shortLabel GA dimers
+    longLabel GC dimers
+    type bigWig
+    bigDataUrl microSatRepeats/v1.GC.128.bigWig
+    color 188,115,19
+    priority 10.3
+    visibility pack
+
+    track microSatRepeats_AT
+    parent microSatRepeats
+    shortLabel AT dimers
+    longLabel AT dimers
+    type bigWig
+    bigDataUrl microSatRepeats/v1.AT.128.bigWig
+    color 51,102,0
+    priority 10.4
+    visibility pack

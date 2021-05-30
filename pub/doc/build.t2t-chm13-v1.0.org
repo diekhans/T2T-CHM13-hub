@@ -47,7 +47,7 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** HiFi (.bw) team-curation/tracks/v1.0/chm13.draft_v1.0.hifi.bw (SK has HTML description)
 *** Illumina PCR-free (.bw) team-curation/tracks/v1.0/chm13.draft_v1.0.illumina.bw 
 ** Sequence Features:
-*** GC/GA/CT/AT (team-curation/tracks/v1/pattern/*.wig) (SK has description)
+*** ACTIVE GC/GA/CT/AT (team-curation/tracks/v1/pattern/*.wig) (SK has description)
 *** DONE GpG islands (already in browser)
 *** DONE GC percent (already in browser)
 ** GRCh38 alignments
@@ -58,7 +58,7 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** LASTZ alignments (already in browser)
 ** ProSeq (already in browser, confirm no need to remove any)
 ** RNAseq (already in browser, confirm no need to remove any)
-** Annotation (CAT+Liftoff v4 + CAT evidence)
+** DONE Annotation (CAT+Liftoff v4 + CAT evidence)
 *** Already in browser
 *** Includes IsoSeq
 ** CutnRun (losalt CENP-A only) (already in browser) 
@@ -81,16 +81,17 @@ need to clear with NCBI
 ** Sergey Koren  5 hours ago
 @MarkD see above for the 1000G variant call track info
 https://t2t-consortium.slack.com/archives/C014HC8NCLW/p1622058780104900?thread_ts=1621882203.094500&cid=C014HC8NCLW
+** making top-level ISO-seq
 * Track Html from tracks.tar.gz 
-chm13_liftedoverGRCh38_issues.html
-chm13_uncovered_byGRCh38.html
-gc_ga_ct_at_track.html
-mapping.html
-merfin_hifi_track.html
-merfin_illumina_track.html
-merqury_asmonly.html
-unique_21_51_mer.html
-v1.0_to_v1.1.html
+** chm13_liftedoverGRCh38_issues.html
+** chm13_uncovered_byGRCh38.html
+** DONE gc_ga_ct_at_track.html
+** mapping.html
+** merfin_hifi_track.html
+** merfin_illumina_track.html
+** merqury_asmonly.html
+** unique_21_51_mer.html
+** v1.0_to_v1.1.html
 * Track build log
 ** rmsk
 from Savannah /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
@@ -128,3 +129,9 @@ mkln *.bigBed ../../../../pub/t2t-chm13-v1.0/cenSat
 
 mkln assemblyHub/CHM13/* ../../../../pub/t2t-chm13-v1.0/CAT/
 mkln consensus_gene_set/*  ../../../../pub/t2t-chm13-v1.0/CAT/consensus_gene_set/
+** microSatRepeats
+team-curation/tracks/v1/pattern/*.wig
+v1.AT.128.wig  v1.GA.128.wig  v1.GC.128.wig  v1.TC.128.wig
+pigz *.wig
+for f in *.gz ; do (wigToBigWig $f ../genome/t2t-chm13-v1.0.sizes $(basename $f .wig.gz).bigWig &) ; done
+mkln *.bigWig  ../../../../pub/t2t-chm13-v1.0/microSatRepeats/

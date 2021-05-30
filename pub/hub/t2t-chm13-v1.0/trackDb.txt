@@ -27,6 +27,8 @@ type bigWig 0 100
 bigDataUrl gc5Base/gc5Base.bigWig
 html gc5Base
 
+include microSatRepeats.trackDb.txt
+
 ##
 # varRep
 ##

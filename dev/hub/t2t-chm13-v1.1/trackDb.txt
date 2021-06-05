@@ -1,0 +1,73 @@
+##
+# map
+## 
+track gc5Base
+shortLabel GC Percent
+longLabel GC Percent in 5-Base Windows
+group map
+visibility hide
+autoScale Off
+maxHeightPixels 128:36:16
+graphTypeDefault Bar
+gridDefault OFF
+windowingFunction Mean
+color 0,0,0
+altColor 128,128,128
+viewLimits 30:70
+type bigWig 0 100
+bigDataUrl gc5Base/gc5Base.bigWig
+html gc5Base
+
+
+##
+# varRep
+##
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9 +
+bigDataUrl rmsk/rmsk.bigBed
+priority 1
+
+track simpleRepeat
+shortLabel Simple Repeats
+longLabel Simple Tandem Repeats by TRF
+group varRep
+visibility hide
+type bigBed 4 +
+bigDataUrl trf/trf.bigBed
+priority 2
+
+include sedefSegDups.track.txt
+
+
+##
+# cenTelo
+##
+##
+# genes
+##
+##
+# comparative genomics
+##
+##
+# Expression/transcription/rna
+##
+##
+# regulation
+##
+track cpgIsland
+shortLabel CpG Islands
+longLabel CpG Islands (Islands < 300 Bases are Light Green)
+group regulation
+visibility hide
+color 0,100,0
+altColor 128,228,128
+type bigBed 4 +
+priority 4
+bigDataUrl cpgIsland/t2t-chm13-v1.1.cpgIslandExt.bb

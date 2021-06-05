@@ -1,0 +1,63 @@
+#+STARTUP: nologdone
+#+SEQ_TODO: TODO ACTIVE | DONE
+
+* setup
+export PATH=/hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin:${PATH}
+
+* DONE genome 
+** /assemblies/release/v1.1/
+# need rmsk and simpleRepeats data
+faToTwoBit chm13.v1.1.fasta.gz t2t-chm13-v1.1.unmasked.2bit
+
+faToTwoBit t2t-chm13-v1.1.unmasked.fa.gz t2t-chm13-v1.1.unmasked.2bit
+
+twoBitMask -type=.bed t2t-chm13-v1.1.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trf.bed.gz) t2t-chm13-v1.1.2bit
+
+twoBitInfo t2t-chm13-v1.1.2bit t2t-chm13-v1.1.sizes
+twoBitToFa t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa
+tawk '{print $1,$2,"x"}' t2t-chm13-v1.1.sizes > t2t-chm13-v1.1.sizes3
+
+nice bgzip  --threads=64 t2t-chm13-v1.1.fa
+samtools faidx t2t-chm13-v1.1.fa.gz 
+
+blat t2t-chm13-v1.1.2bit -makeOoc=t2t-chm13-v1.1.11.ooc /dev/null /dev/null
+mkln t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa.gz*  ../../../../dev/t2t-chm13-v1.1/genome
+
+* DONE trf
+** 2021-06-01 Mitchell Robert Vollger
+team-segdups/Assembly_analysis/Masked/chm13_v1.1_plus38Y_trf.bed
+Includes a copy of GRCh38 chrY.
+pigz chm13_v1.1_plus38Y_trf.bed
+
+# drop chrY
+zcat chm13_v1.1_plus38Y_trf.bed.gz |tawk '$1!="chrY"' | pigz -c >trf.bed.gz
+
+### finish genome now
+buildBigBed --as=../../../../T2T-CHM13-hub/etc/simpleRepeat2.as bed3+ t2t-chm13-v1.1 trf.bigBed trf.bed.gz
+mkln trf.bigBed  ../../../../dev/t2t-chm13-v1.1/trf/
+
+* DONE rmsk
+** Savannah Hoyt
+/team-TE/Repeatmasker_polished-033121/chm13v1.1_polish-050321/
+chm13v1.1_RM-polish-0502121_trackformat.bed
+editRepeatMaskerBed chm13v1.1_RM-polish-0502121_trackformat.bed | sort -k1,1 -k2,2n | pigz -c >rmsk.bed.gz
+
+### finish genome now
+
+# switch to finishing genome before next steps
+buildBigBed  --as=../../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.1.unmasked.2bit bed9+ t2t-chm13-v1.1 rmsk.bigBed rmsk.bed.gz
+mkln rmsk.bigBed ../../../../dev/t2t-chm13-v1.1/rmsk/
+
+* DONE sedefSegDups
+** 2021-06-01 Mitchell Robert Vollger
+team-segdups/Assembly_analysis/SEDEF/chm13_v1.1_plus38Y.SDs.bed.bb
+team-segdups/Assembly_analysis/SEDEF/chm13_v1.1_plus38Y.SDs.lowid.bed.bb
+mkln *.bb ../../../../dev/t2t-chm13-v1.1/sedefSegDups/
+* DONE gc5Base
+hgGcPercent -noLoad -wigOut -doGaps -win=5 -file=stdout -verbose=0 NODB ../genome/t2t-chm13-v1.1.2bit  | pigz -c > gc5Base.wigVarStep.gz
+wigToBigWig gc5Base.wigVarStep.gz ../genome/t2t-chm13-v1.1.sizes gc5Base.bigWig
+mkln gc5Base.bigWig ../../../../dev/t2t-chm13-v1.1/gc5Base
+* DONE cpgIsland
+twoBitToFa ../genome/t2t-chm13-v1.1.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
+./my-doMakeBed.csh 
+mkln t2t-chm13-v1.1.cpgIslandExt.bb  ../../../../dev/t2t-chm13-v1.1/cpgIsland

@@ -105,18 +105,6 @@ type bigBed 9 +
 bigDataUrl rmskV2/rmskV2.bigBed
 priority 1
 
-track rmsk
-shortLabel RepeatMasker V1
-longLabel Repeating Elements by RepeatMasker V1
-group varRep
-visibility hide
-itemRgb on
-maxItems 1000000
-maxWindowToDraw 100000000
-type bigBed 9 +
-bigDataUrl rmsk/rmsk.bigBed
-priority 1.5
-
 track simpleRepeat
 shortLabel Simple Repeats
 longLabel Simple Tandem Repeats by TRF

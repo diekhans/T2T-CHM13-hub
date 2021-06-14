@@ -61,3 +61,7 @@ mkln gc5Base.bigWig ../../../../dev/t2t-chm13-v1.1/gc5Base
 twoBitToFa ../genome/t2t-chm13-v1.1.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
 ./my-doMakeBed.csh 
 mkln t2t-chm13-v1.1.cpgIslandExt.bb  ../../../../dev/t2t-chm13-v1.1/cpgIsland
+
+*  v1.0_to_v1.1.html
+Sergey Koren
+@Arang Rhie made one and it’s on the chm13 GitHub page though it will fail to lift over the borders of rdna so needs spot checking

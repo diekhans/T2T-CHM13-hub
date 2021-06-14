@@ -51,6 +51,7 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** DONE GpG islands (already in browser)
 *** DONE GC percent (already in browser)
 ** GRCh38 alignments
+LINK TO DB BROWSER
 *** Regions missing from GRCh38 (bed) (team-curation/tracks/v1/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed) (SK has HTML)
 *** Lifted over GRCh38 issues (team-variants/grch38_issues/hg38.parsedissues.bed) (SK has html)
 *** GRCh38 synteny 1mb (already in browser)
@@ -74,7 +75,6 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 *** dbSNP variants
 *** ClinVar
 *** GWAS SNPs[c]
-
 * Other tracks:
 ** chromosome bands: Nick Altemose
 need to clear with NCBI

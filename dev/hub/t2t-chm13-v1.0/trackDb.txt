@@ -237,9 +237,6 @@ priority 2
 ##
 # genes
 ##
-include CAT/trackDb.txt
-include CAT_V2.1/trackDb.txt
-include CAT_V3/trackDb.txt
 include CAT_V4/trackDb.txt
 include crispr.trackDb.txt
 

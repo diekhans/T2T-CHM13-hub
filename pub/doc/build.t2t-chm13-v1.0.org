@@ -57,6 +57,7 @@ LINK TO DB BROWSER
 *** GRCh38 synteny 1mb (already in browser)
 *** Cactus alignments (already in browser)
 *** LASTZ alignments (already in browser)
+[don't break links in https://github.com/marbl/CHM13]
 ** ProSeq (already in browser, confirm no need to remove any)
 ** RNAseq (already in browser, confirm no need to remove any)
 ** DONE Annotation (CAT+Liftoff v4 + CAT evidence)

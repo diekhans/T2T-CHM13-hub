@@ -5,6 +5,8 @@ description CAT Gene + LiftOff Annotations V4
 type bigGenePred
 group genes
 itemRgb on
+maxItems 10000000
+maxWindowToDraw 10000000000
 priority 1
 visibility pack
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId

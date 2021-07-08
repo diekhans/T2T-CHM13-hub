@@ -65,3 +65,7 @@ mkln t2t-chm13-v1.1.cpgIslandExt.bb  ../../../../dev/t2t-chm13-v1.1/cpgIsland
 *  v1.0_to_v1.1.html
 Sergey Koren
 @Arang Rhie made one and it’s on the chm13 GitHub page though it will fail to lift over the borders of rdna so needs spot checking
+
+* LASTZ IMPORTANT
+ liftover should not have fix
+Justin Zook @MarkD - as @Nancy Hansen and I were looking into variants that don't liftover concordantly between GRCh38 and CHM13, we noticed an anomaly in the liftover from CHM13 to GRCh38, where a multi-Mbp region of CHM13 seems to have its primary alignment to chr8_KZ208915v1_fix instead of to chr8.  This region contains TNKS, MSRA, MFHAS1, BLK, GATA4, and a few more genes. Do you have any idea why this might be happening? It's probably too late to change this for our paper, but might be good to investigate and resolve at some point.

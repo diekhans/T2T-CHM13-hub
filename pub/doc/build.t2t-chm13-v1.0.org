@@ -15,21 +15,6 @@ https://t2t.gi.ucsc.edu/chm13/hub/hub.txt
 https://docs.google.com/document/d/1QmOwTN_ay8_6S-Lo9Clcj7gLZTLGnBxNMBrNN7rScO0/edit
 ** build dir: projs/t2t-chm13/build/pub/t2t-chm13-v1.0
 * tracks to add (as of 2021-05-25T12:54:57-0700)
-** Winnowmap alignments (v2.01): primary alignments
-*** HiFi (team-curation/alignments/20200921_v1.0/hifi/*.wig, med when multiple available) (SK has description)
-**** Coverage (unstranded)
-**** Med. Idy (unstranded)
-**** Med. read length (unstranded)
-**** Med. MQ (unstranded)
-**** 1st and 2nd allele frequency (.bw)
-https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.mostCommonBase.bw
-https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmostCommonBase.bw
-*** ONT (team-curation/alignments/20200921_v1.0/ont/*[pn].wig, med when multiple available) (SK has description)
-**** Coverage (per-strand)
-**** Med. Idy (per-strand)
-**** Med. read length (per-strand)
-**** Med. MQ (per-strand)
-**** Med. reads per strand (%)
 ** Known hets:
 *** Curated SVs (.vcf) (XX)
 *** Lightly filtered SNVs (.vcf) (XX)
@@ -46,10 +31,6 @@ https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmost
 ** Merfin k* tracks (.bw)
 *** HiFi (.bw) team-curation/tracks/v1.0/chm13.draft_v1.0.hifi.bw (SK has HTML description)
 *** Illumina PCR-free (.bw) team-curation/tracks/v1.0/chm13.draft_v1.0.illumina.bw 
-** Sequence Features:
-*** ACTIVE GC/GA/CT/AT (team-curation/tracks/v1/pattern/*.wig) (SK has description)
-*** DONE GpG islands (already in browser)
-*** DONE GC percent (already in browser)
 ** GRCh38 alignments
 LINK TO DB BROWSER
 *** Regions missing from GRCh38 (bed) (team-curation/tracks/v1/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed) (SK has HTML)
@@ -60,13 +41,8 @@ LINK TO DB BROWSER
 [don't break links in https://github.com/marbl/CHM13]
 ** ProSeq (already in browser, confirm no need to remove any)
 ** RNAseq (already in browser, confirm no need to remove any)
-** DONE Annotation (CAT+Liftoff v4 + CAT evidence)
-*** Already in browser
-*** Includes IsoSeq
 ** CutnRun (losalt CENP-A only) (already in browser) 
-** DONE CenSat (bed) (already in browser)
-** DONE RepeatMasker v2 (already in browser)
-** DONE SEDEF SegDup (bed) (already in browser)
+
 ** Methylation frequency (already in browser)
 ** Human population data
 *** HGDP WSSD (already in browser)
@@ -94,7 +70,7 @@ https://t2t-consortium.slack.com/archives/C014HC8NCLW/p1622058780104900?thread_t
 ** unique_21_51_mer.html
 ** v1.0_to_v1.1.html
 * Track build log
-** rmsk
+`** rmsk
 from Savannah /team-TE/Repeatmasker_polished/chm13-v1_Repeatmasker_polish_031921_track_v2.bed
 ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/chm13v1_polish-033121_track.bed.gz .
 ln -f ../../../dev/t2t-chm13-v1.0/rmskV2/rmskV2.bed.gz rmsk.bed.gz 
@@ -136,3 +112,33 @@ v1.AT.128.wig  v1.GA.128.wig  v1.GC.128.wig  v1.TC.128.wig
 pigz *.wig
 for f in *.gz ; do (wigToBigWig $f ../genome/t2t-chm13-v1.0.sizes $(basename $f .wig.gz).bigWig &) ; done
 mkln *.bigWig  ../../../../pub/t2t-chm13-v1.0/microSatRepeats/
+
+** ACTIVE winnowmapAlign  Winnowmap alignments (v2.01): primary alignments
+*** HiFi (team-curation/alignments/20200921_v1.0/hifi/*.wig, med when multiple available) (SK has description)
+
+**** 1st and 2nd allele frequency (.bw)
+https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.mostCommonBase.bw
+https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmostCommonBase.bw
+*** ONT (team-curation/alignments/20200921_v1.0/ont/*[pn].wig, med when multiple available) (SK has description)
+**** Coverage (per-strand)
+**** Med. Idy (per-strand)
+**** Med. read length (per-strand)
+**** Med. MQ (per-strand)
+**** Med. reads per strand (%)
+
+
+**  winnowmapAlign
+*** HiFi
+Arang Rhie
+team-curation/alignments/20200921_v1.0/hifi/*.wig
+- Coverage (unstranded) hifi.pri.cov.wig
+- Med. Idy (unstranded) hifi.pri.idy.med.wig
+- Med. read length (unstranded) hifi.pri.len.med.wig
+- Med. MQ (unstranded) hifi.pri.mq.med.wig
+- 1st and 2nd allele frequency
+https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.mostCommonBase.bw
+https://eichlerlab.gs.washington.edu/help/glogsdon/Shared/210413_allchrs.2ndmostCommonBase.bw
+
+* MAKE SURE THESE WORK
+https://github.com/marbl/CHM13
+hg38 alignments, cat gff

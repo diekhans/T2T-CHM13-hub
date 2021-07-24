@@ -131,7 +131,7 @@ shortLabel SEDEF Segmental Dups
 longLabel Segmental Duplications
 priority 10
 group varRep
-    type bigBed 9
+type bigBed 9
 
     track sedefSegDupsAll
     parent sedefSegDups
@@ -200,6 +200,8 @@ type bigBed 4
 bigDataUrl newSatellitesMonomersArrays/newSatellitesMonomersArrays.bigBed
 priority 3
 
+include alphaSatHOR.trackDb.txt
+
 # track hors
 # shortLabel HORs annotation
 # longLabel Centromere HORs annotation
@@ -255,6 +257,8 @@ priority 3
 # bigDataUrl as_annotation/AS_strand.bigBed
 # priority 12
 # 
+
+
 
 ##
 # genes

@@ -1097,3 +1097,29 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 * Arang Hello @MarkD! I've pushed another update on the issues last night - it's now including the error k-mers found with Merqury and 3 additional errors found but forgotten :disappointed: . Please grep the v1.0_issues.bed and v1.1_issues.bed from here:
 https://github.com/marbl/CHM13-issues
 Description.html is also updated in this repo.
+
+* alphaSatHOR
+Lev  10:17 AM
+The five annotation tracks for UCSC GB with the description files are on Globus at /team-satellites/AS_Annotation/release_v1.0/11Jul21/
+Link: team-satellites/AS_Annotation/release_v1.0/11Jul21/
+    ASat_HOR_track.bed
+    ASat_SF_track.bed
+    ASat_strand.bed
+    ASat_StV10.bed
+    Shared_ASat_HORs.bed
+
+ASat_HOR_track.bed:track name="ASat HOR-track" description="Annotation of ASat HOR monomers (T2T CHM13 assembly release v1.0, HMMs 060721)" itemRgb="On" visibility="1"
+ASat_SF_track.bed:track name="ASat SF-track" description="Annotation of ASat monomers into SF-classes (T2T CHM13 assembly release v1.0, HMMs June 29, 2021)" itemRgb="On" visibility="1"
+ASat_strand.bed:track name="ASat strand" description="Annotation of ASat strand orientation (T2T CHM13 assembly release v1.0, HMMs 060721)" itemRgb="On" visibility="1"
+ASat_StV10.bed:track name="StV10" description="Structural Variants 10" itemRgb="On" visibility="1"
+Shared_ASat_HORs.bed:track name="Shared ASat HORs" description="Annotation of ASat double (13/21 and 14/22) and triple (1/5/19) HORs into chromosome-specific subtypes" itemRgb="On" visibility="1"
+
+
+buildBigBed bed9 t2t-chm13-v1.0 ASat_HOR.bigBed ASat_HOR_track.bed
+buildBigBed bed9 t2t-chm13-v1.0 ASat_SF.bigBed ASat_SF_track.bed
+buildBigBed bed9 t2t-chm13-v1.0 ASat_strand.bigBed ASat_strand.bed
+buildBigBed bed9 t2t-chm13-v1.0 ASat_StV10.bigBed ASat_StV10.bed
+buildBigBed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.bed
+
+
+mkln *.bigBed ../../../../dev/t2t-chm13-v1.0/alphaSatHOR 

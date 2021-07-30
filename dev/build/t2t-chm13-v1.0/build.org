@@ -1098,8 +1098,8 @@ ln -f ont.bam*  ../../../hub/t2t-chm13-v1.0/winnowmap_ont/
 https://github.com/marbl/CHM13-issues
 Description.html is also updated in this repo.
 
-* alphaSatHOR
-Lev  10:17 AM
+* alphaSatHOR tracks (top level at Lev's request) [for PUB]
+Lev
 The five annotation tracks for UCSC GB with the description files are on Globus at /team-satellites/AS_Annotation/release_v1.0/11Jul21/
 Link: team-satellites/AS_Annotation/release_v1.0/11Jul21/
     ASat_HOR_track.bed

@@ -1,5 +1,5 @@
 
-hubDir = ../../../dev
+hubDir = ../../../hubs/dev
 
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/dev/hub.txt
 t2tUrl = https://t2t.gi.ucsc.edu/chm13/dev/hub.txt
@@ -40,6 +40,6 @@ sync: sync-t2t
 # sync both pub and dev so identical files are synced
 sync-t2t: ${srcs:%=${hubDir}/%}
 	${hgwdev_check}
-	cd ../../.. && rsync -v -aH --partial --no-owner --no-group dev pub t2t.gi.ucsc.edu:/data/chm13/
+	cd ../../../hubs && rsync -v -aH --partial --no-owner --no-group dev pub t2t.gi.ucsc.edu:/data/chm13/
 	@rm -rf ${t2t_udc_dir}
 	hubCheck -udcDir=${t2t_udc_dir} ${t2tUrl}

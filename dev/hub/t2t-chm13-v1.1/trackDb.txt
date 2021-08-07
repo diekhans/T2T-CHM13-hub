@@ -1,4 +1,4 @@
-##
+#
 # map
 ## 
 track gc5Base
@@ -58,6 +58,9 @@ include sedefSegDups.track.txt
 ##
 # Expression/transcription/rna
 ##
+include proseq.trackDb.txt
+include rnaseq.trackDB.txt
+
 ##
 # regulation
 ##

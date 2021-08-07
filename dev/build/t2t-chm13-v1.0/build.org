@@ -1045,11 +1045,11 @@ Savannah files set by slack and made available for download for the paper
 http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.0/downloads/t2t-chm13-v1.0.composite-repeats-singletons-arrays.bed.gz
 
 buildBigBed bed4 t2t-chm13-v1.0 compositeRepeats.bigBed  t2t-chm13-v1.0.composite-repeats-singletons-arrays.bed.gz 
-mkln *.bigBed ../../../../dev/t2t-chm13-v1.0/compositeRepeats
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/compositeRepeats
 
 * newSatellitesMonomersArrays
 buildBigBed bed4 t2t-chm13-v1.0 newSatellitesMonomersArrays.bigBed t2t-chm13-v1.0.new-satellites-monomers-arrays.bed.gz 
-mkln *.bigBed ../../../../dev/t2t-chm13-v1.0/newSatellitesMonomersArrays
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/newSatellitesMonomersArrays
 
 Savannah files set by slack and made available for download for the paper
 http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.0/downloads/t2t-chm13-v1.0.new-satellites-monomers-arrays.bed.gz
@@ -1122,4 +1122,4 @@ buildBigBed bed9 t2t-chm13-v1.0 ASat_StV10.bigBed ASat_StV10.bed
 buildBigBed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.bed
 
 
-mkln *.bigBed ../../../../dev/t2t-chm13-v1.0/alphaSatHOR 
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/alphaSatHOR 

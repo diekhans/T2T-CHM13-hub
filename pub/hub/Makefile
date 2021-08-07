@@ -1,5 +1,5 @@
 
-hubDir = ../../../pub
+hubDir = ../../../hubs/pub
 
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/t2t/pub/hub.txt
 t2tUrl = https://t2t.gi.ucsc.edu/chm13/pub/hub.txt

@@ -1,0 +1,57 @@
+track RNAseq_BT2-default
+compositeTrack off
+visibility hide
+shortLabel RNAseq default
+longLabel CHM13 RNAseq Bowtie2 default mapped (chm13v1.1) and unique genome-wide kmer filtering
+type bigWig
+group rna
+priority 30
+        
+    track RNAseq-A
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-A bt2-dflt
+    longLabel RNAseq-A bt2 default no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548.bigwig
+
+    track RNAseq-A_21mer
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-A bt2-dflt-21mer
+    longLabel RNAseq-A bt2 default 21mer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-21mer-chm13v1.1.bigwig
+    
+    track RNAseq-A_51mer
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-A bt2-dflt-51mer
+    longLabel RNAseq-A bt2 default 51mer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-51mer-chm13v1.1.bigwig
+    
+    track RNAseq-B
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-B bt2-dflt
+    longLabel RNAseq-B bt2 default no kmer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548.bigwig
+    
+    track RNAseq-B_21mer
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-B bt2-dflt-21mer
+    longLabel RNAseq-B bt2 default 21mer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-21mer-chm13v1.1.bigwig
+    
+    track RNAseq-B_51mer
+    parent RNAseq_BT2-default
+    shortLabel RNAseq-B bt2-dflt-51mer
+    longLabel RNAseq-B bt2 default 51mer filtering
+    type bigWig 
+    visibility dense
+    bigDataUrl rnaseq/RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-51mer-chm13v1.1.bigwig
+    

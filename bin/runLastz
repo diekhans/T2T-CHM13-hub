@@ -5,13 +5,13 @@ if [ $# != 2 ] ; then
     echo "wrong number of args: $0 fwd|swap targetGenome" >&2
     exit 1
 fi
-dir=$1
+direction=$1
 targetGenome="$2"
 trackdir=$(realpath .)
 targetGenomeDir=$(realpath ${trackdir}/../genome)
 
 swapOpt=""
-if [ "$dir" = "swap" ] ; then
+if [ "$direction" = "swap" ] ; then
     swapDir=$(pwd)/swap
     swapOpt=-"-swap -swapDir=${swapDir}"
 fi

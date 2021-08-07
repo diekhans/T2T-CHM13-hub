@@ -14,14 +14,14 @@ faToTwoBit t2t-chm13-v1.1.unmasked.fa.gz t2t-chm13-v1.1.unmasked.2bit
 twoBitMask -type=.bed t2t-chm13-v1.1.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trf.bed.gz) t2t-chm13-v1.1.2bit
 
 twoBitInfo t2t-chm13-v1.1.2bit t2t-chm13-v1.1.sizes
-twoBitToFa t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa
 tawk '{print $1,$2,"x"}' t2t-chm13-v1.1.sizes > t2t-chm13-v1.1.sizes3
 
+twoBitToFa t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa
 nice bgzip  --threads=64 t2t-chm13-v1.1.fa
 samtools faidx t2t-chm13-v1.1.fa.gz 
 
 blat t2t-chm13-v1.1.2bit -makeOoc=t2t-chm13-v1.1.11.ooc /dev/null /dev/null
-mkln t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa.gz*  ../../../../dev/t2t-chm13-v1.1/genome
+mkln t2t-chm13-v1.1.2bit t2t-chm13-v1.1.fa.gz*  ../../../../hubs/dev/t2t-chm13-v1.1/genome
 
 * DONE trf
 ** 2021-06-01 Mitchell Robert Vollger
@@ -34,7 +34,7 @@ zcat chm13_v1.1_plus38Y_trf.bed.gz |tawk '$1!="chrY"' | pigz -c >trf.bed.gz
 
 ### finish genome now
 buildBigBed --as=../../../../T2T-CHM13-hub/etc/simpleRepeat2.as bed3+ t2t-chm13-v1.1 trf.bigBed trf.bed.gz
-mkln trf.bigBed  ../../../../dev/t2t-chm13-v1.1/trf/
+mkln trf.bigBed  ../../../../hubs/dev/t2t-chm13-v1.1/trf/
 
 * DONE rmsk
 ** Savannah Hoyt
@@ -46,21 +46,21 @@ editRepeatMaskerBed chm13v1.1_RM-polish-0502121_trackformat.bed | sort -k1,1 -k2
 
 # switch to finishing genome before next steps
 buildBigBed  --as=../../../../T2T-CHM13-hub/etc/rmskV2Bed.as --twoBit=../genome/t2t-chm13-v1.1.unmasked.2bit bed9+ t2t-chm13-v1.1 rmsk.bigBed rmsk.bed.gz
-mkln rmsk.bigBed ../../../../dev/t2t-chm13-v1.1/rmsk/
+mkln rmsk.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/rmsk/
 
 * DONE sedefSegDups
 ** 2021-06-01 Mitchell Robert Vollger
 team-segdups/Assembly_analysis/SEDEF/chm13_v1.1_plus38Y.SDs.bed.bb
 team-segdups/Assembly_analysis/SEDEF/chm13_v1.1_plus38Y.SDs.lowid.bed.bb
-mkln *.bb ../../../../dev/t2t-chm13-v1.1/sedefSegDups/
+mkln *.bb ../../../../hubs/dev/t2t-chm13-v1.1/sedefSegDups/
 * DONE gc5Base
 hgGcPercent -noLoad -wigOut -doGaps -win=5 -file=stdout -verbose=0 NODB ../genome/t2t-chm13-v1.1.2bit  | pigz -c > gc5Base.wigVarStep.gz
 wigToBigWig gc5Base.wigVarStep.gz ../genome/t2t-chm13-v1.1.sizes gc5Base.bigWig
-mkln gc5Base.bigWig ../../../../dev/t2t-chm13-v1.1/gc5Base
+mkln gc5Base.bigWig ../../../../hubs/dev/t2t-chm13-v1.1/gc5Base
 * DONE cpgIsland
 twoBitToFa ../genome/t2t-chm13-v1.1.2bit stdout | /hive/data/staging/data/cpgIslandExt/cpglh /dev/stdin >cpgIslands.cpglh
 ./my-doMakeBed.csh 
-mkln t2t-chm13-v1.1.cpgIslandExt.bb  ../../../../dev/t2t-chm13-v1.1/cpgIsland
+mkln t2t-chm13-v1.1.cpgIslandExt.bb  ../../../../hubs/dev/t2t-chm13-v1.1/cpgIsland
 
 *  v1.0_to_v1.1.html
 Sergey Koren
@@ -69,3 +69,116 @@ Sergey Koren
 * LASTZ IMPORTANT
  liftover should not have fix
 Justin Zook @MarkD - as @Nancy Hansen and I were looking into variants that don't liftover concordantly between GRCh38 and CHM13, we noticed an anomaly in the liftover from CHM13 to GRCh38, where a multi-Mbp region of CHM13 seems to have its primary alignment to chr8_KZ208915v1_fix instead of to chr8.  This region contains TNKS, MSRA, MFHAS1, BLK, GATA4, and a few more genes. Do you have any idea why this might be happening? It's probably too late to change this for our paper, but might be good to investigate and resolve at some point.
+
+* grch38PriLastz
+
+** Lastz parameters (from human/chimp browser settings)
+v1.03.52
+
+BLASTZ_O=600    --gap=600,150
+BLASTZ_E=150
+BLASTZ_M=254     --masking=254
+BLASTZ_T=2       --seed=12of19 --notransition
+BLASTZ_Y=15000 --ydrop==15000
+BLASTZ_K=4500  --hspthresh=4500
+
+BLASTZ_Q --score=
+    A    C    G    T
+    90 -330 -236 -356
+  -330  100 -318 -236
+  -236 -318  100 -330
+  -356 -236 -330   90
+
+** create grch38 files with only primary assembly
+cd grch38PriLastz/tmp/grch38
+fgrep -v _ /hive/data/genomes/hg38/chrom.sizes >grch38.sizes
+twoBitToFa -seqList=<(cut -f 1 grch38.sizes) /hive/data/genomes/hg38/hg38.2bit stdout | faToTwoBit stdin grch38.2bit
+
+** build alignments
+cd grch38PriLastz
+ln -s ../../../../../T2T-CHM13-hub/dev/build/t2t-chm13-v1.1/grch38PriLastz.DEF DEF
+runLastz fwd t2t-chm13-v1.1 >&fwd.log&
+
+# after complete
+runLastz swap t2t-chm13-v1.1 >&swap.log&
+
+# Can't add netclass, since it relies on repeat database.
+pigz -9 axtChain/noClass.net
+ln axtChain/noClass.net.gz ../t2t-chm13-v1.1.grch38.net.gz
+ln axtChain/t2t-chm13-v1.1.grch38.* ..
+
+pigz -9 ./swap/axtChain/noClass.net 
+ln ./swap/axtChain/noClass.net.gz ../grch38.t2t-chm13-v1.1.net.gz
+ln swap/axtChain/grch38.t2t-chm13-v1.1.* ..
+
+** create over bigChains 
+cd tmp
+hgLoadChain -noBin -test no ignore ../t2t-chm13-v1.1.grch38.all.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > chain.bigBedIn
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab chain.bigBedIn  ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.grch38.all.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > link.bigBedIn
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab link.bigBedIn ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.grch38.all.bigLink
+
+hgLoadChain -noBin -test no ignore ../t2t-chm13-v1.1.grch38.over.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > chain.bigBedIn
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab chain.bigBedIn  ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.grch38.over.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > link.bigBedIn
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab link.bigBedIn ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.grch38.over.bigLink
+
+** link to hub
+# make source chains available
+mkln *.gz *.big* ../../../../hubs/dev/t2t-chm13-v1.1/grch38PriLastz/
+mkln *.chain.gz ../../../../hubs/dev/t2t-chm13-v1.1/downloads/
+
+* proseq
+Savannah: /team-epigenetics/PROseq-RNAseq_chm13v1.1/MappedToCHM13v1.1/
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1_POS.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1_POS.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_POS.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-21mer-chm13v1.1_POS.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_meryl-51mer-chm13v1.1_POS.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_NEG.bigwig
+PROseq_BT2-default/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5A_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-21mer-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_meryl-51mer-chm13v1.1_POS.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_NEG.bigwig
+PROseq_BT2-k100/CHM13-5B_proseq_cutadapt-q20-m20_bt2-vs-dM_bt2-k100-chm13v1.1_POS.bigwig
+
+mkln PROseq_BT2-default/* ../../../../hubs/dev/t2t-chm13-v1.1/proseq/PROseq_BT2-default/
+mkln PROseq_BT2-k100/* ../../../../hubs/dev/t2t-chm13-v1.1/proseq/PROseq_BT2-k100
+
+* rnaseq
+Savannah: /team-epigenetics/PROseq-RNAseq_chm13v1.1/MappedToCHM13v1.1/
+RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548.bigwig
+RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-21mer-chm13v1.1.bigwig
+RNAseq_BT2-default/CHM13_S182_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-51mer-chm13v1.1.bigwig
+RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548.bigwig
+RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-21mer-chm13v1.1.bigwig
+RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-51mer-chm13v1.1.bigwig
+
+mkln RNAseq_BT2-default/*.bigwig ../../../../hubs/dev/t2t-chm13-v1.1/rnaseq/RNAseq_BT2-default/

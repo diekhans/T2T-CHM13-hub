@@ -1,8 +1,8 @@
 track PROseq_BT2-default
 compositeTrack off
 visibility hide
-shortLabel PROseq default
-longLabel CHM13 PROseq Bowtie2 default mapped and unique genome-wide kmer filtering Stranded and notStranded
+shortLabel PROseq_bt2-default_kmerFilt
+longLabel CHM13 PROseq Bowtie2 default mapped (chm13v1.1) and unique genome-wide kmer filtering Stranded and notStranded
 color 255,0,0
 altColor 0,0,255
 type bigWig
@@ -19,8 +19,8 @@ priority 30
 
     track PROseq-default-A_POS
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 default no kmer filtering
+    shortLabel PROseq-A bt2-dflt POS
+    longLabel PROseq-A bt2 default no kmer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -28,8 +28,8 @@ priority 30
 
     track PROseq-default-A_NEG
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 default no kmer filtering
+    shortLabel PROseq-A bt2-dflt NEG
+    longLabel PROseq-A bt2 default no kmer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -45,8 +45,8 @@ priority 30
     
     track PROseq-default-A_21mer_POS
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 21mer filtering
+    shortLabel PROseq-A bt2-dflt POS
+    longLabel PROseq-A bt2 21mer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -54,8 +54,8 @@ priority 30
 
     track PROseq-default-A_21mer_NEG
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 21mer filtering
+    shortLabel PROseq-A bt2-dflt NEG
+    longLabel PROseq-A bt2 21mer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -71,8 +71,8 @@ priority 30
     
     track PROseq-default-A_51mer_POS
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 51mer filtering
+    shortLabel PROseq-A bt2-dflt POS
+    longLabel PROseq-A bt2 51mer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -80,8 +80,8 @@ priority 30
 
     track PROseq-default-A_51mer_NEG
     parent PROseq_BT2-default
-    shortLabel PROseq-A bt2-dflt
-    longLabel PROseq-A bt2 51mer filtering
+    shortLabel PROseq-A bt2-dflt NEG
+    longLabel PROseq-A bt2 51mer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -168,7 +168,7 @@ priority 30
 track PROseq_BT2-k100
 compositeTrack off
 visibility hide
-shortLabel PROseq k100
+shortLabel PROseq_bt2-k100_kmerFilt
 longLabel CHM13 PROseq Bowtie2 k100 mapped (chm13v1.1) and unique genome-wide kmer filtering Stranded and notStranded
 color 255,0,0
 altColor 0,0,255
@@ -186,8 +186,8 @@ priority 30
 
     track PROseq-k100-A_POS
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 k100 no kmer filtering
+    shortLabel PROseq-A bt2-k100 POS 
+    longLabel PROseq-A bt2 k100 no kmer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -195,8 +195,8 @@ priority 30
 
     track PROseq-k100-A_NEG
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 k100 no kmer filtering
+    shortLabel PROseq-A bt2-k100 NEG
+    longLabel PROseq-A bt2 k100 no kmer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -212,8 +212,8 @@ priority 30
     
     track PROseq-k100-A_21mer_POS
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 21mer filtering
+    shortLabel PROseq-A bt2-k100 POS
+    longLabel PROseq-A bt2 21mer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -221,8 +221,8 @@ priority 30
 
     track PROseq-k100-A_21mer_NEG
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 21mer filtering
+    shortLabel PROseq-A bt2-k100 NEG
+    longLabel PROseq-A bt2 21mer filtering NEG
     type bigWig 
     visibility dense
     negateValues on
@@ -238,8 +238,8 @@ priority 30
     
     track PROseq-k100-A_51mer_POS
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 51mer filtering
+    shortLabel PROseq-A bt2-k100 POS
+    longLabel PROseq-A bt2 51mer filtering POS
     type bigWig 
     visibility dense
     negateValues off
@@ -247,8 +247,8 @@ priority 30
     
     track PROseq-k100-A_51mer_NEG
     parent PROseq_BT2-k100
-    shortLabel PROseq-A bt2-k100
-    longLabel PROseq-A bt2 51mer filtering
+    shortLabel PROseq-A bt2-k100 NEG
+    longLabel PROseq-A bt2 51mer filtering NEG
     type bigWig 
     visibility dense
     negateValues on

@@ -1,13 +1,13 @@
 include annotation.txt
 
 
-track cactus20200727
+track cactusV1.0
 compositeTrack on
-shortLabel Cactus 20200727
-longLabel Cactus t2tChm13_20200727 Alignment Tracks
+shortLabel Cactus V1.0
+longLabel Cactus t2t-chm13-v1.0 Alignment Tracks
 group compGeno
 subGroup1 view Track_Type Snake=Alignments
-subGroup2 orgs Organisms CHM13=CHM13 GRCh38=GRCh38
+subGroup2 orgs Organisms t2t-chm13-v1.0=t2t-chm13-v1.0 GRCh38=GRCh38
 dragAndDrop subTracks
 dimensions dimensionX=view dimensionY=orgs
 noInherit on
@@ -17,24 +17,24 @@ visibility hide
 type bigBed 3
 html needTrackDescription.html
 
-    track cactus20200727Alignments
+    track cactusV1.0Alignments
     shortLabel Alignments
     view Alignments
     visibility full
-    subTrack cactus20200727
+    subTrack cactusV1.0
     html needTrackDescription.html
 
-        track snakeCHM13
-        longLabel CHM13
-        shortLabel CHM13
-        otherSpecies CHM13
+        track snakechm13-v1.0
+        longLabel T2T chm13 v1.0
+        shortLabel T2T chm13 v1.0
+        otherSpecies t2t-chm13-v1.0
         visibility full
-        parent cactus20200727Alignments off
+        parent cactusV1.0Alignments off
         priority 3
-        bigDataUrl ../t2tChm13_20200727/CAT/t2tChm13.hal
+        bigDataUrl ../t2t-chm13-v1.0/cactus/t2t-chm13-v1.0.aln1.hal
         type halSnake
         group compGeno
-        subGroups view=Snake orgs=CHM13
+        subGroups view=Snake orgs=t2t-chm13-v1.0
         html needTrackDescription.html
 
         track snakeGRCh38
@@ -42,11 +42,12 @@ html needTrackDescription.html
         shortLabel GRCh38
         otherSpecies GRCh38
         visibility hide
-        parent cactus20200727Alignments off
+        parent cactusV1.0Alignments off
         priority 3
-        bigDataUrl ../t2tChm13_20200727/CAT/t2tChm13.hal
+        bigDataUrl ../t2t-chm13-v1.0/cactus/t2t-chm13-v1.0.aln1.hal
         type halSnake
         group compGeno
         subGroups view=Snake orgs=GRCh38
         html needTrackDescription.html
+
 

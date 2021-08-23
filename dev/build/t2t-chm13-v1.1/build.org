@@ -182,3 +182,40 @@ RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl
 RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl-51mer-chm13v1.1.bigwig
 
 mkln RNAseq_BT2-default/*.bigwig ../../../../hubs/dev/t2t-chm13-v1.1/rnaseq/RNAseq_BT2-default/
+
+* cactus 2021-08-23
+from marina
+courtyard:/nanopore/marina/t2t_v1.1/t2tChm13.v1.1.hal
+mv t2tChm13.v1.1.hal t2t-chm13-v1.1.hal
+# edit hal to use t2tChm13.v1.1 and hg38 names
+halRenameGenomes t2t-chm13-v1.1.hal renames.tab
+mkln t2t-chm13-v1.1.hal ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
+
+* synteny  2021-08-23
+cd synteny/tmp
+halStats --bedSequences t2t-chm13-v1.1 ../../cactus/t2t-chm13-v1.1.hal  > t2t.bed
+
+create syn.tmpl:
+#LOOP
+../../../../../T2T-CHM13-hub/bin/halSyntenyRun  ../../cactus/t2t-chm13-v1.1.hal t2t-chm13-v1.1 $(path1) hg38 25000 25000 {check out exists out/25kb.$(path1).psl}
+../../../../../T2T-CHM13-hub/bin/halSyntenyRun  ../../cactus/t2t-chm13-v1.1.hal t2t-chm13-v1.1 $(path1) hg38 1000000 50000 {check out exists out/1mb.$(path1).psl}
+#ENDLOOP
+
+gensub2 <(cut -f 1 t2t.bed) <(echo "") syn.tmpl syn.jobs
+
+ # run with -ram=16g
+para create -batch=b1 syn.jobs -ram=16g -maxQueue=100000000
+
+# halSyntenty produced no output for chrMT, which is identical
+
+# combine data for tracks
+cat out/25kb.chr* | pslSwap stdin stdout | sort -k 14,14 -k 16,16n |pigz -9 >synteny.25kb.psl.gz
+cat out/1mb.chr* | pslSwap stdin stdout | sort -k 14,14 -k 16,16n |pigz -9 >synteny.1mb.psl.gz
+
+pslToBigPsl synteny.25kb.psl.gz 25kb.bigin
+pslToBigPsl synteny.1mb.psl.gz 1mb.bigin
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 25kb.bigin ../../genome/t2t-chm13-v1.1.sizes ../synteny.25kb.bigPsl
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin ../../genome/t2t-chm13-v1.1.sizes ../synteny.1mb.bigPsl
+
+cd ..
+mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/synteny

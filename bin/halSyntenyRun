@@ -13,7 +13,7 @@ minBlockSize=$1; shift
 maxAnchorDistance=$1; shift
 outPsl=$1; shift
 
-export PATH=${HOME}/compbio/compartiveGenomics/projs/hal/src/hal/bin:${PATH}
+export PATH=${HOME}/compbio/compartiveGenomics/projs/hal/src/hal-opt/bin:${PATH}
 tmpOutPsl=${outPsl}.$(hostname).$$.tmp
 mkdir -p $(dirname ${outPsl})
 

@@ -1,0 +1,36 @@
+track grch38Synteny
+compositeTrack off
+visibility hide
+shortLabel GRCh38 Synteny
+longLabel GRCh38 Cactus Synteny
+altColor 0,0,255
+type bigPsl
+group compGeno
+priority 40
+html synteny.html    
+
+    track grch38Synteny25kb
+    parent grch38Synteny
+    shortLabel GRCh38 Synteny 25KB
+    longLabel  GRCh38 Cactus Synteny 25KB resolution
+    type bigPsl
+    color 0,20,180
+    visibility hide
+    priority 40.1
+    bigDataUrl synteny/synteny.25kb.bigPsl
+    group compGeno
+    html synteny.html
+
+    track grch38Synteny1mb
+    parent grch38Synteny
+    shortLabel GRCh38 Synteny 1MB
+    longLabel  GRCh38 Cactus Synteny 1MB resolution
+    type bigPsl
+    color 0,20,180
+    visibility hide
+    priority 41.1
+    bigDataUrl synteny/synteny.1mb.bigPsl
+    group compGeno
+    html synteny.html
+
+

@@ -55,6 +55,9 @@ include sedefSegDups.track.txt
 ##
 # comparative genomics
 ##
+include cactus.trackDb.txt
+include synteny.trackDb.txt
+
 ##
 # Expression/transcription/rna
 ##

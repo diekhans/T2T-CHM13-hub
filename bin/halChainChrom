@@ -1,0 +1,38 @@
+#!/bin/bash -x
+# build a chain for a chromosome
+set -beEu -o pipefail
+export PATH=/cluster/home/markd/compbio/compartiveGenomics/projs/hal/src/hal-opt/bin:${PATH}
+
+if [ $# != 7 ] ; then
+    echo "Wrong # args: halChainChrom hal targetGenome target2big queryGenome query2bit chrom outChain" >&2
+    exit 1
+fi
+
+hal="$1" ; shift
+targetGenome="$1" ; shift
+target2bit="$1" ; shift
+queryGenome="$1" ; shift
+query2bit="$1" ; shift
+chrom="$1" ; shift
+outChain="$1" ; shift
+
+tmpExt=$(hostname).$$
+
+# get range for one chromosome
+chromTmpBed=${TMPDIR}/halChainChrom.${tmpExt}.bed
+halStats --bedSequences ${targetGenome} ${hal} | tawk -v chr=${chrom} '$1==chr{print}' >$chromTmpBed
+
+mkdir -p $(dirname $outChain)
+
+outPslTmp=${TMPDIR}/halChainChrom.${tmpExt}.psl
+halLiftover --outPSL ${hal} ${targetGenome} ${chromTmpBed} ${queryGenome} /dev/stdout | \
+    pslPosTarget stdin ${outPslTmp}
+
+outChainTmp=${outChain}.${tmpExt}
+axtChain -psl -linearGap=medium -scoreScheme=/hive/data/staging/data/blastz/human_chimp.v2.q \
+         ${outPslTmp} ${query2bit} ${target2bit} ${outChainTmp}
+
+
+mv -f ${outChainTmp} ${outChain}
+
+rm -f ${outChainTmp} ${chromTmpBed}

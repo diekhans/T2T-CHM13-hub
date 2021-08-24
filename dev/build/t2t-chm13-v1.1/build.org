@@ -191,6 +191,10 @@ mv t2tChm13.v1.1.hal t2t-chm13-v1.1.hal
 halRenameGenomes t2t-chm13-v1.1.hal renames.tab
 mkln t2t-chm13-v1.1.hal ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
 
+# cactus chains
+# NOT DONE
+# added halChainChrom to build
+
 * synteny  2021-08-23
 cd synteny/tmp
 halStats --bedSequences t2t-chm13-v1.1 ../../cactus/t2t-chm13-v1.1.hal  > t2t.bed

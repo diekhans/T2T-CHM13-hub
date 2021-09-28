@@ -67,7 +67,7 @@ mkdir ../../../hub/HG002-X-v1.0/rmskV2/
 ln -f rmskV2.bigBed ../../../hub/HG002-X-v1.0/rmskV2/
 
 * chm13-liftover
-idate markd for Savannah
+markd for Savannah
 I know that hg002 has an unassembled PAR1 region and that corresponds to 1-1929004 of the chm13 chrX, so hg002 is ~2Mb shorter. But I’d like to be able to compare the repeat content between the two and an alignment+liftover would be the most accurate to do so.
 
 twoBitToFa -seq=chrX ../genome/HG002-X-v1.0.2bit tmp/HG002.chrX.fa
@@ -79,18 +79,33 @@ faToTwoBit tmp/HG002.chrX.fa  tmp/HG002.chrX.2bit
 faSize -detailed tmp/CHM13.chrX.fa >tmp/CHM13.chrX.sizes
 faSize -detailed tmp/HG002.chrX.fa >tmp/HG002.chrX.sizes
 
-
-
+doBlastzChainNet.pl DEF  -stop=net -syntenicNet -noDbNameCheck -blastzOutRoot=$(pwd -P)/CHM13 -bigClusterHub=ku -workhorse=hgwdev >&log&
 
 makeOneToOnePsl --skipChrom=chrX ../genome/HG002-X-v1.0.sizes tmp/CHM13-HG002.auto.psl
-
 pslToChain tmp/CHM13-HG002.auto.psl  tmp/CHM13-HG002.auto.chain
-
-
 chainToPsl CHM13-HG002.chain ../genome/HG002-X-v1.0.sizes ../../t2t-chm13-v1.0/genome/t2t-chm13-v1.0.sizes ../genome/HG002-X-v1.0.2bit  ../../t2t-chm13-v1.0/genome/t2t-chm13-v1.0.2bit CHM13-HG002.psl
 
 
 (zcat tmp/CHM13.chrX.HG002.chrX.over.chain.gz; cat tmp/CHM13-HG002.auto.chain )| chainSort stdin CHM13-HG002.over.chain
-doBlastzChainNet.pl DEF  -stop=net -syntenicNet -noDbNameCheck -blastzOutRoot=$(pwd -P)/CHM13 -bigClusterHub=ku -workhorse=hgwdev >&log&
 
 ln -f CHM13-HG002.* HG002-CHM13.* ../../../hub/HG002-X-v1.0/chm13-liftover/
+
+* chm13-v1.1 liftover
+markd for Savannah
+twoBitToFa -seq=chrX ../genome/HG002-X-v1.0.2bit tmp/HG002.chrX.fa
+twoBitToFa -seq=chrX ../../t2t-chm13-v1.1/genome/t2t-chm13-v1.1.2bit tmp/CHM13.chrX.fa
+
+faToTwoBit tmp/CHM13.chrX.fa  tmp/CHM13.chrX.2bit 
+faToTwoBit tmp/HG002.chrX.fa  tmp/HG002.chrX.2bit
+
+faSize -detailed tmp/CHM13.chrX.fa >tmp/CHM13.chrX.sizes
+faSize -detailed tmp/HG002.chrX.fa >tmp/HG002.chrX.sizes
+
+
+cd run
+doBlastzChainNet.pl DEF  -stop=net -syntenicNet -noDbNameCheck -blastzOutRoot=$(pwd -P)/CHM13 -bigClusterHub=ku -workhorse=hgwdev >&log&
+
+ln axtChain/CHM13.chrX.HG002.chrX.over.chain.gz ../CHM13-v1.1.HG002.chrX.over.chain.gz
+cd ..
+
+mkln *.chain.gz ../../../../hubs/dev/HG002-X-v1.0/chm13-v1.1-liftover/

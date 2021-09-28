@@ -223,3 +223,9 @@ bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin 
 
 cd ..
 mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/synteny
+* uwLiftoff
+Mitchell 
+team-segdups/Assembly_analysis/Liftoff/chm13_v1.1_plus38Y.all.bb
+team-segdups/Assembly_analysis/Liftoff/chm13_v1.1_plus38Y.orf_only.bb
+
+mkln chm13_v1.1_plus38Y.* ../../../../hubs/dev/t2t-chm13-v1.1/uwLiftoff/

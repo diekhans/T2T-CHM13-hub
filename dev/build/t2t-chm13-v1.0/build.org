@@ -335,9 +335,9 @@ ln -f AS_*.bigBed  ../../../hub/t2t-chm13-v1.0/as_annotation/
 - use gencode V35 to match CAT, only do protein code and lncRNAs
 
 # fix complex ids and skip PAR
-zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.pc_transcripts.fa.gz  /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.lncRNA_transcripts.fa.gz | gencodeFastaEdit /dev/stdin tmp/rna.fa.gz
+zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.pc_transcripts.fa.gz  /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v35.lncRNA_transcripts.fa.gz | gencodeFastaEdit /dev/stdin data/rna.fa.gz
 
-blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit tmp/rna.fa.gz tmp
+blatRnaMkJobs ../genome/t2t-chm13-v1.0.2bit data/rna.fa.gz tmp
 
 # run in parasol, MUST push all alignments, as exceeds 100000
 
@@ -349,7 +349,7 @@ pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -g
 hgsql hg38 -Ne 'select * from gencodeAnnotV35' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
 hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from gencodeAttrsV35 ga left join gencodeToGeneSymbolV35 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz
 
-pslToBigPsl -cds=data/gencode.cds -fa=tmp/rna.fa.gz aligns/gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
+pslToBigPsl -cds=data/gencode.cds -fa=data/rna.fa.gz aligns/gencode.psl.gz stdout | sort -k1,1 -k2,2n > tmp/g.bigin1
 
 bigBlatPslAddColumns data/gencode.meta.tsv.gz tmp/g.bigin1 tmp/g.bigin2
 

@@ -52,6 +52,39 @@ include sedefSegDups.track.txt
 ##
 # genes
 ##
+track uwLiftoff
+compositeTrack off
+visibility hide
+shortLabel LiftOff Genes
+longLabel  LiftOff Genes Annotations based on GENCODE (from UW)
+type bigGenePred
+group genes
+priority 800
+
+    track uwLiftoffAll
+    parent uwLiftoff on
+    bigDataUrl uwLiftoff/chm13_v1.1_plus38Y.all.bb
+    shortLabel LiftOff Genes (All)
+    longLabel LiftOff Genes - all annotations (from UW)
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+
+    track uwLiftoffOrf
+    parent uwLiftoff on
+    bigDataUrl uwLiftoff/chm13_v1.1_plus38Y.orf_only.bb
+    shortLabel LiftOff Genes (ORFs)
+    longLabel LiftOff Genes V1 - annotations with ORFs (from UW)
+    type bigGenePred
+    group genes
+    labelFields name, name2
+    defaultLabelFields name
+    searchIndex name,name2
+
+
+
 ##
 # comparative genomics
 ##

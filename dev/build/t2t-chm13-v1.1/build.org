@@ -230,7 +230,7 @@ team-segdups/Assembly_analysis/Liftoff/chm13_v1.1_plus38Y.orf_only.bb
 
 mkln chm13_v1.1_plus38Y.* ../../../../hubs/dev/t2t-chm13-v1.1/uwLiftoff/
 
-* compositeRepeats
+* compositeRepeats 2021-09-29
 Savannah files set by slack
 
 buildBigBed bed4 t2t-chm13-v1.1 compositeRepeats.bigBed Composite_track_CHM13v1.1.bed.gz 
@@ -242,7 +242,7 @@ mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/compositeRepeats
 http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.composite-repeats-singletons-arrays.bed.gz
 ln -f Composite_track_CHM13v1.1.bed.gz  ../../../../hubs/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.composite-repeats-singletons-arrays.bed.gz
 
-* newSatellitesMonomersArrays
+* newSatellitesMonomersArrays 2021-09-29
 Savannah files set by slack
 
 buildBigBed bed4 t2t-chm13-v1.1 newSatellitesMonomersArrays.bigBed NewSatellites_track_CHM13v1.1.bed.gz 
@@ -254,3 +254,16 @@ http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.new-sat
 ln Composite_track_CHM13v1.1.bed.gz  ../../../../hubs/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.new-satellites-monomers-arrays.bed.gz
 
 
+* as_annotation 2021-09-29
+Lev 
+The three annotation tracks for CHM13 v1.1 with the description files are
+on Globus at /team-satellites/AS_Annotation/CHM13_v1.1/
+
+pigz *.bed
+
+
+buildBigBed bed9 t2t-chm13-v1.1 AS_HOR_Annot.bigBed t2t-chm13.v1.1-AS-HORs-annotation.170921.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 AS_SF_Annot.bigBed t2t-chm13.v1.1-AS-SFs.290621.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 AS_strand.bigBed t2t-chm13.v1.1-AS-strand.170921.bed.gz &
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/as_annotation/

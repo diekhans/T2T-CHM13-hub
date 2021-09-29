@@ -73,6 +73,39 @@ type bigBed 4
 bigDataUrl newSatellitesMonomersArrays/newSatellitesMonomersArrays.bigBed
 priority 3
 
+track AS_HOR_Annot
+shortLabel AS HOR annotation
+longLabel Alpha satellite higher-order repeats annotation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+maxItems 100000
+bigDataUrl as_annotation/AS_HOR_Annot.bigBed
+priority 10
+
+track AS_SF_Annot
+shortLabel AS SF annotation
+longLabel Alpha satellite suprachromosomal Families and pericentromeric monomer layers annotation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+maxItems 100000
+bigDataUrl as_annotation/AS_SF_Annot.bigBed
+priority 11
+
+track AS_strand
+shortLabel AS strand
+longLabel alpha satellite higher-order repeats strand orientation
+group cenTelo
+visibility hide
+type bigBed 9
+itemRgb on
+maxItems 100000
+bigDataUrl as_annotation/AS_strand.bigBed
+priority 12
+
 ##
 # genes
 ##

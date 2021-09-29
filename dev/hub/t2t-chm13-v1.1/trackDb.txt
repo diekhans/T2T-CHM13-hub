@@ -43,12 +43,36 @@ type bigBed 4 +
 bigDataUrl trf/trf.bigBed
 priority 2
 
+track compositeRepeats
+shortLabel Composite Repeats
+longLabel  Composite Repeats
+group varRep
+visibility hide
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 4
+bigDataUrl compositeRepeats/compositeRepeats.bigBed
+priority 3
+
+
 include sedefSegDups.track.txt
+
 
 
 ##
 # cenTelo
 ##
+track newSatellitesMonomersArrays
+shortLabel New Satellites
+longLabel New Satellites Monomers Arrays
+group cenTelo
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 4
+bigDataUrl newSatellitesMonomersArrays/newSatellitesMonomersArrays.bigBed
+priority 3
+
 ##
 # genes
 ##

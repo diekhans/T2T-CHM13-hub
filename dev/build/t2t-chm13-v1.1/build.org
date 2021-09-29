@@ -223,9 +223,34 @@ bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as 1mb.bigin 
 
 cd ..
 mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/synteny
-* uwLiftoff
+* uwLiftoff 2021-09-28
 Mitchell 
 team-segdups/Assembly_analysis/Liftoff/chm13_v1.1_plus38Y.all.bb
 team-segdups/Assembly_analysis/Liftoff/chm13_v1.1_plus38Y.orf_only.bb
 
 mkln chm13_v1.1_plus38Y.* ../../../../hubs/dev/t2t-chm13-v1.1/uwLiftoff/
+
+* compositeRepeats
+Savannah files set by slack
+
+buildBigBed bed4 t2t-chm13-v1.1 compositeRepeats.bigBed Composite_track_CHM13v1.1.bed.gz 
+
+buildBigBed bed4 t2t-chm13-v1.1 compositeRepeats.bigBed
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/compositeRepeats
+
+# make available for download for the paper
+http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.composite-repeats-singletons-arrays.bed.gz
+ln -f Composite_track_CHM13v1.1.bed.gz  ../../../../hubs/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.composite-repeats-singletons-arrays.bed.gz
+
+* newSatellitesMonomersArrays
+Savannah files set by slack
+
+buildBigBed bed4 t2t-chm13-v1.1 newSatellitesMonomersArrays.bigBed NewSatellites_track_CHM13v1.1.bed.gz 
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/newSatellitesMonomersArrays
+
+# make available for download for the paper
+http://t2t.gi.ucsc.edu/chm13/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.new-satellites-monomers-arrays.bed.gz
+ln Composite_track_CHM13v1.1.bed.gz  ../../../../hubs/dev/t2t-chm13-v1.1/downloads/t2t-chm13-v1.1.new-satellites-monomers-arrays.bed.gz
+
+

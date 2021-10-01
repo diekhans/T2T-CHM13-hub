@@ -267,3 +267,10 @@ buildBigBed bed9 t2t-chm13-v1.1 AS_SF_Annot.bigBed t2t-chm13.v1.1-AS-SFs.290621.
 buildBigBed bed9 t2t-chm13-v1.1 AS_strand.bigBed t2t-chm13.v1.1-AS-strand.170921.bed.gz &
 
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/as_annotation/
+
+* cytobands 2021-10-01
+from @Nick Altemose via slack
+
+chm13_v1.1.cytoBandIdeo_v1.1.txt
+buildBigBed bed4 --as=${HOME}/kent/src/hg/lib/cytoBand.as   t2t-chm13-v1.1  cytoBandIdeo.bigBed chm13_v1.1.cytoBandIdeo_v1.1.txt
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/cytobands/

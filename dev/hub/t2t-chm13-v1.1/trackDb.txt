@@ -1,4 +1,12 @@
-#
+##
+# cytoBands
+track cytoBandIdeo
+longLabel Chromosome ideogram with cytogenetic bands
+shortLabel cytoBandIdeo
+bigDataUrl cytobands/cytoBandIdeo.bigBed
+type bigBed
+
+##
 # map
 ## 
 track gc5Base

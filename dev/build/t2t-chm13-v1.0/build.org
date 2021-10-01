@@ -1123,3 +1123,10 @@ buildBigBed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.bed
 
 
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/alphaSatHOR 
+
+* cytobands 2021-10-01
+from @Nick Altemose via slack
+
+chm13_v1.0.cytoBandIdeo_v1.0.txt
+buildBigBed bed4 --as=${HOME}/kent/src/hg/lib/cytoBand.as   t2t-chm13-v1.0  cytoBandIdeo.bigBed chm13_v1.0.cytoBandIdeo_v1.0.txt
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/cytobands/

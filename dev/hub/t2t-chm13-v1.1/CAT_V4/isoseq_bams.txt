@@ -1,0 +1,34 @@
+track bams_CHM13_V4
+superTrack catEvidence_V4 hide
+group genes
+compositeTrack on
+shortLabel IsoSeq BAMs V4
+longLabel IsoSeq BAMs V4
+dragAndDrop subTracks
+visibility hide
+type bam
+indelDoubleInsert on
+indelQueryInsert on
+showNames off
+bamColorMode gray
+bamGrayMode aliQual
+pairEndsByName on
+html CAT_V4/bams_CHM13.html
+
+
+    track 0_chm13_1.t2t.sorted.bam_CHM13_V4
+    parent bams_CHM13_V4
+    bigDataUrl CAT_V4/0_chm13_1.t2t.sorted.bam
+    shortLabel chm13
+    longLabel chm13
+    type bam
+    priority 10
+
+    track 1_chm13_2.t2t.sorted.bam_CHM13_V4
+    parent bams_CHM13_V4
+    bigDataUrl CAT_V4/1_chm13_2.t2t.sorted.bam
+    shortLabel chm13
+    longLabel chm13
+    type bam
+    priority 10
+

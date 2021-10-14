@@ -1,0 +1,16 @@
+include consensus.txt
+
+# track catEvidence_V4
+# superTrack on
+# group genes
+# visibility hide
+# shortLabel CAT Evidence V4
+# longLabel CAT Gene Annotation Evidence V4
+# priority 1.1
+# html CAT_V4/catEvidence.html
+
+# include isoseq_bams.txt
+# include filtered_transmap.txt
+# include evaluation.txt
+# include transmap.txt
+# include annotation.txt

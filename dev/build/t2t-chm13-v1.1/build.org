@@ -295,11 +295,12 @@ zcat /hive/data/genomes/hg38/bed/gencodeV35/import/release/release_35/gencode.v3
 blatRnaMkJobs ../genome/t2t-chm13-v1.1.2bit data/rna.fa.gz tmp
 
 # run in parasol, MUST push all alignments, as exceeds 100000
+para push -maxPush=500000 -batch=tmp/b2 tmp/para.jobs 
 
 # sort by query
 find tmp/psls -type f | xargs cat | sort -k 10,10 | pigz -c >aligns/gencode.raw.psl.gz
 
-pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -globalNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=aligns/gencode.stats aligns/gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >aligns/gencode.psl.gz
+pslCDnaFilter -minQSize=20 -ignoreIntrons -repsAsMatch -ignoreNs -bestOverlap -globalNearBest=0.001  -minId=0.92 -minCover=0.75 -statsOut=aligns/gencode.stats aligns/gencode.raw.psl.gz stdout | sort -k 14,14 -k 16,16n |pigz -9c >aligns/gencode.psl.gzp
 
 hgsql hg38 -Ne 'select * from gencodeAnnotV35' | cut -f 2- |genePredToFakePsl no /dev/stdin -chromSize=/hive/data/genomes/hg38/chrom.sizes /dev/null data/gencode.cds
 hgsql hg38 -e 'select ga.transcriptId id, ga.geneName as geneSym, ga.geneId, gs.geneId as hgncId, ga.geneType from gencodeAttrsV35 ga left join gencodeToGeneSymbolV35 gs on gs.transcriptId = ga.transcriptId' |gzip -c >data/gencode.meta.tsv.gz

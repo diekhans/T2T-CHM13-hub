@@ -191,11 +191,40 @@ mv t2tChm13.v1.1.hal t2t-chm13-v1.1.hal
 halRenameGenomes t2t-chm13-v1.1.hal renames.tab
 mkln t2t-chm13-v1.1.hal ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
 
+cd tmp
+halStats --bedSequences hg38 ../t2t-chm13-v1.1.hal >hg38.bed
+split -l 1 hg38.bed hg38/chrom.
+
+find  hg38 -type f | awk '{print "../getChromPairswise", $1}' >para.jobs
+para create para.jobs -batch=b1
+find t2t-chm13-v1.1/ -type f | xargs cat | csort -k 10,10  -k12,12n > t2t-chm13-v1.1.hg38.cactus.psl
+pslToBigPsl t2t-chm13-v1.1.hg38.cactus.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.1.hg38.cactus.bigPslIn 
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.1.hg38.cactus.bigPslIn ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.hg38.cactus.bigPsl
+
+pslSwap t2t-chm13-v1.1.hg38.cactus.psl stdout | axtChain -psl -verbose=0 -scoreScheme=/scratch/data/blastz/human_chimp.v2.q -minScore=5000 -linearGap=medium stdin /hive/data/genomes/hg38/hg38.2bit ../../genome/t2t-chm13-v1.1.2bit stdout | chainSwap stdin t2t-chm13-v1.1.hg38.cactus.chain
+chainToPsl t2t-chm13-v1.1.hg38.cactus.chain ../../genome/t2t-chm13-v1.1.sizes /hive/data/genomes/hg38/chrom.sizes ../../genome/t2t-chm13-v1.1.2bit /hive/data/genomes/hg38/hg38.2bit t2t-chm13-v1.1.hg38.cactus.chained.psl
+pslToBigPsl t2t-chm13-v1.1.hg38.cactus.chained.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.1.hg38.cactus.chained.bigPslIn
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.1.hg38.cactus.chained.bigPslIn  ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.hg38.cactus.chained.bigPsl
+
+# get lifted 1.0 PSL from Marina
+/nanopore/marina/t2t_v1.1/chain/t2t-chm13-v1.1.liftover.GRCh38.cactus.psl
+pslToBigPsl t2t-chm13-v1.1.liftover.GRCh38.cactus.psl stdout | sort -k1,1 -k2,2n > tmp/t2t-chm13-v1.1.liftover.hg38.cactus.bigPslIn
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as tmp/t2t-chm13-v1.1.liftover.hg38.cactus.bigPslIn  ../genome/t2t-chm13-v1.1.sizes t2t-chm13-v1.1.liftover.hg38.cactus.bigPsl
+
+mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
+
 # cactus chains
 # NOT DONE
 # added halChainChrom to build
 
-* synteny  2021-08-23
+
+* issues  Assembly/Validation
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1_issues.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
+
+buildBigBed bed9  t2t-chm13-v1.1 issues.bigBed v1.1_issues.bed 
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/issues* synteny  2021-08-23
 cd synteny/tmp
 halStats --bedSequences t2t-chm13-v1.1 ../../cactus/t2t-chm13-v1.1.hal  > t2t.bed
 

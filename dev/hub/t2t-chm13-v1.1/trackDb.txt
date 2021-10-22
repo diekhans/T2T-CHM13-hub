@@ -27,6 +27,16 @@ type bigWig 0 100
 bigDataUrl gc5Base/gc5Base.bigWig
 html gc5Base
 
+track issues
+shortLabel Issues
+longLabel Issues from read low-coverage
+group map
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 9
+bigDataUrl issues/issues.bigBed 
+priority 3.5
 
 ##
 # varRep

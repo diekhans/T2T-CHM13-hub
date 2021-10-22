@@ -1,0 +1,55 @@
+<h2>Description</h2>
+<p>Issues Track:<\p>
+
+<h2>Methods</h2>
+<p>
+This file contains regions with low coverage support and location of each error k-mer obtained from HiFi and ONT platforms.<br><br>
+
+Reads were aligned with Winnowmap 2.01.<br><br>
+Primary read alignments have been processed with asset commit ver. 0133f268eebf308a1c3eb356b564550526465157, and regions meeting the following criteria are reported in each platform:<br>
+
+<li> Less than 7 reads aligned in hifi, 10 reads aligned in ONT<br>
+<li> Merged when regions are less than 5 kb apart<br>
+<li> Exclude low coverage at both 3 kb ends of each chromosome due to natural coverage drop<br>
+<li> Exclude low coverage overlapping rDNA gaps<br><br>
+
+Additionally, regions below were included:<br><br>
+  
+<li> Regions with base error were detected with 21-mers from Illumina-HiFi reads using Merqury
+<li> Chimeric consensus of two haplotypes and collapsed simple tandem repeat, found from variant calling and other methods
+
+</p>
+<p>
+Raw low coverage tracks from each platform (containing clippings and low coverage from sequencing biases):
+<li> hifi.pri.issues.bed
+<li> ont.pri.len1k_idy85.issues.bed
+</p>
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p>
+<li> Error_Kmer (k-mers found only in the assembly, and not in the Illumina-HiFi hybrid set) : 0,0,0 (black)
+<li> Chimeric_Hap (Joined two haplotypes) and Collapse : 204,0,0 (red)
+<li> Low (Low coverage), Low_Qual (Low coverage associated with consensus error) : 204,0,0 (red)
+</p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+browser  -->
+<p>https://github.com/marbl/CHM13-issues/v1.0_issues.bed</p>
+<p>https://github.com/marbl/CHM13-issues/v1.1_issues.bed</p>
+
+<h2>Release history</h2>
+<ol>
+<li> 2021 Jun 24. Update to include error k-mers, removing clippings and calls from sequencing biases
+<li> 2021 Apr 28. Internal release
+<li> 2021 Feb 23. Internal release
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+<li><a href="https://github.com/marbl/CHM13-issues">Please report any issues to https://github.com/marbl/CHM13-issues</a>
+</ul>
+<h2>Credits</h2>
+<p>Please cite Mc Cartney AM, Shafin K, Alonge M et al. <a href="https://doi.org/10.1101/2021.07.02.450803">Chasing perfection: validation and polishing strategies for telomere-to-telomere genome assemblies.</a> bioRxiv (2021) doi: https://doi.org/10.1101/2021.07.02.450803</p>
+

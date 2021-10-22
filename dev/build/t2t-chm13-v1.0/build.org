@@ -605,6 +605,7 @@ buildBigBed bed9 t2t-chm13-v1.0 low_coverage.bigBed low_coverage.bed.gz
 buildBigBed bed9 t2t-chm13-v1.0 low_coverage.30k.bigBed low_coverage.30k.bed.gz
 buildBigBed bed9 t2t-chm13-v1.0 low_coverage.100k.bigBed low_coverage.100k.bed.gz
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage/
+** REPLACED BY low-coverage2
 * jaspar:
 ** https://github.com/wassermanlab/JASPAR-UCSC-tracks
 
@@ -984,6 +985,7 @@ ont.pri.len1k_idy85.issues.bed
 for f in *.gz ; do buildBigBed bed9 t2t-chm13-v1.0 $(basename $f .bed.gz).bigBed $f ; done
 ln -f *.bigBed ../../../hub/t2t-chm13-v1.0/low_coverage2/
 
+** replaced by issues
 * proSeqUnstranded2
 from Savannah
 
@@ -1130,3 +1132,13 @@ from @Nick Altemose via slack
 chm13_v1.0.cytoBandIdeo_v1.0.txt
 buildBigBed bed4 --as=${HOME}/kent/src/hg/lib/cytoBand.as   t2t-chm13-v1.0  cytoBandIdeo.bigBed chm13_v1.0.cytoBandIdeo_v1.0.txt
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/cytobands/
+
+* issues
+replaces low-coverage2
+
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.0_issues.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
+
+buildBigBed bed9  t2t-chm13-v1.0 issues.bigBed v1.0_issues.bed 
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/issues

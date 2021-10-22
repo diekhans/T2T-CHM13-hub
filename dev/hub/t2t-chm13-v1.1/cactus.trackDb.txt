@@ -46,28 +46,56 @@ html cactus.html
         subGroups view=Snake orgs=t2t-chm13-v1.1
         html cactus.html
 
-# track cactusSimplified
-# #compositeTrack on
-# superTrack on
-# shortLabel Cactus (simplified)
-# longLabel Cactus Alignment Tracks (simplified)
-# group compGeno
-# visibility hide
-# type bigPsl
-# priority 2
-# html cactus.html
-# 
-#         track cactusSimplifiedChained
-#         parent cactusSimplified
-#         shortLabel hg38 Cactus Chained
-#         longLabel  hg38 Cactus Chained Alignments
-#         type bigPsl
-#         color 20,0,120
-#         visibility hide
-#         bigDataUrl cactus/t2t-chm13-v1.1.hg38.cactus.chained.bigPsl
-#         priority 9
-#         group compGeno
-#         #subGroups view=Chained orgs=GRCH38
-#         html cactus.html
-#         #configurable on
-# 
+track cactusSimplified
+#compositeTrack on
+superTrack on
+shortLabel Cactus (simplified)
+longLabel Cactus Alignment Tracks (simplified)
+group compGeno
+visibility hide
+type bigPsl
+priority 2
+html cactus.html
+
+        track cactusSimplifiedChained
+        parent cactusSimplified
+        shortLabel hg38 Cactus Chained
+        longLabel  hg38 Cactus Chained Alignments
+        type bigPsl
+        color 20,0,120
+        visibility hide
+        bigDataUrl cactus/t2t-chm13-v1.1.hg38.cactus.chained.bigPsl
+        priority 9
+        group compGeno
+        #subGroups view=Chained orgs=GRCH38
+        html cactus.html
+        #configurable on
+
+        track cactusSimplifiedUnchained
+        parent cactusSimplified
+        shortLabel hg38 Cactus
+        longLabel  hg38 Cactus Alignments not chained
+        type bigPsl
+        color 120,0,20
+        visibility hide
+        bigDataUrl cactus/t2t-chm13-v1.1.hg38.cactus.bigPsl
+        priority 10
+        group compGeno
+        #subGroups view=Chained orgs=GRCH38
+        html cactus.html
+        #configurable on
+
+        track cactusSimplifiedLifted
+        parent cactusSimplified
+        shortLabel hg38 Cactus Lifted
+        longLabel  hg38 Cactus Alignments Lifted from V1.0
+        type bigPsl
+        color 120,0,120
+        visibility hide
+        bigDataUrl cactus/t2t-chm13-v1.1.liftover.hg38.cactus.bigPsl
+        priority 11
+        group compGeno
+        #subGroups view=Lifted orgs=GRCH38
+        html cactus.html
+        #configurable on
+

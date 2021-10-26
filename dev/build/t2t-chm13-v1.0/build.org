@@ -1142,3 +1142,20 @@ https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
 
 buildBigBed bed9  t2t-chm13-v1.0 issues.bigBed v1.0_issues.bed 
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/issues
+
+move under validation supertrack
+
+* merfinKmer (validation)
+Giulio Formenti
+team-curation/tracks/v1.0/chm13.draft_v1.0.hifi.bw
+merfin_hifi_track.html
+team-curation/tracks/v1.0/chm13.draft_v1.0.illumina.bw
+merfin_illumina_track.html
+mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.0/merfinKmer
+
+
+* todo 
+Glennis Logsdon
+Yeah, the initial Iso-Seq alignments were produced by Phillip Dishuck!
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/

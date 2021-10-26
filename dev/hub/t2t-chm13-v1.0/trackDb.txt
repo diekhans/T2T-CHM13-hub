@@ -19,17 +19,6 @@ type bigBed 3
 bigDataUrl gap.bigBed
 priority 1
 
-track issues
-shortLabel Issues
-longLabel Issues from read low-coverage
-group map
-visibility hide
-itemRgb on
-maxItems 100000
-type bigBed 9
-bigDataUrl issues/issues.bigBed 
-priority 3.5
-
 track gc5Base
 shortLabel GC Percent
 longLabel GC Percent in 5-Base Windows
@@ -47,6 +36,7 @@ type bigWig 0 100
 bigDataUrl gc5Base.bigWig
 html gc5Base
 
+include validation.trackDb.txt
 
 track kmers
 shortLabel K-MERs

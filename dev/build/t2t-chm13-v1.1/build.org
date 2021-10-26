@@ -183,6 +183,8 @@ RNAseq_BT2-default/CHM13_S183_rnaseq_cutadapt-q20-m100_bt2-chm13v1.1_F1548_meryl
 
 mkln RNAseq_BT2-default/*.bigwig ../../../../hubs/dev/t2t-chm13-v1.1/rnaseq/RNAseq_BT2-default/
 
+* track spread sheet
+https://docs.google.com/spreadsheets/d/13BXuEFB904aje6zWXyZ0znZnXvQiu1qxKADA2uV2JU4/edit#gid=1966247802
 * cactus 2021-08-23
 from marina
 courtyard:/nanopore/marina/t2t_v1.1/t2tChm13.v1.1.hal
@@ -224,7 +226,19 @@ https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1_issues.bed
 https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
 
 buildBigBed bed9  t2t-chm13-v1.1 issues.bigBed v1.1_issues.bed 
-mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/issues* synteny  2021-08-23
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/issues
+
+move under validation supertrack
+
+* merfinKmer (validation)
+Giulio Formenti
+team-curation/tracks/v1.1/chm13_v1.1.merfin.hifi.bw
+merfin_hifi_track.html
+team-curation/tracks/v1.1/chm13_v1.1.merfin.illumina.bw
+merfin_illumina_track.html
+
+mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.1/merfinKmer
+* synteny  2021-08-23
 cd synteny/tmp
 halStats --bedSequences t2t-chm13-v1.1 ../../cactus/t2t-chm13-v1.1.hal  > t2t.bed
 

@@ -1,0 +1,40 @@
+track validation
+shortLabel Validation
+longLabel Validation of T2T assembly
+superTrack on show
+group map
+priority 3.5
+
+    track issues
+    parent validation
+    shortLabel Issues
+    longLabel Issues from read low-coverage
+    group map
+    visibility dense
+    itemRgb on
+    maxItems 100000
+    type bigBed 9
+    bigDataUrl issues/issues.bigBed 
+    priority 1.0
+
+    track merfinKmerHiFi
+    parent validation
+    shortLabel HiFi 21-mers 
+    longLabel  HiFi 21-mers generated with Merfin
+    group map
+    visibility hide
+    type bigWig
+    bigDataUrl merfinKmer/chm13_v1.1.merfin.hifi.bw
+    priority 2.0
+
+    track merfinKmerIllumina
+    parent validation
+    shortLabel Illumina 21-mers 
+    longLabel  Illumina 21-mers generated with Merfin
+    group map
+    visibility hide
+    type bigWig
+    bigDataUrl merfinKmer/chm13.v1.1.merfin.illumina.bw
+    priority 3.0
+
+

@@ -220,25 +220,8 @@ mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
 # added halChainChrom to build
 
 
-* issues  Assembly/Validation
-Arang Rhie
-https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1_issues.bed
-https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
-
-buildBigBed bed9  t2t-chm13-v1.1 issues.bigBed v1.1_issues.bed 
-mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/issues
-
-move under validation supertrack
-
-* merfinKmer (validation)
-Giulio Formenti
-team-curation/tracks/v1.1/chm13_v1.1.merfin.hifi.bw
-merfin_hifi_track.html
-team-curation/tracks/v1.1/chm13_v1.1.merfin.illumina.bw
-merfin_illumina_track.html
-
-mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.1/merfinKmer
 * synteny  2021-08-23
+
 cd synteny/tmp
 halStats --bedSequences t2t-chm13-v1.1 ../../cactus/t2t-chm13-v1.1.hal  > t2t.bed
 
@@ -304,12 +287,29 @@ on Globus at /team-satellites/AS_Annotation/CHM13_v1.1/
 
 pigz *.bed
 
-
 buildBigBed bed9 t2t-chm13-v1.1 AS_HOR_Annot.bigBed t2t-chm13.v1.1-AS-HORs-annotation.170921.bed.gz &
 buildBigBed bed9 t2t-chm13-v1.1 AS_SF_Annot.bigBed t2t-chm13.v1.1-AS-SFs.290621.bed.gz &
 buildBigBed bed9 t2t-chm13-v1.1 AS_strand.bigBed t2t-chm13.v1.1-AS-strand.170921.bed.gz &
 
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/as_annotation/
+
+# updated 2021-10-26
+/team-satellites/AS_Annotation/CHM13_v1.1/
+ASat_HOR.170921.bed
+ASat_SFs.290621.bed
+ASat_strand.170921.bed
+ASat_StV.231021.bed
+Shared_ASat_HORs.231021.bed
+
+
+pigz *.bed
+buildBigBed bed9 t2t-chm13-v1.1 ASat_HOR.bigBed ASat_HOR.170921.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 ASat_SFs.bigBed ASat_SFs.290621.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 ASat_strand.bigBed ASat_strand.170921.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 ASat_StV.bigBed ASat_StV.231021.bed.gz &
+buildBigBed bed9 t2t-chm13-v1.1 Shared_ASat_HORs.bigBed Shared_ASat_HORs.231021.bed.gz &
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/as_annotation/
+
 
 * cytobands 2021-10-01
 from @Nick Altemose via slack
@@ -398,4 +398,28 @@ tawk 'BEGIN{print "@HD", "VN:1.6","SO:coordinate"} {print "@SQ", "SN:"$1, "LN:"$
 mrnaToGene -quiet -genePredExt -cdsFile=data/refSeq-curated.cds.gz -insertMergeSize=0 refSeq-curated.psl.gz refSeq-curated.gp
 pigz *.gp
 
+
+* issues  assembly/validation
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1_issues.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
+
+buildBigBed bed9  t2t-chm13-v1.1 issues.bigBed v1.1_issues.bed 
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/issues
+
+move under validation supertrack
+
+* merfinKmer (validation)
+Giulio Formenti
+team-curation/tracks/v1.1/chm13_v1.1.merfin.hifi.bw
+merfin_hifi_track.html
+team-curation/tracks/v1.1/chm13_v1.1.merfin.illumina.bw
+merfin_illumina_track.html
+
+mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.1/merfinKmer
+
+
+Dear, @MarkD Please update these five BED files with descriptions uploaded to Globus at /team-satellites/AS_Annotation/CHM13_v1.1/
+Link: https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2FCHM13_v1.1%2F
+Note: please, keep track name and description as it is.* synteny  2021-08-23
 

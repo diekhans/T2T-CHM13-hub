@@ -1,0 +1,54 @@
+track ASat_HOR
+bigDataUrl as_annotation/ASat_HOR.bigBed
+shortLabel ASat HOR
+longLabel Annotation of ASat HOR monomers (T2T CHM13 assembly release v1.1, HMMs 060721)
+type bigBed 9
+itemRgb on
+visibility hide
+maxItems 100000
+priority 20
+group cenTelo
+
+track ASat_SFs
+bigDataUrl as_annotation/ASat_SFs.bigBed
+shortLabel ASat SFs
+longLabel Annotation of ASat monomers into SF-classes (T2T CHM13 assembly release v1.1, HMMs June 29, 2021)
+type bigBed 9
+itemRgb on
+visibility hide
+maxItems 100000
+priority 21
+group cenTelo
+
+track ASat_strand
+bigDataUrl as_annotation/ASat_strand.bigBed
+shortLabel ASat strand
+longLabel Annotation of ASat strand orientation (T2T CHM13 assembly release v1.1, HMMs 060721)
+type bigBed 9
+itemRgb on
+visibility hide
+maxItems 100000
+priority 22
+group cenTelo
+
+track ASat_StV
+bigDataUrl as_annotation/ASat_StV.bigBed
+shortLabel StV
+longLabel Structural Variants
+type bigBed 9
+itemRgb on
+visibility hide
+maxItems 100000
+priority 23
+group cenTelo
+
+track Shared_ASat_HORs
+bigDataUrl as_annotation/Shared_ASat_HORs.bigBed
+shortLabel Shared ASat HORs
+longLabel Annotation of ASat double (13/21 and 14/22) and triple (1/5/19) HORs into chromosome-specific subtypes 
+type bigBed 9
+itemRgb on
+visibility hide
+maxItems 100000
+priority 24
+group cenTelo

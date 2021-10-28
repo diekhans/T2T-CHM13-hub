@@ -72,6 +72,17 @@ include sedefSegDups.track.txt
 ##
 # cenTelo
 ##
+track cenSatAnnotation
+shortLabel CenSat Annotation
+longLabel Centromeric Satellite Annotation
+group cenTelo
+visibility hide
+itemRgb on
+maxItems 100000
+type bigBed 9 +
+bigDataUrl cenSat/cenSatAnnotation.bigBed
+priority 2
+
 track newSatellitesMonomersArrays
 shortLabel New Satellites
 longLabel New Satellites Monomers Arrays
@@ -152,6 +163,7 @@ searchIndex name,geneSym,geneId
 # comparative genomics
 ##
 include cactus.trackDb.txt
+include cactus13.trackDb.txt
 include synteny.trackDb.txt
 
 ##

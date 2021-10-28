@@ -1,0 +1,87 @@
+track cactus13
+compositeTrack on
+shortLabel Cactus V1.3
+longLabel Cactus V1.3 Alignment Tracks 
+group compGeno
+subGroup1 view Track_Type Snake=Alignments_13 Simplified=Simplified_13 Chained=Chained_13
+subGroup2 orgs Organisms t2t-chm13-v1.1=t2t-chm13-v1.1 hg38=hg38
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+centerLabelsDense on
+visibility hide
+type bigBed 3
+priority 1
+html cactus13.html
+
+    track cactusAlignments_13
+    shortLabel Alignments (Cactus V1.3)
+    view Alignments_13 (Cactus V1.3)
+    visibility full
+    subTrack cactus13
+
+        track snakehg38_13
+        longLabel Cactus V1.3 hg38
+        shortLabel hg38 (Cactus V1.3)
+        otherSpecies hg38
+        visibility full
+        parent cactusAlignments_13 on
+        priority 1
+        bigDataUrl cactus13/t2t-chm13-v1.1.cactus13.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=hg38
+        html cactus.html
+
+        track snaket2t-chm13-v1.1_13
+        longLabel Cactus t2t-chm13-v1.1 (Cactus V1.3)
+        shortLabel t2t-chm13-v1.1 (Cactus V1.3)
+        otherSpecies t2t-chm13-v1.1
+        visibility hide
+        parent cactusAlignments_13 off
+        priority 2
+        bigDataUrl cactus13/t2t-chm13-v1.1.cactus13.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=t2t-chm13-v1.1
+        html cactus.html
+
+track cactusSimplified13
+#compositeTrack on
+superTrack on
+shortLabel Cactus V1.3 (simplified)
+longLabel Cactus V1.3 Alignment Tracks (simplified)
+group compGeno
+visibility hide
+type bigPsl
+priority 2
+html cactus.html
+
+        track cactusSimplifiedChained_13
+        parent cactusSimplified13
+        shortLabel hg38 Cactus Chained (Cactus V1.3)
+        longLabel  hg38 Cactus Chained Alignments (Cactus V1.3)
+        type bigPsl
+        color 20,0,120
+        visibility hide
+        bigDataUrl cactus13/t2t-chm13-v1.1.hg38.cactus.chained13.bigPsl
+        priority 9
+        group compGeno
+        #subGroups view=Chained orgs=GRCH38
+        html cactus.html
+        #configurable on
+
+        track cactusSimplifiedUnchained_13
+        parent cactusSimplified13
+        shortLabel hg38 Cactus (Cactus V1.3)
+        longLabel  hg38 Cactus Alignments not chained (Cactus V1.3)
+        type bigPsl
+        color 120,0,20
+        visibility hide
+        bigDataUrl cactus13/t2t-chm13-v1.1.hg38.cactus13.bigPsl
+        priority 10
+        group compGeno
+        #subGroups view=Chained orgs=GRCH38
+        html cactus13.html
+        #configurable on
+

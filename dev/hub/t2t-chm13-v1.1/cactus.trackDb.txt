@@ -1,6 +1,6 @@
 track cactus
 compositeTrack on
-shortLabel CACTUS
+shortLabel Cactus
 longLabel Cactus Alignment Tracks
 group compGeno
 subGroup1 view Track_Type Snake=Alignments Simplified=Simplified Chained=Chained

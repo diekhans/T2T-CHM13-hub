@@ -320,7 +320,7 @@ mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/cytobands/
 * CAT_V4
 lifted from V1.0
 http://courtyard.gi.ucsc.edu/~mhauknes/t2t_v1.1/liftover/chm13.draft_v1.1.gene_annotation.v4.bb
-mkln assemblyHub/CHM13/*  ../../../../hubs/dev//t2t-chm13-v1.1/CAT_V4
+mkln assemblyHub/CHM13/*  ../../../../hubs/dev/t2t-chm13-v1.1/CAT_V4
 
 * ACTIVE gencodeBlat
 - use gencode V35 to match CAT, only do protein code and lncRNAs
@@ -422,4 +422,47 @@ mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.1/merfinKmer
 Dear, @MarkD Please update these five BED files with descriptions uploaded to Globus at /team-satellites/AS_Annotation/CHM13_v1.1/
 Link: https://app.globus.org/file-manager?origin_id=9db1f0a6-a05a-11ea-8f06-0a21f750d19b&origin_path=%2Fteam-satellites%2FAS_Annotation%2FCHM13_v1.1%2F
 Note: please, keep track name and description as it is.* synteny  2021-08-23
+
+
+
+
+* cactus13 built with cactus V1.3 2021-10-28
+from marina
+/nanopore/marina/t2t_hal/t2tChm13.v1.1.cactus13.hal
+mv t2tChm13.v1.1.cactus13.hal t2t-chm13-v1.1.cactus13.hal
+
+
+# edit hal to use t2tChm13.v1.1 and hg38 names
+halRenameGenomes t2tChm13.v1.1.cactus13.hal renames.tab
+
+cd tmp
+halStats --bedSequences hg38 ../t2tChm13.v1.1.cactus13.hal >hg38.bed
+split -l 1 hg38.bed hg38/chrom.
+
+find  hg38 -type f | awk '{print "../getChromPairswise", $1}' >para.jobs
+para create para.jobs -batch=b1
+find t2t-chm13-v1.1/ -type f | xargs cat | csort -k 10,10  -k12,12n > t2t-chm13-v1.1.hg38.cactus13.psl
+pslToBigPsl t2t-chm13-v1.1.hg38.cactus13.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.1.hg38.cactus13.bigPslIn 
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.1.hg38.cactus13.bigPslIn ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.hg38.cactus13.bigPsl
+
+pslSwap t2t-chm13-v1.1.hg38.cactus13.psl stdout | axtChain -psl -verbose=0 -scoreScheme=/scratch/data/blastz/human_chimp.v2.q -minScore=5000 -linearGap=medium stdin /hive/data/genomes/hg38/hg38.2bit ../../genome/t2t-chm13-v1.1.2bit stdout | chainSwap stdin t2t-chm13-v1.1.hg38.cactus13.chain
+chainToPsl t2t-chm13-v1.1.hg38.cactus13.chain ../../genome/t2t-chm13-v1.1.sizes /hive/data/genomes/hg38/chrom.sizes ../../genome/t2t-chm13-v1.1.2bit /hive/data/genomes/hg38/hg38.2bit t2t-chm13-v1.1.hg38.cactus13.chained.psl
+pslToBigPsl t2t-chm13-v1.1.hg38.cactus13.chained.psl stdout | sort -k1,1 -k2,2n > t2t-chm13-v1.1.hg38.cactus13.chained.bigPslIn
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as t2t-chm13-v1.1.hg38.cactus13.chained.bigPslIn  ../../genome/t2t-chm13-v1.1.sizes ../t2t-chm13-v1.1.hg38.cactus13.chained.bigPsl
+
+# get lifted 1.0 PSL from Marina
+/nanopore/marina/t2t_v1.1/chain/t2t-chm13-v1.1.liftover.GRCh38.cactus.psl
+pslToBigPsl t2t-chm13-v1.1.liftover.GRCh38.cactus.psl stdout | sort -k1,1 -k2,2n > tmp/t2t-chm13-v1.1.liftover.hg38.cactus.bigPslIn
+bedToBigBed -type=bed12+13 -tab -as=${HOME}/kent/src/hg/lib/bigPsl.as tmp/t2t-chm13-v1.1.liftover.hg38.cactus.bigPslIn  ../genome/t2t-chm13-v1.1.sizes t2t-chm13-v1.1.liftover.hg38.cactus.bigPsl
+
+mkln t2t-chm13-v1.1.* ../../../../hubs/dev/t2t-chm13-v1.1/cactus13/
+
+** cenSat 2021-10-28
+Lev
+/team-satellites/cenSat_Annotation/t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.1.Ivans_colors.bed
+
+pigz *.bed
+# had to modify  ifles asthey had multiple tabs and sometimes space between columns
+buildBigBed bed9 t2t-chm13-v1.1 cenSatAnnotation.bigBed  t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.1.Ivans_colors.bed.gz
+mkln *.bigBed  ../../../../hubs/dev/t2t-chm13-v1.1/cenSat/
 

@@ -397,6 +397,16 @@ bigDataUrl synteny/synteny.1mb.bigPsl
 group compGeno
 html synteny.html
 
+track chm13_uncovered_byGRCh38
+shortLabel GRCH38 non-syntenic
+longLabel GRCh38 non-syntenic
+group compGeno
+visibility hide
+type bigBed 3
+bigDataUrl grch38NonSyntenic/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bigBed
+priority 50
+
+
 
 ##
 # Expression/transcription/rna

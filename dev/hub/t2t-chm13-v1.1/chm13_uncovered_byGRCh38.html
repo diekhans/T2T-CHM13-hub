@@ -1,0 +1,32 @@
+<h2>Description</h2>
+<p>A track showing the regions of CHM13 with no primary aligments from GRCh38 (excluding patches/alts/chrY)</p>
+
+<h2>Methods</h2>
+<p>The track was generated using <a href="https://github.com/marbl/winnowmap">Winnowmap</a> v2.0.1 with the command: <code>winnowmap -ax asm20 -H --MD chm13.v1.0.fasta GCA_000001405.28_GRCh38.p13_genomic_noalt_noY.fasta</code> , primary alignments were converted to paf and filtered for primary only via <code>k8 paftools.js sam2paf -p out.sam</code> and converted to unmapped regions by inverting the list of mappings w/MAPQ greater than 0
+<code>
+    cat out.paf |awk &apos;{if ($12 > 0) print $6&quot;\t&quot;$8&quot;\t&quot;$9}&apos;| bedtools sort -i - | bedtools merge -i - | bedtools complement -i - -g chm13.v1.0.sizes
+</code>
+and likewise for v1.1 assembly.</p>
+
+<h2>Display Conventions and Configuration</h2>
+<!-- if there are special conventions, like colors, describe them here -->
+<p></p>
+
+
+<h2>Data access</h2>
+<!-- Optional, links for downloading the data if there is a separate source beside the
+  browser  -->
+<p></p>
+
+<h2>Release history</h2>
+<ol>
+  <li>2021/05/24, Winnowmap uncovered track for chm13.v1.0 assembly.</li>
+  <li>2021/05/24, Winnowmap uncovered track for chm13.v1.1 assembly.</li>
+</ol>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:sergey.koren@nih.gov">Sergey Koren</a>
+</ul>
+<h2>Credits</h2>
+<p>Please cite <a href="https://github.com/marbl/winnowmap">Winnowmap</a></p>

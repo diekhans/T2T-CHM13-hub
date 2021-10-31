@@ -166,6 +166,16 @@ include cactus.trackDb.txt
 include cactus13.trackDb.txt
 include synteny.trackDb.txt
 
+track chm13_uncovered_byGRCh38
+shortLabel GRCH38 non-syntenic
+longLabel GRCh38 non-syntenic
+group compGeno
+visibility hide
+type bigBed 3
+bigDataUrl grch38NonSyntenic/chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bigBed
+priority 50
+
+
 ##
 # Expression/transcription/rna
 ##

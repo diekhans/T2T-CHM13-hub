@@ -1159,3 +1159,11 @@ Glennis Logsdon
 Yeah, the initial Iso-Seq alignments were produced by Phillip Dishuck!
 
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/
+
+* grch38NonSyntenic
+Sergey Koren
+GRCh38
+team-curation/tracks/v1/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed
+chm13_uncovered_byGRCh38.html											
+buildBigBed bed3 t2t-chm13-v1.0 chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bigBed chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed.gz 
+mkln chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/grch38NonSyntenic

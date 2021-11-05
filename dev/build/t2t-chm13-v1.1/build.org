@@ -466,6 +466,17 @@ pigz *.bed
 buildBigBed bed9 t2t-chm13-v1.1 cenSatAnnotation.bigBed  t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.1.Ivans_colors.bed.gz
 mkln *.bigBed  ../../../../hubs/dev/t2t-chm13-v1.1/cenSat/
 
+* readCoverage
+under validation
+
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.cov.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.markersandlength.cov.wig
+
+pigz *.wig
+for f in *.wig.gz ; do wigToBigWig -clip $f ../genome/t2t-chm13-v1.1.sizes $(basename $f .wig).bigWig ; done
+mkln *.bigWig  ../../../../hubs/dev/t2t-chm13-v1.1/readCoverage/
+
+
 * grch38NonSyntenic
 Sergey Koren
 GRCh38
@@ -473,3 +484,4 @@ team-curation/tracks/v1.1/chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bed
 chm13_uncovered_byGRCh38.html
 buildBigBed bed3 t2t-chm13-v1.1 chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bigBed chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bed.gz 
 mkln chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bigBed ../../../../hubs/dev/t2t-chm13-v1.1/grch38NonSyntenic
+

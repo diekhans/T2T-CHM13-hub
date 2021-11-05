@@ -1,0 +1,548 @@
+#+STARTUP: nologdone
+#+SEQ_TODO: TODO ACTIVE | DONE
+
+==== t2t-chm13-v1.0 public browser hub ====
+* Info
+** URLs
+https://hgwdev.gi.ucsc.edu/~markd/t2t/pub/hub.txt
+https://t2t.gi.ucsc.edu/chm13/pub/hub.txt
+** build dir: projs/t2t-chm13/build/pub/t2t-chm13-v1.0
+* Assembly
+** Cytoband
+Present in v1.0 and v1.1
+Nick Altemose
+
+** Gap (v1.0) / Model Sequence (v1.1)
+Present in v1.0
+Adam Phillippy (model)
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v1.1.rdna_model.bed
+rdna_model.html
+** GC Percent
+Present in v1.0 and v1.1
+
+** Micro-satellites
+*** GA
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.0.microsatellite.GA.128.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.1.microsatellite.GA.128.wig
+micrsatellite.html
+*** TC
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.0.microsatellite.TC.128.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.1.microsatellite.CT.128.wig
+*** GC
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.0.microsatellite.GC.128.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.1.microsatellite.GC.128.wig
+*** AT
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.0.microsatellite.AT.128.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/pattern/chm13v1.1.microsatellite.AT.128.wig
+
+** Validation
+*** Issues
+Present in v1.0 and v1.1
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.0_issues.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1_issues.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/description.html
+*** Corrections from v1.0 to v1.1
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/changes/v1.0_to_v1.1/v1.0_patch.vcf.gz
+n/a
+
+*** Curated het SVs
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.0/hets/chm13.draft_v1.0.curated_sv.20210701.vcf
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1/hets/chm13.draft_v1.1.curated_sv.20210701.vcf
+
+*** Combined het region
+Arang Rhie
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.0/hets/chm13.draft_v1.0.hets_combined.20210615.bed
+https://raw.githubusercontent.com/marbl/CHM13-issues/main/v1.1/hets/chm13.draft_v1.1.hets_combined.20211013.bed
+
+*** Merfin K* HiFi
+Present in v1.0 and v1.1
+Giulio Formenti
+team-curation/tracks/v1/chm13.draft_v1.0.hifi.bw
+team-curation/tracks/v1.1/chm13_v1.1.merfin.hifi.bw
+merfin_hifi_track.html
+*** Merfin K* Illumina
+Present in v1.0 and v1.1
+Giulio Formenti
+team-curation/tracks/v1/chm13.draft_v1.0.illumina.bw
+team-curation/tracks/v1.1/chm13_v1.1.merfin.illumina.bw
+merfin_illumina_track.html
+*** HiFi coverage (subtracks: Primary / Marker assisted)
+Present in v1.0
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/hifi.pri.cov.wig, https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/hifi.markersandlength.cov.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.cov.wig, https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.markersandlength.cov.wig
+
+*** Med. Idy
+TBD
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/hifi.pri.idy.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.idy.med.wigg
+
+*** Med. read length
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/hifi.pri.len.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.len.med.wig
+
+*** Med. MQ
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/hifi.pri.mq.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.mq.med.wig
+
+*** Most common allele frequency
+Glennis Logsdon
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/chm13v1.0.mostCommonBase.bw
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/chm13v1.1.mostCommonBase.bw
+nucfreq.html
+*** 2nd most common allele frequency
+Glennis Logsdon
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_hifi_20k_wm_2.01/chm13v1.0.2ndmostCommonBase.bw
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/chm13v1.1.2ndmostCommonBase.bw
+
+*** ONT coverage  (subtracks: Primary / Marker assisted)
+Present in v1.0
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.wig, https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.markersandlength.cov.wig
+
+*** ONT coverage (+)
+TBD
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.p.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.p.wig
+
+*** ONT coverage (-)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.n.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.n.wig
+
+*** Med. Idy
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.med.wig
+
+*** Med. Idy (+)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.p.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.p.med.wig
+
+*** Med. Idy (-)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.n.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.idy.n.med.wig
+
+*** Med. read length
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.len.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.len.med.wig
+
+*** Med. read length (+)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.readLen.p.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.readLen.p.med.wig
+
+*** Med. read length (-)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.readLen.n.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.readLen.n.med.wig
+
+*** Med. MQ
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.med.wig
+
+*** Med. MQ (+)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.p.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.p.med.wig
+
+*** Med. MQ (-)
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.0_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.n.med.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.mq.n.med.wig
+
+** Mappability
+*** Unique 21-mer density
+Present in v1.0, needs update
+Ann McCartney
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.0.single.k21.bw
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.1.single.k21.bw
+unique_21_51_mer.html 
+*** Unique 21-mer deserts
+TBD
+Ann McCartney
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.0.single.k21.desert.bed.gz
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.1.single.k21.desert.bed.gz
+*** Unique 51-mer density
+TBD
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.0.single.k51.bw
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.1.single.k51.bw
+*** Unique 51-mer deserts
+TBD
+Arang Rhie
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.0.single.k51.desert.bed.gz
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/marker/chm13v1.1.single.k31.desert.bed.
+*** Unique 100-mer density
+TBD
+Michael Sauria
+team-epigenetics/Kmer_analysis/20201201_chm13_KmerCountMaps/chmv1_100mer.bw
+*** Unique 100-mer deserts
+TBD
+Michael Sauria
+team-curation/tracks/v1/chm13v1_unique_100mers_reformatted4overlaps.markerdesert.
+*** Min unique k-mer (+)
+TBD
+Michael Sauria
+team-epigenetics/Kmer_analysis/052021_chm13_minUniqKmers/min_unique_kmer/chm13v1_mul.bw
+min_unique_kmer.html
+*** Min unique k-mer (-)
+TBD
+Michael Sauria
+team-epigenetics/Kmer_analysis/052021_chm13_minUniqKmers/min_unique_kmer/chm13v1_mur.bw
+
+* Repeats
+** Centromere and Satellites
+*** Centromere / Satellite Annotation
+Present in v1.0
+Karen Miga
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.cenAnnotation.bed
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.1.cenAnnotation.bed
+
+*** New Satellites
+Present in v1.0 and v1.1
+Savannah Hoyt
+
+*** ASat HOR
+Present in v1.0 and v1.1
+Lev Uralsky, Ivan Alexandrov
+
+*** ASat SF
+Present in v1.0 and v1.1
+Lev Uralsky, Ivan Alexandrov
+
+*** ASat strand
+Present in v1.0 and v1.1
+Lev Uralsky, Ivan Alexandrov
+
+*** StV10
+Present in v1.0
+Fedor Ryabov, Lev Uralsky, Ivan Alexandrov
+
+*** Shared ASat HORs
+Present in v1.0
+Fedor Ryabov, Ivan Alexandrov
+
+** rDNA
+TBD
+Adam Phillippy
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v1.1.rdna_units.bed
+rdna_units.html
+
+** Telomere
+TBD
+Sergey Koren
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.telomere.bed.gz
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.1.telomere.bed.gz
+telomere_track.html
+** RepeatMasker V2
+Present in v1.0 and v1.1
+Savannah Hoyt
+
+** Composite Repeats
+Present in v1.0 and v1.1
+Savannah Hoyt
+
+** Simple Repeats
+Present in v1.0 and v1.1
+Gary Benson
+
+** SEDEF Segmental Dups
+*** SEDEF Segmental Dups
+Present in v1.0 and v1.1
+Mitchell R. Vollger
+
+*** SEDEF Segmental Dups Low Idy
+Present in v1.0 and v1.1
+Mitchell R. Vollger
+
+* Genes
+** CAT Genes + LiftOff V4
+Present in v1.0 and v1.1
+Marina Haukness, Alaina Shumate, Mark Diekhans
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.1.gene_annotation.v4.gff3.gz
+Make sure we have in the description that we used IsoSeq as an evidence
+** CAT Evidence V4
+transMap V4
+Present in v1.0
+Marina Haukness, Mark Diekhans
+
+*** CHM13.external_reference V4
+Present in v1.0
+Marina Haukness, Mark Diekhans
+
+*** Filtered transMap V4
+Present in v1.0
+Marina Haukness, Mark Diekhans
+
+*** Consensus indels V4
+Present in v1.0
+Marina Haukness, Mark Diekhans
+
+** GENCODE BLAT
+Present in v1.0
+Mark Diekhans
+
+** RefSeq BLAT
+Present in v1.0
+Mark Diekhans
+
+** CRISPR Targets
+Present in v1.0
+?
+
+** LiftOff Genes
+LiftOff Genes V2
+Present in v1.0
+Alaina Shumate
+
+*** LiftOff Genes V1 (All)
+Present in v1.0 and v1.1
+Mitchell R. Vollger
+not necessary
+
+*** LiftOff Genes V1 (ORFs)
+Present in v1.0 and v1.1
+Mitchell R. Vollger
+not necessary
+
+* Transcription
+Salmon expression
+Present in v1.0
+Colin Shew
+
+** ISOseq
+*** IsoSeq BAMs V4 (Subtrack: bam1 bam2)
+Present in v1.0; move from CAT Evidence V4
+Phillip Dishuk (pdx@uw.edu) Marina Haukness, Mark Diekhans
+Please add Phillip Dishuk (pdx@uw.edu) in contact
+** PROseq
+*** A (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** A (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** A (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+** RNAseq
+*** A (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted)
+TBD
+Savannah Hoyt
+
+*** A (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** A (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** B (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted +)
+TBD
+Savannah Hoyt
+
+*** AB (Subtrack: k100 / 21-mer marker assisted -)
+TBD
+Savannah Hoyt
+
+* Regulation
+Methylation Frequency
+Present in v1.0
+Ariel Gershman
+
+** CpG Islands
+Present in v1.0 and v1.1
+Mark Diekhans
+
+** JASPAR TFBS
+Present in v1.0
+Mark Diekhans, Karen Miga
+
+** ENCODE
+ENCODE pileups
+Present in v1.0
+Michael Sauria
+
+*** ENCODE macs2 peaks
+Present in v1.0
+Michael Sauria
+
+*** ENCDE macs2 LO peaks
+Present in v1.0
+Michael Sauria
+
+* GRCh38
+** Non-syntenic to CHM13
+TBD
+Sergey Koren
+team-curation/tracks/v1/chm13_v1.0_uncoveredByGRCh38WinnowmapAlignments.bed
+team-curation/tracks/v1.1/chm13_v1.1_uncoveredByGRCh38WinnowmapAlignments.bed
+chm13_uncovered_byGRCh38.html
+** GRCh38 Issues Resolved
+TBD
+Sergey Koren
+team-variants/grch38_issues/hg38.parsedissues.bed
+team-curation/tracks/v1.1/chm13_v1.1_lifted_nopatchresolved.issues.bed
+chm13_liftedoverGRCh38_issues.html
+** Synteny and Liftover
+GRCh38 Synteny 25KB
+Present in v1.0 and v1.1
+Mark Diekhans
+
+*** GRCh38 Synteny 1Mb
+Present in v1.0 and v1.1
+Mark Diekhans
+
+*** GRCh38 Cactus
+Present in v1.0 and v1.1
+Mark Diekhans
+
+*** GRCh38 Cactus Alignments
+Present in v1.0
+Mark Diekhans
+
+*** GRCh38 Cactus Chained
+Present in v1.0
+Mark Diekhans
+
+*** GRCh38 LASTZ Liftover Chains
+Present in v1.0
+Mark Diekhans
+
+*** GRCh38 LASTZ All Chains
+Present in v1.0
+Mark Diekhans
+
+* Variation
+HGDP WSSD CN
+271 tracks
+Present in v1.0
+Mitchell R. Vollger
+
+** HGDP WSSD CN Subset
+34 tracks
+Present in v1.0
+Mitchell R. Vollger
+team-segdups/WSSD_v1.0/WSSD_subset/wssd_sub/
+
+** T2TDP WSSD CN
+20 tracks
+Present in v1.0
+Mitchell R. Vollger
+
+** 1000G Variants
+AF per population
+TBD
+Nancy Hansen, Samantha Zarate
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/variants/1000_Genomes_Project/1kgp.allvars.recalibrated.snp_indel.pass.withafinfo.vcf.gz
+allelefrequencies.html
+*** vcf
+TBD
+Samantha Zarate
+https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
+1kg_small_variants.html
+** HPRC+ SV
+TBD
+Melanie Kirsche
+team-variants/MergedSVCalls/chm13_intersect_hifi.specprec.vcf
+svtrackform.html
+** dbSNP Variants
+Lifted
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/dbSNP/dbSNP.build_154.CHM13.lifted.vcf.gz
+dbSNP_liftover.html
+*** Lifted after ref/alt swap
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/dbSNP/dbSNP.build_154.CHM13.recovered_refaltswap/dbSNP.build_154.CHM13.recovered_refaltswap.vcf.gz
+dbSNP_refaltswap.html
+** ClinVar
+Lifted
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/ClinVar/clinvar_20210308.noY.CHM13.lifted.vcf.gz
+clinvar_liftover.html
+*** Lifted after ref/alt swap
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/ClinVar/clinvar_20210308.noY.CHM13.recovered_refaltswap.vcf.gz
+clinvar_refaltswap.html
+** GWAS SNPs
+Lifted
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/GWAS_Catalog/gwas_catalog.v1.0.associated_rsids.CHM13.lifted/gwas_catalog.v1.0.associated_rsids.CHM13.lifted.vcf.gz
+gwas_catalog_liftover.html
+*** Lifted after ref/alt swap
+TBD
+Dylan Taylor
+team-variants/liftover_analysis/T2T_liftover_vcfs/GWAS_Catalog/gwas_catalog.v1.0.associated_rsids.CHM13.lifted/gwas_catalog.v1.0.associated_rsids.CHM13.recovered_refaltswap.vcf.gz
+gwas_catalog_refaltswap.html
+** Accessibility Mask
+Combined
+TBD
+Rajiv McCoy
+team-variants/masks/combined_mask.bed.gz
+

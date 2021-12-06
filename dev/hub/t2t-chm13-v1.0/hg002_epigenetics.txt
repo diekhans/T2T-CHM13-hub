@@ -1,0 +1,31 @@
+track hg002_nanopore_methylation
+superTrack on hide
+shortLabel HG002 Nanopore Epigenetics
+longLabel HG002 Nanopore Epigenetics
+group regulation
+visibility hide
+type bigWig 0 1
+bigDataUrl 
+priority 11
+html hg002_epigenetics.html
+
+    track hg002_nanopore_methylation_accessibility
+    parent hg002_nanopore_methylation
+    shortLabel HG002 Methylation Accessibility
+    longLabel HG002 Methylation Accessibility
+    group regulation
+    visibility hide
+    type bigWig 0 11
+    bigDataUrl hg002_epigenetics/HG002_GpC_nanonome_accessibility_zscore.bigwig
+    priority 11.1
+
+    track hg002_nanopore_methylation_peaks
+    parent hg002_nanopore_methylation
+    shortLabel HG002 Methylation Peaks
+    longLabel HG002 Methylation Peaks
+    group regulation
+    visibility hide
+    type bigBed 3
+    bigDataUrl hg002_epigenetics/HG002_nanonome_accessibility_Peaks.bigBed
+    priority 11.2
+

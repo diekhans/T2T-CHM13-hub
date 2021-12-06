@@ -5,7 +5,6 @@ longLabel Methylation Frequency
 group regulation
 visibility hide
 type bigWig 0 1
-bigDataUrl methyFreq.bigWig
 priority 2
 html methylation.html
 

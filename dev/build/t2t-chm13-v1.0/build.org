@@ -1178,29 +1178,17 @@ HG002_CpG_methylationFrequency_50kb.bigwig
 
 mkln *.bigwig ../../../../hubs/dev/t2t-chm13-v1.0/methylation/
 
+* mappability   # ADD TO PUB
+Ariel Gershman
+mappability_chm13v1_200bp.bw
+mkln *.bw ../../../../hubs/dev/t2t-chm13-v1.0/mappability
 
 * Ariel Gershman 
-Hi Mark. I have a few more epigenetics tracks to be  added to the T2T v1.0 browser. Right now I am hosting  them here https://genome.ucsc.edu/s/agershman/t2t-chm13-v1.0_Epigenetics. Most of the bigwigs also contain GRCh38 Y, do I need to remake them without to  add them to the main T2T browser?
-
-
- also have revised methylation tracks that should replace the ones already on there
-12:50
-ok  perfect, I will get these setup
-
-Hi  Mark here is a dropbox link to the browser tracks for  v1.0  https://www.dropbox.com/sh/0nu4bzfoyu3ojkg/AAAbCT6bl6YKwxo3RHaDRkDea?dl=0
-Dropbox
-Browser_Tracks
-Shared with Dropbox
-
-CHM13_CpG_methylationFrequency_50kb.bigwig
-CHM13_CpG_methylationFrequency.bigwig
 CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
 CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig?dl=0.1
 CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
-HG002_CpG_methylationFrequency_50kb.bigwig
 HG002_nanonome_accessibility_Peaks.bed
 mappability_chm13v1_200bp.bw
-
 HG002_epigenetics_info.html is for all HG002*, 
 CHM13_epigenetics_info.html is for CHM13* 
 mappability_info.html goes with mappability_chm13v1_200bp.bw

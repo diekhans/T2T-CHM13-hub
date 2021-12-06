@@ -1,4 +1,4 @@
-track chm13_methylation
+track chm13_epigenetics
 superTrack on hide
 shortLabel CHM13 Epigenetics
 longLabel CHM13 Epigenetics
@@ -9,20 +9,20 @@ bigDataUrl
 priority 10
 html chm13_epigenetics.html
 
-    track chm13_methylation_H3K27me3
-    parent chm13_methylation
-    shortLabel CHM13 H3K27me3 Methylation
-    longLabel CHM13 H3K27me3 Methylation
+    track chm13_epigenetics_H3K27me3
+    parent chm13_epigenetics
+    shortLabel CHM13 H3K27me3 CUT&RUN
+    longLabel CHM13 H3K27me3 CUT&RUN
     group regulation
     visibility hide
     type bigWig 0 735
     bigDataUrl chm13_epigenetics/CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
     priority 10.1
 
-    track chm13_methylation_H3K4me2
-    parent chm13_methylation
-    shortLabel CHM13 H3K4me2 Methylation
-    longLabel CHM13 H3K4me2 Methylation
+    track chm13_epigenetics_H3K4me2
+    parent chm13_epigenetics
+    shortLabel CHM13 H3K4me2 CUT&RUN
+    longLabel CHM13 H3K4me2 CUT&RUN
     group regulation
     visibility hide
     type bigWig 0 735

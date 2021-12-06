@@ -1,0 +1,40 @@
+track methylation
+superTrack on hide
+shortLabel Methylation
+longLabel Methylation Frequency
+group regulation
+visibility hide
+type bigWig 0 1
+bigDataUrl methyFreq.bigWig
+priority 2
+html methylation.html
+
+    track methylation_chm13
+    parent methylation
+    shortLabel CHM13 Methylation
+    longLabel CHM13 Methylation Frequency
+    group regulation
+    visibility hide
+    type bigWig 0 1
+    bigDataUrl methylation/CHM13_CpG_methylationFrequency.bigwig
+    priority 2.1
+
+    track methylation_chm13_50kb
+    parent methylation
+    shortLabel CHM13 50kb Methylation
+    longLabel CHM13 50kb Methylation Frequency
+    group regulation
+    visibility hide
+    type bigWig 0 1
+    bigDataUrl methylation/CHM13_CpG_methylationFrequency_50kb.bigwig
+    priority 2.2
+
+    track methylation_hg002_50kb
+    parent methylation
+    shortLabel HG002 50kb Methylation
+    longLabel HG002 50kb Methylation Frequency
+    group regulation
+    visibility hide
+    type bigWig 0 1
+    bigDataUrl methylation/HG002_CpG_methylationFrequency_50kb.bigwig
+    priority 2.3

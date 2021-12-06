@@ -219,6 +219,8 @@ mkln *.bigPsl ../../../../hubs/dev/t2t-chm13-v1.1/cactus/
 # NOT DONE
 # added halChainChrom to build
 
+# 2021-11-19 click-throught to hg38 doesn't work, so rename back to our own copy of
+# GRCh38
 
 * synteny  2021-08-23
 
@@ -472,8 +474,11 @@ under validation
 https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.pri.cov.wig
 https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_hifi_20k_wm_2.01/hifi.markersandlength.cov.wig
 
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.pri.len1k_idy85.cov.wig
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/alignments/chm13v1.1_ont_guppy_3.6.0_wm_2.01/ont.markersandlength.cov.wig
+
 pigz *.wig
-for f in *.wig.gz ; do wigToBigWig -clip $f ../genome/t2t-chm13-v1.1.sizes $(basename $f .wig).bigWig ; done
+for f in *.wig.gz ; do wigToBigWig -clip $f ../genome/t2t-chm13-v1.1.sizes $(basename $f .wig.gz).bigWig ; done >&log
 mkln *.bigWig  ../../../../hubs/dev/t2t-chm13-v1.1/readCoverage/
 
 

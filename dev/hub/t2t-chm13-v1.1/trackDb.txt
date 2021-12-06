@@ -163,8 +163,8 @@ searchIndex name,geneSym,geneId
 # comparative genomics
 ##
 include cactus.trackDb.txt
-include cactus13.trackDb.txt
 include synteny.trackDb.txt
+include grch38PriLastz.trackDb.txt
 
 track chm13_uncovered_byGRCh38
 shortLabel GRCH38 non-syntenic

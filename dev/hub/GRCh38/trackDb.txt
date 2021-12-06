@@ -37,7 +37,7 @@ html needTrackDescription.html
         subGroups view=Snake orgs=t2t-chm13-v1.0
         html needTrackDescription.html
 
-        track snakeGRCh38
+        track snakeGRCh38V1.0
         longLabel GRCh38
         shortLabel GRCh38
         otherSpecies GRCh38
@@ -45,6 +45,56 @@ html needTrackDescription.html
         parent cactusV1.0Alignments off
         priority 3
         bigDataUrl ../t2t-chm13-v1.0/cactus/t2t-chm13-v1.0.aln1.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=GRCh38
+        html needTrackDescription.html
+
+
+track cactusV1.1
+compositeTrack on
+shortLabel Cactus V1.1
+longLabel Cactus t2t-chm13-v1.1 Alignment Tracks
+group compGeno
+subGroup1 view Track_Type Snake=Alignments
+subGroup2 orgs Organisms t2t-chm13-v1.1=t2t-chm13-v1.1 GRCh38=GRCh38
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+priority 0
+centerLabelsDense on
+visibility hide
+type bigBed 3
+html needTrackDescription.html
+
+    track cactusV1.1Alignments
+    shortLabel Alignments
+    view Alignments
+    visibility full
+    subTrack cactusV1.1
+    html needTrackDescription.html
+
+        track snakechm13-v1.1
+        longLabel T2T chm13 v1.1
+        shortLabel T2T chm13 v1.1
+        otherSpecies t2t-chm13-v1.1
+        visibility full
+        parent cactusV1.1Alignments off
+        priority 3
+        bigDataUrl ../t2t-chm13-v1.1/cactus/t2t-chm13-v1.1.hal
+        type halSnake
+        group compGeno
+        subGroups view=Snake orgs=t2t-chm13-v1.1
+        html needTrackDescription.html
+
+        track snakeGRCh38V1.1
+        longLabel GRCh38 V1.1
+        shortLabel GRCh38 V1.1
+        otherSpecies GRCh38
+        visibility hide
+        parent cactusV1.1Alignments off
+        priority 3
+        bigDataUrl ../t2t-chm13-v1.1/cactus/t2t-chm13-v1.1.hal
         type halSnake
         group compGeno
         subGroups view=Snake orgs=GRCh38

@@ -1202,3 +1202,24 @@ CHM13_H3K27me3_cutnrun-202021_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51
 CHM13_H3K4me2_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
 HG002_epigenetics_info.html is for all HG002*, 
 CHM13_epigenetics_info.html is for CHM13* 
+
+* cenSatV3
+2022-01-25 Lev
+t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.0.Ivans_colors.bed
+via slack
+
+pigz t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.0.Ivans_colors.bed 
+buildBigBed bed9 t2t-chm13-v1.0 cenSatAnnotation.bigBed t2t_cenAnnotation.v3.221021.Ivans8.CHM13v1.0.Ivans_colors.bed.gz
+ln -f *.bigBed  ../../../../hubs/dev/t2t-chm13-v1.0/
+
+* alphaSatHORV2
+2022-01-25 Lev
+(update of Shared_ASat_HORs only)
+Shared_ASat_HORs.CHM13v1.0.211221.bed
+Shared_ASat_HORs_track_Description.v1.0.html
+via slack
+
+buildBigBed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.CHM13v1.0.211221.bed Bed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.bed
+
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/alphaSatHOR 

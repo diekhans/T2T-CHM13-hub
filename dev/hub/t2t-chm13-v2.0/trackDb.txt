@@ -1,0 +1,38 @@
+##
+# varRep
+##
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9 +
+bigDataUrl rmsk/rmsk.bigBed
+priority 1
+
+track simpleRepeat
+shortLabel Simple Repeats
+longLabel Simple Tandem Repeats by TRF
+group varRep
+visibility hide
+type bigBed 4 +
+bigDataUrl trf/trf.bigBed
+priority 2
+
+track sedefSegDups
+compositeTrack off
+shortLabel SEDEF Segmental Dups
+longLabel SEDEF Segmental Duplications
+priority 10
+group varRep
+type bigBed 9 35
+visibility hide
+itemRgb on
+maxItems 100000
+bigDataUrl sedefSegDups/sedefSegDups.bigBed
+
+
+

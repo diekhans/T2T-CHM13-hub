@@ -641,17 +641,17 @@ Savannah
 
 #######Sequenced in DEC 2020:
 
-###CENPA: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPA/
-CHM13_CA_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
-CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
-CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
-CHM13_CA_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
-
 ###CENPB: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPB/
 CHM13_CB_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
 CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
 CHM13_CB_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
 CHM13_CB_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
+
+###CENPA: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPA/
+CHM13_CA_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_21mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.IlluminaPCRfree_v1.0-assembly_51mers_single_mrg_meryl_sort.bigwig
+CHM13_CA_cutnrun_losalt.F3852.over.chm13v1_unique_100mers_sort.bigwig
 
 ###CENPC: /team-satellites/122920_CUTRUN/0222_LowSaltOnly/CHM13_F3852_noMAPQ-filtering_bigwigs/CENPC/
 CHM13_CC_cutnrun_losalt_trimmed_q20_2.chm13.draft_v1.0F3852_sort.bigwig
@@ -1220,6 +1220,4 @@ Shared_ASat_HORs_track_Description.v1.0.html
 via slack
 
 buildBigBed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.CHM13v1.0.211221.bed Bed bed9 t2t-chm13-v1.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.bed
-
-
 mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v1.0/alphaSatHOR 

@@ -1,3 +1,17 @@
+genome t2t-chm13-v2.0
+trackDb t2t-chm13-v2.0/trackDb.txt
+groups t2t-chm13-v2.0/groups.txt
+description T2T CHM13 (v2.0)
+twoBitPath t2t-chm13-v2.0/genome/t2t-chm13-v2.0.2bit
+organism CHM13 Homo sapiens
+defaultPos chr3:90,755,737-90,789,938
+scientificName Homo sapiens
+htmlPath t2t-chm13-v2.0/description.html
+#blat blatx.soe.ucsc.edu 17881
+#transBlat blatx.soe.ucsc.edu 17880
+#isPcr blatx.soe.ucsc.edu 17881
+priority 7.0
+
 genome t2t-chm13-v1.1
 trackDb t2t-chm13-v1.1/trackDb.txt
 groups t2t-chm13-v1.1/groups.txt

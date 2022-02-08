@@ -1,0 +1,72 @@
+#+STARTUP: nologdone
+#+SEQ_TODO: TODO ACTIVE | DONE
+
+* names
+CHM13v2
+T2T-CHM13v2.0
+
+* setup
+export PATH=/hive/users/markd/t2t/projs/t2t-chm13/T2T-CHM13-hub/bin:${PATH}
+* genome
+/assemblies/release/v2.0/chm13_autosomeX_hg002v2.7_Y.fasta
+
+# need to rename chrY_hg002
+cat chm13_autosomeX_hg002v2.7_Y.fasta | sed -e 's/chrY_hg002/chrY/' | pigz >t2t-chm13-v2.0.unmasked.fa.gz &
+
+faToTwoBit t2t-chm13-v2.0.unmasked.fa.gz  t2t-chm13-v2.0.unmasked.2bit
+
+# run rmsk and trf now
+
+twoBitMask -type=.bed t2t-chm13-v2.0.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trf.bed.gz) t2t-chm13-v2.0.2bit
+rm *unmasked*
+
+twoBitInfo t2t-chm13-v2.0.2bit t2t-chm13-v2.0.sizes
+tawk '{print $1,$2,"x"}' t2t-chm13-v2.0.sizes > t2t-chm13-v2.0.sizes3
+
+twoBitToFa t2t-chm13-v2.0.2bit t2t-chm13-v2.0.fa
+nice bgzip  --threads=64 t2t-chm13-v2.0.fa
+samtools faidx t2t-chm13-v2.0.fa.gz 
+
+blat t2t-chm13-v2.0.2bit -makeOoc=t2t-chm13-v2.0.11.ooc /dev/null /dev/null
+
+mkln t2t-chm13-v2.0.2bit t2t-chm13-v2.0.fa.gz*  ../../../../hubs/dev/t2t-chm13-v2.0/genome
+
+# for globus
+ln t2t-chm13-v2.0.fa.gz  T2T-CHM13v2.0.ucsc-names.fa.gz
+mkln T2T-CHM13v2.0.ucsc-names.fa.gz  ../../../../hubs/dev/t2t-chm13-v2.0/genome/
+
+
+* rmsk
+http://www.repeatmasker.org/~jstorer/T2T/completeRM/completeRM.out
+http://www.repeatmasker.org/~jstorer/T2T/completeRM/completeRM.bed
+
+pigz completeRM.*
+# need to drop chrX_hg002 and rename chrY_hg002
+editRepeatMaskerBed completeRM.bed.gz | sort -k1,1 -k2,2n | pigz -c >rmsk.bed.gz
+
+buildBigBed  --as=../../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2t-chm13-v2.0.unmasked.2bit bed9+ t2t-chm13-v2.0 rmsk.bigBed rmsk.bed.gz
+mkln rmsk.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/rmsk/
+
+
+* trf
+team-segdups/Assembly_analysis/Masked/T2T-CHM13v2_trf.bed
+pigz T2T-CHM13v2_trf.bed
+
+# need to rename chrY_hg002
+cat T2T-CHM13v2_trf.bed | tawk '$1=="chrY_hg002"{$1 = "chrY"} {print}' | pigz >trf.bed.gz
+
+buildBigBed --as=../../../../T2T-CHM13-hub/etc/simpleRepeat2.as --twoBit=../genome/t2t-chm13-v2.0.unmasked.2bit bed3+ t2t-chm13-v2.0 trf.bigBed trf.bed.gz
+mkln trf.bigBed  ../../../../hubs/dev/t2t-chm13-v2.0/trf/
+
+
+* DONE sedefSegDups
+** 2021-06-01 Mitchell Robert Vollger
+pigz T2T-CHM13v2.SDs.bed
+am-segdups/Assembly_analysis/SEDEF/T2T-CHM13v2.SDs.bed
+
+buildBigBed --as=../../../../T2T-CHM13-hub/etc/sedefSegDups2.as  bed9+ t2t-chm13-v2.0 sedefSegDups.bigBed T2T-CHM13v2.SDs.bed.gz
+Expecting 36 words line 1 of /data/tmp/tmp_md59bxi got 37. If the input is a tab-sep file, do not forget to use the -tab option
+mkln  sedefSegDups.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/sedefSegDups/
+
+
+* pending:

@@ -35,4 +35,5 @@ maxItems 100000
 bigDataUrl sedefSegDups/sedefSegDups.bigBed
 
 
-
+include prelimChains.trackDb.txt
+include as_annotation.trackDb.txt 

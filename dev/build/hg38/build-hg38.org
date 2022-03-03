@@ -1,0 +1,58 @@
+* grch38Exclusions
+GRGh38 exclusions
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13/GRCh38_major_release_seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_GRC_exclusions.bed
+buildBigBed bed4 hg38 grch38Exclusions.bigBed GCA_000001405.15_GRCh38_GRC_exclusions.bed
+mkln grch38Exclusions.bigBed ../../../../hubs/dev/hg38/grch38Exclusions/
+
+
+
+* prelimChains
+
+chainSwap ../../t2t-chm13-v2.0/prelimChains/chm13v2-grch38.chain.gz stdout | pigz -c > grch38-chm13v2.chain.gz &
+chainSwap ../../t2t-chm13-v2.0/prelimChains/chm13v2-grch38-unique-s10k.chain.gz stdout | pigz -c > grch38-chm13v2-unique-s10k.chain.gz &
+chainSwap ../../t2t-chm13-v2.0/prelimChains/chm13v2-grch38-unique-s50k.chain.gz stdout | pigz -c > grch38-chm13v2-unique-s50k.chain.gz &
+
+
+hgLoadChain -noBin -test no tmp/bigChain grch38-chm13v2.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/hg38.sizes grch38-chm13v2.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/hg38.sizes grch38-chm13v2.bigLink
+
+hgLoadChain -noBin -test no tmp/bigChain grch38-chm13v2-unique-s10k.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/hg38.sizes grch38-chm13v2-unique-s10k.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/hg38.sizes grch38-chm13v2-unique-s10k.bigLink
+
+hgLoadChain -noBin -test no tmp/bigChain grch38-chm13v2-unique-s50k.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/hg38.sizes grch38-chm13v2-unique-s50k.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/hg38.sizes grch38-chm13v2-unique-s50k.bigLink
+
+mkln *.gz  *.bigChain *.bigLink ../../../../hubs/dev/hg38/prelimChains/
+
+** chains in exclusions
+chr9    70701801        70719794
+chr13   86252979        8626952
+chr13   111753855       111793441
+
+* prelimChains/chainLiftEval
+hgsql hg38  -Ne 'select * from wgEncodeGencodeCompV39 where length(chrom) <= 5 union select * from wgEncodeGencodePseudoGeneV39 where length(chrom) <= 5 '| cut -f 2-> gencodeV39.gp
+
+liftOver -genePred gencodeV39.gp ../../prelimChains/grch38-chm13v2-unique-s10k.chain.gz /dev/null gencodeV39.s10k-unmapped.gp &
+liftOver -genePred gencodeV39.gp ../../prelimChains/grch38-chm13v2-unique-s50k.chain.gz /dev/null gencodeV39.s50k-unmapped.gp &
+clusterGenes gencodeV39.s10k-unmapped.clusters no gencodeV39.s10k-unmapped.gp
+clusterGenes gencodeV39.s50k-unmapped.clusters no gencodeV39.s50k-unmapped.gp
+clusterGenesToBed gencodeV39.s10k-unmapped.clusters gencodeV39.s10k-unmapped.bed
+clusterGenesToBed gencodeV39.s50k-unmapped.clusters gencodeV39.s50k-unmapped.bed
+cd ..
+buildBigBed bed4 hg38 gencodeV39.s10k-unmapped.bigBed  chainLiftEval/gencodeV39.s10k-unmapped.bed 
+buildBigBed bed4 hg38 gencodeV39.s50k-unmapped.bigBed  chainLiftEval/gencodeV39.s50k-unmapped.bed 
+
+mkln  *.bigBed chainLiftEval/*.bed ../../../../hubs/dev/hg38/prelimChains/
+
+bedToHtmlDir -hub http://t2t.gi.ucsc.edu/chm13/hub/hub.txt -pack-track wgEncodeGencodeCompV39 -pack-track wgEncodeGencodePseudoGeneV39 -public-browser -title 'Unmapped GENCODE regions s10k' hg38 chainLiftEval/gencodeV39.s10k-unmapped.bed ~/public_html/t2t/chainEval/s10k/
+bedToHtmlDir -hub http://t2t.gi.ucsc.edu/chm13/hub/hub.txt -pack-track wgEncodeGencodeCompV39 -pack-track wgEncodeGencodePseudoGeneV39 -public-browser -title 'Unmapped GENCODE regions s50k' hg38 chainLiftEval/gencodeV39.s50k-unmapped.bed ~/public_html/t2t/chainEval/s50k/
+

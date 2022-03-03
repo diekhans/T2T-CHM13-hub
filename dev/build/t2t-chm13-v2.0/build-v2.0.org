@@ -8,32 +8,25 @@ T2T-CHM13v2.0
 * setup
 export PATH=/hive/users/markd/t2t/projs/t2t-chm13/T2T-CHM13-hub/bin:${PATH}
 * genome
-/assemblies/release/v2.0/chm13_autosomeX_hg002v2.7_Y.fasta
+/assemblies/release/v2.0/chm13v2.0.fasta
+pigz chm13v2.0.fasta &
 
-# need to rename chrY_hg002
-cat chm13_autosomeX_hg002v2.7_Y.fasta | sed -e 's/chrY_hg002/chrY/' | pigz >t2t-chm13-v2.0.unmasked.fa.gz &
-
-faToTwoBit t2t-chm13-v2.0.unmasked.fa.gz  t2t-chm13-v2.0.unmasked.2bit
+faToTwoBit chm13v2.0.fasta.gz  t2t-chm13-v2.0.unmasked.2bit
 
 # run rmsk and trf now
 
 twoBitMask -type=.bed t2t-chm13-v2.0.unmasked.2bit <(zcat ../rmsk/rmsk.bed.gz ../trf/trf.bed.gz) t2t-chm13-v2.0.2bit
-rm *unmasked*
 
 twoBitInfo t2t-chm13-v2.0.2bit t2t-chm13-v2.0.sizes
 tawk '{print $1,$2,"x"}' t2t-chm13-v2.0.sizes > t2t-chm13-v2.0.sizes3
 
 twoBitToFa t2t-chm13-v2.0.2bit t2t-chm13-v2.0.fa
-nice bgzip  --threads=64 t2t-chm13-v2.0.fa
+Nice bgzip  --threads=64 t2t-chm13-v2.0.fa
 samtools faidx t2t-chm13-v2.0.fa.gz 
 
 blat t2t-chm13-v2.0.2bit -makeOoc=t2t-chm13-v2.0.11.ooc /dev/null /dev/null
 
 mkln t2t-chm13-v2.0.2bit t2t-chm13-v2.0.fa.gz*  ../../../../hubs/dev/t2t-chm13-v2.0/genome
-
-# for globus
-ln t2t-chm13-v2.0.fa.gz  T2T-CHM13v2.0.ucsc-names.fa.gz
-mkln T2T-CHM13v2.0.ucsc-names.fa.gz  ../../../../hubs/dev/t2t-chm13-v2.0/genome/
 
 
 * rmsk
@@ -62,11 +55,98 @@ mkln trf.bigBed  ../../../../hubs/dev/t2t-chm13-v2.0/trf/
 * DONE sedefSegDups
 ** 2021-06-01 Mitchell Robert Vollger
 pigz T2T-CHM13v2.SDs.bed
-am-segdups/Assembly_analysis/SEDEF/T2T-CHM13v2.SDs.bed
+team-segdups/Assembly_analysis/SEDEF/T2T-CHM13v2.SDs.bed
 
 buildBigBed --as=../../../../T2T-CHM13-hub/etc/sedefSegDups2.as  bed9+ t2t-chm13-v2.0 sedefSegDups.bigBed T2T-CHM13v2.SDs.bed.gz
-Expecting 36 words line 1 of /data/tmp/tmp_md59bxi got 37. If the input is a tab-sep file, do not forget to use the -tab option
 mkln  sedefSegDups.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/sedefSegDups/
 
 
+* prelimChains
+Nae-Chyun Chen  2:39 PM
+@MarkD Here are the processed chain files (chm13v2->grch38). Filtering criteria:
+The overlapped chains wrt either of source/target are removed
+Chains with sum of segment sizes less than 10k-/50k-bp are removed. Here segment sizes include both match and mismatch
+50k: 121 chains, 2867436019 bp in total (99.37% are w/ forward strand)
+10k: 249 chains, 2869914707 bp in total (99.34% forward)
+
+My filtering script is at https://github.com/milkschen/chaintools (see the filter part)
+
+chm13v2-grch38-unique-s10k.chain.gz
+chm13v2-grch38-unique-s50k.chain.gz
+
+all chains:
+/team-liftover/20220208/chm13v2-grch38.chain
+
+
+hgLoadChain -noBin -test no tmp/bigChain chm13v2-grch38.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38.bigLink
+
+hgLoadChain -noBin -test no tmp/bigChain chm13v2-grch38-unique-s10k.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38-unique-s10k.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38-unique-s10k.bigLink
+
+hgLoadChain -noBin -test no tmp/bigChain chm13v2-grch38-unique-s50k.chain.gz
+sed 's/.000000//' chain.tab | tawk '{print $2, $4, $5, $11, 1000, $8, $3, $6, $7, $9, $10, $1}' > tmp/bigChain
+bedToBigBed -type=bed6+6 -as=${HOME}/kent/src/hg/lib/bigChain.as -tab tmp/bigChain ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38-unique-s50k.bigChain
+tawk '{print $1, $2, $3, $5, $4}' link.tab | sort -k1,1 -k2,2n --parallel=64 > tmp/bigLink
+bedToBigBed -type=bed4+1 -as=${HOME}/kent/src/hg/lib/bigLink.as -tab tmp/bigLink  ../genome/t2t-chm13-v2.0.sizes chm13v2-grch38-unique-s50k.bigLink
+
+mkln  *.bigChain *.bigLink ../../../../hubs/dev/t2t-chm13-v2.0/prelimChains/
+
+
+
 * pending:
+
+* rmsk comparsion
+
+mine rmsk: %54.43 1696614892
+mine trf    %3.27  101827820
+mine both: %54.54 1700220945
+
+GenArk rmsk: %54.45 1697318823
+GenArk trf   %8.89  277,065,041
+GenArk both: %54.59 1701599095
+NCBI: %40.27 1255456226 
+
+|----------+---------------+---------------+---------------|
+|          |           T2T |        GenArk |          NCBI |
+|----------+---------------+---------------+---------------|
+| rmsk     |        %54.43 |        %54.45 |               |
+| TRF      |         %3.27 |         %8.89 |               |
+| combined |        %54.54 |        %54.59 |        %40.27 |
+|----------+---------------+---------------+---------------|
+| rmsk     | 1,696,614,892 | 1,697,318,823 |               |
+| TRF      |   101,827,820 |   277,065,041 |               |
+| combined | 1,700,220,945 | 1,701,599,095 | 1,255,456,226 |
+|----------+---------------+---------------+---------------|
+|          |           <r> |           <r> |           <r> |
+
+
+
+* proseq
+ @MarkD! I’ve put together the PRO-seq tracks for the official CHM13v2.0 browser in Globus (/team-epigenetics/PROseq-RNAseq_chm13v1.1/MappedToCHM13v1.1/PROseq_Bowtie2/). They are mapped to CHM13v1.1, but thought this was more appropriate since PRO-seq was done with CHM13 and therefore, lacks chrY. Is this okay?
+I figured we could do one track superset for all 4 track sets (same data, just mapped/filtered in 4 different ways). I’ve attached the trackDB and the description html below.
+I was going to share these in #chm13-browser, but wanted to run it all by you first- make sure I’m not missing anything.
+
+* as_annotation
+received AS_Annotation_chm13_v2.0.zip  from Fedor Ryabov
+pigz *.bed
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_SF.bigBed ASat_SF.130222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_strand.bigBed ASat_strand.180222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_StV.bigBed ASat_StV.170222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.231021.bed.gz &
+
+
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.bed.gz
+Trailing characters parsing signed integer in field 5 line 426900 of /data/tmp/tmp9u8n3bb6, got 182.100000
+
+zcat ASat_HOR.170222.bed.gz | tawk '{$5 = gensub("^([0-9]+).*", "\\1", 1, $5); print}' | pigz -c >ASat_HOR.170222.fix.bed.gz
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.fix.bed.gz
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/as_annotation/

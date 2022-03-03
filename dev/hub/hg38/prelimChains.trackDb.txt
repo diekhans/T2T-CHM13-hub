@@ -1,0 +1,47 @@
+track chm13v2Chains
+compositeTrack off
+shortLabel Chm13v2 Chains
+longLabel Chm13v2 Chains
+visibility hide
+priority 30
+type bigChain t2t-chm13-v2.0
+group compGeno
+html chm13v2Chains
+
+    track chm13v2AllChains
+    parent chm13v2Chains
+    shortLabel Chm13v2 All Chains
+    longLabel  Chm13v2 All Chains
+    type bigChain t2t-chm13-v2.0
+    color 120,20,0
+    visibility hide
+    bigDataUrl prelimChains/grch38-chm13v2.bigChain
+    linkDataUrl prelimChains/grch38-chm13v2.bigLink
+    priority 1
+    group compGeno
+
+    track chm13v2s10kChains
+    parent chm13v2Chains
+    shortLabel Chm13v2 10k Unique Chains
+    longLabel  Chm13v2 10k Unique Chains
+    type bigChain t2t-chm13-v2.0
+    color 20,120,0
+    visibility hide
+    bigDataUrl prelimChains/grch38-chm13v2-unique-s10k.bigChain
+    linkDataUrl prelimChains/grch38-chm13v2-unique-s10k.bigLink
+    priority 2
+    group compGeno
+
+    track chm13v2s50kChains
+    parent chm13v2Chains
+    shortLabel Chm13v2 50k Unique Chains
+    longLabel  Chm13v2 50k Unique Chains
+    type bigChain t2t-chm13-v2.0
+    color 0,20,120
+    visibility hide
+    bigDataUrl prelimChains/grch38-chm13v2-unique-s50k.bigChain
+    linkDataUrl prelimChains/grch38-chm13v2-unique-s50k.bigLink
+    priority 3
+    group compGeno
+
+

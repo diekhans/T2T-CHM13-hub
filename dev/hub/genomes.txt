@@ -80,3 +80,7 @@ groups GRCh38/groups.txt
 htmlPath GRCh38/description.html
 priority 20.0
 
+genome hg38
+trackDb hg38/trackDb.txt
+priority 30.0
+

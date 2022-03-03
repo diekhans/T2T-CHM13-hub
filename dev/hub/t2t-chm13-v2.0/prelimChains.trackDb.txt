@@ -1,0 +1,47 @@
+track grch38Chains
+compositeTrack off
+shortLabel GRCh38 Chains
+longLabel GRCh38 Chains
+visibility hide
+priority 30
+type bigChain hg38
+group compGeno
+html grch38Chains
+
+    track grch38AllChains
+    parent grch38Chains
+    shortLabel GRCh38 All Chains
+    longLabel  GRCh38 All Chains
+    type bigChain hg38
+    color 120,20,0
+    visibility hide
+    bigDataUrl prelimChains/chm13v2-grch38.bigChain
+    linkDataUrl prelimChains/chm13v2-grch38.bigLink
+    priority 1
+    group compGeno
+
+    track grch38s10kChains
+    parent grch38Chains
+    shortLabel GRCh38 10k Unique Chains
+    longLabel  GRCh38 10k Unique Chains
+    type bigChain hg38
+    color 20,120,0
+    visibility hide
+    bigDataUrl prelimChains/chm13v2-grch38-unique-s10k.bigChain
+    linkDataUrl prelimChains/chm13v2-grch38-unique-s10k.bigLink
+    priority 2
+    group compGeno
+
+    track grch38s50kChains
+    parent grch38Chains
+    shortLabel GRCh38 50k Unique Chains
+    longLabel  GRCh38 50k Unique Chains
+    type bigChain hg38
+    color 0,20,120
+    visibility hide
+    bigDataUrl prelimChains/chm13v2-grch38-unique-s50k.bigChain
+    linkDataUrl prelimChains/chm13v2-grch38-unique-s50k.bigLink
+    priority 3
+    group compGeno
+
+

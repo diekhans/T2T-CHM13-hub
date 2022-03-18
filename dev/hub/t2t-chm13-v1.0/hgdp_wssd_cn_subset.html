@@ -1,10 +1,33 @@
+
 <html>
 <h3>Description</h3>
-This track represents copy number estimates for 266 Simons Genome Diversity Panel genomes. Copy number is estimated over 500 bp windows of uniqely mappable sequence. Sequences are colored from cold to hot (0 - 10+) and exact copy can be found by clicking on the region of interest. \n\n
-Additionally, these tracks contain kmer-ized versions of chm13 and hg38 where 36mers with a slide of 1 are used to simulate 30X coverage depth for each reference. 
-<h3>Credits</h3>
-Please feel free to contact <a href=mailto:wharvey@uw.edu >William Harvey</a> or <a href=mailto:mvollger@uw.edu>Mitchell Vollger</a> with any questions and/or concerns regarding this or other tracks.
-<h3>References</h3>
-Bailey JA, Gu Z, Clark RA, Reinert K, Samonte RV, Schwartz S, Adams MD, Myers EW, Li PW, Eichler EE. (2002). Recent segmental duplications in the human genome. Science Aug;297(5583):1003-1007.
+This track represents short-read copy number estimates. 
+Short-read sequence data were processed into 36 bp non-overlapping fragments (assemblies were fragmented into 36 bp overlapping segments)
+and mapped to a masked reference using mrsFAST with a maximum of two substitution mismatches not allowing for indels (masking was determined by TRF and RepeatMasker). 
+Mapping counts were then aggregated into windows with 500 bp of non repeat masked sequence and these counts were corrected for GC bias per sample using windows known to be single copy in the genome.
+Finally, copy number was determined from corrected mapping counts using linear regression on read-depth versus known copy number control regions.
+Sequences are colored from cold to hot (0 - 120+) and exact copy can be found by clicking on the region of interest. 
 <br><br>
+NOTE: While copy number is calculated in overlapping windows of 500bp of unique sequence with a 100bp slide,
+the windows in the track only show the 100bp resulting from the slide to reduce file size and redundancy.  
+
+<h3>Copy Number Key</h3>
+<table border="1"><tr><th>Copy number</th><th>Color</th></tr><tr><td style="text-align: center; vertical-align: middle;">0</td><td style="background: rgb(229,229,229); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(229,229,229)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">1</td><td style="background: rgb(196,196,196); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(196,196,196)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">2</td><td style="background: rgb(0,0,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(0,0,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">3</td><td style="background: rgb(0,0,205); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(0,0,205)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">4</td><td style="background: rgb(65,105,225); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(65,105,225)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">5</td><td style="background: rgb(100,149,237); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(100,149,237)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">6</td><td style="background: rgb(180,238,180); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(180,238,180)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">7</td><td style="background: rgb(255,255,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(255,255,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">8</td><td style="background: rgb(255,165,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(255,165,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">9</td><td style="background: rgb(139,26,26); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(139,26,26)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">10</td><td style="background: rgb(255,0,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(255,0,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">20</td><td style="background: rgb(0,255,255); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(0,255,255)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">30</td><td style="background: rgb(32,178,170); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(32,178,170)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">40</td><td style="background: rgb(0,255,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(0,255,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">50</td><td style="background: rgb(34,139,34); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(34,139,34)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">60</td><td style="background: rgb(0,100,0); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(0,100,0)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">70</td><td style="background: rgb(75,0,130); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(75,0,130)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">80</td><td style="background: rgb(139,0,139); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(139,0,139)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">90</td><td style="background: rgb(148,0,211); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(148,0,211)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">100</td><td style="background: rgb(199,21,133); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(199,21,133)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">110</td><td style="background: rgb(255,105,180); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(255,105,180)">&#9632;</div></td></tr><tr><td style="text-align: center; vertical-align: middle;">120</td><td style="background: rgb(255,192,203); text-align: center; vertical-align: middle;"><div style="font-size:15px; color:rgb(255,192,203)">&#9632;</div></td></tr></table>
+
+<h3>Credits</h3>
+Please feel free to contact <a href=mailto:wharvey@uw.edu >William Harvey</a> or <a href=mailto:mvollger@uw.edu>Mitchell Vollger</a> with any questions and/or concerns regarding this track.
+
+<h3>References</h3>
+Bailey JA, Gu Z, Clark RA, Reinert K, Samonte RV, Schwartz S, Adams MD, Myers EW, Li PW, Eichler EE. Recent segmental duplications in the human genome. Science 2002
+<br><br>
+
+Hach, F., Hormozdiari, F., Alkan, C. et al. mrsFAST: a cache-oblivious algorithm for short-read mapping. Nat Methods. 2010
+<br><br>
+
+Sudmant PH, Kitzman JO, Antonacci F, Alkan C, Malig M, Tsalenko A, et al. Diversity of human copy number. Science. 2010
+<br><br>
+
+Sudmant PH, Mallick S, Nelson BJ, Hormozdiari F, Krumm N, Huddleston J, et al. Global diversity, population stratification, and selection of human copy-number variation. Science. 2015
+<br><br>
+
 </html>

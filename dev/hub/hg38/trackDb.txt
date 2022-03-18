@@ -1,0 +1,30 @@
+track grch38Exclusions
+shortLabel GRCh38 exclusions
+longLabel GRCh38 exclusions
+visibility dense
+color 200,0,0
+type bigBed 4
+bigDataUrl grch38Exclusions/grch38Exclusions.bigBed
+priority 0.1
+
+track gencodeUnmappeds10k
+shortLabel GENCODE Unmapped s10k
+longLabel  GENCODE Unmapped s10k
+visibility dense
+color 200,0,0
+type bigBed 4
+bigDataUrl prelimChains/gencodeV39.s10k-unmapped.bigBed
+priority 1
+html empty.html
+
+track gencodeUnmappeds50k
+shortLabel GENCODE Unmapped s50k
+longLabel  GENCODE Unmapped s50k
+visibility dense
+color 220,0,0
+type bigBed 4
+bigDataUrl prelimChains/gencodeV39.s50k-unmapped.bigBed
+priority 2
+html empty.html
+
+include prelimChains.trackDb.txt

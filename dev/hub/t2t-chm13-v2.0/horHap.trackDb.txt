@@ -1,0 +1,12 @@
+track horHap
+shortLabel HOR Haplotypes
+longLabel HOR Haplotypes cenX/cenY
+priority 10
+type bigBed 9
+visibility hide
+itemRgb on
+maxItems 100000
+bigDataUrl horHap/HorHap_CHM13.v2.0.chrXY.bb
+html empty.html
+
+

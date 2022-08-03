@@ -1,4 +1,4 @@
-assemblies = t2t-chm13-v2.0
+assemblies = GCA_009914755.4
 
 all: hub
 

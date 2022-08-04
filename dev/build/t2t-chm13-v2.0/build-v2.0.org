@@ -23,3 +23,8 @@ via slack:
 Composite_track_CHM13v2.0.bed  
 
 mkln *.bb ../../../../hubs/dev/t2t-chm13-v2.0/compositeRepeats
+
+* refseqLiftoff 2022-08-03
+Alaina Shumate
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_RefSeq_Liftoff.gff3
+https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13v2.0_RefSeq_Liftoff.gff3iteRepeeats.trackDb.txt

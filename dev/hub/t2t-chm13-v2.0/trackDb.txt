@@ -1,3 +1,4 @@
 
 include horHap.trackDb.txt
 include compositeRepeats.trackDb.txt
+include as_annotation.trackDb.txt

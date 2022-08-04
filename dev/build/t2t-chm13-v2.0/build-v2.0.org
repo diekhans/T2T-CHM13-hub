@@ -16,3 +16,10 @@ HorHap_CHM13.v2.0.chrXY.bb
 HorHap_CHM13.v2.0.chrXY.bed
 
 mkln *.bb ../../../../hubs/dev/t2t-chm13-v2.0/horHap
+
+* compositeRepeats 2022-08-03
+Savannah Hoyt, composite repeat element track hosted
+via slack:
+Composite_track_CHM13v2.0.bed  
+
+mkln *.bb ../../../../hubs/dev/t2t-chm13-v2.0/compositeRepeats

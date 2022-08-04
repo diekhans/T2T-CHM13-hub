@@ -1,0 +1,11 @@
+track compositeRepeats
+shortLabel Composite Repeats
+longLabel  Composite Repeats
+priority 19
+type bigBed 3
+visibility hide
+color 220,88,42
+bigDataUrl compositeRepeats/Composite_track_CHM13v2.0.bb
+html empty.html
+
+

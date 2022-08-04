@@ -1,3 +1,3 @@
 
 include horHap.trackDb.txt
-
+include compositeRepeats.trackDb.txt

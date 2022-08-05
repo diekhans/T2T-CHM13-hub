@@ -1,0 +1,12 @@
+track t2t_rmsk
+shortLabel RepeatMasker (T2T colors)
+longLabel Repeating Elements by RepeatMasker (T2T colors)
+#group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9 +
+bigDataUrl rmsk/rmsk.bigBed
+priority 1
+html rmsk.html

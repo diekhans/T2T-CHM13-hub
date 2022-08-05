@@ -8,6 +8,35 @@ export PATH=/hive/users/markd/t2t/projs/t2t-chm13/T2T-CHM13-hub/bin:${PATH}
 https://hgwdev.gi.ucsc.edu/~markd/t2t/dev/hub.txt
 https://t2t.gi.ucsc.edu/chm13/dev/hub.txt
 
+* rmsk
+http://www.repeatmasker.org/~jstorer/T2T/completeRM/completeRM.out
+http://www.repeatmasker.org/~jstorer/T2T/completeRM/completeRM.bed
+
+pigz completeRM.*
+# need to drop chrX_hg002 and rename chrY_hg002
+editRepeatMaskerBed completeRM.bed.gz | sort -k1,1 -k2,2n | pigz -c >rmsk.bed.gz
+
+buildBigBed  --as=../../../../T2T-CHM13-hub/etc/rmskBed.as --twoBit=../genome/t2t-chm13-v2.0.unmasked.2bit bed9+ t2t-chm13-v2.0 rmsk.bigBed rmsk.bed.gz
+mkln rmsk.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/rmsk/
+
+* as_annotation
+received AS_Annotation_chm13_v2.0.zip  from Fedor Ryabov
+pigz *.bed
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_SF.bigBed ASat_SF.130222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_strand.bigBed ASat_strand.180222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 ASat_StV.bigBed ASat_StV.170222.bed.gz &
+buildBigBed bed9 t2t-chm13-v2.0 Shared_ASat_HORs.bigBed Shared_ASat_HORs.231021.bed.gz &
+
+
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.bed.gz
+Trailing characters parsing signed integer in field 5 line 426900 of /data/tmp/tmp9u8n3bb6, got 182.100000
+
+zcat ASat_HOR.170222.bed.gz | tawk '{$5 = gensub("^([0-9]+).*", "\\1", 1, $5); print}' | pigz -c >ASat_HOR.170222.fix.bed.gz
+buildBigBed bed9 t2t-chm13-v2.0 ASat_HOR.bigBed ASat_HOR.170222.fix.bed.gz
+
+mkln *.bigBed ../../../../hubs/dev/t2t-chm13-v2.0/as_annotation/
+
 * horHap 2022-08-03
 Fedor Ryabov 
 HorHap track for cenX and cenY of CHM13.v2.0.
@@ -23,6 +52,8 @@ via slack:
 Composite_track_CHM13v2.0.bed  
 
 mkln *.bb ../../../../hubs/dev/t2t-chm13-v2.0/compositeRepeats
+
+* 
 
 * refseqLiftoff 2022-08-03
 Alaina Shumate
